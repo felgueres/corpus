@@ -11,7 +11,7 @@ import AudioRecorder from "../components/audio-recorder";
 // Define our app...
 const InvokeEditor = () => {
     const apiUrl = process.env.REACT_APP_API_URL;
-    console.log(apiUrl);
+    console.log('API URL: ' + apiUrl);
     const { getAccessTokenSilently } = useAuth0()
     const [message, setMessage] = useState(" ");
     const [isLoading, setIsLoading] = useState(false);
