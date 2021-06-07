@@ -1,4 +1,4 @@
-### Corpus. Automated clinician notes 
+### Jotly. Writing Assistant for Clinicians 
 
 Clinicians spend more time documenting information than interacting with patients. 
 
