@@ -6,7 +6,6 @@ import { Container, Row, Col } from "react-bootstrap";
 // Import the Slate components and React plugin.
 import { Slate, Editable, withReact } from 'slate-react';
 import { useAuth0 } from "@auth0/auth0-react";
-import AudioRecorder from "../components/audio-recorder";
 
 // Define our app...
 const InvokeEditor = () => {
@@ -141,7 +140,6 @@ const InvokeEditor = () => {
         
         <Row>
           <Col contentEditable={false}>
-            <AudioRecorder onChange = {handleVoice} contentEditable={false} ></AudioRecorder>
             <Slate editor={editor} value={value} onChange={value => { setValue(value); postDataSecurely(value)}}>
               <Editable 
                 renderElement={renderElement}

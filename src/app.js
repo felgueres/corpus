@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { NavBar, Footer, Loading, PrivateRoute } from "./components";
-import { Home, Profile, ExternalApi, InvokeEditor, AudioRecorder } from "./views";
+import { Home, Profile, InvokeEditor } from "./views";
 
 import "./app.css";
 

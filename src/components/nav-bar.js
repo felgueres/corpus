@@ -15,7 +15,7 @@ const MainNav = () => (
       exact
       activeClassName="router-link-exact-active"
     >
-      HealthHub
+      Note
     </Nav.Link>
   </Nav>
 );
