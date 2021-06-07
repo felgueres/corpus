@@ -1,4 +1,4 @@
-### Jotly. Writing Assistant for Clinicians 
+### Jotly: Writing Assistant for Clinicians 
 
 Clinicians spend more time documenting information than interacting with patients. 
 
