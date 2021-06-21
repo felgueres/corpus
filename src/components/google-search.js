@@ -8,9 +8,9 @@ const OpenSearch = (props) => {
   const { getAccessTokenSilently } = useAuth0()
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  async function fetchOpenSearch () {
+  async function fetchGoogleSearch () {
     const token = await getAccessTokenSilently();
-    const res = await fetch(`${apiUrl}/api/openai-search`, {
+    const res = await fetch(`${apiUrl}/api/google-search`, {
       method: 'GET',
       headers: {
       Authorization: `Bearer ${token}`,
@@ -20,14 +20,12 @@ const OpenSearch = (props) => {
   };
 
   function handleSearch(){
-    console.log(props)
-    fetchOpenSearch()
-    .then(r=>props.onChange(r))
+    fetchGoogleSearch().then(r=>props.onChange(r))
   }
 
   return (
     <Container>
-      <Button variant="outline-primary" className="float-right m-3" onClick={handleSearch}>openAi</Button>
+      <Button variant="outline-primary" className="float-right m-3" onClick={handleSearch}>Google</Button>
     </Container>
   );
 };

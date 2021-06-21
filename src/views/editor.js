@@ -3,7 +3,7 @@ import { createEditor, Editor } from 'slate'
 import { Container, Row, Col } from "react-bootstrap";
 import { Slate, Editable, withReact } from 'slate-react';
 import { useAuth0 } from "@auth0/auth0-react";
-import { OpenSearch, Cards } from "../components";
+import { OpenSearch, GoogleSearch, Cards } from "../components";
 
 const InvokeEditor = () => {
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -82,8 +82,16 @@ const InvokeEditor = () => {
     }
   }, [])
 
+  const [cardsInformation, setCardsInformation] = useState("");
+  const [searchTerms, setSearchTerms] = useState("");
+
   function handleSearch(text) {
     Editor.insertText(editor, text)
+    setSearchTerms(text)
+  }
+
+  function handleGoogleSearch(queryInformation) {
+    setCardsInformation(queryInformation)
   }
 
   useFetch()
@@ -100,10 +108,11 @@ const InvokeEditor = () => {
             <Editable renderElement={renderElement} renderLeaf={renderLeaf}/>
           </Slate>
           <OpenSearch onChange={handleSearch} contentEditable={false}> </OpenSearch>
+          <GoogleSearch onChange={handleGoogleSearch} contentEditable={false}> </GoogleSearch>
         </Col>
         <Col sm={1}></Col>
         <Col sm={3} style={{ paddingLeft: 0, paddingRight: 0 }}>
-          <Cards></Cards>
+          <Cards cardsInformation={cardsInformation}></Cards>
         </Col>
       </Row>
     </Container>

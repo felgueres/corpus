@@ -6,6 +6,7 @@ import NavBar from "./nav-bar";
 import Highlight from "./highlight";
 import PrivateRoute from "./private-route";
 import OpenSearch from "./open-ai-search";
+import GoogleSearch from "./google-search"
 import Cards from "./cards";
 
-export { Content, Footer, Hero, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, Cards};
+export { Content, Footer, Hero, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, Cards, GoogleSearch};
