@@ -54,7 +54,6 @@ const InvokeEditor = () => {
     return { response, isLoading }
   };
 
-
   const editor = useMemo(() => withReact(createEditor()), [])
 
   const Leaf = props => {
@@ -82,16 +81,11 @@ const InvokeEditor = () => {
     }
   }, [])
 
-  const [cardsInformation, setCardsInformation] = useState("");
   const [searchTerms, setSearchTerms] = useState("");
 
-  function handleSearch(text) {
-    Editor.insertText(editor, text)
-    setSearchTerms(text)
-  }
-
-  function handleGoogleSearch(queryInformation) {
-    setCardsInformation(queryInformation)
+  function handleSearch(searchOutput) {
+    Editor.insertText(editor, searchOutput)
+    setSearchTerms(searchOutput)
   }
 
   useFetch()
@@ -108,11 +102,10 @@ const InvokeEditor = () => {
             <Editable renderElement={renderElement} renderLeaf={renderLeaf}/>
           </Slate>
           <OpenSearch onChange={handleSearch} contentEditable={false}> </OpenSearch>
-          <GoogleSearch onChange={handleGoogleSearch} contentEditable={false}> </GoogleSearch>
         </Col>
         <Col sm={1}></Col>
         <Col sm={3} style={{ paddingLeft: 0, paddingRight: 0 }}>
-          <Cards cardsInformation={cardsInformation}></Cards>
+          <Cards searchTerms={searchTerms}></Cards>
         </Col>
       </Row>
     </Container>

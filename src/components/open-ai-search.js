@@ -20,7 +20,6 @@ const OpenSearch = (props) => {
   };
 
   function handleSearch(){
-    console.log(props)
     fetchOpenSearch()
     .then(r=>props.onChange(r))
   }
