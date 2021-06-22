@@ -3,7 +3,7 @@ import { createEditor, Editor } from 'slate'
 import { Container, Row, Col } from "react-bootstrap";
 import { Slate, Editable, withReact } from 'slate-react';
 import { useAuth0 } from "@auth0/auth0-react";
-import { OpenSearch, GoogleSearch, Cards } from "../components";
+import { OpenSearch, Cards } from "../components";
 
 const InvokeEditor = () => {
   const apiUrl = process.env.REACT_APP_API_URL;
