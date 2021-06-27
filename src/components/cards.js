@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Card, Container } from "react-bootstrap";
 
+// <Card.Title>{props.cardsInformation.title}</Card.Title>
+// <Card.Subtitle className="mb-2 text-muted">{card.title}</Card.Subtitle>
+// <Card.Text>One, two, go!</Card.Text>
+
 const Cards = (props) => {
-
-  const [cardsInformation, setCardsInformation] = useState('');
-
+  const [cardsInformation, setCardsInformation] = useState(null);
   const { getAccessTokenSilently } = useAuth0()
   const apiUrl = process.env.REACT_APP_API_URL;
   
@@ -18,31 +20,35 @@ const Cards = (props) => {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json'},});
     const responseData = await res.json();
-    setCardsInformation(responseData)
+    setCardsInformation(responseData);
+    console.log('search counter')
   };
+  const styleCard = {
+    fontSize: 10,
+    color: "#4a54f1",
+    paddingLeft: 0,
+    paddingRight: 0
+}
   
-// data[0] = { 'link': link, 'title': title }
-// data[1] ...
   const renderCard = (idx, card) => {
     return (
-      <Card style={{ paddingLeft: 0, paddingRight: 0 }} key={idx}>
+      <Card style={styleCard} key={idx}>
         <Card.Body>
-          {/* <Card.Title>{props.cardsInformation.title}</Card.Title> */}
-          {/* <Card.Subtitle className="mb-2 text-muted">{card.title}</Card.Subtitle> */}
-          {/* <Card.Text>One, two, go!</Card.Text> */}
           <Card.Link href={card.link}>{card.title}</Card.Link>
         </Card.Body>
       </Card>)
   }
 
+  useEffect(() => {
+    if (props.searchTerms) fetchGoogleSearch(props.searchTerms);
+  }, [props.searchTerms]);
+
   if (!props.searchTerms) {
-    return <div> Do kuul searches! </div>
+    return <div> Your searches will appear here! </div>
   }
 
-  fetchGoogleSearch(props.searchTerms);
-
   if (!cardsInformation) {
-    return <div> Waiting for your searches! </div>
+    return <div> Just one sec! </div>
   }
   
   return (

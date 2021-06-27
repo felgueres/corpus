@@ -26,7 +26,7 @@ const OpenSearch = (props) => {
 
   return (
     <Container>
-      <Button variant="outline-primary" className="float-right m-3" onClick={handleSearch}>openSearch</Button>
+      <Button variant="outline-primary" className="float-right m-3" onClick={handleSearch}>Search</Button>
     </Container>
   );
 };
