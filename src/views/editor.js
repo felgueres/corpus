@@ -3,7 +3,7 @@ import { createEditor, Editor } from 'slate'
 import { Container, Row, Col } from "react-bootstrap";
 import { Slate, Editable, withReact } from 'slate-react';
 import { useAuth0 } from "@auth0/auth0-react";
-import { OpenSearch, Cards } from "../components";
+import { OpenSearch, Cards, Graph } from "../components";
 
 const InvokeEditor = () => {
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -107,6 +107,9 @@ const InvokeEditor = () => {
         <Col sm={3} style={{ paddingLeft: 0, paddingRight: 0 }}>
           <Cards searchTerms={searchTerms}></Cards>
         </Col>
+      </Row>
+      <Row>
+        <Graph></Graph>
       </Row>
     </Container>
   )
