@@ -7,6 +7,7 @@ import Highlight from "./highlight";
 import PrivateRoute from "./private-route";
 import OpenSearch from "./open-ai-search";
 import Cards from "./cards";
+import RiskCards from "./riskcard";
 import Graph from "./directed-graph";
 
-export { Content, Footer, Hero, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, Cards, Graph};
+export { Content, Footer, Hero, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, Cards, RiskCards, Graph};

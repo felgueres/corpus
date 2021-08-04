@@ -15,7 +15,7 @@ const MainNav = () => (
       exact
       activeClassName="router-link-exact-active"
     >
-      Note
+      Climate Risks Digest
     </Nav.Link>
   </Nav>
 );
