@@ -11,7 +11,8 @@ export const ExternalApi = () => {
 
   const callApi = async () => {
     try {
-      const response = await fetch(`${apiUrl}/api/public`);
+      console.log(`${apiUrl}`);
+      const response = await fetch(`${apiUrl}/api/climaterisks`);
       const responseData = await response.json();
       setMessage(responseData);
     } catch (error) {
@@ -19,39 +20,26 @@ export const ExternalApi = () => {
     }
   };
 
-  const callSecureApi = async () => {
-    try {
-      const token = await getAccessTokenSilently();
-      const response = await fetch(`${apiUrl}/api/private`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      const responseData = await response.json();
-
-      setMessage(responseData);
-    } catch (error) {
-      setMessage(error.message);
-    }
-  };
 
   return (
-    <Container className="mb-5">
-      <h1>External API</h1>
+    <Container className="mb-5 pt-5">
+
+      <h3>Climate Risks Digest</h3>
+      <p></p>
       <p>
-        You use will use a button to call an external API using an access token,
-        and the API will validate it using the API's audience value.{" "}
-        <strong>This route should be private</strong>.
+        In the near-future, lending capital will only be available to businesses that have a strategy in place to get to a low carbon future.
       </p>
-      <ButtonGroup>
-        <Button onClick={callApi} color="primary" className="mt-5">
-          Get Public Message
-        </Button>
-        <Button onClick={callSecureApi} color="primary" className="mt-5">
-          Get Private Message
-        </Button>
-      </ButtonGroup>
+      <p>
+        This project is a web interface making sense of the climate risk landscape disclosed by companies in their SEC 10K filings.
+      </p>
+
+      <p>
+        It allows investors, creditors, underwriters and entrepreneurs to identify opportunities that decarbonize the productive sector of the US.
+      </p>
+
+      <Button onClick={callApi} color="primary" className="mt-1">
+        Show latest
+      </Button>
 
       {message && (
         <div className="mt-5">

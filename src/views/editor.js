@@ -108,9 +108,6 @@ const InvokeEditor = () => {
           <Cards searchTerms={searchTerms}></Cards>
         </Col>
       </Row>
-      <Row>
-        <Graph></Graph>
-      </Row>
     </Container>
   )
 }

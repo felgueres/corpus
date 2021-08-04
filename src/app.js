@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { NavBar, Footer, Loading, PrivateRoute } from "./components";
-import { Home, Profile, InvokeEditor } from "./views";
+import { Home, Profile, InvokeEditor, ExternalApi } from "./views";
 
 import "./app.css";
 
@@ -20,7 +20,8 @@ const App = () => {
       <NavBar />
       <Container className="flex-grow-1 mt-1">
         <Switch>
-          <PrivateRoute path="/" exact component={InvokeEditor} />
+          <Route path="/" exact component={ExternalApi} />
+          {/* <PrivateRoute path="/" exact component={InvokeEditor} /> */}
         </Switch>
       </Container>
       <Footer />
