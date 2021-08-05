@@ -31,18 +31,24 @@ const RiskCards = (props) => {
     paddingRight: 0,
     marginTop: 3,
     marginBottom: 20
-}
-  
+  }
+
   const renderCard = (idx, card) => {
+
+    var risks = card.risks.map(function (risk) {
+      return <ListGroup.Item>{risk}</ListGroup.Item>
+    })
+
     return (
-    <Card style={styleCard} key={idx}>
-      <Card.Header>{card.company_name}</Card.Header>
-      <Card.Body>
-        <Card.Title>Climate Risks {card.year}</Card.Title>
-        <Card.Link href={card.url}>Source: 10-k Filing</Card.Link>
-        <Card.Text>{card.risks[1]}</Card.Text>
-      </Card.Body>
-    </Card>
+      <Card style={styleCard} key={idx}>
+        <Card.Header><strong>{card.company_name}</strong>
+          <Card.Link href={card.url}> (Source)</Card.Link>
+        </Card.Header>
+        <ListGroup variant="flush">
+          {risks}
+        </ListGroup>
+
+      </Card>
     )
   }
 
@@ -57,10 +63,10 @@ const RiskCards = (props) => {
   if (!cardsInformation) {
     return <div> Just one sec! </div>
   }
-  
+
   return (
     <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
-      { Object.entries(cardsInformation).map(([idx, card],) => renderCard(idx, card))}
+      {Object.entries(cardsInformation).map(([idx, card],) => renderCard(idx, card))}
     </Container>
   );
 };

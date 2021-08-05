@@ -26,20 +26,10 @@ export const ExternalApi = () => {
     <Container className="mb-5 pt-5">
 
       {/* <h3>Climate Risks Digest</h3> */}
-      
-      {/* <Button onClick={callApi} color="primary" className="mt-1">
-        Show latest
-      </Button> */}
-      {/* <Col sm={3} style={{ paddingLeft: 0, paddingRight: 0 }}> */}
-          <RiskCards searchTerms='ClimateRisks'></RiskCards>
-      {/* </Col> */}
+      <br></br>
 
-      {message && (
-        <div className="mt-5">
-          <h6 className="muted">Result</h6>
-          <Highlight>{JSON.stringify(message, null, 2)}</Highlight>
-        </div>
-      )}
+      <RiskCards searchTerms='ClimateRisks'></RiskCards>
+
     </Container>
   );
 };
