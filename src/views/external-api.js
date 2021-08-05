@@ -25,7 +25,7 @@ export const ExternalApi = () => {
   return (
     <Container className="mb-5 pt-5">
 
-      {/* <h3>Climate Risks Digest</h3> */}
+      <h3>Search Companies</h3>
       <br></br>
 
       <RiskCards searchTerms='ClimateRisks'></RiskCards>
