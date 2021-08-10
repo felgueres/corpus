@@ -15,7 +15,7 @@ const MainNav = () => (
       exact
       activeClassName="router-link-exact-active"
     >
-    Disclosures 
+    Home 
     </Nav.Link>
   </Nav>
 );
@@ -32,11 +32,11 @@ const AuthNav = () => {
 
 const NavBar = () => {
   return (
-    <Navbar bg="white" expand="md">
+    <Navbar bg="primary" expand="md">
       <Container>
         {/* <img className="mb-3 app-logo" src={logo} alt="React logo" width="120" /> */}
-        <MainNav />
-        <AuthNav />
+        {/*<MainNav /> */}
+        {/*<AuthNav /> */}
       </Container>
     </Navbar>
   );

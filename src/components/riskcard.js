@@ -2,17 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Card, Container, ListGroup, ListGroupItem } from "react-bootstrap";
 
-// <Card.Title>{props.cardsInformation.title}</Card.Title>
-// <Card.Subtitle className="mb-2 text-muted">{card.title}</Card.Subtitle>
-// <Card.Text>One, two, go!</Card.Text>
 
 const RiskCards = (props) => {
   const [cardsInformation, setCardsInformation] = useState(null);
   // const { getAccessTokenSilently } = useAuth0()
   const apiUrl = process.env.REACT_APP_API_URL;
-
   const [message, setMessage] = useState("");
-
   const fetchClimateRisks = async () => {
     try {
       console.log(`${apiUrl}`);
@@ -34,7 +29,6 @@ const RiskCards = (props) => {
   }
 
   const renderCard = (idx, card) => {
-
     var risks = card.risks.map(function (risk) {
       return <ListGroup.Item>{risk}</ListGroup.Item>
     })
@@ -43,30 +37,34 @@ const RiskCards = (props) => {
       <Card style={styleCard} key={idx}>
         <Card.Header><strong>{card.company_name}</strong>
           <Card.Link href={card.url}> (Source)</Card.Link>
+          <Card.Title></Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">Category: {card.category}</Card.Subtitle>
         </Card.Header>
         <ListGroup variant="flush">
           {risks}
         </ListGroup>
-
       </Card>
     )
   }
 
   useEffect(() => {
-    if (props.searchTerms) fetchClimateRisks(props.searchTerms);
-  }, [props.searchTerms]);
-
-  if (!props.searchTerms) {
-    return <div> Your searches will appear here! </div>
-  }
+    if (!props.searchTerms) fetchClimateRisks();
+  }, []);
 
   if (!cardsInformation) {
     return <div> Just one sec! </div>
   }
 
+  var filteredCompanies = {};
+  for (const [_idx, card] of Object.entries(cardsInformation)) {
+    if (card.company_name.toLowerCase().includes(props.searchTerms.toLowerCase())) {
+      filteredCompanies[card.company_name] = card
+    }
+  }
+
   return (
     <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
-      {Object.entries(cardsInformation).map(([idx, card],) => renderCard(idx, card))}
+      {Object.entries(filteredCompanies).sort((a,b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
     </Container>
   );
 };

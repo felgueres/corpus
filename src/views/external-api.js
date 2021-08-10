@@ -4,31 +4,27 @@ import { Highlight } from "../components";
 import { useAuth0 } from "@auth0/auth0-react";
 import { RiskCards } from "../components";
 
-export const ExternalApi = () => {
+export const ExternalApi = (props) => {
   const [message, setMessage] = useState("");
   const apiUrl = process.env.REACT_APP_API_URL;
-
   const { getAccessTokenSilently } = useAuth0();
+  const [searchTerms, setSearchTerms] = useState("");
 
-  const callApi = async () => {
-    try {
-      console.log(`${apiUrl}`);
-      const response = await fetch(`${apiUrl}/api/climaterisks`);
-      const responseData = await response.json();
-      setMessage(responseData);
-    } catch (error) {
-      setMessage(error.message);
-    }
-  };
-
+  const companyFilterOnChange = (event) => {
+    console.log("coming at you from onChange", event.target.value)
+    setSearchTerms(event.target.value)
+  }
 
   return (
-    <Container className="mb-5 pt-5">
+    <Container className="mb-5 pt-3">
 
-      <h3>Search Companies</h3>
+      <h2>Climate Capital</h2>
+      <p>Making climate risk data accessible for business</p>
+      <input style={{ width: "50%"}} type="text" placeholder="Search a company..." onChange={companyFilterOnChange}></input>
+      <br></br>
       <br></br>
 
-      <RiskCards searchTerms='ClimateRisks'></RiskCards>
+      <RiskCards searchTerms={searchTerms}></RiskCards>
 
     </Container>
   );
