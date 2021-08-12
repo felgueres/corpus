@@ -28,8 +28,7 @@ export const ExternalApi = (props) => {
   const categories = ['All Categories', 'Aerospace', 'Agriculture', 'Airlines', 'Apparel', 'Auto', 'Auto Parts', 'Automotive', 'Banking', 'Beverage', 'Beverages', 'Biotechnology', 'Careers', 'Chem', 'Chemicals', 'Conglomerate', 'Construction', 'Consumer', 'Consumer Goods', 'Defense', 'Energy', 'Enterprise', 'Entertainment', 'Fast Food', 'Finance', 'Financial', 'Financial Services', 'Financials', 'Food', 'Gas', 'Healthcare', 'Home', 'Home Improvement', 'Hotels', 'Industrial', 'Infrastructure', 'Insurance', 'Investment Banking', 'Lodging', 'Log', 'Logistics', 'Manufacturing', 'Marketplace', 'Materials', 'Media', 'Medical Devices', 'Metals', 'Mining', 'Oil', 'Packaging', 'Paper', 'Pharmaceuticals', 'Printing', 'Private Equity', 'Property Management', 'REIT', 'Real Estate', 'Renewable Energy', 'Restaurants', 'Retail', 'Security', 'Semiconductors', 'Shipping', 'Software', 'Sports', 'Technology', 'Tourism', 'Transportation', 'Travel', 'Utilities', 'Waste Management', 'Water'] 
   return (
     <Container className="mb-5 pt-3">
-      <h3 style={{display : 'inline-block'}}>Climate Metrics</h3>
-      <span class="badge badge-primary ml-2 mt-2" style={{verticalAlign: 'top'}}>Beta</span>
+      <h5>Climate-Related Disclosures</h5>
       <p>Helping markets transition to a low carbon economy by providing tools and data.</p>
       <Row>
         <Col md={7}>

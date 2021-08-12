@@ -3,9 +3,8 @@ import logo from "../assets/invoke_logo.png"
 
 const Hero = () => (
   <div className="text-center hero my-5">
-    <img className="mb-3 app-logo" src={logo} alt="" width="120" />
     <p className="lead">
-      Documentation that writes itself
+     Tools and data for Financial Markets to price in Climate Risk. 
     </p>
   </div>
 );

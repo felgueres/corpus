@@ -17,7 +17,7 @@ const Profile = () => {
             alt="Profile"
             className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
           />
-        </Col>
+        </Col> 
         <Col md>
           <h2>{name}</h2>
           <p className="lead text-muted">{email}</p>
