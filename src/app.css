@@ -17,6 +17,10 @@
   }
 }
 
+.label-as-badge {
+  border-radius: 1em;
+}
+
 .spinner {
   position: absolute;
   display: flex;

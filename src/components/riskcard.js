@@ -32,6 +32,7 @@ const RiskCards = (props) => {
     var risks = card.risks.map(function (risk) {
       return <ListGroup.Item>{risk}</ListGroup.Item>
     })
+    console.log(idx);
 
     return (
       <Card style={styleCard} key={idx}>
@@ -55,8 +56,22 @@ const RiskCards = (props) => {
     return <div> Just one sec! </div>
   }
 
+  var filteredCompaniesByCategory = {};
   var filteredCompanies = {};
+
   for (const [_idx, card] of Object.entries(cardsInformation)) {
+    if (props.categorySearchTerms == 'All Categories' ) {
+      filteredCompaniesByCategory[card.company_name] = card
+    }
+
+    else {
+      if (card.category.toLowerCase().includes(props.categorySearchTerms.toLowerCase())){
+        filteredCompaniesByCategory[card.company_name] = card
+      }      
+    }
+  }
+
+  for (const [_, card] of Object.entries(filteredCompaniesByCategory)){
     if (card.company_name.toLowerCase().includes(props.searchTerms.toLowerCase())) {
       filteredCompanies[card.company_name] = card
     }
@@ -64,7 +79,8 @@ const RiskCards = (props) => {
 
   return (
     <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
-      {Object.entries(filteredCompanies).sort((a,b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
+      <p>Showing {Object.keys(filteredCompanies).length} companies.</p>
+      {Object.entries(filteredCompanies).sort((a, b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
     </Container>
   );
 };

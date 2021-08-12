@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, Badge } from "react-bootstrap";
 
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from "./logout-button";
@@ -32,7 +32,7 @@ const AuthNav = () => {
 
 const NavBar = () => {
   return (
-    <Navbar bg="primary" expand="md">
+    <Navbar expand="md">
       <Container>
         {/* <img className="mb-3 app-logo" src={logo} alt="React logo" width="120" /> */}
         {/*<MainNav /> */}
