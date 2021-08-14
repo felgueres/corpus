@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Card, Container, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Card, Container, ListGroup } from "react-bootstrap";
+import Highlighter from "react-highlight-words";
 
 
 const RiskCards = (props) => {
@@ -30,19 +31,24 @@ const RiskCards = (props) => {
 
   const renderCard = (idx, card) => {
     var risks = card.risks.map(function (risk) {
-      return <ListGroup.Item>{risk}</ListGroup.Item>
+      return <ListGroup.Item>
+        <Highlighter
+        highlightClassName="YourHighlightClass"
+        searchWords={["climate change", "opportunities", "risk", "risks"]}
+        autoEscape={true}
+        textToHighlight={risk}/>
+        </ListGroup.Item>
     })
-    console.log(idx);
 
     return (
-      <Card style={styleCard} key={idx}>
-        <Card.Header><strong>{card.company_name}</strong>
+      <Card className="shadow-sm rounded" style={styleCard} key={idx}>
+        <Card.Header className="bg-light"><strong>{card.company_name}</strong>
           <Card.Link href={card.url}> (Source)</Card.Link>
           <Card.Title></Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">Category: {card.category}</Card.Subtitle>
+          <Card.Subtitle className="text-muted">Category: {card.category}</Card.Subtitle>
         </Card.Header>
         <ListGroup variant="flush">
-          {risks}
+        {risks}
         </ListGroup>
       </Card>
     )
@@ -60,25 +66,25 @@ const RiskCards = (props) => {
   var filteredCompanies = {};
 
   for (const [_idx, card] of Object.entries(cardsInformation)) {
-    if (props.categorySearchTerms == 'All Categories' ) {
+    if (props.categorySearchTerms == 'All Categories') {
       filteredCompaniesByCategory[card.company_name] = card
     }
 
     else {
-      if (card.category.toLowerCase().includes(props.categorySearchTerms.toLowerCase())){
+      if (card.category.toLowerCase().includes(props.categorySearchTerms.toLowerCase())) {
         filteredCompaniesByCategory[card.company_name] = card
-      }      
+      }
     }
   }
 
-  for (const [_, card] of Object.entries(filteredCompaniesByCategory)){
+  for (const [_, card] of Object.entries(filteredCompaniesByCategory)) {
     if (card.company_name.toLowerCase().includes(props.searchTerms.toLowerCase())) {
       filteredCompanies[card.company_name] = card
     }
   }
 
   return (
-    <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
+    <Container>
       <p>Showing {Object.keys(filteredCompanies).length} companies.</p>
       {Object.entries(filteredCompanies).sort((a, b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
     </Container>
