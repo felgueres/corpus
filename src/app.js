@@ -18,8 +18,8 @@ const App = () => {
       <NavBar />
       <Container className="flex-grow-1 mt-1">
         <Switch>
-          <Route path="/" exact component={ExternalApi} />
-          <Route path="/home" exact component={Home} />
+          <Route path="/app" exact component={ExternalApi} />
+          <Route path="/" exact component={Home} />
         </Switch>
       </Container>
     </div>

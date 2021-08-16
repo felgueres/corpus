@@ -51,12 +51,14 @@
   background-color: #23B5D3;
   border: none;
   color: white;
-  padding: 10px 40px;
+  padding: 18px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 100%;
+  font-size: 18px;
   border-radius: 10px;
-  margin: 5px;
+  margin: 10px;
   text-align: center;
+  width: 220px;
+  font-family: 'Inter', Courier, monospace;
 }

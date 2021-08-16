@@ -9,14 +9,14 @@ const MainNav = () => (
   <Nav >
     <Nav.Link
       as={RouterNavLink}
-      to="/home"
+      to="/"
       exact
     >
-      Mission
+    Home
     </Nav.Link>
     <Nav.Link
       as={RouterNavLink}
-      to="/"
+      to="/app"
       exact
     >
       Climate Disclosures
