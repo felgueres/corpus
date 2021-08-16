@@ -30,14 +30,14 @@ export const ExternalApi = (props) => {
   return (
     <Container className="mb-5 pt-3">
       <br></br>
-      <h3 style={{textAlign: "center"}}>Climate-Related Financial Disclosures</h3>
+      <h3 style={{textAlign: "center"}}>Climate-Related Disclosures</h3>
       <p style={{textAlign: "center"}}>Search for risks and opportunities in annual filings</p>
       <br></br>
       <Row>
-        <Col md={7}>
+        <Col className='col-7'>
           <input style={{ width: '100%', minHeight: 35, height: 35 }} type="text" placeholder="Search a company..." onChange={companyFilterOnChange}></input>
         </Col>
-        <Col md={{ span: 5, offset: 0 }}>
+        <Col className='col-5'>
           <select placeholder="Category" style={{width: '100%', minHeight: 35, height: 35 }} onChange={categoryFilterOnChange}>
             {categories.map(category => renderOption(category))}
           </select>

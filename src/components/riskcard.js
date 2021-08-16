@@ -42,10 +42,10 @@ const RiskCards = (props) => {
 
     return (
       <Card className="shadow-sm rounded" style={styleCard} key={idx}>
-        <Card.Header className="bg-light"><strong>{card.company_name}</strong>
-          <Card.Link href={card.url}> (Source)</Card.Link>
+        <Card.Header className="bg-white"><strong>{card.company_name}</strong>
           <Card.Title></Card.Title>
           <Card.Subtitle className="text-muted">Category: {card.category}</Card.Subtitle>
+          <Card.Link href={card.url}> Source: 10-K, 2021</Card.Link>
         </Card.Header>
         <ListGroup variant="flush">
         {risks}

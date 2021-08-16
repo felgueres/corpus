@@ -1,5 +1,5 @@
-import React from "react";
 
+import React from "react";
 import contentData from "../utils/content-data";
 import { Col, Row } from "react-bootstrap";
 
