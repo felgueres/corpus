@@ -39,7 +39,7 @@ const NavBar = () => {
   return (
     <Navbar expand="md" bg="white">
       <Container >
-        <Navbar.Brand className='lm-2 font-inter' href="">Climate<strong>Cap</strong></Navbar.Brand>
+        <Navbar.Brand className='lm-2 font-inter' href="/">Climate<strong>Cap</strong></Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse className='justify-content-end' id='responsive-navbar-nav' >
           <MainNav />

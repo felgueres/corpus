@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Card, Container, ListGroup } from "react-bootstrap";
+import { Card, Container, ListGroup, Spinner } from "react-bootstrap";
 import Highlighter from "react-highlight-words";
 
 
@@ -33,11 +33,11 @@ const RiskCards = (props) => {
     var risks = card.risks.map(function (risk) {
       return <ListGroup.Item>
         <Highlighter
-        highlightClassName="YourHighlightClass"
-        searchWords={["climate change", "opportunities", "risk", "risks"]}
-        autoEscape={true}
-        textToHighlight={risk}/>
-        </ListGroup.Item>
+          highlightClassName="YourHighlightClass"
+          searchWords={["climate change", "opportunities", "risk", "risks"]}
+          autoEscape={true}
+          textToHighlight={risk} />
+      </ListGroup.Item>
     })
 
     return (
@@ -48,7 +48,7 @@ const RiskCards = (props) => {
           <Card.Link href={card.url}> Source: 10-K, 2021</Card.Link>
         </Card.Header>
         <ListGroup variant="flush">
-        {risks}
+          {risks}
         </ListGroup>
       </Card>
     )
@@ -59,7 +59,12 @@ const RiskCards = (props) => {
   }, []);
 
   if (!cardsInformation) {
-    return <div> Just one sec! </div>
+
+    return (<div>
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden"></span>
+      </Spinner>
+    </div>)
   }
 
   var filteredCompaniesByCategory = {};
