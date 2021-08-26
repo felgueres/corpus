@@ -19,7 +19,7 @@ const MainNav = () => (
       to="/app"
       exact
     >
-      Climate Disclosures
+      Climate Tracker
       <span class="badge badge-primary badge-small">Beta</span>
     </Nav.Link>
   </Nav>

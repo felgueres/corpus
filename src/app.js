@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavBar, Loading, PrivateRoute } from "./components";
-import { ExternalApi, Home } from "./views";
+import { ExternalApi, Home, Profiles} from "./views";
 import "./app.css";
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
       <Container className="flex-grow-1 mt-1">
         <Switch>
           <Route path="/app" exact component={ExternalApi} />
+          <Route path="/profiles" exact component={Profiles} />
           <Route path="/" exact component={Home} />
         </Switch>
       </Container>

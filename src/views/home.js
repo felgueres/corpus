@@ -4,7 +4,7 @@ import { Button, Container } from "react-bootstrap";
 const Home = () => (
   <Container>
     <h1 className="pt-4" style={{ 'font-size': '40px', width: '60%', textAlign: 'center', marginLeft: '20%', marginRight: '20%', marginTop: '5%' }}>
-      Data and intelligence for climate finance.
+      Intelligence for climate finance.
       <br></br>
     <hr className="mt-3" style={{width: '70%'}}/>
     </h1>
