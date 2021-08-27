@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Spinner, Row} from "react-bootstrap";
+import { Container, Spinner, Row } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const ProfilesTable = (props) => {
@@ -19,11 +19,12 @@ const ProfilesTable = (props) => {
 
   const renderCard = (idx, card) => {
     return (
-    <tr>
-      <td>{card.company_name}</td>
-      <td>{card.year}</td>
-      <td>{card.url}</td>
-    </tr>
+      <tr>
+        <td>{card.company_name}</td>
+        <td>{card.category}</td>
+        <td>{card.year}</td>
+        <td><a href={card.url}>Link</a></td>
+      </tr>
     )
   }
 
@@ -42,20 +43,17 @@ const ProfilesTable = (props) => {
 
   return (
     <Container>
-      <Row>
-        <table class="table table-sm">
-          <thead>
-            <tr class='row'>
-              <th class='col-md-4' >Company</th>
-              <th class='col-md-4' >First Mention</th>
-              <th class='col-md-4' >Statements</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </Row>
-      {Object.entries(cardsInformation).sort((a, b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
+      <table class="table table-sm">
+        <thead>
+            <th>Organization Name</th>
+            <th>Categories</th>
+            <th>Year</th>
+            <th>SEC 10K</th>
+        </thead>
+        <tbody>
+          {Object.entries(cardsInformation).sort((a, b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
+        </tbody>
+      </table>
     </Container>
   );
 };
