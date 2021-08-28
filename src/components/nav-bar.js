@@ -20,7 +20,7 @@ const MainNav = () => (
       exact
     >
       Climate Tracker
-      <span class="badge badge-primary badge-small">Beta</span>
+      <span className="badge badge-primary badge-small">Beta</span>
     </Nav.Link>
   </Nav>
 );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Spinner, Row } from "react-bootstrap";
+import { Container, Spinner, Col} from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const ProfilesTable = (props) => {
@@ -8,7 +8,6 @@ const ProfilesTable = (props) => {
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchClimateRisks = async () => {
     try {
-      console.log(`${apiUrl}`);
       const response = await fetch(`${apiUrl}/api/climaterisks`);
       const responseData = await response.json();
       setCardsInformation(responseData);
@@ -19,13 +18,38 @@ const ProfilesTable = (props) => {
 
   const renderCard = (idx, card) => {
     return (
-      <tr>
-        <td>{card.company_name}</td>
+      <tr key={idx}>
+        <td><a href={`profiles/${card.company_name}`}>{card.company_name}</a></td>
         <td>{card.category}</td>
         <td>{card.year}</td>
-        <td><a href={card.url}>Link</a></td>
       </tr>
     )
+  }
+
+  const buildTable = (cardsInformation) => {
+    return (
+      <table className="table table-sm">
+        <thead>
+          <tr>
+            <th>Organization Name</th>
+            <th>Industry</th>
+            <th>Climate Reporting Since</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(cardsInformation).sort((a, b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
+        </tbody>
+      </table>
+    )
+  }
+
+  const spinner = () => {
+    return (
+    <div>
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden"></span>
+      </Spinner>
+    </div>)
   }
 
   useEffect(() => {
@@ -33,27 +57,14 @@ const ProfilesTable = (props) => {
   }, []);
 
   if (!cardsInformation) {
-
-    return (<div>
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden"></span>
-      </Spinner>
-    </div>)
+    return spinner()
   }
 
   return (
     <Container>
-      <table class="table table-sm">
-        <thead>
-            <th>Organization Name</th>
-            <th>Categories</th>
-            <th>Year</th>
-            <th>SEC 10K</th>
-        </thead>
-        <tbody>
-          {Object.entries(cardsInformation).sort((a, b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
-        </tbody>
-      </table>
+      <Col className='col-md-8'>
+      {buildTable(cardsInformation)}
+      </Col>
     </Container>
   );
 };
