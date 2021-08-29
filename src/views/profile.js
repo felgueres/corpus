@@ -1,14 +1,14 @@
 import React from "react";
+import { ProfileSummary } from "../components";
+
 
 export const Profile = ({ match, location }) => {
   const apiUrl = process.env.REACT_APP_API_URL;
-  const { params: { organizationId }} = match;
+  var organizationId = match.params.organizationId;
 
   return (
-    <div>
-      <p>
-        <strong>{organizationId}</strong>
-      </p>
+    <div className='pt-4'>
+      <ProfileSummary organizationId={organizationId} />
     </div>
   );
 };

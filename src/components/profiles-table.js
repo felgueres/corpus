@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Spinner, Col} from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
+import { BsBook } from "react-icons/bs";
 
 const ProfilesTable = (props) => {
   const [cardsInformation, setCardsInformation] = useState(null);
@@ -17,23 +18,24 @@ const ProfilesTable = (props) => {
   };
 
   const renderCard = (idx, card) => {
+    console.log(card.company_name)
     return (
       <tr key={idx}>
-        <td><a href={`profiles/${card.company_name}`}>{card.short_name}</a></td>
+        <td><a className='company-names' href={`profiles/${card.company_name}`}>{card.short_name}</a></td>
       </tr>
     )
   }
 
   const buildTable = (cardsInformation) => {
     return (
-      <table className="table table-sm">
+      <table className="table table-sm border hover">
         <thead>
           <tr>
-            <th>Organization Name</th>
+            <th><BsBook className="m-2"/>Organization Name</th>
           </tr>
         </thead>
         <tbody>
-          {Object.entries(cardsInformation).sort((a, b) => a[0].localeCompare(b[0])).map(([idx, card],) => renderCard(idx, card))}
+          {Object.entries(cardsInformation).map(([idx, card],) => renderCard(idx, card))}
         </tbody>
       </table>
     )

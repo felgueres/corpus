@@ -33,3 +33,8 @@
 .result-block-container .result-block {
   opacity: 1;
 }
+
+.company-names {
+  font-size: small;
+  margin: 10px;
+}

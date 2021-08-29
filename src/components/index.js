@@ -9,5 +9,6 @@ import Cards from "./cards";
 import RiskCards from "./riskcard";
 import Content from "./content";
 import ProfilesTable from "./profiles-table";
+import ProfileSummary from "./profile-summary";
 
-export { Footer, Hero, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, Cards, RiskCards, Content, ProfilesTable };
+export { Footer, Hero, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, Cards, RiskCards, Content, ProfilesTable, ProfileSummary };

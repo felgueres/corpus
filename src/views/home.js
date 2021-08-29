@@ -9,10 +9,10 @@ const Home = () => (
     <hr className="mt-3" style={{width: '70%'}}/>
     </h1>
     <p className="pt-1" style={{textAlign:'center', width: '60%', marginLeft: '20%', marginRight: '20%', 'font-size': '16px'}}>
-      The transition to a lower-carbon economy is estimated to require around $1T USD / year for the foreseeable future. 
+      A lower-carbon economy requires ~$1T USD / year in investments for the foreseeable future. 
       <br></br>
       <br></br>
-      ClimateCap builds software to collect data and develop intelligence on climate-related risks and opportunities to support these investments. 
+      ClimateCap makes climate-related data available to help investors price in risks and opportunities. 
       </p>
 
     <div className="text-center pt-3">
