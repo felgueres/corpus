@@ -16,7 +16,7 @@ const MainNav = () => (
     </Nav.Link>
     <Nav.Link
       as={RouterNavLink}
-      to="/app"
+      to="/profiles"
       exact
     >
       Climate Tracker

@@ -8,10 +8,8 @@ const RiskCards = (props) => {
   const [cardsInformation, setCardsInformation] = useState(null);
   // const { getAccessTokenSilently } = useAuth0()
   const apiUrl = process.env.REACT_APP_API_URL;
-  const [message, setMessage] = useState("");
   const fetchClimateRisks = async () => {
     try {
-      console.log(`${apiUrl}`);
       const response = await fetch(`${apiUrl}/api/climaterisks`);
       const responseData = await response.json();
       setCardsInformation(responseData);
@@ -71,7 +69,7 @@ const RiskCards = (props) => {
   var filteredCompanies = {};
 
   for (const [_idx, card] of Object.entries(cardsInformation)) {
-    if (props.categorySearchTerms == 'All Categories') {
+    if (props.categorySearchTerms === 'All Categories') {
       filteredCompaniesByCategory[card.company_name] = card
     }
 

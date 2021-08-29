@@ -8,7 +8,7 @@ const ProfilesTable = (props) => {
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchClimateRisks = async () => {
     try {
-      const response = await fetch(`${apiUrl}/api/climaterisks`);
+      const response = await fetch(`${apiUrl}/api/organizations`);
       const responseData = await response.json();
       setCardsInformation(responseData);
     } catch (error) {
@@ -19,9 +19,7 @@ const ProfilesTable = (props) => {
   const renderCard = (idx, card) => {
     return (
       <tr key={idx}>
-        <td><a href={`profiles/${card.company_name}`}>{card.company_name}</a></td>
-        <td>{card.category}</td>
-        <td>{card.year}</td>
+        <td><a href={`profiles/${card.company_name}`}>{card.short_name}</a></td>
       </tr>
     )
   }
@@ -32,8 +30,6 @@ const ProfilesTable = (props) => {
         <thead>
           <tr>
             <th>Organization Name</th>
-            <th>Industry</th>
-            <th>Climate Reporting Since</th>
           </tr>
         </thead>
         <tbody>
@@ -62,7 +58,7 @@ const ProfilesTable = (props) => {
 
   return (
     <Container>
-      <Col className='col-md-8'>
+      <Col className='col-md-3'>
       {buildTable(cardsInformation)}
       </Col>
     </Container>

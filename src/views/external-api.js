@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Button, ButtonGroup, Container, Col, Row, Badge } from "react-bootstrap";
-import { Highlight } from "../components";
+import { Container, Col, Row } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 import { RiskCards } from "../components";
 
 export const ExternalApi = (props) => {
-  const [message, setMessage] = useState("");
   const apiUrl = process.env.REACT_APP_API_URL;
   const { getAccessTokenSilently } = useAuth0();
   const [searchTerms, setSearchTerms] = useState("");
