@@ -37,7 +37,7 @@ const AuthNav = () => {
 
 const NavBar = () => {
   return (
-    <Navbar expand="md" bg="white">
+    <Navbar expand="lg" bg="white" className="navbar">
       <Container >
         <Navbar.Brand className='lm-2 font-inter' href="/">Climate<strong>Cap</strong></Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />

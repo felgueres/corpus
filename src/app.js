@@ -15,9 +15,9 @@ const App = () => {
 
   return (
     <div id="app" className="d-flex flex-column h-100">
-      {/* <NavBar /> */}
+      <NavBar />
       <Row className="h-100">
-        <Col className='sidebar bg-light'>
+        <Col className='sidebar pr-0'>
           <SideBar  />
         </Col>
         <Col className='not-sidebar'>

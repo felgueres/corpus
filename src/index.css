@@ -1,21 +1,3 @@
-.next-steps .fa-link {
-  margin-right: 5px;
-}
-
-/* Fix for use only flexbox in content area */
-.next-steps .row {
-  margin-bottom: 0;
-}
-
-.next-steps .col-md-5 {
-  margin-bottom: 3rem;
-}
-
-@media (max-width: 768px) {
-  .next-steps .col-md-5 {
-    margin-bottom: 0;
-  }
-}
 
 .spinner {
   position: absolute;
@@ -35,12 +17,46 @@
 }
 
 .sidebar {
-  flex-basis: 15rem;
+  flex-basis: 11rem;
   flex-grow: 1;
+  background-color:whitesmoke;
+  color: black
+}
+
+@media screen and (max-width: 799px){
+  .sidebar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 799px){
+  .navbar {
+    display: none;
+  }
 }
 
 .not-sidebar {
   flex-basis: 0;
   flex-grow: 1100;
   min-width: 50%;
+}
+
+.nav-links {
+  font-size: medium;
+  color: grey;
+  text-decoration:none;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+
+.nav-links:hover {
+  font-weight:500;
+  color: black;
+}
+
+.nav-link-active {
+  color: black;
+  font-weight:500;
+  border-right-style: solid;
+  border-right-color: lightskyblue;
 }
