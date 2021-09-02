@@ -34,7 +34,13 @@
   opacity: 1;
 }
 
-.company-names {
-  font-size: small;
-  margin: 10px;
+.sidebar {
+  flex-basis: 15rem;
+  flex-grow: 1;
+}
+
+.not-sidebar {
+  flex-basis: 0;
+  flex-grow: 1100;
+  min-width: 50%;
 }
