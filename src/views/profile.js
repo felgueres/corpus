@@ -2,8 +2,7 @@ import React from "react";
 import { ProfileSummary } from "../components";
 
 
-export const Profile = ({ match, location }) => {
-  const apiUrl = process.env.REACT_APP_API_URL;
+export const Profile = ({ match }) => {
   var organizationId = match.params.organizationId;
 
   return (

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container, Spinner, Col} from "react-bootstrap";
-import { useAuth0 } from "@auth0/auth0-react";
+import { Container, Spinner, Col } from "react-bootstrap";
 import { BsBook } from "react-icons/bs";
 
 const ProfilesTable = (props) => {
   const [cardsInformation, setCardsInformation] = useState(null);
-  // const { getAccessTokenSilently } = useAuth0()
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchClimateRisks = async () => {
     try {
@@ -18,7 +16,6 @@ const ProfilesTable = (props) => {
   };
 
   const renderCard = (idx, card) => {
-    console.log(card.company_name)
     return (
       <tr key={idx}>
         <td><a className='company-names' href={`profiles/${card.company_name}`}>{card.short_name}</a></td>
@@ -31,7 +28,7 @@ const ProfilesTable = (props) => {
       <table className="table table-sm border hover">
         <thead>
           <tr>
-            <th><BsBook className="m-2"/>Organization Name</th>
+            <th><BsBook className="m-2" />Organization Name</th>
           </tr>
         </thead>
         <tbody>
@@ -43,11 +40,11 @@ const ProfilesTable = (props) => {
 
   const spinner = () => {
     return (
-    <div>
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden"></span>
-      </Spinner>
-    </div>)
+      <div>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden"></span>
+        </Spinner>
+      </div>)
   }
 
   useEffect(() => {
@@ -60,8 +57,8 @@ const ProfilesTable = (props) => {
 
   return (
     <Container>
-      <Col className='col-md-3'>
-      {buildTable(cardsInformation)}
+      <Col className='my-3 p-3 border rounded shadow-sm'>
+        {buildTable(cardsInformation)}
       </Col>
     </Container>
   );

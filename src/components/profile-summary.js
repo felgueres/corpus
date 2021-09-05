@@ -29,7 +29,6 @@ const ProfileSummary = ({ organizationId }) => {
             <p className="card-text">{ organizationInformation[0].risks }</p>
           </div>
         </Card>
-        
       </Col>
     </Container>
   );
