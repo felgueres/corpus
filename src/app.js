@@ -24,7 +24,6 @@ const App = () => {
           <Switch>
             <Route path="/profiles" exact component={Profiles} />
             <Route path="/profiles/:organizationId" exact component={Profile} />
-            <Route path="/invest" exact component={Invest} />
             <Route path="/" exact component={Home} />
           </Switch>
         </Col>
