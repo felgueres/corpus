@@ -25,7 +25,7 @@ const ProfilesTable = (props) => {
 
   const buildTable = (cardsInformation) => {
     return (
-        <table className="table table-sm border hover">
+        <table className="table table-sm hover">
           <thead>
             <tr>
               <th className='table-title'>Directory</th>
