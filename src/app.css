@@ -1,64 +1,103 @@
-.next-steps .fa-link {
-  margin-right: 5px;
-}
-
-/* Fix for use only flexbox in content area */
-.next-steps .row {
-  margin-bottom: 0;
-}
-
-.next-steps .col-md-5 {
-  margin-bottom: 3rem;
-}
-
-@media (max-width: 768px) {
-  .next-steps .col-md-5 {
-    margin-bottom: 0;
-  }
-}
-
 .label-as-badge {
-  border-radius: 1em;
+    border-radius: 1em;
 }
 
 .spinner {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-.result-block-container .result-block {
-  opacity: 1;
-}
 .badge.badge-small {
-  vertical-align: Top;
-  margin-left: '10px';
-  font-size: 0.5em;
+    vertical-align: Top;
+    margin-left: '10px';
+    font-size: 0.5em;
 }
 
-.font-inter {
-  font-family: 'Inter', sans-serif;
+.title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 55px;
+    color: #24221e;
+}
+
+/* Small screen */
+
+@media screen and (max-width: 799px) {
+    .title {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        font-size: 36px;
+        line-height: 45px;
+        color: #24221e;
+    }
 }
 
 .button {
-  background-color: #23B5D3;
-  border: none;
-  color: white;
-  padding: 18px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  border-radius: 10px;
-  margin: 10px;
-  text-align: center;
-  width: 220px;
-  font-family: 'Inter', Courier, monospace;
+    font-family: 'Inter', sans-serif;
+    background-color: #23B5D3;
+    border: none;
+    padding: 15px;
+    width: 9em;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    line-height: 27px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-right: 10px;
 }
+
+#searchbar:focus+#blurable {
+    filter: opacity(50%);
+}
+
+.searchbar {
+    border: none;
+    background: whitesmoke;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color:#5a564f;
+    width: auto
+    ;
+}
+
+.searchbar:focus {
+    border: none;
+    background: whitesmoke;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color:#5a564f;
+    ;
+}
+::placeholder {
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #5a564f;
+}
+
+.table-title {
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.table-child {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color:black;
+}
+

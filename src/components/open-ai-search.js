@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button, Container } from "react-bootstrap";
 
 const OpenSearch = (props) => {
 
-  const [message, setMessage] = useState(''); 
   const { getAccessTokenSilently } = useAuth0()
   const apiUrl = process.env.REACT_APP_API_URL;
 

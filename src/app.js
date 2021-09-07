@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavBar, Loading, SideBar } from "./components";
-import { Home, Profiles, Profile, Invest } from "./views";
+import { Home, Profiles, Profile } from "./views";
 import "./app.css";
 
 const App = () => {

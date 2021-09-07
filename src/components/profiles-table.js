@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container, Spinner, Col } from "react-bootstrap";
-import { BsBook } from "react-icons/bs";
+import { Spinner } from "react-bootstrap";
 
 const ProfilesTable = (props) => {
   const [cardsInformation, setCardsInformation] = useState(null);
+  const [fetchError, setFetchError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchClimateRisks = async () => {
     try {
@@ -11,30 +11,30 @@ const ProfilesTable = (props) => {
       const responseData = await response.json();
       setCardsInformation(responseData);
     } catch (error) {
-      setCardsInformation(error.message);
+      setFetchError(error.message);
     }
   };
 
-  const renderCard = (idx, card) => {
+  const renderRow = (idx, card) => {
     return (
       <tr key={idx}>
-        <td><a className='company-names' href={`profiles/${card.company_name}`}>{card.short_name}</a></td>
+        <td><a className='table-child' href={`profiles/${card.company_name}`}>{card.short_name}</a></td>
       </tr>
     )
   }
 
   const buildTable = (cardsInformation) => {
     return (
-      <table className="table table-sm border hover">
-        <thead>
-          <tr>
-            <th><BsBook className="m-2" />Organization Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(cardsInformation).map(([idx, card],) => renderCard(idx, card))}
-        </tbody>
-      </table>
+        <table className="table table-sm border hover">
+          <thead>
+            <tr>
+              <th className='table-title'>Directory</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
+          </tbody>
+        </table>
     )
   }
 
@@ -49,18 +49,19 @@ const ProfilesTable = (props) => {
 
   useEffect(() => {
     if (!props.searchTerms) fetchClimateRisks();
-  }, []);
+  });
 
   if (!cardsInformation) {
     return spinner()
   }
 
+  if (fetchError) {
+    return <div className="mt-3">Unable to fetch data.</div>
+  }
   return (
-    <Container>
-      <Col className='my-3 p-3 border rounded shadow-sm'>
-        {buildTable(cardsInformation)}
-      </Col>
-    </Container>
+    <div className="mt-3">
+      {buildTable(cardsInformation)}
+    </div>
   );
 };
 

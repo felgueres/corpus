@@ -1,50 +1,27 @@
 import React from "react";
-import { NavLink as RouterNavLink } from "react-router-dom";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { useAuth0 } from "@auth0/auth0-react";
-import LogoutButton from "./logout-button";
-import LoginButton from "./login-button";
+import { Link } from "react-router-dom";
+import { Nav, Navbar } from "react-bootstrap";
 
 const MainNav = () => (
-  <Nav >
+  <Nav className="align-items-end">
     <Nav.Link
-      as={RouterNavLink}
-      to="/"
-      exact
-    >
-    Home
-    </Nav.Link>
-    <Nav.Link
-      as={RouterNavLink}
+      eventKey='profiles'
+      as={Link}
       to="/profiles"
       exact
-    >
-      Climate Tracker
-      <span className="badge badge-primary badge-small">Beta</span>
+    >Product
     </Nav.Link>
   </Nav>
 );
 
-
-const AuthNav = () => {
-  const { isAuthenticated } = useAuth0();
-  return (
-    <Nav className="justify-content-end">
-      {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-    </Nav>
-  );
-};
-
 const NavBar = () => {
   return (
-    <Navbar expand="lg" bg="white" className="navbar">
-      <Container >
-        <Navbar.Brand className='lm-2 font-inter' href="/">Climate<strong>Cap</strong></Navbar.Brand>
-        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-        <Navbar.Collapse className='justify-content-end' id='responsive-navbar-nav' >
-          <MainNav />
-        </Navbar.Collapse>
-      </Container>
+    <Navbar collapseOnSelect expand="lg" bg="white" className="navbar">
+      <Navbar.Brand className='lm-2 font-inter' href="/">Climate<strong>Cap</strong></Navbar.Brand>
+      <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
+      <Navbar.Collapse id='responsive-navbar-nav' >
+        <MainNav />
+      </Navbar.Collapse>
     </Navbar>
   );
 };

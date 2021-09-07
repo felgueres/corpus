@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
 
 const News = () => {
   const [newsInformation, setNewsInformation] = useState(null);
@@ -24,15 +23,15 @@ const News = () => {
   }
 
 
-  useEffect(() => { if (!newsInformation) { fetchClimateNews() } }, []);
+  useEffect(() => { if (!newsInformation) { fetchClimateNews() } });
 
   if (!newsInformation) {
     return 'loading...'
   }
 
   return (
-    <div class="my-3 p-3 border rounded shadow-sm">
-      <h6 class="border-bottom pb-2 mb-0">Recent updates</h6>
+    <div className="my-3 p-3 border rounded shadow-sm" style={{'backdrop-filter': 'blur(100px)'}}>
+      <h6 className="border-bottom pb-2 mb-0">Recent updates</h6>
       {Object.entries(newsInformation).map(([idx, card],) => newsItem(idx, card))}
     </div>
   );

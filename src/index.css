@@ -23,16 +23,24 @@
   color: black
 }
 
+/* Small Screen */
 @media screen and (max-width: 799px){
   .sidebar {
     display: none;
   }
+  .heavy-padded {
+  padding-top: 1em;
+  }
 }
-
+/* Mid and large screens */
 @media screen and (min-width: 799px){
   .navbar {
     display: none;
   }
+  .heavy-padded {
+  padding-top: 80px;
+  }
+
 }
 
 .not-sidebar {
@@ -42,6 +50,7 @@
 }
 
 .nav-links {
+  font-family: 'Inter', sans-serif;
   font-size: medium;
   color: grey;
   text-decoration:none;
@@ -58,5 +67,9 @@
   color: black;
   font-weight:500;
   border-right-style: solid;
-  border-right-color: lightskyblue;
+  border-right-color: #23B5D3;
+}
+
+.centered {
+  text-align: center;
 }

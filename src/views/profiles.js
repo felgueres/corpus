@@ -1,18 +1,22 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { ProfilesTable, News } from "../components";
+import { ProfilesTable } from "../components";
+import { NavLink as RouterNavLink } from "react-router-dom";
+import { Nav } from "react-bootstrap"
 
 export const Profiles = () => {
   return (
-    <Container>
-      <div class="input-group mb-3 mt-5">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+    <Container className="heavy-padded">
+      <Nav aria-label="breadcrumb">
+        <ol className="breadcrumb" style={{'backgroundColor': 'white', 'padding': '0px'}}> 
+          <Nav.Link className = 'breadcrumb-item' as = { RouterNavLink } to = "/profiles" > Firms </Nav.Link> 
+        </ol>
+      </Nav>
+      <input id='searchbar' type="text" className="form-control searchbar" autoComplete="off" placeholder="Search" />
+      <div id='blurable'>
+        {/* <News></News> */}
+        <ProfilesTable className='mt-5'></ProfilesTable>
       </div>
-      <News></News>
-      <ProfilesTable></ProfilesTable>
     </Container>
   );
 };
