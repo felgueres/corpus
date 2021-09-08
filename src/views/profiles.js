@@ -4,7 +4,7 @@ import { ProfilesTable, SideBar } from "../components";
 
 export const Profiles = () => {
   return (
-      <Row> 
+      <Row className='vh-100'> 
         <Col className='sidebar'>
           <SideBar />
         </Col>
