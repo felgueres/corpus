@@ -54,7 +54,6 @@
     border-radius: 10px;
     font-weight: 600;
     margin-top: 20px;
-    margin-right: 10px;
 }
 
 #searchbar:focus+#blurable {
@@ -68,8 +67,8 @@
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     color:#5a564f;
-    width: auto
-    ;
+    width: auto;
+    margin-bottom: 50px;
 }
 
 .searchbar:focus {

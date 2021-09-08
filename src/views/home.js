@@ -1,17 +1,21 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { NavBar } from "../components";
 
 const Home = () => (
-  <Container>
-    <h1 className="heavy-padded title">
+  <div>
+    <NavBar />
+    <h1 className="heavy-padded title centered">
       A firm-level database </h1>
-    <h1 className="title">
+    <h1 className="title centered">
       and analytics
     </h1>
-    <h1 className="title">for climate finance.
+    <h1 className="title centered">for climate finance.
     </h1>
-    <Button className="button" href="/profiles">Get started</Button>
-  </Container>
+    <div style={{ 'display': 'flex', 'justifyContent': 'center' }}>
+      <Button className="button" href="/profiles">Get started</Button>
+    </div>
+  </div>
 );
 
 export default Home;

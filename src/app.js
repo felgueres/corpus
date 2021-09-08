@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavBar, Loading, SideBar } from "./components";
 import { Home, Profiles, Profile } from "./views";
@@ -14,20 +13,12 @@ const App = () => {
   }
 
   return (
-    <div id="app" className="d-flex flex-column h-100">
-      <NavBar />
-      <Row className="h-100">
-        <Col className='sidebar pr-0'>
-          <SideBar  />
-        </Col>
-        <Col className='not-sidebar'>
-          <Switch>
-            <Route path="/profiles" exact component={Profiles} />
-            <Route path="/profiles/:organizationId" exact component={Profile} />
-            <Route path="/" exact component={Home} />
-          </Switch>
-        </Col>
-      </Row>
+    <div className='container-fluid' id="app">
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/profiles" exact component={Profiles} />
+        <Route path="/profiles/:organizationId" exact component={Profile} />
+      </Switch>
     </div>
   );
 };

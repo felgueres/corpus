@@ -3,10 +3,10 @@ import { NavLink as RouterNavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 
 const SideBar = () => {
-    return ( 
-        <div className ='heavy-padded' >
-        <Nav.Link className = 'nav-links' activeClassName = "nav-link-active" as = { RouterNavLink } to = "/" exact > Climate<strong>Cap</strong> </Nav.Link>
-        <Nav.Link className = 'nav-links' activeClassName = "nav-link-active" as = { RouterNavLink } to = "/profiles" > Get Started </Nav.Link> 
+    return (
+        <div className='pt-5'>
+            <Nav.Link className='nav-links brand' href="/">ClimateCap</Nav.Link>
+            <Nav.Link className='nav-links' activeClassName="nav-link-active" as={RouterNavLink} to="/profiles" > Directory </Nav.Link>
         </div>
     );
 };

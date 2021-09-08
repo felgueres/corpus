@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Col, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const ProfileSummary = ({ organizationId }) => {
   const [organizationInformation, setOrganizationInformation] = useState(null);

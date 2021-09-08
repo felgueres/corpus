@@ -48,8 +48,8 @@ const ProfilesTable = (props) => {
   }
 
   useEffect(() => {
-    if (!props.searchTerms) fetchClimateRisks();
-  });
+    if (!cardsInformation) fetchClimateRisks();
+  }, []);
 
   if (!cardsInformation) {
     return spinner()
