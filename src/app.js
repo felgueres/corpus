@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { NavBar, Loading, SideBar } from "./components";
+import { Loading } from "./components";
 import { Home, Profiles, Profile } from "./views";
 import "./app.css";
 
@@ -16,8 +16,7 @@ const App = () => {
     <div className='container-fluid' id="app">
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/profiles" exact component={Profiles} />
-        <Route path="/profiles/:organizationId" exact component={Profile} />
+        <Route path="/profiles" component={Profiles} />
       </Switch>
     </div>
   );

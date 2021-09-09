@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
   const ProfilesTable = () => {
   const [cardsInformation, setCardsInformation] = useState(null);
@@ -18,7 +19,7 @@ import { Spinner } from "react-bootstrap";
   const renderRow = (idx, card) => {
     return (
       <tr key={idx}>
-        <td><a className='table-child' href={`profiles/${card.company_name}`}>{card.short_name}</a></td>
+         <td><Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link></td>
       </tr>
     )
   }

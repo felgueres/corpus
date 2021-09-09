@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 
-const ProfileSummary = ({ organizationId }) => {
+const ProfileSummary = ({match}) => {
+  var organizationId = match.params.organizationId;
   const [organizationInformation, setOrganizationInformation] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchClimateRisks = async () => {
