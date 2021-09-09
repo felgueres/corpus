@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { NavBar } from "../components";
 
 const Home = () => (
-  <div>
+  <div className='pt-3'>
     <NavBar />
     <h1 className="heavy-padded title centered">
       A firm-level database </h1>

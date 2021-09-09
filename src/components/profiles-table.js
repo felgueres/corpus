@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 
-const ProfilesTable = (props) => {
+  const ProfilesTable = () => {
   const [cardsInformation, setCardsInformation] = useState(null);
   const [fetchError, setFetchError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
