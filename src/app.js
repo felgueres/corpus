@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Loading } from "./components";
-import { Home, Profiles, Profile } from "./views";
+import { Home, Profiles } from "./views";
 import "./app.css";
 
 const App = () => {
