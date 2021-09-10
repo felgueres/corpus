@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Nav, Navbar } from "react-bootstrap";
+import { Button, Nav, Navbar } from "react-bootstrap";
 
 const MainNav = () => (
   <Nav className="align-items-end ml-auto ">
@@ -9,14 +9,8 @@ const MainNav = () => (
       as={Link}
       to="/profiles"
       className="navbar-font-cta"
-    >Get Started
-    </Nav.Link>
-    <Nav.Link
-      eventKey='blog'
-      as={Link}
-      to="/blog"
-      className="navbar-font"
-    >Blog
+    >
+    <a>Get Started</a>
     </Nav.Link>
   </Nav>
 );
