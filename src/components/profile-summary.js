@@ -15,7 +15,7 @@ const ProfileSummary = ({match}) => {
     }
   };
 
-  useEffect(() => { if (!organizationInformation) { fetchClimateRisks() } });
+  useEffect(() => { if (organizationId) { fetchClimateRisks() } }, [organizationId]);
 
   if (!organizationInformation) {
     return 'loading'

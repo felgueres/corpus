@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 
 const MainNav = () => (
   <Nav className="align-items-end ml-auto ">
@@ -10,7 +10,7 @@ const MainNav = () => (
       to="/profiles"
       className="navbar-font-cta"
     >
-    <a>Get Started</a>
+    Get Started
     </Nav.Link>
   </Nav>
 );

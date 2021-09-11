@@ -56,8 +56,9 @@
     margin-top: 20px;
 }
 
-#searchbar:focus+#blurable {
+#searchbar:focus#blurable{
     filter: opacity(50%);
+    display: none
 }
 
 .searchbar {
@@ -67,8 +68,17 @@
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     color:#5a564f;
-    width: auto;
-    margin-bottom: 50px;
+    width: 100%;
+    display: inline;
+}
+
+.search-child {
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color:#5a564f;
+    display: 'inline';
+    padding: 12px;
 }
 
 .searchbar:focus {
@@ -99,6 +109,12 @@
     font-weight: 400;
     color:black;
     display: 'inline';
-
 }
 
+.overflow-y-scroll {
+    overflow-y: scroll;
+    max-height: 500px;
+    width: 100%;
+    padding: 0;
+    background-color: whitesmoke;
+}
