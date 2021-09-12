@@ -61,9 +61,9 @@ export const Profiles = ({ match }) => {
 
   const stock_banner = () => {
     return (<div>
-      <h2>
+      <h1 className='view-title'>
         Stocks
-      </h2>
+      </h1>
       <p className="mb-3">
         Our stock-rating approach focuses on the completeness and quality of climated-related financial disclosures.
         We base our analysis on the recommendations by the <a href='https://www.fsb-tcfd.org/'>Task Force on Climate-Related Financial Disclosures</a>.

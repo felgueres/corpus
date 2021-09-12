@@ -22,7 +22,6 @@
 }
 
 .title {
-    font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-size: 44px;
     line-height: 55px;
@@ -33,7 +32,6 @@
 
 @media screen and (max-width: 799px) {
     .title {
-        font-family: 'Inter', sans-serif;
         font-weight: 800;
         font-size: 36px;
         line-height: 45px;
@@ -42,7 +40,6 @@
 }
 
 .button {
-    font-family: 'Inter', sans-serif;
     background-color: #23B5D3;
     border: none;
     padding: 15px;
@@ -65,7 +62,6 @@
     border: none;
     background: whitesmoke;
     font-size: 18px;
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
     color:#5a564f;
     width: 75%;
@@ -86,30 +82,30 @@
     border: none;
     background: whitesmoke;
     font-size: 18px;
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
     color:#5a564f;
     ;
 }
 ::placeholder {
     font-size: 18px;
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
     color: #5a564f;
 }
 
 .table-title {
-    font-size: 18px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .table-child {
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
+    font-size: 16px;
     font-weight: 400;
     color:black;
     display: 'inline';
+}
+
+.table-sm thead tr th{
+    border-top: none;
 }
 
 .overflow-y-scroll {
@@ -119,4 +115,12 @@
     padding: 0;
     background-color: whitesmoke;
     float:right;
+}
+
+.view-title {
+    font-weight: 600;
+}
+
+.profile-title {
+    font-weight: 600;
 }

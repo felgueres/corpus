@@ -25,7 +25,7 @@ const ProfileSummary = ({match}) => {
     <div className="my-5">
       <Card>
         <div className="card-body">
-          <h5 className="card-title">{organizationId}</h5>
+          <h5 className="profile-title">{organizationId}</h5>
           <p className="card-text">{organizationInformation[0].risks}</p>
         </div>
       </Card>
