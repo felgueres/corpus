@@ -27,19 +27,20 @@ export const Profiles = ({ match }) => {
   var mouseDownHappened = false;
 
   function handleClear() {
-    if (mouseDownHappened){
+    if (mouseDownHappened) {
       // Hack to get passed the planned execution where onblur precedes the go to link.
       mouseDownHappened = false
     }
     else {
-    setSearchTerm('')
-    setSearchResult('') }
+      setSearchTerm('')
+      setSearchResult('')
+    }
   }
 
   const renderRow = (searchItem) => {
     return (
-      <li style={{'listStyleType': 'none'}} key={searchItem.short_name}>
-        <Link onMouseDown={()=> { mouseDownHappened = true }} onClick={handleClear} className="search-child" to={`/profiles/${searchItem.company_name}`}>{searchItem.short_name}</Link>
+      <li style={{ 'listStyleType': 'none' }} key={searchItem.short_name}>
+        <Link onMouseDown={() => { mouseDownHappened = true }} onClick={handleClear} className="search-child" to={`/profiles/${searchItem.company_name}`}>{searchItem.short_name}</Link>
       </li>
     )
   }
@@ -52,11 +53,24 @@ export const Profiles = ({ match }) => {
     if (searchTerm) { fetchSearchResults(searchTerm) }
   }, [searchTerm]);
 
-  useEffect(()=> {
-    if (searchTerm===''){
+  useEffect(() => {
+    if (searchTerm === '') {
       setSearchResult('')
     }
-  },[searchTerm])
+  }, [searchTerm])
+
+  const stock_banner = () => {
+    return (<div>
+      <h2>
+        Stocks
+      </h2>
+      <p className="mb-3">
+        Our stock-ranking approach on the completeness and quality of climated-related financial disclosures.
+        We base our analysis on the recommendations by the <a href='https://www.fsb-tcfd.org/'>Task Force on Climate-Related Financial Disclosures</a>.
+      </p>
+     </div>
+    )
+  }
 
   return (
     <Row className='vh-100'>
@@ -64,12 +78,20 @@ export const Profiles = ({ match }) => {
         <SideBar />
       </Col>
       <Col className="not-sidebar pt-5">
-        <div role="combobox" aria-controls="" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
-          <input onBlur={handleClear} id='searchbar' value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="form-control searchbar" autoComplete="off" placeholder="Search firms..." onChange={event => { handleSearch(event) }} />
-            <ul className="overflow-y-scroll border" role="listbox">
-              {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
-            </ul>
-        </div>
+        <Row>
+          <Col>
+            {stock_banner()}
+          </Col>
+          <Col>
+            <div role="combobox" aria-controls="" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
+              <input onBlur={handleClear} id='searchbar' value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="form-control searchbar" autoComplete="off" placeholder="Search..." onChange={event => { handleSearch(event) }} />
+              <ul className="overflow-y-scroll border" role="listbox">
+                {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
+              </ul>
+            </div>
+          </Col>
+        </Row>
+
         <div id='blurable' className='mb-5'>
           <Switch>
             <Route path={`${match.path}`} exact component={ProfilesTable} />
