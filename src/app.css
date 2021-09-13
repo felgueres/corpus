@@ -118,7 +118,7 @@
 }
 
 .view-title {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .profile-title {
@@ -154,3 +154,11 @@
 .no-border {
     border: none;
 }
+
+.climate-risk-gradient {
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,119,0,1));
+ }
+
+ .centered {
+     text-align: center;
+ }

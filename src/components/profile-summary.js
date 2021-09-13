@@ -37,8 +37,8 @@ const ProfileSummary = ({ match }) => {
       </Row>
 
       <Row className="pt-3">
-        <Col className="xs-col-4 lg-col-4 md-col-4">
-          <p className="profile-subtitle">Climate Rating </p>
+        <Col className="col-md-4 col-lg-4 col-sm-6">
+          <p className="profile-subtitle">Climate Risk Rating </p>
           <Row>
             <Col className="xs-col-6">
               <span className="climate-risk-score">X</span>
@@ -53,10 +53,19 @@ const ProfileSummary = ({ match }) => {
               </div>
             </Col>
           </Row>
+          <Row className="climate-risk-gradient">
+            <Col className="centered">Neglible</Col>
+            <Col className="centered"> Low</Col>
+            <Col className="centered">Med</Col>
+            <Col className="centered">High</Col>
+            <Col className="centered">Severe</Col>
+          </Row>
         </Col>
-        <Col className='lg-col-8 md-col-8 xs-col-8'>
+        <Col className='col-md-8 col-lg-8 col-sm-6'>
+          <p className="profile-subtitle"></p>
         </Col>
       </Row>
+      <br />
       <br />
       <div className="profile-snippet">
         <p className="my-0"><strong>Selected Snippet</strong></p>
