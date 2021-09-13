@@ -46,7 +46,7 @@ const ProfileSummary = ({ match }) => {
             <Col className="xs-col-6">
               <div className="margin-auto">
                 <p className="climate-risk-assessment">
-                  Medium
+                  X
                   <br />
                   Risk
                 </p>
