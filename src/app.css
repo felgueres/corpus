@@ -122,5 +122,35 @@
 }
 
 .profile-title {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 36px;
+ }
+
+ .profile-subtitle {
     font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+ }
+
+.profile-snippet {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.climate-risk-score {
+    font-weight: 800;
+    font-size: 80px;
+}
+
+.climate-risk-assessment {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    vertical-align: middle;
+    padding-top: 20px;
+}
+
+.no-border {
+    border: none;
 }

@@ -62,10 +62,10 @@ export const Profiles = ({ match }) => {
   const stock_banner = () => {
     return (<div>
       <h1 className='view-title'>
-        Stocks
+        Company Climate Ratings
       </h1>
       <p className="mb-3">
-        Our stock-rating approach focuses on the completeness and quality of climated-related financial disclosures.
+        Our company-rating approach focuses on the completeness and quality of climated-related financial disclosures.
         We base our analysis on the recommendations by the <a href='https://www.fsb-tcfd.org/'>Task Force on Climate-Related Financial Disclosures</a>.
       </p>
      </div>
@@ -84,7 +84,7 @@ export const Profiles = ({ match }) => {
           </Col>
           <Col>
             <div role="combobox" aria-controls="" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
-              <input onBlur={handleClear} id='searchbar' value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="form-control searchbar" autoComplete="off" placeholder="Search..." onChange={event => { handleSearch(event) }} />
+              <input onBlur={handleClear} id='searchbar' value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="form-control searchbar" autoComplete="off" placeholder="Search companies" onChange={event => { handleSearch(event) }} />
               <ul className="overflow-y-scroll border" role="listbox">
                 {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
               </ul>
