@@ -65,7 +65,7 @@ export const Profiles = ({ match }) => {
         Company Climate Ratings
       </h1>
       <p className="mb-3">
-        Our company-rating approach focuses on the completeness and quality of climated-related financial disclosures.
+        Our company-rating approach focuses on the completeness and quality of climate-related financial disclosures.
         We base our analysis on the recommendations by the <a href='https://www.fsb-tcfd.org/'>Task Force on Climate-Related Financial Disclosures</a>.
       </p>
      </div>
