@@ -37,7 +37,7 @@ const ProfileSummary = ({ match }) => {
       </Row>
 
       <Row className="pt-3">
-        <Col className="col-md-6 col-lg-6 col-sm-6">
+        <Col className="col-md-6 col-lg-6 col-xs-12">
           <p className="profile-subtitle">Climate Risk Rating </p>
           <Row>
             <Col className="col-xs-6">

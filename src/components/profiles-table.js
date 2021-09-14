@@ -22,7 +22,6 @@ import { Link } from "react-router-dom";
          <td><Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link></td>
          <td><Link className='table-child' to={`/profiles/${card.company_name}`}>{card.category}</Link></td>
          <td><Link className='table-child' to={`/profiles/${card.company_name}`}>--</Link></td>
-         <td><Link className='table-child' to={`/profiles/${card.company_name}`}>--</Link></td>
       </tr>
     )
   }
@@ -34,8 +33,7 @@ import { Link } from "react-router-dom";
             <tr>
               <th className='table-title'>Name</th>
               <th className='table-title'>Sector</th>
-              <th className='table-title'>Ticker</th>
-              <th className='table-title'>Climate Rating</th>
+               <th className='table-title'>Climate Rating</th>
             </tr>
           </thead>
           <tbody>
