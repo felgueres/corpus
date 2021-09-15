@@ -24,42 +24,6 @@
   padding-right: 0;
 }
 
-/* Small Screen */
-@media screen and (max-width: 799px){
-  .sidebar {
-    display: none;
-  }
-  .heavy-padded {
-  padding-top: 1em;
-  }
-
-  .not-sidebar {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .navbar-layout {
-    margin: auto;
-  }
-}
-/* Mid and large screens */
-@media screen and (min-width: 799px){
-  .heavy-padded {
-  padding-top: 80px;
-  }
-  .not-sidebar {
-    flex-basis: 0;
-    flex-grow: 1100;
-    min-width: 50%;
-    padding-left: 10em;
-    padding-right: 10em;
-  }
-  .navbar-layout {
-    width: 60%;
-    margin: auto;
-  }
-}
-
 .nav-links {
   font-family: 'Inter', sans-serif;
   color: grey;
@@ -83,6 +47,12 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 27px;
+}
+
+.navbar-layout {
+  padding: 0px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .navbar-font-cta {
