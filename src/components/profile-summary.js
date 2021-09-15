@@ -23,7 +23,7 @@ const ProfileSummary = ({ match }) => {
   var data = organizationInformation[0];
 
   return (
-    <div className="container-fluid my-5">
+    <div className="my-5">
       <h3 className="profile-title">{organizationId}</h3>
 
       {/* Subtitle */}
