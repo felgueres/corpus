@@ -3,14 +3,38 @@ import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 
 const MainNav = () => (
-  <Nav className="align-items-end ml-auto ">
+  <Nav className="align-items-end ml-auto">
     <Nav.Link
       eventKey='profiles'
       as={Link}
       to="/profiles"
       className="navbar-font-cta"
     >
-    Get Started
+    Company Ratings
+    </Nav.Link>
+    <Nav.Link
+      eventKey='profiles'
+      as={Link}
+      to="/profiles"
+      className="navbar-font-cta"
+    >
+    Sales
+    </Nav.Link>
+    <Nav.Link
+      eventKey='profiles'
+      as={Link}
+      to="/profiles"
+      className="navbar-font-cta"
+    >
+    Sign in
+    </Nav.Link>
+    <Nav.Link
+      eventKey='profiles'
+      as={Link}
+      to="/profiles"
+      className="navbar-font-cta"
+    >
+    Join Now
     </Nav.Link>
   </Nav>
 );

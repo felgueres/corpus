@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-import { ProfilesTable, SideBar, ProfileSummary } from "../components";
+import { ProfilesTable, SideBar, NavBar, ProfileSummary } from "../components";
 import { Route, Switch, Link } from "react-router-dom";
 
 export const Profiles = ({ match }) => {
@@ -75,10 +75,8 @@ export const Profiles = ({ match }) => {
 
   return (
     <Row className='vh-100'>
-      <Col className='sidebar'>
-        <SideBar />
-      </Col>
-      <Col className="not-sidebar pt-5">
+      <Col>
+      <NavBar/>
         <Row>
           <Col>
             {stock_banner()}

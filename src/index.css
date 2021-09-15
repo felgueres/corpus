@@ -25,7 +25,7 @@
 }
 
 /* Small Screen */
-@media screen and (max-width: 799px){
+/* @media screen and (max-width: 799px){
   .sidebar {
     display: none;
   }
@@ -41,9 +41,9 @@
   .navbar-layout {
     margin: auto;
   }
-}
+} */
 /* Mid and large screens */
-@media screen and (min-width: 799px){
+/* @media screen and (min-width: 799px){
   .heavy-padded {
   padding-top: 80px;
   }
@@ -55,10 +55,9 @@
     padding-right: 10em;
   }
   .navbar-layout {
-    width: 60%;
     margin: auto;
   }
-}
+} */
 
 .nav-links {
   font-family: 'Inter', sans-serif;

@@ -13,7 +13,7 @@ const App = () => {
   }
 
   return (
-    <div className='container-fluid' id="app">
+    <div className='container' id="app">
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/profiles" component={Profiles} />
