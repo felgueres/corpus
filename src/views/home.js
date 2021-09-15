@@ -3,16 +3,16 @@ import { Button } from "react-bootstrap";
 import { NavBar } from "../components";
 
 const Home = () => (
-  <div className='pt-3'>
+  <div>
     <NavBar />
-    <h1 className="heavy-padded title centered">
+    <h1 className="heavy-padded title">
       A firm-level database </h1>
-    <h1 className="title centered">
-      and analytics
+    <h1 className="title">
+      and analytics for
     </h1>
-    <h1 className="title centered">for climate finance.
+    <h1 className="title">climate finance.
     </h1>
-    <div style={{ 'display': 'flex', 'justifyContent': 'center' }}>
+    <div style={{ 'display': 'flex' }}>
       <Button className="button" href="/profiles">Get started</Button>
     </div>
   </div>
