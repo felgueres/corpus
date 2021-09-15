@@ -69,12 +69,8 @@
 }
 
 .search-child {
-    font-size: 18px;
-    font-family: 'Inter', sans-serif;
+    color:#23B5D3;
     font-weight: 600;
-    color:#5a564f;
-    display: 'inline';
-    padding: 12px;
 }
 
 .searchbar:focus {
@@ -109,7 +105,7 @@
 
 .overflow-y-scroll {
     overflow-y: scroll;
-    max-height: 300px;
+    max-height: 350px;
     padding: 0;
     background-color: white;
     z-index: 100;
@@ -126,9 +122,8 @@
 .view-content {
     font-weight: 400;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 25px;
 }
-
 
 .profile-title {
     font-weight: 800;
@@ -177,3 +172,12 @@
  .centered {
      text-align: center;
  }
+
+.searchbar-list {
+    /* border-bottom: 1px solid #5a564f; */
+    list-style-type: none;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    display: 'inline';
+    padding: 12px;
+}

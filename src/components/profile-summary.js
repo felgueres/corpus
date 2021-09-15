@@ -23,7 +23,7 @@ const ProfileSummary = ({ match }) => {
   var data = organizationInformation[0];
 
   return (
-    <div className="my-5">
+    <div className="container-fluid my-5">
       <h3 className="profile-title">{organizationId}</h3>
 
       {/* Subtitle */}
@@ -37,7 +37,7 @@ const ProfileSummary = ({ match }) => {
       </Row>
 
       <Row className="pt-3">
-        <Col className="col-md-6 col-lg-6 col-xs-12">
+        <Col xs={12} sm={8} md={8} lg={6} xl={6}>
           <p className="profile-subtitle">Climate Risk Rating </p>
           <Row>
             <Col className="col-xs-6">
@@ -60,9 +60,6 @@ const ProfileSummary = ({ match }) => {
             <Col className="centered">High</Col>
             <Col className="centered">Severe</Col>
           </Row>
-        </Col>
-        <Col className='col-md-8 col-lg-8 col-sm-6'>
-          <p className="profile-subtitle"></p>
         </Col>
       </Row>
       <br />
