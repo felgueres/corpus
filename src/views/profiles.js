@@ -91,7 +91,7 @@ export const Profiles = ({ match }) => {
               </ul>
             </div>
           </Col>
-        <div id='blurable' className='mb-5'>
+        <div className='mb-5'>
           <Switch>
             <Route path={`${match.path}`} exact component={ProfilesTable} />
             <Route path={`${match.path}/:organizationId`} exact component={ProfileSummary} />

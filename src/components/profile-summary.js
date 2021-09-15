@@ -54,7 +54,7 @@ const ProfileSummary = ({ match }) => {
             </Col>
           </Row>
           <Row className="climate-risk-gradient">
-            <Col className="centered risk-gradient-active">Neglible</Col>
+            <Col className="centered risk-gradient-active">NA</Col>
             <Col className="centered"> Low</Col>
             <Col className="centered ">Med</Col>
             <Col className="centered">High</Col>

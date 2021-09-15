@@ -53,11 +53,6 @@
     margin-top: 20px;
 }
 
-#searchbar:focus#blurable{
-    filter: opacity(50%);
-    display: none
-}
-
 .searchbar {
     border: none;
     background: whitesmoke;
@@ -69,7 +64,7 @@
 }
 
 .search-child {
-    color:#23B5D3;
+    color:#5a564f;
     font-weight: 600;
 }
 
@@ -174,7 +169,6 @@
  }
 
 .searchbar-list {
-    /* border-bottom: 1px solid #5a564f; */
     list-style-type: none;
     font-size: 16px;
     font-family: 'Inter', sans-serif;
