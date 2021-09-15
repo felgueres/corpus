@@ -10,7 +10,7 @@ const MainNav = () => (
       to="/profiles"
       className="navbar-font-cta"
     >
-    Company Ratings
+    Climate Ratings
     </Nav.Link>
   </Nav>
 );
@@ -18,7 +18,7 @@ const MainNav = () => (
 const NavBar = () => {
   return (
     <div>
-      <Navbar className="navbar-layout" collapseOnSelect expand="md" bg="white">
+      <Navbar className="navbar-layout mb-5" collapseOnSelect expand="md" bg="white">
         <Navbar.Brand className="navbar-font" href="/">ClimateCap</Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>

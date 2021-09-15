@@ -52,7 +52,14 @@
 .navbar-layout {
   padding: 0px;
   margin-top: 30px;
-  margin-bottom: 50px;
+}
+
+.bg-margin-bottom {
+  margin-bottom: 125px;
+}
+
+.md-margin-bottom {
+  margin-bottom: 75px;
 }
 
 .navbar-font-cta {
@@ -77,4 +84,51 @@
 
 .centered {
   text-align: center;
+}
+
+.risk-gradient-active {
+  border-style: solid;
+}
+
+.p-bold {
+  font-weight: 600;
+  font-size: 18px;
+  color: #5a564f;
+}
+
+.email-input-layout {
+  border: #23B5D3;
+  border-style: solid;
+  padding: 7px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.email-input {
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  width: 80%;
+  background-color: transparent;
+  color: #5a564f;
+}
+
+.email-input:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.email-button {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  float: right;
+  font-weight: 600;
+  font-size: 16px;
+  color: #5a564f;
+}
+
+.no-x-padding {
+  padding-left: 0;
+  padding-right: 0;
 }
