@@ -21,7 +21,7 @@ return (
       <Button className="button" href="/profiles">Get started</Button>
     </div>
 
-    <Col xs={10} sm={10} md={8} lg={6} xl={5} className="no-x-padding" >
+    <Col xs={12} sm={10} md={8} lg={6} xl={5} className="no-x-padding" >
       <p className="p-bold">
         Receive monthly updates via email
       </p>
