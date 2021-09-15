@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const ProfileSummary = ({ match }) => {
   var organizationId = match.params.organizationId;
@@ -54,9 +54,9 @@ const ProfileSummary = ({ match }) => {
             </Col>
           </Row>
           <Row className="climate-risk-gradient">
-            <Col className="centered">Neglible</Col>
+            <Col className="centered risk-gradient-active">Neglible</Col>
             <Col className="centered"> Low</Col>
-            <Col className="centered">Med</Col>
+            <Col className="centered ">Med</Col>
             <Col className="centered">High</Col>
             <Col className="centered">Severe</Col>
           </Row>

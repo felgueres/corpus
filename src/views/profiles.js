@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-import { ProfilesTable, SideBar, NavBar, ProfileSummary } from "../components";
+import { ProfilesTable, NavBar, ProfileSummary } from "../components";
 import { Route, Switch, Link } from "react-router-dom";
 
 export const Profiles = ({ match }) => {

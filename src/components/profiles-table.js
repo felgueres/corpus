@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
       <tr key={idx}>
          <td><Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link></td>
          <td><Link className='table-child' to={`/profiles/${card.company_name}`}>{card.category}</Link></td>
-         <td><Link className='table-child' to={`/profiles/${card.company_name}`}>--</Link></td>
+         <td><Link className='table-child' to={`/profiles/${card.company_name}`}>-</Link></td>
       </tr>
     )
   }

@@ -78,3 +78,33 @@
 .centered {
   text-align: center;
 }
+
+.risk-gradient-active {
+  border-style: solid;
+}
+
+.p-bold {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#email-input-layout {
+  border: #23B5D3;
+  border-style: solid;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+#email-input {
+  display: inline;
+  border: none;
+}
+
+.email-button {
+  display: inline;
+  border: none;
+  padding: 15px;
+  background-color: white;
+  text-align: center;
+  color:#5a564f;
+}
