@@ -27,7 +27,7 @@ return (
       </p>
       <div className="email-input-layout">
         <form action="https://climatecap.us5.list-manage.com/subscribe/post?u=072ee25a6f9893f25183af5df&amp;id=87eead596f" method="post" name="mc-embedded-subscribe-form" className="validate" target="_blank" novalidate>
-            <input className="email-input" type="email" value={userEmail} onChange={event => { setUserEmail(event.target.value) }} name="EMAIL"  id="mce-EMAIL" placeholder="you@email.com" required />
+            <input className="email-input" type="email" value={userEmail} onChange={event => { setUserEmail(event.target.value) }} name="EMAIL"  id="mce-EMAIL" autoComplete="off" placeholder="you@email.com" required />
             <input className="email-button" type="submit" value="Sign up" name="subscribe" />
         </form>
       </div>
