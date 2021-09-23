@@ -94,6 +94,13 @@
     display: 'inline';
 }
 
+.table-child-subtitle {
+    font-size: 10px;
+    font-weight: 400;
+    color:black;
+    display: 'inline';
+}
+
 .table-sm thead tr th{
     border-top: none;
 }
@@ -120,16 +127,10 @@
     line-height: 25px;
 }
 
-.profile-title {
-    font-weight: 800;
-    font-size: 40px;
-    line-height: 36px;
- }
-
  .profile-title {
     font-weight: 800;
-    font-size: 40px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 32px;
  }
 
  .profile-subtitle {

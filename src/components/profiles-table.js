@@ -19,9 +19,10 @@ import { Link } from "react-router-dom";
   const renderRow = (idx, card) => {
     return (
       <tr key={idx}>
-         <td><Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link></td>
-         <td><Link className='table-child' to={`/profiles/${card.company_name}`}>{card.category}</Link></td>
-         <td><Link className='table-child' to={`/profiles/${card.company_name}`}>-</Link></td>
+         <td>
+          <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link><br/>
+          <Link className='table-child-subtitle' to={`/profiles/${card.company_name}`}>{card.category}</Link>
+        </td>
       </tr>
     )
   }
@@ -31,9 +32,8 @@ import { Link } from "react-router-dom";
         <table className="table table-sm hover">
           <thead>
             <tr>
-              <th className='table-title'>Name</th>
-              <th className='table-title'>Sector</th>
-               <th className='table-title'>Climate Rating</th>
+              <th className='table-title'>Companies (Showing first {Object.keys(cardsInformation).length})
+              </th>
             </tr>
           </thead>
           <tbody>

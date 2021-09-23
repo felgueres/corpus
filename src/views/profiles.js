@@ -59,39 +59,19 @@ export const Profiles = ({ match }) => {
     }
   }, [searchTerm])
 
-  const stock_banner = () => {
-    return (<div>
-      <h2 className='view-title'>
-        Company Climate Ratings
-      </h2>
-      <p className="mb-3 view-content">
-        Our company-rating approach focuses on the completeness and quality of climate-related financial disclosures.
-        <br/>
-        We base our analysis on the recommendations by the <a href='https://www.fsb-tcfd.org/'>Task Force on Climate-Related Financial Disclosures</a>.
-      </p>
-     </div>
-    )
-  }
-
   return (
     <Row className='vh-100'>
       <Col>
       <NavBar/>
-        <Row>
-          <Col>
-            {stock_banner()}
-          </Col>
-
-        </Row>
         <Col xs={6} sm={6} md={6} style={{"padding": "0px"}}>
             <div role="combobox" aria-controls="" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
-              <input onBlur={handleClear} id='searchbar' value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="form-control searchbar" autoComplete="off" placeholder="Find companies by name" onChange={event => { handleSearch(event) }} />
+              <input onBlur={handleClear} id='searchbar' value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="form-control searchbar border" autoComplete="off" placeholder="Find companies by name" onChange={event => { handleSearch(event) }} />
               <ul className="overflow-y-scroll" role="listbox">
                 {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
               </ul>
             </div>
           </Col>
-        <div className='mb-5'>
+        <div className='my-5'>
           <Switch>
             <Route path={`${match.path}`} exact component={ProfilesTable} />
             <Route path={`${match.path}/:organizationId`} exact component={ProfileSummary} />
