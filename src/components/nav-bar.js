@@ -10,7 +10,7 @@ const MainNav = () => (
       to="/profiles"
       className="navbar-font-cta"
     >
-    Climate Ratings
+    Search
     </Nav.Link>
   </Nav>
 );

@@ -11,11 +11,8 @@ return (
   <div>
     <NavBar />
     <h1 className="title">
-      A firm-level database </h1>
-    <h1 className="title">
-      and analytics for
-    </h1>
-    <h1 className="title">climate finance.
+      Search climate-related </h1>
+    <h1 className="title">financial disclosures.
     </h1>
     <div className="bg-margin-bottom" style={{ 'display': 'flex' }}>
       <Button className="button" href="/profiles">Get started</Button>
