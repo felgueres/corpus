@@ -11,9 +11,10 @@ return (
   <div>
     <NavBar />
     <h1 className="title">
-      Search climate-related </h1>
-    <h1 className="title">financial disclosures.
+      Integrate climate risk </h1>
+    <h1 className="title">into your daily workflow
     </h1>
+
     <div className="bg-margin-bottom" style={{ 'display': 'flex' }}>
       <Button className="button" href="/profiles">Get started</Button>
     </div>
