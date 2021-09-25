@@ -144,6 +144,12 @@
     font-size: 11px;
 }
 
+.profile-findings {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
 .climate-risk-score {
     font-weight: 800;
     font-size: 80px;
@@ -175,4 +181,9 @@
     font-family: 'Inter', sans-serif;
     display: 'inline';
     padding: 12px;
+}
+
+.investor-disclosure {
+    border-radius: 10px;
+    border:black;
 }
