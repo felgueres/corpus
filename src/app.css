@@ -150,6 +150,11 @@
     line-height: 18px;
 }
 
+.profile-cards {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .climate-risk-score {
     font-weight: 800;
     font-size: 80px;
@@ -186,4 +191,5 @@
 .investor-disclosure {
     border-radius: 10px;
     border:black;
+    margin-top: 10px;
 }
