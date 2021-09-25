@@ -32,14 +32,13 @@ const ProfileSummary = ({ match }) => {
       <Row className='py-2'>
         <Col className="col-md-6 col-sm-12">
           <Row>
-
-            <Col className="col-xs-4">Source: {data.url} </Col>
+            {/* <Col className="col-xs-4">Source: {data.url} </Col> */}
           </Row>
         </Col>
       </Row>
 
       <div className="profile-snippet">
-        <p className="my-0"><strong>Selected Snippet</strong></p>
+        <p className="my-1"><strong>Featured Snippet</strong></p>
         <p className="">{data.risks}</p>
       </div>
     </div>
