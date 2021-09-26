@@ -21,6 +21,7 @@ const ProfileSummary = ({ match }) => {
     return 'loading'
   }
   var data = organizationInformation[0];
+
   const matchCounter = (text, regex) => {
     if (text.toLowerCase().match(regex)) {
       return (text.toLowerCase().match(regex).length)
@@ -35,6 +36,9 @@ const ProfileSummary = ({ match }) => {
     var climateRiskMention = 0
     var weatherMention = 0
     var materialMention = 0
+    var physicalEffectsMention = 0
+    var regulationRiskMention = 0
+    var financialRiskMention = 0
 
     for (var i = 0; i < textArr.length; i++) {
       var line = textArr[i];
@@ -45,19 +49,48 @@ const ProfileSummary = ({ match }) => {
       weatherMention += matchCounter(line, /\bextreme weather\b/g)
       weatherMention += matchCounter(line, /\bweather\b/g)
       materialMention += matchCounter(line, /\bmaterial impact\b/g)
+      physicalEffectsMention += matchCounter(line, /\bphysical effects\b/g)
+      regulationRiskMention += matchCounter(line, /\bregulation\b/g)
+      regulationRiskMention += matchCounter(line, /\bregulatory\b/g)
+      regulationRiskMention += matchCounter(line, /\bcompliance\b/g)
+      financialRiskMention += matchCounter(line, /\bfinancial\b/g)
+      financialRiskMention += matchCounter(line, /\boperational cost\b/g)
     }
 
     return (
       <div>
-        Climate risk: {climateRiskMention}
-        <br />
-        Climate change: {climateMention}
-        <br />
-        Greenhouse gasses: {ghgMention}
-        <br />
-        Material impact: {materialMention}
-        <br />
-        Severe weather: {weatherMention}
+        {climateRiskMention > 0 && <span>Climate risk: {climateRiskMention} <br /></span>}
+        {climateMention > 0 && <span>Climate change: {climateMention} <br /></span>}
+        {ghgMention > 0 && <span>Greenhouse gases: {ghgMention}<br /></span>}
+        {materialMention > 0 && <span>Material impact: {materialMention}<br /></span>}
+        {weatherMention > 0 && <span>Severe weather: {weatherMention}<br /></span>}
+        {physicalEffectsMention > 0 && <span>Physical risk: {physicalEffectsMention}<br /></span>}
+        {regulationRiskMention > 0 && <span>Regulation risk: {regulationRiskMention}<br /></span>}
+        {financialRiskMention > 0 && <span>Financial risk: {financialRiskMention}<br /></span>}
+      </div>
+    )
+  }
+
+  const getCompleteness = (textArr) => {
+    var governance = 0
+    var strategy = 0
+    var riskManagement = 0
+    var metricTargets = 0
+
+    for (var i = 0; i < textArr.length; i++) {
+      var line = textArr[i];
+      governance += matchCounter(line, /\bgovernance\b/g)
+      strategy += matchCounter(line, /\bstrategy\b/g)
+      riskManagement += matchCounter(line, /\brisk management\b/g)
+      metricTargets += matchCounter(line, /\bco2\b/g)
+    }
+
+    return (
+      <div>
+        <span>Governance: {governance ? governance : <strong className="card-strong">Not mentioned</strong>} <br /></span>
+        <span>Strategy: {strategy ? strategy : <strong className="card-strong">Not mentioned</strong>} <br /></span>
+        <span>Risk Management: {riskManagement ? riskManagement : <strong className="card-strong">Not mentioned</strong>} <br /></span>
+        <span>Metric Targets: {metricTargets ? metricTargets : <strong className="card-strong">Not mentioned</strong>} <br /></span>
       </div>
     )
   }
@@ -84,8 +117,12 @@ const ProfileSummary = ({ match }) => {
         </Col>
         <Col sm={12} md={4}>
           <div className="investor-disclosure border profile-cards">
-            <p className="my-3 profile-findings"><strong> Keywords </strong></p>
+            <p className="my-3 profile-findings"><strong> Identified Climate Risks </strong></p>
             <p className="my-3 profile-findings">{getStats(data.risks)}</p>
+          </div>
+          <div className="investor-disclosure border profile-cards">
+            <p className="my-3 profile-findings"><strong> TCFD Recommendations </strong></p>
+            <p className="my-3 profile-findings">{getCompleteness(data.risks)}</p>
           </div>
         </Col>
       </Row>
