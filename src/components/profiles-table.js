@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Col, Row } from "react-bootstrap";
 
-  const ProfilesTable = () => {
+const ProfilesTable = () => {
   const [cardsInformation, setCardsInformation] = useState(null);
   const [fetchError, setFetchError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -19,8 +20,8 @@ import { Link } from "react-router-dom";
   const renderRow = (idx, card) => {
     return (
       <tr key={idx}>
-         <td>
-          <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link><br/>
+        <td>
+          <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link><br />
           <Link className='table-child-subtitle' to={`/profiles/${card.company_name}`}>{card.category}</Link>
         </td>
       </tr>
@@ -29,17 +30,17 @@ import { Link } from "react-router-dom";
 
   const buildTable = (cardsInformation) => {
     return (
-        <table className="table table-sm hover">
-          <thead>
-            <tr>
-              <th className='table-title'>Companies (Showing first {Object.keys(cardsInformation).length})
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
-          </tbody>
-        </table>
+      <table className="table table-sm hover">
+        <thead>
+          <tr>
+            <th className='table-title'>Featured Companies
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
+        </tbody>
+      </table>
     )
   }
 
@@ -65,7 +66,14 @@ import { Link } from "react-router-dom";
   }
   return (
     <div className="mt-3">
-      {buildTable(cardsInformation)}
+      <Row>
+        <Col sm={12} md={6}>
+          {buildTable(cardsInformation)}
+        </Col>
+        <Col sm={12} md={6}>
+          {/* To be added */}
+        </Col>
+      </Row>
     </div>
   );
 };
