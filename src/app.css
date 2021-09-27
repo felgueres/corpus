@@ -55,7 +55,7 @@
 
 .searchbar {
     border: none;
-    background: whitesmoke;
+    background: white;
     font-size: 18px;
     font-weight: 600;
     color:#5a564f;
@@ -196,4 +196,14 @@
 
 .card-strong {
     color: #5a564f 
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+}
+
+.searchbar-margin {
+    border-radius: 5px;
 }

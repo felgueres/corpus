@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { ProfilesTable, NavBar, ProfileSummary } from "../components";
 import { Route, Switch, Link } from "react-router-dom";
+import { BsSearch } from 'react-icons/bs';
+
 
 export const Profiles = ({ match }) => {
 
@@ -62,15 +64,18 @@ export const Profiles = ({ match }) => {
   return (
     <Row className='vh-100'>
       <Col>
-      <NavBar/>
-        <Col xs={6} sm={6} md={6} style={{"padding": "0px"}}>
-            <div role="combobox" aria-controls="" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
-              <input onBlur={handleClear} id='searchbar' value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="form-control searchbar border" autoComplete="off" placeholder="Find companies by name" onChange={event => { handleSearch(event) }} />
-              <ul className="overflow-y-scroll" role="listbox">
-                {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
-              </ul>
+        <NavBar />
+        <Col xs={12} sm={12} md={6} style={{ "padding": "0px" }}>
+          <div className="border searchbar-margin" role="combobox" aria-controls="" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
+            <div className="input-group">
+              <span className="search-icon"><BsSearch className="search-icon"/></span>
+              <input onBlur={handleClear} id='searchbar' value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="form-control searchbar" autoComplete="off" placeholder="Find companies by name" onChange={event => { handleSearch(event) }} />
             </div>
-          </Col>
+            <ul className="overflow-y-scroll" role="listbox">
+              {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
+            </ul>
+          </div>
+        </Col>
         <div className='my-5'>
           <Switch>
             <Route path={`${match.path}`} exact component={ProfilesTable} />
