@@ -21,6 +21,7 @@ const ProfileSummary = ({ match }) => {
     return 'loading'
   }
   var data = organizationInformation[0];
+  console.log(organizationInformation)
 
   const matchCounter = (text, regex) => {
     if (text.toLowerCase().match(regex)) {
@@ -55,6 +56,8 @@ const ProfileSummary = ({ match }) => {
       regulationRiskMention += matchCounter(line, /\bcompliance\b/g)
       financialRiskMention += matchCounter(line, /\bfinancial\b/g)
       financialRiskMention += matchCounter(line, /\boperational cost\b/g)
+      financialRiskMention += matchCounter(line, /\boperating cost\b/g)
+      financialRiskMention += matchCounter(line, /\bcost of operation\b/g)
     }
 
     return (
@@ -95,13 +98,53 @@ const ProfileSummary = ({ match }) => {
     )
   }
 
-  const renderDisclosure = (idx, line) => {
+  const renderLine = (idx, line) => {
     return (
-      <tr key={idx}>
-        <p className="profile-snippet">
-          {line}
-        </p>
-      </tr>)
+      <span>
+        <br />
+        {line}
+        <br />
+      </span>
+    )
+  }
+
+
+  const renderDisclosure = (year, disclosure) => {
+    if (disclosure.disclosure.length > 0) {
+      return (
+        <span className="profile-snippet">
+          <tr key={year}>
+            <hr />
+            <span className="profile-findings"><strong>{year}</strong></span> |
+            <a href={disclosure.url}> source</a>
+            <br />
+            <br />
+            <span>
+              {disclosure.disclosure}
+              {Object.entries(disclosure.disclosure).map(([idx, line],) => renderLine(idx, line))}
+            </span>
+          </tr>
+        </span>
+      )
+    }
+  }
+
+  const renderDisclosures = (disclosures) => {
+    if (!(data)) {
+      return (
+        <span className="profile-findings">
+          <br />
+          <hr />
+          Company doesn't report climate-related disclosures.
+          <br />
+        </span>)
+    }
+    var disclosures = data.disclosures;
+    return (
+      <div>
+        {Object.entries(disclosures).map(([year, disclosure],) => renderDisclosure(year, disclosure))}
+      </div>
+    )
   }
 
   return (
@@ -110,20 +153,25 @@ const ProfileSummary = ({ match }) => {
       <Row className='py-2'>
         <Col sm={12} md={8}>
           <div className="investor-disclosure border profile-cards ">
-            <p className="my-3 profile-findings"><strong>Annual Investor Report (10K), 2021 </strong></p>
-            <p className="profile-findings">Climate-related snippets</p>
-            {Object.entries(data.risks).map(([idx, line],) => renderDisclosure(idx, line))}
+            <br />
+            <span className="my-3 profile-subtitle"><strong>Annual Investor Reports</strong></span>
+            <br />
+            <span className="profile-findings">Climate-related snippets</span>
+            {renderDisclosures(data)}
+            <br />
           </div>
         </Col>
+
         <Col sm={12} md={4}>
-          <div className="investor-disclosure border profile-cards">
-            <p className="my-3 profile-findings"><strong> Identified Climate Risks </strong></p>
-            <p className="my-3 profile-findings">{getStats(data.risks)}</p>
-          </div>
-          <div className="investor-disclosure border profile-cards">
+          {/* <div className="investor-disclosure border profile-cards">
+            <p className="my-3 profile-findings"><strong> Climate Risks found </strong></p>
+            <p className="my-3 profile-findings">{getStats(data.disclosures)}</p>
+          </div> */}
+
+          {/* <div className="investor-disclosure border profile-cards">
             <p className="my-3 profile-findings"><strong> TCFD Recommendations </strong></p>
             <p className="my-3 profile-findings">{getCompleteness(data.risks)}</p>
-          </div>
+          </div> */}
         </Col>
       </Row>
     </div>

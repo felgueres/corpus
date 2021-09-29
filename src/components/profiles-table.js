@@ -30,7 +30,7 @@ const ProfilesTable = () => {
 
   const buildTable = (cardsInformation) => {
     return (
-      <table className="table table-sm hover">
+      <table className="table table-sm table-hover">
         <thead>
           <tr>
             <th className='table-title'>Featured Companies

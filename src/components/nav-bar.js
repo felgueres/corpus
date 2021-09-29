@@ -19,11 +19,12 @@ const NavBar = () => {
   return (
     <div>
       <Navbar className="navbar-layout mb-5" collapseOnSelect expand="md" bg="white">
-        <Navbar.Brand className="navbar-font" href="/">Climate Disclosures</Navbar.Brand>
+        <Navbar.Brand className="navbar-font" href="/">ClimateCap</Navbar.Brand>
         {/* <Navbar.Toggle aria-controls='responsive-navbar-nav' /> */}
         {/* <Navbar.Collapse id='responsive-navbar-nav'> */}
           {/* <MainNav /> */}
         {/* </Navbar.Collapse> */}
+
       </Navbar>
     </div>
   );
