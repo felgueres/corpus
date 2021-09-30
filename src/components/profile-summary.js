@@ -21,7 +21,6 @@ const ProfileSummary = ({ match }) => {
     return 'loading'
   }
   var data = organizationInformation[0];
-  console.log(organizationInformation)
 
   const matchCounter = (text, regex) => {
     if (text.toLowerCase().match(regex)) {

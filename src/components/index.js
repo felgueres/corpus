@@ -8,5 +8,6 @@ import ProfilesTable from "./profiles-table";
 import ProfileSummary from "./profile-summary";
 import SideBar from "./side-bar";
 import News from "./news";
+import SearchBar from "./search-bar";
 
-export { SideBar, News, Footer, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, ProfilesTable, ProfileSummary };
+export { SideBar, SearchBar, News, Footer, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, ProfilesTable, ProfileSummary };

@@ -55,13 +55,14 @@
 
 .searchbar {
     border: none;
-    background: white;
     font-size: 18px;
-    font-weight: 600;
-    color:#5a564f;
+    font-weight: 400;
     display: inline;
-    min-width: 300px;
+    margin-left: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
+
 
 .search-child {
     color:#5a564f;
@@ -70,12 +71,13 @@
 
 .searchbar:focus {
     border: none;
-    background: white;
     font-size: 18px;
     font-weight: 600;
     color:#5a564f;
+    outline: none
     ;
 }
+
 ::placeholder {
     font-size: 18px;
     font-weight: 600;
@@ -109,6 +111,7 @@
     overflow-y: scroll;
     max-height: 350px;
     padding: 0;
+    margin: 0;
     background-color: white;
     z-index: 100;
     position: absolute;
@@ -201,9 +204,10 @@
 .search-icon {
     display: flex;
     align-items: center;
-    padding-left: 3px;
+    margin-left: 10px;
 }
 
 .searchbar-margin {
-    border-radius: 5px;
+    border-radius: 50px;
+    min-width: 300px;
 }
