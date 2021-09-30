@@ -61,7 +61,7 @@ export const SearchBar = () => {
   }, [searchTerm])
 
   return (
-    <Col xs={8} sm={8} md={5}>
+    <Col xs={12} sm={8} md={5}>
       <div className="border shadow-sm searchbar-margin" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
         <div className="input-group">
           <span className="search-icon"><BsSearch className="search-icon" /></span>

@@ -15,8 +15,7 @@ const App = () => {
   return (
     <div className='container' id="app">
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/profiles" component={Profiles} />
+        <Route path="/" component={Profiles} />
       </Switch>
     </div>
   );

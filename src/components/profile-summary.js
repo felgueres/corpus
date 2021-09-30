@@ -30,7 +30,14 @@ const ProfileSummary = ({ match }) => {
     }
   }
 
-  const getStats = (textArr) => {
+  const getStats = (data) => {
+
+    if (typeof data === 'undefined' ){
+      return <span>Nothing yet.</span>
+    }
+
+    var disclosures = data.disclosures
+
     var climateMention = 0
     var ghgMention = 0
     var climateRiskMention = 0
@@ -39,26 +46,28 @@ const ProfileSummary = ({ match }) => {
     var physicalEffectsMention = 0
     var regulationRiskMention = 0
     var financialRiskMention = 0
-
-    for (var i = 0; i < textArr.length; i++) {
-      var line = textArr[i];
-      climateMention += matchCounter(line, /\bclimate change\b/g)
-      ghgMention += matchCounter(line, /\bghg\b/g)
-      ghgMention += matchCounter(line, /\bgreenhouse\b/g)
-      climateRiskMention += matchCounter(line, /\bclimate risk\b/g)
-      weatherMention += matchCounter(line, /\bextreme weather\b/g)
-      weatherMention += matchCounter(line, /\bweather\b/g)
-      materialMention += matchCounter(line, /\bmaterial impact\b/g)
-      physicalEffectsMention += matchCounter(line, /\bphysical effects\b/g)
-      regulationRiskMention += matchCounter(line, /\bregulation\b/g)
-      regulationRiskMention += matchCounter(line, /\bregulatory\b/g)
-      regulationRiskMention += matchCounter(line, /\bcompliance\b/g)
-      financialRiskMention += matchCounter(line, /\bfinancial\b/g)
-      financialRiskMention += matchCounter(line, /\boperational cost\b/g)
-      financialRiskMention += matchCounter(line, /\boperating cost\b/g)
-      financialRiskMention += matchCounter(line, /\bcost of operation\b/g)
+    for (var y in disclosures) {
+      if (disclosures[y]['disclosure'].length > 0) {
+        for (var i = 0; i < disclosures[y]['disclosure'].length; i++) {
+          var line = disclosures[y]['disclosure'][i];
+          climateMention += matchCounter(line, /\bclimate change\b/g)
+          ghgMention += matchCounter(line, /\bghg\b/g)
+          ghgMention += matchCounter(line, /\bgreenhouse\b/g)
+          climateRiskMention += matchCounter(line, /\bclimate risk\b/g)
+          weatherMention += matchCounter(line, /\bextreme weather\b/g)
+          weatherMention += matchCounter(line, /\bweather\b/g)
+          materialMention += matchCounter(line, /\bmaterial impact\b/g)
+          physicalEffectsMention += matchCounter(line, /\bphysical effects\b/g)
+          regulationRiskMention += matchCounter(line, /\bregulation\b/g)
+          regulationRiskMention += matchCounter(line, /\bregulatory\b/g)
+          regulationRiskMention += matchCounter(line, /\bcompliance\b/g)
+          financialRiskMention += matchCounter(line, /\bfinancial\b/g)
+          financialRiskMention += matchCounter(line, /\boperational cost\b/g)
+          financialRiskMention += matchCounter(line, /\boperating cost\b/g)
+          financialRiskMention += matchCounter(line, /\bcost of operation\b/g)
+        }
+      }
     }
-
     return (
       <div>
         {climateRiskMention > 0 && <span>Climate risk: {climateRiskMention} <br /></span>}
@@ -162,10 +171,10 @@ const ProfileSummary = ({ match }) => {
         </Col>
 
         <Col sm={12} md={4}>
-          {/* <div className="investor-disclosure border profile-cards">
+          <div className="investor-disclosure border profile-cards">
             <p className="my-3 profile-findings"><strong> Climate Risks found </strong></p>
-            <p className="my-3 profile-findings">{getStats(data.disclosures)}</p>
-          </div> */}
+            <p className="my-3 profile-findings">{getStats(data)}</p>
+          </div>
 
           {/* <div className="investor-disclosure border profile-cards">
             <p className="my-3 profile-findings"><strong> TCFD Recommendations </strong></p>

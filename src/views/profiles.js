@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { ProfilesTable, NavBar, ProfileSummary } from "../components";
+import { ProfilesTable, NavBar, ProfileSummary, Footer } from "../components";
 import { Route, Switch } from "react-router-dom";
 
 export const Profiles = ({ match }) => {
@@ -11,7 +11,7 @@ export const Profiles = ({ match }) => {
         <NavBar />
           <Switch>
             <Route path={`${match.path}`} exact component={ProfilesTable} />
-            <Route path={`${match.path}/:organizationId`} exact component={ProfileSummary} />
+            <Route path={`${match.path}profiles/:organizationId`} exact component={ProfileSummary} />
           </Switch>
       </Col>
     </Row>
