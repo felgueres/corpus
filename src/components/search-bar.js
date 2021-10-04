@@ -61,11 +61,11 @@ export const SearchBar = () => {
   }, [searchTerm])
 
   return (
-    <Col xs={12} sm={8} md={5}>
+    <Col xs={12} sm={12} md={8}>
       <div className="border shadow-sm searchbar-margin" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
         <div className="input-group">
           <span className="search-icon"><BsSearch className="search-icon" /></span>
-          <input onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" className="searchbar" autoComplete="off" placeholder="Find Companies" onChange={event => { handleSearch(event) }} />
+          <input onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" size="30" className="searchbar" autoComplete="off" placeholder="Search Climate Disclosures" onChange={event => { handleSearch(event) }} />
         </div>
         <div className="input-group">
         <ul className="overflow-y-scroll" role="listbox">
