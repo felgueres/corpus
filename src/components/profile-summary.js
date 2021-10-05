@@ -136,7 +136,7 @@ return (
 
       <Col sm={12} md={4}>
         <div>
-          <p className="my-1 ">Filter by climate risk</p>
+          <p className="my-1 ">Findings</p>
           <Button className='button-pill' value={'physical'} onClick={activateClass}>Physical risk <span className='badge badge-pill badge-light'>{('physical' in riskSummary) ? riskSummary['physical'] : 0}</span></Button>
           <span className='button-divider' />
           <Button className='button-pill' value={'regulat'} onClick={activateClass}>Policy & regulation <span className='badge badge-pill badge-light'>{('regulation' in riskSummary) ? riskSummary['regulation'] : 0}</span></Button>

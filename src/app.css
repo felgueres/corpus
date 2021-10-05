@@ -54,34 +54,17 @@
 }
 
 .searchbar {
-    border: none;
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: 400;
     display: inline;
-    margin-left: 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
 }
-
 
 .search-child {
     color:#5a564f;
-    font-weight: 600;
-}
-
-.searchbar:focus {
-    border: none;
-    font-size: 18px;
-    font-weight: 600;
-    color:#5a564f;
-    outline: none
-    ;
+    font-weight: 400;
 }
 
 ::placeholder {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     color: #5a564f;
 }
 
@@ -202,15 +185,22 @@
     color: #5a564f 
 }
 
-.search-icon {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-}
-
 .searchbar-margin {
     border-radius: 50px;
-    min-width: 300px;
+    border-style: solid;
+    border-width: thin;
+}
+
+.searchbar-group {
+    border-style:None;
+    background: transparent;
+}
+
+.searchbar-group:focus {
+    outline: none;
+}
+.searchbar-margin:focus-within {
+    border-color: blue
 }
 
 .button-pill {

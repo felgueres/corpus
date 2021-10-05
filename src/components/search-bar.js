@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsSearch } from 'react-icons/bs';
 
@@ -61,18 +61,20 @@ export const SearchBar = () => {
   }, [searchTerm])
 
   return (
-    <Col xs={12} sm={12} md={8}>
-      <div className="border shadow-sm searchbar-margin" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label" >
-        <div className="input-group">
-          <span className="search-icon"><BsSearch className="search-icon" /></span>
-          <input onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" size="30" className="searchbar" autoComplete="off" placeholder="Search Climate Disclosures" onChange={event => { handleSearch(event) }} />
-        </div>
-        <div className="input-group">
+    <Col xs={12} sm={12} md={7}>
+      <Form.Row>
+        <InputGroup className="searchbar-group">
+          <InputGroup.Prepend>
+            <InputGroup.Text><BsSearch /></InputGroup.Text>
+          </InputGroup.Prepend>
+          <Form.Control onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" autoComplete="off" className="searchbar" placeholder="Search companies by name" onChange={event => { handleSearch(event) }} />
+        </InputGroup>
+      </Form.Row>
+      <InputGroup>
         <ul className="overflow-y-scroll" role="listbox">
           {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
         </ul>
-        </div>
-      </div>
+      </InputGroup>
     </Col>
   );
 };
