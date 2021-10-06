@@ -5,7 +5,7 @@ import { SearchBar } from ".";
 const NavBar = () => {
   return (
     <div>
-      <Navbar className="navbar-layout mb-5" collapseOnSelect expand="md" bg="white">
+      <Navbar className="justify-content-between bg-light shadow-sm" >
         <Navbar.Brand className="navbar-font" href="/">ClimateCap</Navbar.Brand>
         <SearchBar />
       </Navbar>

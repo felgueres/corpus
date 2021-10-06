@@ -65,7 +65,6 @@ const ProfilesTable = () => {
     return <div className="mt-3">Unable to fetch data.</div>
   }
   return (
-    <div className="mt-3">
       <Row>
         <Col sm={12} md={6}>
           {buildTable(cardsInformation)}
@@ -74,7 +73,6 @@ const ProfilesTable = () => {
           {/* To be added */}
         </Col>
       </Row>
-    </div>
   );
 };
 

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Badge, Button } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 
 const ProfileSummary = ({ match }) => {
   var organizationId = match.params.organizationId;
   const [organizationInformation, setOrganizationInformation] = useState(null);
   const [isActive, setActive] = useState(false);
   const [riskCategory, setriskCategory] = useState('');
-  const [risksCounter, setRisksCounter] = useState(null);
 
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchClimateRisks = async () => {
@@ -120,23 +119,20 @@ const activateClass = (event) => {
 var riskSummary = getIdentifiedRisks(data)
 
 return (
-  <div className="my-5">
-    <h3 className="profile-title">{organizationId}</h3>
-    <Row className='py-2'>
+  <div>
+    <h3 className="py-2"><strong>{organizationId}</strong></h3>
+    <Row>
       <Col sm={12} md={8}>
-        <div className="investor-disclosure border profile-cards ">
-          <br />
-          <span className="my-3 profile-subtitle"><strong>Annual Financial Disclosures</strong></span>
-          <br />
-          <span className="profile-findings">Climate-related snippets</span>
+        <div className="py-3 px-3 border">
+          <h5><strong>Annual Financial Disclosures</strong></h5>
+          <span>Climate-related snippets</span>
           {renderDisclosures(data)}
-          <br />
         </div>
       </Col>
 
       <Col sm={12} md={4}>
         <div>
-          <p className="my-1 ">Findings</p>
+          <p className="my-1 ">Filter by climate risk:</p>
           <Button className='button-pill' value={'physical'} onClick={activateClass}>Physical risk <span className='badge badge-pill badge-light'>{('physical' in riskSummary) ? riskSummary['physical'] : 0}</span></Button>
           <span className='button-divider' />
           <Button className='button-pill' value={'regulat'} onClick={activateClass}>Policy & regulation <span className='badge badge-pill badge-light'>{('regulation' in riskSummary) ? riskSummary['regulation'] : 0}</span></Button>

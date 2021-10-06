@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Loading } from "./components";
-import { Home, Profiles } from "./views";
+import { Loading, NavBar } from "./components";
+import { Profiles } from "./views";
 import "./app.css";
 
 const App = () => {
@@ -13,7 +13,8 @@ const App = () => {
   }
 
   return (
-    <div className='container' id="app">
+    <div className='container-fluid' id="app">
+      <NavBar/>
       <Switch>
         <Route path="/" component={Profiles} />
       </Switch>

@@ -1,14 +1,13 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { ProfilesTable, NavBar, ProfileSummary, Footer } from "../components";
+import { ProfilesTable, ProfileSummary} from "../components";
 import { Route, Switch } from "react-router-dom";
 
 export const Profiles = ({ match }) => {
 
   return (
-    <Row className='vh-100'>
+    <Row className='px-3 py-3'>
       <Col>
-        <NavBar />
           <Switch>
             <Route path={`${match.path}`} exact component={ProfilesTable} />
             <Route path={`${match.path}profiles/:organizationId`} exact component={ProfileSummary} />

@@ -43,10 +43,8 @@
 
 .navbar-font {
   font-family: 'Inter', sans-serif;
-  color: #5a564f;
   font-weight: 600;
-  font-size: 15px;
-  line-height: 27px;
+  font-size: 16px;
 }
 
 .navbar-layout {
@@ -135,4 +133,8 @@
 
 .highlight-yellow {
   background-color: yellow;
+}
+
+.container-fluid {
+    padding: 0;
 }

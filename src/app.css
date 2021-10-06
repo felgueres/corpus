@@ -114,18 +114,6 @@
     line-height: 25px;
 }
 
- .profile-title {
-    font-weight: 800;
-    font-size: 26px;
-    line-height: 32px;
- }
-
- .profile-subtitle {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
- }
-
 .profile-snippet {
     font-weight: 400;
     font-size: 11px;
@@ -135,11 +123,6 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-}
-
-.profile-cards {
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 .climate-risk-score {
@@ -173,12 +156,6 @@
     font-family: 'Inter', sans-serif;
     display: 'inline';
     padding: 12px;
-}
-
-.investor-disclosure {
-    border-radius: 10px;
-    border:black;
-    margin-top: 10px;
 }
 
 .card-strong {

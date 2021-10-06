@@ -61,13 +61,13 @@ export const SearchBar = () => {
   }, [searchTerm])
 
   return (
-    <Col xs={12} sm={12} md={7}>
+    <span>
       <Form.Row>
         <InputGroup className="searchbar-group">
           <InputGroup.Prepend>
             <InputGroup.Text><BsSearch /></InputGroup.Text>
           </InputGroup.Prepend>
-          <Form.Control onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" autoComplete="off" className="searchbar" placeholder="Search companies by name" onChange={event => { handleSearch(event) }} />
+          <Form.Control onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" autoComplete="off" className="searchbar" placeholder="Search companies" onChange={event => { handleSearch(event) }} />
         </InputGroup>
       </Form.Row>
       <InputGroup>
@@ -75,7 +75,7 @@ export const SearchBar = () => {
           {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
         </ul>
       </InputGroup>
-    </Col>
+      </span>
   );
 };
 
