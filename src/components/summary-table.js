@@ -17,11 +17,11 @@ const SummaryTable = () => {
     }
   };
 
-  const renderRow = (category, count) => {
+  const renderRow = (category) => {
     return (
-      <tr key={category}>
+      <tr key={category[0]}>
         <td>
-          <Link className='table-child'>{category}: {count}</Link><br />
+          <Link className='table-child'>{category[0]}: {category[1]}</Link><br />
         </td>
       </tr>
     )
@@ -37,7 +37,7 @@ const SummaryTable = () => {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(cardsInformation).map(([category, count],) => renderRow(category, count))}
+          {Object.entries(cardsInformation).map(([idx, category],) => renderRow(category))}
         </tbody>
       </table>
     )
