@@ -61,9 +61,9 @@ export const SearchBar = () => {
   }, [searchTerm])
 
   return (
-    <span>
+    <span className="searchbar-block">
       <Form.Row>
-        <InputGroup className="searchbar-group">
+        <InputGroup>
           <InputGroup.Prepend>
             <InputGroup.Text><BsSearch /></InputGroup.Text>
           </InputGroup.Prepend>

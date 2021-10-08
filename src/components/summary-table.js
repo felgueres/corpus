@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
-import { SummaryTable } from ".";
 
-const ProfilesTable = () => {
+const SummaryTable = () => {
   const [cardsInformation, setCardsInformation] = useState(null);
   const [fetchError, setFetchError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchClimateRisks = async () => {
     try {
-      const response = await fetch(`${apiUrl}/api/organizations`);
+      const response = await fetch(`${apiUrl}/api/organizations/summary`);
       const responseData = await response.json();
       setCardsInformation(responseData);
     } catch (error) {
@@ -18,12 +17,11 @@ const ProfilesTable = () => {
     }
   };
 
-  const renderRow = (idx, card) => {
+  const renderRow = (category, count) => {
     return (
-      <tr key={idx}>
+      <tr key={category}>
         <td>
-          <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link><br />
-          <Link className='table-child-subtitle' to={`/profiles/${card.company_name}`}>{card.category}</Link>
+          <Link className='table-child'>{category}: {count}</Link><br />
         </td>
       </tr>
     )
@@ -34,12 +32,12 @@ const ProfilesTable = () => {
       <table className="table table-sm table-hover">
         <thead>
           <tr>
-            <th className='table-title'>Featured Companies
+            <th className='table-title'>Company Sectors
             </th>
           </tr>
         </thead>
         <tbody>
-          {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
+          {Object.entries(cardsInformation).map(([category, count],) => renderRow(category, count))}
         </tbody>
       </table>
     )
@@ -65,16 +63,17 @@ const ProfilesTable = () => {
   if (fetchError) {
     return <div className="mt-3">Unable to fetch data.</div>
   }
+  console.log(cardsInformation)
   return (
       <Row>
         <Col sm={12} md={6}>
           {buildTable(cardsInformation)}
         </Col>
         <Col sm={12} md={6}>
-          <SummaryTable />
+          {/* To be added */}
         </Col>
       </Row>
   );
 };
 
-export default ProfilesTable;
+export default SummaryTable;

@@ -9,5 +9,6 @@ import ProfileSummary from "./profile-summary";
 import SideBar from "./side-bar";
 import News from "./news";
 import SearchBar from "./search-bar";
+import SummaryTable from "./summary-table";
 
-export { SideBar, SearchBar, News, Footer, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, ProfilesTable, ProfileSummary };
+export { SummaryTable, SideBar, SearchBar, News, Footer, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, ProfilesTable, ProfileSummary };

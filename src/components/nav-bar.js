@@ -1,13 +1,16 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import { SearchBar } from ".";
 
 const NavBar = () => {
   return (
     <div>
-      <Navbar className="justify-content-between bg-light shadow-sm" >
+      <Navbar className="bg-light shadow-sm" >
         <Navbar.Brand className="navbar-font" href="/">ClimateCap</Navbar.Brand>
+        <NavbarCollapse className='justify-content-center'>
         <SearchBar />
+        </NavbarCollapse>
       </Navbar>
     </div>
   );

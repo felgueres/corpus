@@ -57,6 +57,10 @@
     display: inline;
 }
 
+.searchbar-block {
+    width: 500px;
+}
+
 .search-child {
     color:#5a564f;
     font-weight: 400;
