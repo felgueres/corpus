@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Loading, NavBar } from "./components";
+import { Footer, Loading, NavBar } from "./components";
 import { Profiles } from "./views";
 import "./app.css";
 
@@ -13,11 +13,13 @@ const App = () => {
   }
 
   return (
-    <div className='container-fluid' id="app">
-      <NavBar/>
-      <Switch>
-        <Route path="/" component={Profiles} />
-      </Switch>
+    <div className='container-fluid bg-light' id="app">
+      <NavBar />
+      <div className="main-screen">
+        <Switch>
+          <Route path="/" component={Profiles} />
+        </Switch>
+      </div>
     </div>
   );
 };

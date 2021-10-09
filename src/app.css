@@ -53,9 +53,6 @@
     margin-top: 20px;
 }
 
-.searchbar {
-    display: inline;
-}
 
 .searchbar-block {
     width: 500px;
@@ -195,4 +192,23 @@
     width:5px;
     height:auto;
     display:inline-block;
+}
+
+.rounded-border{
+    border-radius: 7px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.search {
+    background-color: #f8f8f8;
+    border-left: none;
+}
+
+.main-screen {
+    min-height: 700px;
+}
+
+.footer {
+    min-height: 50px;
 }

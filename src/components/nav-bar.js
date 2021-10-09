@@ -6,7 +6,7 @@ import { SearchBar } from ".";
 const NavBar = () => {
   return (
     <div>
-      <Navbar className="bg-light shadow-sm" >
+      <Navbar className="bg-white shadow-sm" >
         <Navbar.Brand className="navbar-font" href="/">ClimateCap</Navbar.Brand>
         <NavbarCollapse className='justify-content-center'>
         <SearchBar />

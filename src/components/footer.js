@@ -1,9 +1,10 @@
 import React from "react";
+import { Row } from "react-bootstrap";
 
 const Footer = () => (
-  <footer className="bg-white text-center">
+  <footer className="footer bg-white text-center border footer shadow-sm">
     <p>
-        2021 Climate Cap
+      Climate Cap 2021
     </p>
   </footer>
 );

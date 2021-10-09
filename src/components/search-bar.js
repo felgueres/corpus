@@ -64,10 +64,10 @@ export const SearchBar = () => {
     <span className="searchbar-block">
       <Form.Row>
         <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Text><BsSearch /></InputGroup.Text>
-          </InputGroup.Prepend>
           <Form.Control onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" autoComplete="off" className="searchbar" placeholder="Search companies" onChange={event => { handleSearch(event) }} />
+          <InputGroup.Prepend>
+            <InputGroup.Text className="search"><BsSearch /></InputGroup.Text>
+          </InputGroup.Prepend>
         </InputGroup>
       </Form.Row>
       <InputGroup>

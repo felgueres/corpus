@@ -29,10 +29,10 @@ const SummaryTable = () => {
 
   const buildTable = (cardsInformation) => {
     return (
-      <table className="table table-sm table-hover">
+      <table className="table table-hover bg-white border rounded-border">
         <thead>
           <tr>
-            <th className='table-title'>Company Sectors
+            <th >Sectors
             </th>
           </tr>
         </thead>
@@ -63,14 +63,10 @@ const SummaryTable = () => {
   if (fetchError) {
     return <div className="mt-3">Unable to fetch data.</div>
   }
-  console.log(cardsInformation)
   return (
       <Row>
-        <Col sm={12} md={6}>
+        <Col sm={12} md={8}>
           {buildTable(cardsInformation)}
-        </Col>
-        <Col sm={12} md={6}>
-          {/* To be added */}
         </Col>
       </Row>
   );

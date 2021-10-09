@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Spinner } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 import { SummaryTable } from ".";
@@ -31,10 +31,10 @@ const ProfilesTable = () => {
 
   const buildTable = (cardsInformation) => {
     return (
-      <table className="table table-sm table-hover">
+      <table className="table table-hover bg-white border rounded-border">
         <thead>
           <tr>
-            <th className='table-title'>Featured Companies
+            <th>Featured Companies
             </th>
           </tr>
         </thead>
@@ -66,6 +66,7 @@ const ProfilesTable = () => {
     return <div className="mt-3">Unable to fetch data.</div>
   }
   return (
+    <Container>
       <Row>
         <Col sm={12} md={6}>
           {buildTable(cardsInformation)}
@@ -74,6 +75,8 @@ const ProfilesTable = () => {
           <SummaryTable />
         </Col>
       </Row>
+    </Container>
+
   );
 };
 

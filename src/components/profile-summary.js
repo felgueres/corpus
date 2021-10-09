@@ -123,7 +123,7 @@ return (
     <h3 className="py-2"><strong>{organizationId}</strong></h3>
     <Row>
       <Col sm={12} md={8}>
-        <div className="py-3 px-3 border">
+        <div className="p-3 border rounded-border bg-white">
           <h5><strong>Annual Financial Disclosures</strong></h5>
           <span>Climate-related snippets</span>
           {renderDisclosures(data)}
@@ -131,8 +131,9 @@ return (
       </Col>
 
       <Col sm={12} md={4}>
-        <div>
-          <p className="my-1 ">Filter by climate risk:</p>
+        <div className="bg-white p-3 border rounded-border">
+          <p className="my-1 "><strong>Filter by climate risk</strong></p>
+          <hr/>
           <Button className='button-pill' value={'physical'} onClick={activateClass}>Physical risk <span className='badge badge-pill badge-light'>{('physical' in riskSummary) ? riskSummary['physical'] : 0}</span></Button>
           <span className='button-divider' />
           <Button className='button-pill' value={'regulat'} onClick={activateClass}>Policy & regulation <span className='badge badge-pill badge-light'>{('regulation' in riskSummary) ? riskSummary['regulation'] : 0}</span></Button>
