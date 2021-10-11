@@ -20,6 +20,7 @@ const App = () => {
           <Route path="/" component={Profiles} />
         </Switch>
       </div>
+      <Footer/>
     </div>
   );
 };
