@@ -1,5 +1,4 @@
 import React from "react";
-import { Row } from "react-bootstrap";
 
 const Footer = () => (
   <div>
@@ -7,7 +6,6 @@ const Footer = () => (
       <div className="col-md-8 d-flex align-items-center">
         <span><strong className="navbar-font">ClimateCap</strong> helps investors screen companies by climate risk and opportunities.</span>
       </div>
-
     </footer>
   </div>
 );
