@@ -21,7 +21,7 @@ const SummaryTable = () => {
     return (
       <tr key={category[0]}>
         <td>
-          <Link className='table-child'>{category[0]}: {category[1]}</Link><br />
+          <Link className='table-child' to={`/categories/${category[0]}`}>{category[0]}: {category[1]}</Link><br />
         </td>
       </tr>
     )

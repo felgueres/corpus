@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div>
       <Navbar className="bg-white shadow-sm" >
-        <Navbar.Brand className="navbar-font" href="/">ClimateCap</Navbar.Brand>
+        <Navbar.Brand className="navbar-font" href="/">ClimateDisclosures</Navbar.Brand>
         <NavbarCollapse className='justify-content-center'>
         <SearchBar />
         </NavbarCollapse>

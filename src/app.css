@@ -86,6 +86,8 @@
     font-weight: 400;
     color:black;
     display: 'inline';
+    float: right;
+    vertical-align: middle;
 }
 
 .table-sm thead tr th{
@@ -206,7 +208,7 @@
 }
 
 .main-screen {
-    min-height: 500px;
+    min-height: 800px;
 }
 
 .footer {

@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
-import { SummaryTable } from ".";
 
-const ProfilesTable = () => {
+const ProfilesTableCategory = ({match}) => {
+  var categoryId = match.params.categoryId;
   const [cardsInformation, setCardsInformation] = useState(null);
   const [fetchError, setFetchError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchClimateRisks = async () => {
     try {
-      const response = await fetch(`${apiUrl}/api/organizations`);
+      const response = await fetch(`${apiUrl}/api/categories/${categoryId}`);
       const responseData = await response.json();
       setCardsInformation(responseData);
     } catch (error) {
@@ -22,14 +22,8 @@ const ProfilesTable = () => {
     return (
       <tr key={idx}>
         <td>
-          <Row className="justify-content-between">
-            <Col md={8}>
-              <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link>
-            </Col>
-            <Col md={4} className='float-end'>
-              <span className='table-child-subtitle' to={`/profiles/${card.company_name}`}> {card.category}</span>
-            </Col>
-          </Row>
+          <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link> 
+          <Link className='table-child-subtitle ' to={`/profiles/${card.company_name}`}> {card.category}</Link>
         </td>
       </tr>
     )
@@ -40,7 +34,7 @@ const ProfilesTable = () => {
       <table className="table table-hover bg-white border rounded-border">
         <thead>
           <tr>
-            <th>Discover Companies
+            <th>{categoryId}
             </th>
           </tr>
         </thead>
@@ -77,13 +71,10 @@ const ProfilesTable = () => {
         <Col sm={12} md={6}>
           {buildTable(cardsInformation)}
         </Col>
-        <Col sm={12} md={6}>
-          <SummaryTable />
-        </Col>
       </Row>
     </Container>
 
   );
 };
 
-export default ProfilesTable;
+export default ProfilesTableCategory;
