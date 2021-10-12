@@ -5,7 +5,6 @@ import { Col } from "react-bootstrap";
 import { useLocation } from "react-router";
 
 const ProfilesTableCategory = ({ match }) => {
-
   const location = useLocation()
   const [categoryId, setCategory] = useState(null)
   const [cardsInformation, setCardsInformation] = useState(null);
@@ -61,7 +60,7 @@ const ProfilesTableCategory = ({ match }) => {
 
   useEffect(()=>
   {
-    if (cardsInformation) fetchClimateRisks();
+    if (categoryId) fetchClimateRisks();
   }
   , [categoryId])
 

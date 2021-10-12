@@ -22,10 +22,10 @@ const ProfilesTable = () => {
       <tr key={idx}>
         <td>
           <Row className="justify-content-between">
-            <Col md={8}>
+            <Col md={9}>
               <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link>
             </Col>
-            <Col md={4} className='float-end'>
+            <Col md={3} className='float-end'>
               <span className='table-child-subtitle' to={`/profiles/${card.company_name}`}> {card.category}</span>
             </Col>
           </Row>
@@ -65,7 +65,7 @@ const ProfilesTable = () => {
     return <div className="mt-3">Unable to fetch data.</div>
   }
   return (
-      <Col sm={12} md={6}>
+      <Col sm={12} md={7}>
         <Row>
           <strong>Explore Companies</strong>
           <br/>
