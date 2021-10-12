@@ -183,13 +183,6 @@
     border-color: blue
 }
 
-.button-pill {
-    border-radius: 50px;
-    background: transparent;
-    color: black;
-    margin-top: 5px;
-}
-
 .button-divider{
     width:5px;
     height:auto;
@@ -213,4 +206,21 @@
 
 .footer {
     min-height: 50px;
+}
+
+.underline {
+    border-bottom-width: 2px;
+    border-bottom: solid;
+}
+
+.nav-link{
+    color: black;
+    font-size: 11px;
+}
+
+.button-pill {
+    border-radius: 50px;
+    background: transparent;
+    color: black;
+    margin-top: 5px;
 }

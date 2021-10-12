@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { Col, Row } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
+import { NavLink as RouterNavLink } from "react-router-dom";
 
-const SummaryTable = () => {
+const NavbarCategories = () => {
   const [cardsInformation, setCardsInformation] = useState(null);
   const [fetchError, setFetchError] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -19,28 +20,19 @@ const SummaryTable = () => {
 
   const renderRow = (category) => {
     return (
-      <tr key={category[0]}>
-        <td>
-          <Link className='table-child' to={`/categories/${category[0]}`}>{category[0]}: {category[1]}</Link><br />
-        </td>
-      </tr>
+      <Nav.Link
+        as={RouterNavLink}
+        to={`/categories/${category[0]}`}
+        exact
+        activeClassName="underline"
+      >
+        {category[0]} <strong> ({category[1]}) </strong>
+      </Nav.Link>
     )
   }
 
   const buildTable = (cardsInformation) => {
-    return (
-      <table className="table table-hover bg-white border rounded-border">
-        <thead>
-          <tr>
-            <th >Sectors
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(cardsInformation).map(([idx, category],) => renderRow(category))}
-        </tbody>
-      </table>
-    )
+    return  <NavbarCollapse className="d-flex justify-content-center">{Object.entries(cardsInformation).map(([idx, category],) => renderRow(category))}</NavbarCollapse>
   }
 
   const spinner = () => {
@@ -63,13 +55,13 @@ const SummaryTable = () => {
   if (fetchError) {
     return <div className="mt-3">Unable to fetch data.</div>
   }
+
   return (
-      <Row>
-        <Col sm={12} md={8}>
-          {buildTable(cardsInformation)}
-        </Col>
-      </Row>
+      <Navbar>
+           {buildTable(cardsInformation)}
+      </Navbar>
+
   );
 };
 
-export default SummaryTable;
+export default NavbarCategories;

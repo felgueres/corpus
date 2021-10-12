@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
-import { SummaryTable } from ".";
 
 const ProfilesTable = () => {
   const [cardsInformation, setCardsInformation] = useState(null);
@@ -38,12 +37,6 @@ const ProfilesTable = () => {
   const buildTable = (cardsInformation) => {
     return (
       <table className="table table-hover bg-white border rounded-border">
-        <thead>
-          <tr>
-            <th>Discover Companies
-            </th>
-          </tr>
-        </thead>
         <tbody>
           {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
         </tbody>
@@ -72,17 +65,14 @@ const ProfilesTable = () => {
     return <div className="mt-3">Unable to fetch data.</div>
   }
   return (
-    <Container>
-      <Row>
-        <Col sm={12} md={6}>
+      <Col sm={12} md={6}>
+        <Row>
+          <strong>Explore Companies</strong>
+          <br/>
+          <br/>
           {buildTable(cardsInformation)}
-        </Col>
-        <Col sm={12} md={6}>
-          <SummaryTable />
-        </Col>
-      </Row>
-    </Container>
-
+        </Row>
+      </Col>
   );
 };
 

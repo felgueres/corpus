@@ -7,7 +7,7 @@ import ProfilesTableCategory from "../components/profiles-table-category";
 export const Profiles = ({ match }) => {
 
   return (
-    <Row className='px-3 py-5'>
+    <Row className='px-3 py-3'>
       <Col>
           <Switch>
             <Route path={`${match.path}`} exact component={ProfilesTable} />
