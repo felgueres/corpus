@@ -39,9 +39,18 @@ export const SearchBar = () => {
 
   const renderRow = (searchItem) => {
     return (
-      <li className="searchbar-list border" key={searchItem.short_name}>
-        <Link onMouseDown={() => { mouseDownHappened = true }} onClick={handleClear} className="search-child" to={`/profiles/${searchItem.company_name}`}>{searchItem.short_name}</Link>
-      </li>
+      <Link onMouseDown={() => { mouseDownHappened = true }} onClick={handleClear} to={`/profiles/${searchItem.company_name}`}>
+        <li className="searchbar-list border search-card" key={searchItem.short_name}>
+          <span>
+            <BsSearch />
+          </span>
+          <span className='button-divider' />
+          <span className='button-divider' />
+          <span>
+            {searchItem.short_name}
+          </span>
+        </li>
+      </Link >
     )
   }
 
@@ -74,7 +83,7 @@ export const SearchBar = () => {
           {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
         </ul>
       </InputGroup>
-      </span>
+    </span>
   );
 };
 
