@@ -54,15 +54,11 @@ const ProfilesTableCategory = ({ match }) => {
     setCategory(match.params.categoryId)
   }, [location])
 
-  useEffect(() => {
-    if (!cardsInformation) fetchClimateRisks();
-  }, []);
-
   useEffect(()=>
   {
     if (categoryId) fetchClimateRisks();
   }
-  , [categoryId, location])
+  , [categoryId])
 
   if (!cardsInformation) {
     return spinner()
