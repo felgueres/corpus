@@ -20,7 +20,7 @@ const ProfilesTable = () => {
   const renderRow = (idx, card) => {
     return (
       <Link className='profile-card' to={`/profiles/${card.company_name}`}>
-      <Row className='my-3 py-4 px-3 pointer border d-flex justify-content-between'> 
+      <Row className='my-3 py-4 px-3 pointer border border-card d-flex justify-content-between'> 
         <span>
           <svg height="18" width="18">
             <circle cx="9" cy="9" r="3" stroke="#FF7F7F" stroke-width="3" fill="#FF7F7F" />
@@ -58,7 +58,7 @@ const ProfilesTable = () => {
     return <div className="mt-3">Unable to fetch data.</div>
   }
   return (
-    <Col sm={12} md={7}>
+    <Col sm={12} md={6}>
         <strong>Explore Companies</strong>
         {buildTable(cardsInformation)}
     </Col>

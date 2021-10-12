@@ -23,15 +23,16 @@ const ProfilesTableCategory = ({ match }) => {
   const renderRow = (idx, card) => {
     return (
       <Link className='profile-card' to={`/profiles/${card.company_name}`}>
-        <Row className='my-3 py-4 pointer border'> 
-          <span className='px-2'>
-            <svg height="18" width="18">
-              <circle cx="9" cy="9" r="3" stroke="#FF7F7F" stroke-width="3" fill="#FF7F7F" />
-            </svg>
-          </span>
-          <span>{card.short_name}</span>
-        </Row>
-      </Link>
+      <Row className='my-3 py-4 px-3 pointer border border-card d-flex justify-content-between'> 
+        <span>
+          <svg height="18" width="18">
+            <circle cx="9" cy="9" r="3" stroke="#FF7F7F" stroke-width="3" fill="#FF7F7F" />
+          </svg>
+            <span className='button-divider'/>
+        {card.short_name}</span>
+        <span className='sm-font'>{card.category}</span>
+      </Row>
+    </Link>
     )
   }
 

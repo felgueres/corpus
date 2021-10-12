@@ -224,12 +224,13 @@
     min-height: 800px;
 }
 
-.border {
+.border-card {
     border-radius: 8px;
     background-color: white;
 }
 
-.border:hover {
+
+.border-card:hover {
     outline: grey;
     outline-style: solid;
     outline-width: thin;
