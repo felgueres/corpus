@@ -74,11 +74,10 @@
     font-weight: 400;
 }
 
-.table-child {
-    font-size: 16px;
+.profile-card {
+    font-size: 14px;
     font-weight: 400;
     color:black;
-    display: 'inline';
 }
 
 .table-child-subtitle {
@@ -161,10 +160,6 @@
     padding: 12px;
 }
 
-.card-strong {
-    color: #5a564f 
-}
-
 .searchbar-margin {
     border-radius: 50px;
     border-style: solid;
@@ -227,4 +222,28 @@
 
 .body {
     min-height: 800px;
+}
+
+.border {
+    border-radius: 8px;
+    background-color: white;
+}
+
+.border:hover {
+    outline: grey;
+    outline-style: solid;
+    outline-width: thin;
+    text-decoration: none;
+    color: black;
+}
+
+
+.pointer {
+    cursor: pointer;
+}
+
+.sm-font {
+    font-size: 8px;
+    display: inline-flex;
+    align-items: center;
 }

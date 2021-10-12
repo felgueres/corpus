@@ -19,29 +19,22 @@ const ProfilesTable = () => {
 
   const renderRow = (idx, card) => {
     return (
-      <tr key={idx}>
-        <td>
-          <Row className="justify-content-between">
-            <Col md={9}>
-              <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link>
-            </Col>
-            <Col md={3} className='float-end'>
-              <span className='table-child-subtitle' to={`/profiles/${card.company_name}`}> {card.category}</span>
-            </Col>
-          </Row>
-        </td>
-      </tr>
+      <Link className='profile-card' to={`/profiles/${card.company_name}`}>
+      <Row className='my-3 py-4 px-3 pointer border d-flex justify-content-between'> 
+        <span>
+          <svg height="18" width="18">
+            <circle cx="9" cy="9" r="3" stroke="#FF7F7F" stroke-width="3" fill="#FF7F7F" />
+          </svg>
+            <span className='button-divider'/>
+        {card.short_name}</span>
+        <span className='sm-font'>{card.category}</span>
+      </Row>
+    </Link>
     )
   }
 
   const buildTable = (cardsInformation) => {
-    return (
-      <table className="table table-hover bg-white border rounded-border">
-        <tbody>
-          {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
-        </tbody>
-      </table>
-    )
+    return <div>{Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}</div>
   }
 
   const spinner = () => {
@@ -66,12 +59,8 @@ const ProfilesTable = () => {
   }
   return (
     <Col sm={12} md={7}>
-      <Row>
         <strong>Explore Companies</strong>
-        <br />
-        <br />
         {buildTable(cardsInformation)}
-      </Row>
     </Col>
   );
 };

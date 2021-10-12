@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Col } from "react-bootstrap";
-import { useLocation } from "react-router";
+import { Col, Row } from "react-bootstrap";
+import { Redirect, useLocation } from "react-router";
 
 const ProfilesTableCategory = ({ match }) => {
   const location = useLocation()
@@ -22,23 +22,28 @@ const ProfilesTableCategory = ({ match }) => {
 
   const renderRow = (idx, card) => {
     return (
-      <tr key={idx}>
-        <td>
-          <Link className='table-child' to={`/profiles/${card.company_name}`}>{card.short_name}</Link>
-          <Link className='table-child-subtitle ' to={`/profiles/${card.company_name}`}> {card.category}</Link>
-        </td>
-      </tr>
+      <Link className='profile-card' to={`/profiles/${card.company_name}`}>
+        <Row className='my-3 py-4 pointer border'> 
+          <span className='px-2'>
+            <svg height="18" width="18">
+              <circle cx="9" cy="9" r="3" stroke="#FF7F7F" stroke-width="3" fill="#FF7F7F" />
+            </svg>
+          </span>
+          <span>{card.short_name}</span>
+        </Row>
+      </Link>
     )
   }
 
   const buildTable = (cardsInformation) => {
     return (
-      <table className="table table-hover bg-white border rounded-border">
-
-        <tbody>
-          {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
-        </tbody>
-      </table>
+      // <table className="table table-hover bg-white border rounded-border">
+      <div>
+        {/* <tbody> */}
+        {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
+        {/* </tbody> */}
+      </div>
+      // </table>
     )
   }
 
@@ -54,11 +59,10 @@ const ProfilesTableCategory = ({ match }) => {
     setCategory(match.params.categoryId)
   }, [location])
 
-  useEffect(()=>
-  {
+  useEffect(() => {
     if (categoryId) fetchClimateRisks();
   }
-  , [categoryId])
+    , [categoryId])
 
   if (!cardsInformation) {
     return spinner()
@@ -71,8 +75,6 @@ const ProfilesTableCategory = ({ match }) => {
   return (
     <Col md={6}>
       <strong>Sector: {categoryId}</strong>
-      <br/>
-      <br/>
       {buildTable(cardsInformation)}
     </Col>
   );
