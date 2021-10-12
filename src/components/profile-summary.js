@@ -25,7 +25,6 @@ const ProfileSummary = ({ match }) => {
   }
   var data = organizationInformation[0];
 
-
   function getIdentifiedRisks(data) {
     if (!(data)) {
       return {}

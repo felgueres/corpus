@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Form, InputGroup } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsSearch } from 'react-icons/bs';
 

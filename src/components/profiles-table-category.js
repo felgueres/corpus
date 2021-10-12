@@ -62,7 +62,7 @@ const ProfilesTableCategory = ({ match }) => {
   {
     if (categoryId) fetchClimateRisks();
   }
-  , [categoryId])
+  , [categoryId, location])
 
   if (!cardsInformation) {
     return spinner()
@@ -71,6 +71,7 @@ const ProfilesTableCategory = ({ match }) => {
   if (fetchError) {
     return <div className="mt-3">Unable to fetch data.</div>
   }
+
   return (
     <Col md={6}>
       <strong>Sector: {categoryId}</strong>

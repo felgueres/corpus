@@ -15,15 +15,15 @@ const App = () => {
   }
 
   return (
-    <div className='container-fluid bg-light' id="app">
-      <Container>
-        <NavBar />
-        <NavbarCategories/>
+    <div className='container-flex bg-light px-0' id="app">
+      <NavBar />
+      <Container className='body'>
+        <NavbarCategories />
           <Switch>
             <Route path="/" component={Profiles} />
           </Switch>
-        <Footer />
       </Container>
+      <Footer />
     </div>
   );
 };

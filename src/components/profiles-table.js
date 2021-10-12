@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 
@@ -65,14 +65,14 @@ const ProfilesTable = () => {
     return <div className="mt-3">Unable to fetch data.</div>
   }
   return (
-      <Col sm={12} md={7}>
-        <Row>
-          <strong>Explore Companies</strong>
-          <br/>
-          <br/>
-          {buildTable(cardsInformation)}
-        </Row>
-      </Col>
+    <Col sm={12} md={7}>
+      <Row>
+        <strong>Explore Companies</strong>
+        <br />
+        <br />
+        {buildTable(cardsInformation)}
+      </Row>
+    </Col>
   );
 };
 

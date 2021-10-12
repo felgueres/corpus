@@ -224,3 +224,7 @@
     color: black;
     margin-top: 5px;
 }
+
+.body {
+    min-height: 800px;
+}
