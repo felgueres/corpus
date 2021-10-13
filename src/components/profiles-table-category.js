@@ -21,7 +21,6 @@ const ProfilesTableCategory = ({ match }) => {
   };
 
   const renderRow = (idx, card) => {
-    console.log(card)
     return (
       <Link className='profile-card' to={`/profiles/${card.company_name}`}>
       <Row className='my-3 py-4 px-3 pointer border border-card d-flex justify-content-between'> 
@@ -39,13 +38,9 @@ const ProfilesTableCategory = ({ match }) => {
 
   const buildTable = (cardsInformation) => {
     return (
-      // <table className="table table-hover bg-white border rounded-border">
       <div>
-        {/* <tbody> */}
         {Object.entries(cardsInformation).map(([idx, card],) => renderRow(idx, card))}
-        {/* </tbody> */}
       </div>
-      // </table>
     )
   }
 

@@ -6,9 +6,8 @@ import PrivateRoute from "./private-route";
 import OpenSearch from "./open-ai-search";
 import ProfilesTable from "./profiles-table";
 import ProfileSummary from "./profile-summary";
-import SideBar from "./side-bar";
 import News from "./news";
 import SearchBar from "./search-bar";
 import NavbarCategories from "./navbar-categories";
 
-export { NavbarCategories, SideBar, SearchBar, News, Footer, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, ProfilesTable, ProfileSummary };
+export { NavbarCategories, SearchBar, News, Footer, Loading, NavBar, Highlight, PrivateRoute, OpenSearch, ProfilesTable, ProfileSummary };
