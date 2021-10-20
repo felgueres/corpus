@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
-import { Redirect, useLocation } from "react-router";
+import { useLocation } from "react-router";
 
 const ProfilesTableCategory = ({ match }) => {
   const location = useLocation()
@@ -46,11 +46,11 @@ const ProfilesTableCategory = ({ match }) => {
 
   const spinner = () => {
     return (
-      <div>
+      <Row>
         <Spinner animation="border" role="status">
           <span className="visually-hidden"></span>
         </Spinner>
-      </div>)
+      </Row>)
   }
   useEffect(() => {
     setCategory(match.params.categoryId)

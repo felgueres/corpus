@@ -5,7 +5,7 @@ import { SearchBar } from ".";
 
 const NavBar = () => {
   return (
-    <div className='bg-white shadow-sm'>
+    <div className='bg-white border'>
       <Container>
         <Navbar className="py-3" >
           <Navbar.Brand className="navbar-font" href="/">ClimateDisclosures</Navbar.Brand>

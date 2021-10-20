@@ -190,6 +190,15 @@
     border-spacing: 0;
 }
 
+
+.rounded-border-bottom{
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-top: none;
+}
+
 .search {
     background-color: #f8f8f8;
     border-left: none;

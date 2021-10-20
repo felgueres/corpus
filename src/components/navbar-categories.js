@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Row } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import { NavLink as RouterNavLink } from "react-router-dom";
 
@@ -32,16 +32,19 @@ const NavbarCategories = () => {
   }
 
   const buildTable = (cardsInformation) => {
-    return  <NavbarCollapse className="d-flex justify-content-center">{Object.entries(cardsInformation).map(([idx, category],) => renderRow(category))}</NavbarCollapse>
+    return <NavbarCollapse className="d-flex justify-content-center">{Object.entries(cardsInformation).map(([idx, category],) => renderRow(category))}</NavbarCollapse>
   }
 
   const spinner = () => {
     return (
-      <div>
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden"></span>
-        </Spinner>
-      </div>)
+      <div className="my-2 border rounded-border bg-white">
+        <Row className="justify-content-center my-3">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden"></span>
+          </Spinner>
+        </Row>
+      </div>
+    )
   }
 
   useEffect(() => {
@@ -57,10 +60,11 @@ const NavbarCategories = () => {
   }
 
   return (
+    <div className="my-2 border rounded-border bg-white">
       <Navbar>
-           {buildTable(cardsInformation)}
+        {buildTable(cardsInformation)}
       </Navbar>
-
+    </div>
   );
 };
 
