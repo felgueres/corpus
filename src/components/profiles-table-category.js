@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Spinner, OverlayTrigger, Tooltip, Button } from "react-bootstrap";
 import { useLocation } from "react-router";
 
 const ProfilesTableCategory = ({ match }) => {
@@ -21,18 +20,36 @@ const ProfilesTableCategory = ({ match }) => {
   };
 
   const renderRow = (idx, card) => {
+
+    console.log(card)
+    var color = card.has_disclosures ? "#90EE90" : "#D3D3D3"
+
     return (
       <Link className='profile-card' to={`/profiles/${card.company_name}`}>
-      <Row className='my-3 py-4 px-3 pointer border border-card d-flex justify-content-between'> 
-        <span>
-          <svg height="18" width="18">
-            <circle cx="9" cy="9" r="3" stroke="#FF7F7F" stroke-width="3" fill="#FF7F7F" />
-          </svg>
-            <span className='button-divider'/>
-        {card.short_name}</span>
-        <span className='sm-font'>{card.category}</span>
-      </Row>
-    </Link>
+        <Row className='my-3 py-4 px-3 pointer border border-card d-flex justify-content-between'>
+          <span>
+            <OverlayTrigger
+              placement="bottom"
+              overlay={<Tooltip id="button-tooltip-2">{card.has_disclosures ? "Has Disclosures" : "No Disclosures"}</Tooltip>}
+            >
+              {({ ref, ...triggerHandler }) => (
+                <Button
+                  variant="transparent"
+                  {...triggerHandler}
+                  className="d-inline-flex align-items-center"
+                >
+                  <svg ref={ref} height="18" width="18">
+                    <circle cx="9" cy="9" r="3" stroke={color} stroke-width="3" fill={color} />
+                  </svg>
+                </Button>
+              )}
+            </OverlayTrigger>
+            <span className='button-divider' />
+            {card.short_name}
+          </span>
+          <span className='sm-font'>{card.category}</span>
+        </Row>
+      </Link>
     )
   }
 
@@ -52,6 +69,7 @@ const ProfilesTableCategory = ({ match }) => {
         </Spinner>
       </Row>)
   }
+
   useEffect(() => {
     setCategory(match.params.categoryId)
   }, [location])
