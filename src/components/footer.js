@@ -10,7 +10,7 @@ const Footer = () => (
         <span><strong className="navbar-font">ClimateDisclosures</strong> helps investors screen climate-related financial risks and opportunities.</span>
       </div>
       <ul className="col-md-1 justify-content-end list-unstyled d-flex">
-        <li className="px-3"><a href="https://twitter.com/getclimatecap"><BsTwitter/></a></li>
+        <li className="px-3"><a href="https://twitter.com/dbclimate"><BsTwitter/></a></li>
       </ul>
     </footer>
     </Container>

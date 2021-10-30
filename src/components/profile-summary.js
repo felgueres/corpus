@@ -23,14 +23,14 @@ const ProfileSummary = ({ match }) => {
   if (!organizationInformation) {
     return 'loading'
   }
-  var data = organizationInformation[0];
+  var data = organizationInformation;
 
   function getIdentifiedRisks(data) {
     if (!(data)) {
       return {}
     }
     const disclosures = data.disclosures;
-    let summary = {'physical': 0 , 'regulation': 0 , 'financial':0, 'emissions': 0} 
+    let summary = {'physical': 0 , 'regulation': 0 , 'financial':0, 'emissions': 0, 'opportunity': 0} 
     for (let year in disclosures) {
       var lines = disclosures[year].disclosure
       if (Array.isArray(lines) && lines.length) {
@@ -39,6 +39,7 @@ const ProfileSummary = ({ match }) => {
           summary['regulation'] += lines[i].toLowerCase().includes('regul') ? 1 : 0
           summary['financial'] += lines[i].toLowerCase().includes('financial') ? 1 : 0
           summary['emissions'] += lines[i].toLowerCase().includes('emissions') ? 1 : 0
+          summary['opportunity'] += lines[i].toLowerCase().includes('opportunit') ? 1 : 0
         }
       }
     }
@@ -140,6 +141,8 @@ return (
           <Button className='button-pill' value={'financial'} onClick={activateClass}>Financial Risk <span className='badge badge-pill badge-light'>{('financial' in riskSummary) ? riskSummary['financial'] : 0}</span></Button>
           <span className='button-divider' />
           <Button className='button-pill' value={'emissions'} onClick={activateClass}>GHG Emissions <span className='badge badge-pill badge-light'>{('emissions' in riskSummary) ? riskSummary['emissions'] : 0}</span></Button>
+          <span className='button-divider' />
+          <Button className='button-pill' value={'opportuni'} onClick={activateClass}>Opportunity<span className='badge badge-pill badge-light'>{('opportunity' in riskSummary) ? riskSummary['opportunity'] : 0}</span></Button>
           <span className='button-divider' />
         </div>
       </Col>

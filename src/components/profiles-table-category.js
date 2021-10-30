@@ -48,6 +48,7 @@ const ProfilesTableCategory = ({ match }) => {
             {card.short_name}
           </span>
           <span className='sm-font'>{card.category}</span>
+          <span className='sm-font'>Physical: {card.summary.physical}</span>
         </Row>
       </Link>
     )
@@ -88,7 +89,7 @@ const ProfilesTableCategory = ({ match }) => {
   }
 
   return (
-    <Col md={6}>
+    <Col className="mx-auto" md={8}>
       <strong>Sector: {categoryId}</strong>
       {buildTable(cardsInformation)}
     </Col>
