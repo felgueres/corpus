@@ -1,22 +1,28 @@
 import { useEffect, useState } from 'react'
 
-export default function useOrganizationSearch(query, pageNumber) {
-  const apiUrl = process.env.REACT_APP_API_URL;
-  const [data, setData] = useState(null);
-
+export default function useOrganizationSearch(filters, pageNumber) {
+  const [companies, setCompanies] = useState([]);
+  const [pagination, setPagination] = useState([]);
+  const [loadingCompanyData, setLoadingCompanyData] = useState(true)
   useEffect(() => {
-    try {
-      const response = await fetch(`${apiUrl}/api/search`,{
-        method: 'GET',
-        headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json'},});
-      const responseData = await response.json();
-      setCardsInformation(responseData);
-    } catch (error) {
-      setFetchError(error.message);
+    async function fetchAPI() {
+      const apiUrl = process.env.REACT_APP_API_URL;
+      setLoadingCompanyData(true)
+      try {
+        let response = await fetch(`${apiUrl}/api/search`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filters, pageNumber })
+        })
+        response = await response.json()
+        setCompanies(response.companies)
+        setPagination(response.pagination)
+        setLoadingCompanyData(false)
+      } catch (error) {
+      }
     }
-  }, [query, pageNumber])
+    fetchAPI()
+  }, [filters, pageNumber])
 
-  return null
+  return { companies, pagination, loadingCompanyData }
 }

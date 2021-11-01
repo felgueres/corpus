@@ -24,7 +24,7 @@ const ProfilesTable = () => {
     }
     let isFiltered = Object.entries(filterCategories)
       .filter(function active([, isApplied]) { return isApplied })
-      .map(([filterName, ],) => entry['summary'][filterName] > 0 || entry['category'] === filterName)
+      .map(([filterName,],) => entry['summary'][filterName] > 0 || entry['category'] === filterName)
       .every(isApplied => isApplied)
     return isFiltered
   }
@@ -86,9 +86,9 @@ const ProfilesTable = () => {
     }))
   }
 
-  var cat_counter = Object.entries(cardsInformation).
-    map(([, entry]) => entry.category).
-    reduce(function (obj, category) {
+  var cat_counter = Object.entries(cardsInformation)
+  .map(([, entry]) => entry.category)
+  .reduce(function (obj, category) {
       if (!obj[category]) {
         obj[category] = 1
       } else {
@@ -96,9 +96,9 @@ const ProfilesTable = () => {
       } return obj
     }, {})
 
-  var risk_counter = Object.entries(cardsInformation).
-    map(([, entry]) => entry.summary).
-    reduce(function (obj, summary) {
+  var risk_counter = Object.entries(cardsInformation)
+  .map(([, entry]) => entry.summary)
+  .reduce(function (obj, summary) {
       Object.entries(summary).forEach(([risk_type, risk_count]) => {
         if (!obj[risk_type] && risk_count > 0) {
           obj[risk_type] = 1
@@ -146,9 +146,9 @@ const ProfilesTable = () => {
       <Col className="mx-auto" md={8}>
         <strong>Explore Companies</strong>
         {
-          Object.entries(cardsInformation).
-            filter(applyFilters).
-            map(([, card],) => renderRow(card))
+          Object.entries(cardsInformation)
+          .filter(applyFilters)
+          .map(([, card],) => renderRow(card))
         }
       </Col>
     </Row>

@@ -268,3 +268,25 @@
     text-decoration: none;
     background-color: #f8f9fa;
 }
+
+.active-button-class {
+    background-color: blue;
+    color: white;
+} 
+
+.prev,
+.next {
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+}
+
+.prev.disabled,
+.next.disabled {
+    pointer-events: none;
+}
+
+.pagination-item.active{
+    color: #888;
+    border: 1px solid
+}
