@@ -72,7 +72,7 @@ const renderDisclosure = (year, disclosure) => {
         <tr key={year}>
           <hr />
           <span className="profile-findings"><strong>{year}</strong></span> |
-          <a href={disclosure.url}> source</a>
+          <a href={disclosure.url}> SEC: Form 10-K</a>
           <br />
           <span>
             {Object.entries(disclosure.disclosure).filter(function ([idx, line]) { return line.toLowerCase().includes(riskCategory) })
@@ -132,7 +132,7 @@ return (
 
       <Col sm={12} md={4}>
         <div className="bg-white p-3 border rounded-border">
-          <p className="my-1 "><strong>Filter by climate risk</strong></p>
+          <p className="my-1 "><strong>Highlight section</strong></p>
           <hr/>
           <Button className='button-pill' value={'physical'} onClick={activateClass}>Physical risk <span className='badge badge-pill badge-light'>{('physical' in riskSummary) ? riskSummary['physical'] : 0}</span></Button>
           <span className='button-divider' />
