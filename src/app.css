@@ -117,7 +117,7 @@
 }
 
 .card-company-name {
-    color: #0969da;
+    color: #24221e;
     font-size: 14px;
 }
 
@@ -168,14 +168,6 @@
 }
 
 
-.rounded-border-bottom{
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-top: none;
-}
-
 .search {
     background-color: #f8f8f8;
     border-left: none;
@@ -183,6 +175,10 @@
 
 .main-screen {
     min-height: 800px;
+}
+
+#feed li {
+    list-style-type: none;
 }
 
 .footer {
@@ -199,6 +195,30 @@
     font-size: 11px;
 }
 
+#feed li:first-of-type {
+    border-top: 1px solid rgba(224,224,224);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#feed li:last-of-type {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#feed li {
+    border-left: 1px solid rgba(224,224,224) ;
+    border-right: 1px solid rgba(224,224,224) ;
+    border-bottom: 1px solid rgba(224,224,224) ;
+    background-color: white;
+    list-style-type: none;
+}
+
+#feed li:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+}
+
 .button-pill {
     border-radius: 50px;
     border-color: transparent;
@@ -206,7 +226,6 @@
     color: #0969da;
     margin-top: 2px;
     font-size: 10px;
-    font-weight: 400;
 }
 
 .button-pill:focus {

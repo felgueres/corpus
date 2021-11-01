@@ -27,15 +27,16 @@ export default function Feed() {
   return (
     <div>
       <Row>
-        <Col>
-          <Row className='my-1'>{!loadingMetadata && sectors.map(e => { return ( <Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`}  onClick={handleFilter} value={e}>{e}</Button> <span className='button-divider' /></Fragment>) })}</Row>
-          <Row className="my-1">{!loadingMetadata && riskTypes.map(e => { return ( <Fragment><Button key={e} className='button-pill' onClick={handleFilter} value={e}>{e}</Button> <span className='button-divider' /></Fragment>) })}</Row>
-        </Col>
+          <Row className='my-1'>{!loadingMetadata && sectors.map(e => { return (<Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`} onClick={handleFilter} value={e}>{e} {`${filters[e] ? '✕' : ''}`} </Button> <span className='button-divider' /></Fragment>) })}</Row>
+          <Row className="my-1">{!loadingMetadata && riskTypes.map(e => { return (<Fragment><Button key={e} className='button-pill' onClick={handleFilter} value={e}>{e}</Button> <span className='button-divider' /></Fragment>) })}</Row>
       </Row>
-      <Row>
-        <Col>
-          {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
-          {paginator}
+      <Row className='my-3'>
+        <Col className='px-0'>
+            <ul id="feed" className="px-0">
+              {loadingCompanyData && <div>Loading</div>}
+              {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
+            </ul>
+            {!loadingCompanyData && paginator}
         </Col>
       </Row>
     </div>
