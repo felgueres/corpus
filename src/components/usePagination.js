@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Button } from 'react-bootstrap';
+import { Button, Nav } from 'react-bootstrap';
 
 export default function usePagination(filters, pagination) {
   const pageLimit = 5
@@ -35,7 +35,7 @@ export default function usePagination(filters, pagination) {
   }
 
   const paginator = (
-    <div>
+    <Nav className='justify-content-center'>
       <Button onClick={goToPreviousPage} className={`btn-light prev ${curPage === 1 ? 'disabled' : ''}`}>
         Previous
       </Button>
@@ -46,7 +46,7 @@ export default function usePagination(filters, pagination) {
       <Button onClick={goToNextPage} className={`btn-light next ${curPage === numPages ? 'disabled' : ''}`}>
         Next
       </Button>
-    </div>
+    </Nav>
   );
 
   var idx = getIndeces()

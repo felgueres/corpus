@@ -39,21 +39,6 @@
     }
 }
 
-.button {
-    background-color: #23B5D3;
-    border: none;
-    padding: 15px;
-    width: 9em;
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    line-height: 27px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin-top: 20px;
-}
-
-
 .searchbar-block {
     width: 500px;
 }
@@ -127,21 +112,13 @@
     line-height: 18px;
 }
 
-.climate-risk-score {
-    font-weight: 800;
-    font-size: 80px;
-}
-
-.climate-risk-assessment {
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 40px;
-    vertical-align: middle;
-    padding-top: 20px;
-}
-
 .no-border {
     border: none;
+}
+
+.card-company-name {
+    color: #0969da;
+    font-size: 14px;
 }
 
 .climate-risk-gradient {
@@ -224,10 +201,18 @@
 
 .button-pill {
     border-radius: 50px;
-    background: transparent;
-    color: black;
-    margin-top: 5px;
+    border-color: transparent;
+    background: #ddf4ff;
+    color: #0969da;
+    margin-top: 2px;
+    font-size: 10px;
+    font-weight: 400;
 }
+
+.button-pill:focus {
+    outline: none;
+    box-shadow: none;
+  }
 
 .body {
     min-height: 800px;
@@ -269,7 +254,7 @@
     background-color: #f8f9fa;
 }
 
-.active-button-class {
+.active-filter {
     background-color: blue;
     color: white;
 } 
@@ -289,4 +274,8 @@
 .pagination-item.active{
     color: #888;
     border: 1px solid
+}
+
+.standard-text {
+    font-size: small;
 }
