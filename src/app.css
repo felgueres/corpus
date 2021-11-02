@@ -65,6 +65,12 @@
     color:black;
 }
 
+.card-company-name {
+    color: #0969da;
+    font-size: 16px
+}
+
+
 .table-child-subtitle {
     font-size: 10px;
     font-weight: 400;
@@ -181,6 +187,32 @@
     list-style-type: none;
 }
 
+#sidebar {
+    padding: 0px;
+}
+
+#sidebar li {
+    list-style-type: none;
+    border-left: 1px solid rgba(224,224,224) ;
+    border-right: 1px solid rgba(224,224,224) ;
+    border-bottom: 1px solid rgba(224,224,224) ;
+    background-color: white;
+}
+
+#sidebar li:first-of-type {
+    border-top: 1px solid rgba(224,224,224);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+#sidebar li:last-of-type {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+
+/* Background should be this: #ffffff */
+
 .footer {
     min-height: 50px;
 }
@@ -197,13 +229,13 @@
 
 #feed li:first-of-type {
     border-top: 1px solid rgba(224,224,224);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 #feed li:last-of-type {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 #feed li {
@@ -297,4 +329,13 @@
 
 .standard-text {
     font-size: small;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-main { 
+    font-size: 12px;
 }

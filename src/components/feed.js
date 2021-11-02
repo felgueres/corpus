@@ -26,17 +26,52 @@ export default function Feed() {
 
   return (
     <div>
-      <Row>
-          <Row className='my-1'>{!loadingMetadata && sectors.map(e => { return (<Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`} onClick={handleFilter} value={e}>{e} {`${filters[e] ? '✕' : ''}`} </Button> <span className='button-divider' /></Fragment>) })}</Row>
-          <Row className="my-1">{!loadingMetadata && riskTypes.map(e => { return (<Fragment><Button key={e} className='button-pill' onClick={handleFilter} value={e}>{e}</Button> <span className='button-divider' /></Fragment>) })}</Row>
-      </Row>
       <Row className='my-3'>
-        <Col className='px-0'>
-            <ul id="feed" className="px-0">
-              {loadingCompanyData && <div>Loading</div>}
-              {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
+        <Col md={8} className='px-0'>
+          <ul id="feed" className="px-0">
+            {loadingCompanyData && <div>Loading</div>}
+            {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
+          </ul>
+          {!loadingCompanyData && paginator}
+        </Col>
+        <Col>
+          <Row className='ml-2'>
+            <ul id="sidebar">
+              <li className='bg-light p-2'>
+                <span className='card-title'>What is ClimateDisclosures?</span>
+              </li>
+              <li className='p-2'>
+                <span className='card-main'>
+                In the near-future, lending capital will only be available to organizations with a strategy towards carbon net zero.                
+                <br/>
+                <hr/>
+                ClimateDisclosures is a company-level database of climate-related risks and opportunities.
+                <br/>
+                It helps investors, creditors, underwriters and entrepreneurs to identify risks & opportunities to decarbonize US listed companies. 
+                </span>
+              </li>
             </ul>
-            {!loadingCompanyData && paginator}
+          </Row>
+          <Row className='ml-2 my-1'>
+            <ul id="sidebar">
+              <li className='bg-light p-2'>
+                <span className='card-title'>Filter by sector</span>
+              </li>
+              <li className='p-2'>
+                {!loadingMetadata && sectors.map(e => { return (<Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`} onClick={handleFilter} value={e}>{e} {`${filters[e] ? '✕' : ''}`} </Button> <span className='button-divider' /></Fragment>) })}
+              </li>
+            </ul>
+          </Row>
+          <Row className='ml-2 my-1'>
+            <ul id="sidebar">
+              <li className='bg-light p-2'>
+                <span className='card-title'>Filter by risk types</span>
+              </li>
+              <li className='p-2'>
+                {!loadingMetadata && riskTypes.map(e => { return (<Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`} onClick={handleFilter} value={e}>{e} {`${filters[e] ? '✕' : ''}`} </Button> <span className='button-divider' /></Fragment>) })}
+              </li>
+            </ul>
+          </Row>
         </Col>
       </Row>
     </div>
