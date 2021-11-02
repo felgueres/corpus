@@ -51,8 +51,8 @@ export default function Feed() {
               <li className='p-2'>
                 <span className='card-main'>
                 ClimateDisclosures is a company-level database of climate risk and opportunities.
-                <br/>
-                It helps investors and entrepreneurs sift through the effects of climate change in the world of business and finance. 
+                It helps sift through exposures related to opportunity, physical and regulatory shocks associated to climate change.
+                The source of data is SEC annual financial disclosures.
                 </span>
               </li>
             </ul>
@@ -70,7 +70,7 @@ export default function Feed() {
           <Row className='ml-2 my-1'>
             <ul id="sidebar">
               <li className='bg-light p-2'>
-                <span className='card-title'>Filter by climate risk</span>
+                <span className='card-title'>Filter by climate change exposure </span>
               </li>
               <li className='p-2'>
                 {!loadingMetadata && riskTypes.map(e => { return (<Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`} onClick={handleFilter} value={e}>{e} {`${filters[e] ? '✕' : ''}`} </Button> <span className='button-divider' /></Fragment>) })}

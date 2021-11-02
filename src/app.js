@@ -15,7 +15,7 @@ const App = () => {
   }
 
   return (
-    <div className='container-flex bg-light px-0' id="app">
+    <div className='container-flex bg-white px-0' id="app">
       <NavBar />
       <Container className='body'>
           <Switch>

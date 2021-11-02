@@ -125,7 +125,7 @@ return (
       <Col sm={12} md={8}>
         <div className="p-3 border rounded-border bg-white">
           <h5><strong>Annual Financial Disclosures</strong></h5>
-          <span>Climate-related snippets</span>
+          <span>Top snippets</span>
           {renderDisclosures(data)}
         </div>
       </Col>
