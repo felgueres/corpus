@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom'
-import { Button, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap'
 
 
 const renderRow = (card) => {
@@ -26,7 +26,7 @@ const renderRow = (card) => {
             )}
           </OverlayTrigger>
           <span className='button-divider' />
-          <span className='card-company-name'>{card.company_name}</span>
+          <a className='card-company-name'>{card.company_name}</a>
           {/* {Object.entries(card.summary).map(([name, value]) => (<span> {name}, {value} </span>))} */}
           {/* {card.category} */}
         </span>

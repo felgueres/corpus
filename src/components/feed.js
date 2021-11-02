@@ -24,12 +24,20 @@ export default function Feed() {
     event.target.blur() //Removes focus 
   }
 
+  const feedHeader = 
+  (
+    <li className='p-3 header-title bg-light'>
+      Explore Companies
+    </li>
+  )
+
   return (
     <div>
       <Row className='my-3'>
         <Col md={8} className='px-0'>
           <ul id="feed" className="px-0">
             {loadingCompanyData && <div>Loading</div>}
+            {!loadingCompanyData && feedHeader}
             {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
           </ul>
           {!loadingCompanyData && paginator}
@@ -42,12 +50,9 @@ export default function Feed() {
               </li>
               <li className='p-2'>
                 <span className='card-main'>
-                In the near-future, lending capital will only be available to organizations with a strategy towards carbon net zero.                
+                ClimateDisclosures is a company-level database of climate risk and opportunities.
                 <br/>
-                <hr/>
-                ClimateDisclosures is a company-level database of climate-related risks and opportunities.
-                <br/>
-                It helps investors, creditors, underwriters and entrepreneurs to identify risks & opportunities to decarbonize US listed companies. 
+                It helps investors and entrepreneurs sift through the effects of climate change in the world of business and finance. 
                 </span>
               </li>
             </ul>
@@ -65,7 +70,7 @@ export default function Feed() {
           <Row className='ml-2 my-1'>
             <ul id="sidebar">
               <li className='bg-light p-2'>
-                <span className='card-title'>Filter by risk types</span>
+                <span className='card-title'>Filter by climate risk</span>
               </li>
               <li className='p-2'>
                 {!loadingMetadata && riskTypes.map(e => { return (<Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`} onClick={handleFilter} value={e}>{e} {`${filters[e] ? '✕' : ''}`} </Button> <span className='button-divider' /></Fragment>) })}

@@ -125,6 +125,7 @@
 .card-company-name {
     color: #24221e;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .climate-risk-gradient {
@@ -338,4 +339,9 @@
 
 .card-main { 
     font-size: 12px;
+}
+
+.header-title {
+    font-size: 14px;
+    font-weight: 600;
 }
