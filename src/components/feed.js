@@ -51,8 +51,9 @@ export default function Feed() {
               <li className='p-2'>
                 <span className='card-main'>
                 ClimateDisclosures is a company-level database of climate risk and opportunities.
-                It helps sift through exposures related to opportunity, physical and regulatory shocks associated to climate change.
-                The source of data is SEC annual financial disclosures.
+                It helps sift through exposures related to opportunity, physical damages and regulatory shocks associated to climate change.
+                <br/>
+                The source of data is annual financial disclosures filed to the SEC.
                 </span>
               </li>
             </ul>

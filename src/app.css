@@ -129,7 +129,7 @@
 }
 
 .climate-risk-gradient {
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,119,0,1));
+    background-image: linear-gradient(to right, #ec9f05, #ff4e00);
  }
  
 .null-gradient {
@@ -286,11 +286,6 @@
 .link-card {
     text-decoration: none;
 }
-
-
-
-
-
 
 .body {
     min-height: 800px;
