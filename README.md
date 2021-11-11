@@ -1,5 +1,7 @@
-In the near-future, lending capital will only be available to businesses that have a strategy in place to get to a low carbon future.
+ClimateDisclosures is a company-level database of climate risk and opportunities. 
 
-It helps investors, creditors, underwriters and entrepreneurs to identify opportunities that decarbonize the productive sector of the US.
+It helps sift through exposures related to opportunity, physical damages and regulatory shocks associated to climate change.
+
+The source of data is annual financial disclosures filed to the SEC.
 
 Runs at https://www.climate-disclosures.com
