@@ -83,7 +83,7 @@ export const SearchBar = () => {
           {searchResult && searchResult.map(searchItem => renderRow(searchItem))}
         </ul>
       </InputGroup>
-    </span>
+     </span>
   );
 };
 

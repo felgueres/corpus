@@ -129,7 +129,7 @@
 }
 
 .climate-risk-gradient {
-    background-image: linear-gradient(to right, #ec9f05, #ff4e00);
+    background-image: linear-gradient(to right, #1E9600, #FF0000);
  }
  
 .null-gradient {
@@ -365,4 +365,8 @@
 .header-title {
     font-size: 16px;
     font-weight: 600;
+}
+
+.no-top-border {
+    border-top: none;
 }

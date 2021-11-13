@@ -1,85 +1,86 @@
 import React, { useState } from 'react'
 import useOrganizationSearch from './useOrganizationSearch'
-import { Button, Col, Row } from 'react-bootstrap'
+import { Col, Row, Table, Form } from 'react-bootstrap'
+import { Link } from "react-router-dom";
 import useMetadata from './useMetadata'
 import usePagination from './usePagination'
 import renderRow from '../utils/renderUtils'
-import { Fragment } from 'react'
 
 export default function Feed() {
   const [filters, setFilters] = useState({})
   const { sectors, riskTypes, loadingMetadata } = useMetadata()
   const { companies, pagination, loadingCompanyData } = useOrganizationSearch(filters)
   const { paginator, idx } = usePagination(filters, pagination)
-
-  function handleFilter(event) {
-    let filterName = event.target.value
+  function handleFilter(event, filterType) {
+    let filterName = event.target.id
     setFilters(prevState => {
-      if (!prevState[filterName]) {
-        return { ...prevState, [filterName]: true }
-      } else {
-        return { ...prevState, [filterName]: !prevState[filterName] }
+      if (prevState[filterType] && prevState[filterType][filterName]) {
+        return {
+          ...prevState,
+          [filterType]: {
+            ...prevState[filterType], [filterName]: !prevState[filterType][filterName]
+          }
+        }
       }
+      else
+        return {
+          ...prevState,
+          [filterType]: {
+            ...prevState[filterType], [filterName]: true
+          }
+        }
     })
-    event.target.blur() //Removes focus 
+    event.target.blur()
   }
 
-  const feedHeader = 
-  (
-    <li className='p-3 header-title bg-light'>
-      Explore Companies
-    </li>
-  )
-
   return (
-    <div>
-      <Row className='my-3'>
-        <Col md={8} className='px-0'>
-          <ul id="feed" className="px-0">
+    <Row>
+      <Col xs={3}>
+        <Row><span className='card-title'>Filters & Sort</span></Row>
+        <Row><span className='card-title'>Sector</span></Row>
+        <Row>
+          <Form>
+            <div key='default-checkbox'>
+              {!loadingMetadata && sectors.map(e => { return (<Form.Check style={{ 'fontSize': '15px' }} type='checkbox' id={e} onChange={(e) => { handleFilter(e, 'sector') }} label={e}></Form.Check>) })}
+            </div>
+          </Form>
+        </Row>
+        <br />
+        <Row><span className='card-title'>Exposure Type</span></Row>
+        <Row>
+          <Form>
+            <div key='default-checkbox'>
+              {!loadingMetadata && riskTypes.map(e => { return (<Form.Check style={{ 'fontSize': '15px' }} type='checkbox' id={e} onChange={(e) => { handleFilter(e, 'risk_type') }} label={e}></Form.Check>) })}
+            </div>
+          </Form>
+        </Row>
+        <br />
+        <Row><span className='card-title'>Sentiment</span></Row>
+        <Row>
+          <Form>
+            <div key='default-checkbox'>
+              {!loadingMetadata && ["Low", "Med", "High"].map(e => { return (<Form.Check style={{ 'fontSize': '15px' }} type='checkbox' id={e} onChange={(e) => { handleFilter(e, 'sentiment') }} label={e}></Form.Check>) })}
+            </div>
+          </Form>
+        </Row>
+        <Row><Link>feedback/contact</Link></Row>
+      </Col>
+      <Col>
+        <Table>
+          <thead className='card-title'>
+            <tr>
+              <th>Company</th>
+              <th>Sector</th>
+              {['Regulation', 'Physical', 'Opportunity'].map(label => <th>{label}</th>)}
+            </tr>
+          </thead>
+          <tbody>
             {loadingCompanyData && <div>Loading</div>}
-            {!loadingCompanyData && feedHeader}
             {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
-          </ul>
-          {!loadingCompanyData && paginator}
-        </Col>
-        <Col>
-          <Row className='ml-2'>
-            <ul id="sidebar">
-              <li className='bg-light p-2'>
-                <span className='card-title'>What is ClimateDisclosures?</span>
-              </li>
-              <li className='p-2'>
-                <span className='card-main'>
-                ClimateDisclosures is a company-level database of climate risk and opportunities.
-                It helps sift through exposures related to opportunity, physical damages and regulatory shocks associated to climate change.
-                <br/>
-                The source of data is annual financial disclosures filed to the SEC.
-                </span>
-              </li>
-            </ul>
-          </Row>
-          <Row className='ml-2 my-1'>
-            <ul id="sidebar">
-              <li className='bg-light p-2'>
-                <span className='card-title'>Filter by sector</span>
-              </li>
-              <li className='p-2'>
-                {!loadingMetadata && sectors.map(e => { return (<Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`} onClick={handleFilter} value={e}>{e} {`${filters[e] ? '✕' : ''}`} </Button> <span className='button-divider' /></Fragment>) })}
-              </li>
-            </ul>
-          </Row>
-          <Row className='ml-2 my-1'>
-            <ul id="sidebar">
-              <li className='bg-light p-2'>
-                <span className='card-title'>Filter by climate change exposure </span>
-              </li>
-              <li className='p-2'>
-                {!loadingMetadata && riskTypes.map(e => { return (<Fragment><Button key={e} className={`button-pill ${filters[e] ? 'active-filter' : null}`} onClick={handleFilter} value={e}>{e} {`${filters[e] ? '✕' : ''}`} </Button> <span className='button-divider' /></Fragment>) })}
-              </li>
-            </ul>
-          </Row>
-        </Col>
-      </Row>
-    </div>
+          </tbody>
+        </Table>
+        {!loadingCompanyData && paginator}
+      </Col>
+    </Row>
   )
 }
