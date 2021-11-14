@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div className='bg-white '>
       <Container>
-        <Navbar className="py-4" >
+        <Navbar className="py-4 px-0" >
           <Navbar.Brand className="navbar-font" href="/">ClimateDisclosures</Navbar.Brand>
           <NavbarCollapse className='justify-content-center'>
             <SearchBar />

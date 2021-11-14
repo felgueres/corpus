@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Button, Nav } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 
 export default function usePagination(filters, pagination) {
-  const pageLimit = 5
+  const pageLimit = 3
   const dataLimit = 10
   const [numPages, setNumPages] = useState(1)
   const [curPage, setCurPage] = useState(1)
@@ -28,26 +28,36 @@ export default function usePagination(filters, pagination) {
     return new Array(Math.min(pageLimit, numPages)).fill().map((_, idx) => start + idx + 1);
   };
 
-  const getIndeces= () => {
+  const getIndeces = () => {
     let startIdx = curPage * dataLimit - dataLimit
-    let endIdx = startIdx+dataLimit
-    return {startIdx, endIdx}
+    let endIdx = startIdx + dataLimit
+    return { startIdx, endIdx }
   }
 
   const paginator = (
-    <Nav className='justify-content-center'>
-      <Button onClick={goToPreviousPage} className={`btn-light prev ${curPage === 1 ? 'disabled' : ''}`}>
-        Previous
-      </Button>
-      {numPages && getPaginationGroup().map((item, index) => (
-        <Button key={index} onClick={changePage} className={`btn-light ${curPage === item ? 'active' : null}`}>
-          {item}
-        </Button>))}
-      <Button onClick={goToNextPage} className={`btn-light next ${curPage === numPages ? 'disabled' : ''}`}>
-        Next
-      </Button>
-    </Nav>
+    <Col>
+      <Row className='my-1'>
+        <div className='mx-auto'>
+          <Button onClick={goToPreviousPage} className={`btn-light prev ${curPage === 1 ? 'disabled' : ''}`}>
+            Previous
+          </Button>
+          {numPages && getPaginationGroup().map((item, index) => (
+            <Button key={index} onClick={changePage} className={`btn-light ${curPage === item ? 'active' : null}`}>
+              {item}
+            </Button>))}
+          <Button onClick={goToNextPage} className={`btn-light next ${curPage === numPages ? 'disabled' : ''}`}>
+            Next
+          </Button>
+        </div>
+      </Row>
+      <Row className='my-2'>
+        <div className='mx-auto'>
+          Showing {pagination.total_items} companies, Page: {curPage} of {numPages}
+        </div>
+      </Row>
+    </Col>
   );
+
 
   var idx = getIndeces()
 
