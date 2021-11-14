@@ -39,7 +39,7 @@ export default function Feed() {
       <Row>
         <Col xs={3}>
           <Row><span className='card-title'>Filters </span></Row>
-          <Row><span className='card-title'>Sector</span></Row>
+          <Row><span className='card-title'>Industry Group</span></Row>
           <Row>
             <Form>
               <div key='default-checkbox'>
