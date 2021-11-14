@@ -1,11 +1,8 @@
-import React from "react";
-const loading =
-  "https://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg";
-
+import { Spinner, Row } from "react-bootstrap";
 const Loading = () => (
-  <div className="spinner">
-    <img src={loading} alt="Loading" />
-  </div>
+  <Row>
+    <Spinner animation="border" className='ml-auto mr-auto'/>
+  </Row>
 );
 
 export default Loading;

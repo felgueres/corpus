@@ -36,7 +36,7 @@ export default function usePagination(filters, pagination) {
 
   const paginator = (
     <Col>
-      <Row className='my-1'>
+      <Row className='my-4'>
         <div className='mx-auto'>
           <Button onClick={goToPreviousPage} className={`btn-light prev ${curPage === 1 ? 'disabled' : ''}`}>
             Previous
@@ -50,7 +50,7 @@ export default function usePagination(filters, pagination) {
           </Button>
         </div>
       </Row>
-      <Row className='my-2'>
+      <Row className='my-4'>
         <div className='mx-auto'>
           Showing {pagination.total_items} companies, Page: {curPage} of {numPages}
         </div>

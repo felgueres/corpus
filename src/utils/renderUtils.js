@@ -3,7 +3,7 @@ import { BsChevronCompactUp, BsDashLg } from 'react-icons/bs'
 
 const renderRow = (card) => {
   const gradientPlot = (data, exposureType) => {
-    let total = Object.values(data).reduce((a, b) => a + b, 0)
+    // let total = Object.values(data).reduce((a, b) => a + b, 0)
     // let exposure = Math.floor((data[exposureType] / total) * 100 / 25)
     let exposure = data[exposureType]
     // if (exposure > 0 && exposure < 1) {

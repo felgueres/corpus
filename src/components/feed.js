@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import useOrganizationSearch from './useOrganizationSearch'
-import { Button, Col, Row, Table, Form } from 'react-bootstrap'
+import { Col, Row, Table, Form } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import useMetadata from './useMetadata'
 import usePagination from './usePagination'
 import renderRow from '../utils/renderUtils'
+import Loading from './loading';
 
 export default function Feed() {
   const [filters, setFilters] = useState({})
@@ -37,7 +38,7 @@ export default function Feed() {
     <span>
       <Row>
         <Col xs={3}>
-          <Row><span className='card-title'>Filters</span></Row>
+          <Row><span className='card-title'>Filters </span></Row>
           <Row><span className='card-title'>Sector</span></Row>
           <Row>
             <Form>
@@ -56,7 +57,7 @@ export default function Feed() {
             </Form>
           </Row>
           <br />
-          <Row><span className='card-title'>Sentiment</span></Row>
+          <Row><span className='card-title'>Risk Sentiment</span></Row>
           <Row>
             <Form>
               <div key='default-checkbox'>
@@ -65,16 +66,13 @@ export default function Feed() {
             </Form>
           </Row>
           <br />
-          <Row><Link>feedback/contact</Link></Row>
-          <br />
-          <Row>
-            <Button>
-              Buy dataset ($20 USD)
-            </Button>
-          </Row>
+          <Row><Link>Feedback / Contact</Link></Row>
         </Col>
-        <Col>
-          <Table>
+        <Col> 
+         {loadingCompanyData && <Loading/>}
+         {!loadingCompanyData &&
+         <div>
+          <Table className=''>
             <thead className='card-title'>
               <tr>
                 <th>Company</th>
@@ -83,12 +81,12 @@ export default function Feed() {
               </tr>
             </thead>
             <tbody>
-              {loadingCompanyData && <div>Loading</div>}
               {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
             </tbody>
           </Table>
-          {!loadingCompanyData && paginator}
-          {/* {!loadingCompanyData && showing_items} */}
+          {paginator}
+         </div>
+         }
         </Col>
       </Row>
     </span>)

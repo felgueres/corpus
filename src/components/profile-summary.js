@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Button } from "react-bootstrap";
 import useOrganizationProfile from "./useOrganizationProfile";
 
 const ProfileSummary = ({ match }) => {
@@ -78,11 +78,11 @@ const ProfileSummary = ({ match }) => {
           <br />
         </span>)
     }
-    var disclosures = organizationData.disclosures;
+    var company_disclosures = organizationData.disclosures;
 
     return (
       <div>
-        {Object.entries(disclosures).map(([year, disclosure],) => renderDisclosure(year, disclosure))}
+        {Object.entries(company_disclosures).map(([year, disclosure],) => renderDisclosure(year, disclosure))}
       </div>
     )
   }
