@@ -7,7 +7,7 @@ const Footer = () => (
     <Container className='px-0'>
     <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-5 bg-white">
       <div className="col-md-11 d-flex align-items-center">
-        <span><strong className="navbar-font">ClimateDisclosures</strong> is a climate risk dataset and visualization tool for investors.</span>
+        <span><strong className="navbar-font">ClimateDisclosures</strong> is a dataset and visualization tool for investors focusing on pricing climate risk.</span>
       </div>
       <ul className="col-md-1 justify-content-end list-unstyled d-flex">
         <li className="px-3"><a href="https://twitter.com/dbclimate"><BsTwitter/></a></li>

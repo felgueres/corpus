@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useOrganizationSearch from './useOrganizationSearch'
-import { Col, Row, Table, Form } from 'react-bootstrap'
+import { Col, Button, Row, Table, Form } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import useMetadata from './useMetadata'
 import usePagination from './usePagination'
@@ -67,6 +67,8 @@ export default function Feed() {
           </Row>
           <br />
           <Row><Link>Feedback / Contact</Link></Row>
+          <br />
+          <Row><Button>Buy Dataset ($50) </Button></Row>
         </Col>
         <Col> 
          {loadingCompanyData && <Loading/>}
