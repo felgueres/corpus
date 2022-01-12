@@ -24,9 +24,9 @@ const renderRow = (card) => {
   }
   return (
     <tr style={{ 'fontSize': '11px' }}>
-      <td><Link to={`/profiles/${card.company_name}`}>{card.company_name}</Link></td>
-      <td>{card.category}</td>
-      {['regulation', 'physical', 'opportunity'].map((exposureType) => gradientPlot(card.summary, exposureType))}
+      <td><Link to={`/profiles/${card.name}`}>{card.name}</Link></td>
+      <td>{card.exchanges}</td>
+      {/* {['regulation', 'physical', 'opportunity'].map((exposureType) => gradientPlot(card.summary, exposureType))} */}
     </tr>
   )
 }

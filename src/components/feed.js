@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import useOrganizationSearch from './useOrganizationSearch'
+import useCompanySearch from './useCompanySearch'
 import { Col, Button, Row, Table, Form } from 'react-bootstrap'
-import { Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import useMetadata from './useMetadata'
 import usePagination from './usePagination'
 import renderRow from '../utils/renderUtils'
@@ -10,7 +11,7 @@ import Loading from './loading';
 export default function Feed() {
   const [filters, setFilters] = useState({})
   const { sectors, riskTypes, loadingMetadata } = useMetadata()
-  const { companies, pagination, loadingCompanyData } = useOrganizationSearch(filters)
+  const { companies, pagination, loadingCompanyData } = useCompanySearch(filters)
   const { paginator, idx } = usePagination(filters, pagination)
   function handleFilter(event, filterType) {
     let filterName = event.target.id
@@ -33,6 +34,28 @@ export default function Feed() {
     })
     event.target.blur()
   }
+  const cols = ['cik',
+  'name',
+  'tickers',
+  'exchanges',
+  'filing_date',
+  'sic',
+  'sic_description',
+  'url',
+  'cc_exposure',
+  'cc_sentiment',
+  'cc_risk',
+  'regulatory_exposure',
+  'regulatory_sentiment',
+  'regulatory_risk',
+  'physical_exposure',
+  'physical_sentiment',
+  'physical_risk',
+  'opportunity_exposure',
+  'opportunity_sentiment',
+  'opportunity_risk',
+  'bigrams_count'
+  ]
 
   return (
     <span>
@@ -66,9 +89,11 @@ export default function Feed() {
             </Form>
           </Row>
           <br />
-          <Row><Link>Feedback / Contact</Link></Row>
-          <br />
-          <Row><Button>Buy Dataset ($50) </Button></Row>
+          <Row>
+            <a href="https://felgueres.gumroad.com/l/climatedisclosuresdataset">
+              <Button>Buy Dataset ($25) </Button>
+            </a>
+          </Row>
         </Col>
         <Col> 
          {loadingCompanyData && <Loading/>}
@@ -77,9 +102,7 @@ export default function Feed() {
           <Table className=''>
             <thead className='card-title'>
               <tr>
-                <th>Company</th>
-                <th>Sector</th>
-                {['Regulation', 'Physical', 'Opportunity'].map(label => <th>{label}</th>)}
+                {cols.map(label => <th>{label}</th>)}
               </tr>
             </thead>
             <tbody>
