@@ -34,34 +34,19 @@ export default function Feed() {
     })
     event.target.blur()
   }
-  const cols = ['cik',
+  const cols = [
   'name',
   'tickers',
-  'exchanges',
-  'filing_date',
-  'sic',
   'sic_description',
-  'url',
-  'cc_exposure',
-  'cc_sentiment',
-  'cc_risk',
-  'regulatory_exposure',
   'regulatory_sentiment',
-  'regulatory_risk',
-  'physical_exposure',
   'physical_sentiment',
-  'physical_risk',
-  'opportunity_exposure',
   'opportunity_sentiment',
-  'opportunity_risk',
-  'bigrams_count'
   ]
 
   return (
     <span>
       <Row>
         <Col xs={3}>
-          <Row><span className='card-title'>Filters </span></Row>
           <Row><span className='card-title'>Industry Group</span></Row>
           <Row>
             <Form>

@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom'
 import { BsChevronCompactUp, BsDashLg } from 'react-icons/bs'
 
+const cols = [
+'tickers',
+'sicDescription',
+'regulatory_sentiment',
+'physical_sentiment',
+'opportunity_sentiment',
+]
+
+
 const renderRow = (card) => {
   const gradientPlot = (data, exposureType) => {
     // let total = Object.values(data).reduce((a, b) => a + b, 0)
@@ -25,6 +34,7 @@ const renderRow = (card) => {
   return (
     <tr style={{ 'fontSize': '11px' }}>
       <td><Link to={`/profiles/${card.name}`}>{card.name}</Link></td>
+      {cols.map(label => <td>{card[label]}</td>)}
       <td>{card.exchanges}</td>
       {/* {['regulation', 'physical', 'opportunity'].map((exposureType) => gradientPlot(card.summary, exposureType))} */}
     </tr>
