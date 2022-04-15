@@ -7,7 +7,7 @@ import feed from "../components/feed";
 export const Profiles = ({ match }) => {
 
   return (
-    <Row className='px-3 py-3'>
+    <Row className='px-0'>
       <Col>
           <Switch>
             <Route path={`${match.path}`} exact component={feed} />

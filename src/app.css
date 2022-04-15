@@ -1,6 +1,7 @@
 .frame {
     border-top:8px #002147 solid;
     max-width: 990px;
+    min-width: 630px;
     min-height: 1024px;
 }
 
@@ -19,6 +20,20 @@
     line-height: 16px;
     align-self: center;
     margin-left: 16px;
+}
+.browse-list {
+    column-count: 5;
+    margin: 0;
+}
+.browse-item {
+    font-family: Helvetica;
+    font-size: 11px;
+    line-height: 18px;
+    list-style-type: None;
+}
+
+.browse-item-link {
+    color: #444444    ;
 }
 
 .navbar-bg {
