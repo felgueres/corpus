@@ -25,7 +25,7 @@
 }
 
 .nav-links {
-  font-family: 'Inter', sans-serif;
+  font-family: Helvetica, Tahoma, sans-serif;
   color: grey;
   text-decoration:none;
   font-weight: 400;
@@ -34,7 +34,7 @@
 
 .brand {
   color: #5a564f;
-  font-family: 'Inter', sans-serif;
+  font-family: Helvetica, Tahoma, sans-serif;
   margin-bottom: 50px;
   font-weight: 600;
   font-size: 18px;
@@ -42,9 +42,8 @@
 }
 
 .navbar-font {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
+  font-family: Helvetica, Tahoma, sans-serif;
+  font-size: 12px;
 }
 
 .navbar-layout {
@@ -61,7 +60,7 @@
 }
 
 .navbar-font-cta {
-  font-family: 'Inter', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #23B5D3;
   font-weight: 600;
   font-size: 18px;

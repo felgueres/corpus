@@ -70,14 +70,9 @@ export const SearchBar = () => {
 
   return (
     <span className="searchbar-block">
-      <Form.Row>
         <InputGroup>
-          <Form.Control onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" autoComplete="off" className="searchbar" placeholder="Find a company by name" onChange={event => { handleSearch(event) }} />
-          <InputGroup.Prepend>
-            <InputGroup.Text className="search"><BsSearch /></InputGroup.Text>
-          </InputGroup.Prepend>
+          <Form.Control onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" autoComplete="off" className="searchbar-frame" placeholder="Search for industries, companies and more" onChange={event => { handleSearch(event) }} />
         </InputGroup>
-      </Form.Row>
       <InputGroup>
         <ul className="overflow-y-scroll" role="listbox">
           {searchResult && searchResult.map(searchItem => renderRow(searchItem))}

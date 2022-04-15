@@ -1,3 +1,30 @@
+.frame {
+    border-top:8px #002147 solid;
+    max-width: 990px;
+    min-height: 1024px;
+}
+
+.footer-frame {
+    border-top: 2px #002147 solid;
+}
+
+.browse-row {
+    background-color: #002147;
+    height: 37px;
+}
+
+.browse {
+    color:#E5E5E5;
+    font-size: 13px;
+    line-height: 16px;
+    align-self: center;
+    margin-left: 16px;
+}
+
+.navbar-bg {
+    background-color: #FAF9F2;
+}
+
 .label-as-badge {
     border-radius: 1em;
 }
@@ -39,19 +66,25 @@
     }
 }
 
+
+.searchbar-frame {
+    border-radius: 0px;
+    max-width: 326px;
+    max-height: 29px;
+}
+
 .searchbar-block {
-    width: 500px;
+    width: 326px;
+    max-height: 29px;
 }
 
 .search-child {
     color:#5a564f;
-    font-weight: 400;
 }
 
 ::placeholder {
-    font-size: 16px;
-    font-weight: 400;
-    color: #5a564f;
+    font-family: Helvetica;
+    font-size: 12px;
 }
 
 .table-title {
@@ -130,14 +163,13 @@
 
 .searchbar-list {
     list-style-type: none;
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-family: Helvetica; 
     display: 'inline';
     padding: 12px;
 }
 
 .searchbar-margin {
-    border-radius: 50px;
     border-style: solid;
     border-width: thin;
 }
@@ -274,9 +306,6 @@
     text-decoration: none;
 }
 
-.body {
-    min-height: 800px;
-}
 
 .border-card {
     border-radius: 8px;

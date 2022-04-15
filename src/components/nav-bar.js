@@ -5,15 +5,14 @@ import { SearchBar } from ".";
 
 const NavBar = () => {
   return (
-    <div className='bg-white '>
-      <Container>
-        <Navbar className="py-4 px-0" >
-          <Navbar.Brand className="navbar-font" href="/">ClimateDisclosures</Navbar.Brand>
+    <div className='navbar-bg'>
+        <Navbar className="py-4" >
+          <Navbar.Brand className="navbar-font" href="/">American Machina [V0.0]</Navbar.Brand>
           <NavbarCollapse className='justify-content-center'>
             <SearchBar />
           </NavbarCollapse>
+          <Navbar.Text className="navbar-font">feedback | updates</Navbar.Text>
         </Navbar>
-      </Container>
     </div>
   );
 };
