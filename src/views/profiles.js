@@ -7,14 +7,12 @@ import feed from "../components/feed";
 export const Profiles = ({ match }) => {
 
   return (
-    <Row className='px-0'>
-      <Col>
+      <div>
           <Switch>
             <Route path={`${match.path}`} exact component={feed} />
             <Route path={`${match.path}profiles/:organizationId`} exact component={ProfileSummary} />
           </Switch>
-      </Col>
-    </Row>
+      </div>
   );
 };
 

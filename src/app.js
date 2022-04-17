@@ -3,8 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Footer, Loading, NavBar } from "./components";
 import { Profiles } from "./views";
+import { Container } from "react-bootstrap";
 import "./app.css";
-import { Container, Row } from "react-bootstrap";
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -16,10 +16,7 @@ const App = () => {
   return (
     <Container className='frame px-0' id="app">
       <NavBar />
-      <Container className="frame">
-        <Row className="browse-row">
-          <span className="browse">Browse by Industry ◢</span>
-        </Row>
+      <Container className="frame px-0">
         <Switch>
           <Route path="/" component={Profiles} />
         </Switch>

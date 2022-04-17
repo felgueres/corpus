@@ -15,7 +15,7 @@ export default function useMetadata() {
           headers: { 'Content-Type': 'application/json' },
         })
         response = await response.json()
-        setSectors(response[0]['sectors'])
+        setSectors(response[0]['sic_3d'])
         setRiskTypes(response[0]['risk_types'])
         setLoadingMetadata(false)
       } catch (error) {

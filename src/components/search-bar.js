@@ -71,7 +71,7 @@ export const SearchBar = () => {
   return (
     <span className="searchbar-block">
         <InputGroup>
-          <Form.Control onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" autoComplete="off" className="searchbar-frame" placeholder="Search for industries, companies and more" onChange={event => { handleSearch(event) }} />
+          <Form.Control onBlur={handleClear} value={searchTerm} aria-labelledby="downshift-0-label" type="text" autoComplete="off" className="searchbar-frame" placeholder="Search ..." onChange={event => { handleSearch(event) }} />
         </InputGroup>
       <InputGroup>
         <ul className="overflow-y-scroll" role="listbox">
