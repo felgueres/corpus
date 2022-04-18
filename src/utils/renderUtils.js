@@ -7,14 +7,13 @@ const cols = [
 'physical_sentiment',
 'opportunity_sentiment',
 ]
+// Card has name, exchanges, tickers, etc as propertirs
 
 const renderRow = (card) => {
   return (
-    <tr style={{ 'fontSize': '11px' }}>
-      <td><Link to={`/profiles/${card.name}`}>{card.name}</Link></td>
-      {cols.map(label => <td>{card[label]}</td>)}
-      <td>{card.exchanges}</td>
-    </tr>
+    <li>
+      <a to={`/profiles/${card.name}`}>{card.name}</a>
+    </li>
   )
 }
 

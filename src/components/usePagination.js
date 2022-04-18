@@ -36,22 +36,22 @@ export default function usePagination(filters, pagination) {
 
   const paginator = (
     <Col>
-      <Row className='my-4'>
+      <Row className='my-4 navbar-font'>
         <div className='mx-auto'>
-          <Button onClick={goToPreviousPage} className={`btn-light prev ${curPage === 1 ? 'disabled' : ''}`}>
+          <a role='button' onClick={goToPreviousPage} className={`btn-light prev ${curPage === 1 ? 'disabled' : ''}`}>
             Previous
-          </Button>
+          </a>
           {numPages && getPaginationGroup().map((item, index) => (
-            <Button key={index} onClick={changePage} className={`btn-light ${curPage === item ? 'active' : null}`}>
+            <a role='button' key={index} onClick={changePage} className={`btn-light ${curPage === item ? 'active' : null}`}>
               {item}
-            </Button>))}
-          <Button onClick={goToNextPage} className={`btn-light next ${curPage === numPages ? 'disabled' : ''}`}>
+            </a>))}
+          <a role='button' onClick={goToNextPage} className={`btn-light next ${curPage === numPages ? 'disabled' : ''}`}>
             Next
-          </Button>
+          </a>
         </div>
       </Row>
       <Row className='my-4'>
-        <div className='mx-auto'>
+        <div className='mx-auto navbar-font'>
           Showing {pagination.total_items} companies, Page: {curPage} of {numPages}
         </div>
       </Row>
