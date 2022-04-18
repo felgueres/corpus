@@ -6,7 +6,6 @@ import Loading from './loading';
 import { CATEGORIESNAVBAR } from "../utils";
 import { Link } from "react-router-dom";
 import useEscape from "./useEscape";
-import { Row } from 'react-bootstrap';
 
 export default function Feed() {
   const [filters, setFilters] = useState(false)
@@ -46,7 +45,7 @@ export default function Feed() {
           <span style={{ 'paddingLeft': '16px' }}>Browse by Industry</span>
           <span style={{ 'fontSize': '6px' }}> ◢</span>
         </button>
-          <ul className="dropdown-content">
+          <ul className={`dropdown-content ${isBrowseVisible ? 'no-hover' : 'no-hover'}`}>
             {Object.entries(CATEGORIESNAVBAR).map(([idx, category],) => getCategoryItems(idx, category))}
           </ul>
       </div>

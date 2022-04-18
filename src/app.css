@@ -30,6 +30,10 @@
     padding-left: 0px !important;
 }
 
+.dropdown-content .notVisible {
+    display: none !important;
+}
+
 /* Links inside the dropdown */
 .dropdown-content .dropdown-category {
     color: black;
@@ -65,7 +69,13 @@
     background-color: #3e8e41;
 }
 
+.dropdown-content:not(.no-hover) .dropdown:hover { /* only apply hover styling when the div does not have the class 'no-hover' */
+    display: none;
+  }
+
+
 /* BARNAV END */
+
 .body {
     font-family: Helvetica;
 }
