@@ -41,16 +41,16 @@ export default function Feed() {
   return (
     <div>
       <div className='dropdown'>
-        <button className="dropbtn">
+        <button className="dropbtn" onClick={()=>setisBrowseVisible(!isBrowseVisible)}>
           <span style={{ 'paddingLeft': '16px' }}>Browse by Industry</span>
           <span style={{ 'fontSize': '6px' }}> ◢</span>
         </button>
-          <ul className={`dropdown-content ${isBrowseVisible ? 'no-hover' : 'no-hover'}`}>
+          <ul className={`dropdown-content ${isBrowseVisible? 'isActive' : ''}`}>
             {Object.entries(CATEGORIESNAVBAR).map(([idx, category],) => getCategoryItems(idx, category))}
           </ul>
       </div>
 
-      <section>
+      <section className='browseTitle'>
         {!browseIndustry && `Browse`}
         {browseIndustry && ` ${CATEGORIESNAVBAR[browseIndustry.sic_2d].humanReadable} / ${CATEGORIESNAVBAR[browseIndustry.sic_2d].subindustries[browseIndustry.sic_3d].humanReadable}`}
       </section>
@@ -60,10 +60,8 @@ export default function Feed() {
         <ul id='companiesnav'>
           {!loadingCompanyData &&
             <span>
-              <tbody>
                 {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
-              </tbody>
-              {paginator}
+              {/* {paginator} */}
             </span>
           }
         </ul>
