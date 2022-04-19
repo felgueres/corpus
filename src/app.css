@@ -76,7 +76,7 @@
     border-top: 8px #002147 solid;
     max-width: 990px;
     min-width: 630px;
-    min-height: 600px;
+    min-height: 990px;
 }
 
 #frame-2 {
@@ -87,22 +87,27 @@
 #companiesnav {
     padding-left: 4px;
     padding-right: 4px;
-    height: 100%;
-    max-width: 160px;
+    width: 100%;
+    height: 80px;
     font-family: Helvetica;
     font-style: normal;
     background-color: #FAF9F2;
 }
 
+#companiesnav {
+    column-count: 4;
+    margin: 0;
+}
+
 #companiesnav a {
     font-size: 11px;
+    color: #444;
 }
 
 #companiesnav li {
-    overflow-wrap: break-word;
     list-style-type: None;
-    line-height: 1;
-    overflow: hidden;
+    line-height: 1.2;
+    padding: 0
 }
 
 

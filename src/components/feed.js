@@ -41,31 +41,30 @@ export default function Feed() {
   return (
     <div>
       <div className='dropdown'>
-        <button className="dropbtn" onClick={()=>setisBrowseVisible(!isBrowseVisible)}>
+        <button className="dropbtn" onClick={() => setisBrowseVisible(!isBrowseVisible)}>
           <span style={{ 'paddingLeft': '16px' }}>Browse by Industry</span>
           <span style={{ 'fontSize': '6px' }}> ◢</span>
         </button>
-          <ul className={`dropdown-content ${isBrowseVisible? 'isActive' : ''}`}>
-            {Object.entries(CATEGORIESNAVBAR).map(([idx, category],) => getCategoryItems(idx, category))}
-          </ul>
+        <ul className={`dropdown-content ${isBrowseVisible ? 'isActive' : ''}`}>
+          {Object.entries(CATEGORIESNAVBAR).map(([idx, category],) => getCategoryItems(idx, category))}
+        </ul>
       </div>
 
       <section className='browseTitle'>
         {!browseIndustry && `Browse`}
         {browseIndustry && ` ${CATEGORIESNAVBAR[browseIndustry.sic_2d].humanReadable} / ${CATEGORIESNAVBAR[browseIndustry.sic_2d].subindustries[browseIndustry.sic_3d].humanReadable}`}
+        {paginator}
       </section>
-      
-      <div id='frame-2'>
-        {loadingCompanyData && <Loading />}
-        <ul id='companiesnav'>
-          {!loadingCompanyData &&
-            <span>
+      <section>
+        {loadingCompanyData && <span id='companiesnav'>loading</span>}
+          <ul id='companiesnav'>
+            {!loadingCompanyData &&
+              <span>
                 {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
-              {/* {paginator} */}
-            </span>
-          }
-        </ul>
-      </div>
+              </span>
+            }
+          </ul>
+      </section>
     </div >
   )
 }

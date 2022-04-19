@@ -1,9 +1,9 @@
-
+import { Link } from "react-router-dom";
 
 const renderRow = (card) => {
   return (
-    <li>
-      <a to={`/profiles/${card.name}`}>{card.name}</a>
+    <li style={{'textDecoration': 'None'}}>
+      <Link to={`/organizations/${card.cik}`}>{card.name}</Link>
     </li>
   )
 }

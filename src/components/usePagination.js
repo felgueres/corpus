@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 
 export default function usePagination(filters, pagination) {
   const pageLimit = 3
-  const dataLimit = 15 
+  const dataLimit = 15
   const [numPages, setNumPages] = useState(1)
   const [curPage, setCurPage] = useState(1)
 
@@ -35,21 +35,24 @@ export default function usePagination(filters, pagination) {
   }
 
   const paginator = (
-    <div className='navbar-font'>
-      <a role='button' onClick={goToPreviousPage} className={`btn-light prev ${curPage === 1 ? 'disabled' : ''}`}>
-        Back
-      </a>
-      {numPages && getPaginationGroup().map((item, index) => (
-        <a role='button' key={index} onClick={changePage} className={`btn-light ${curPage === item ? 'active' : null}`}>
-          {item}
-        </a>))}
-      <a role='button' onClick={goToNextPage} className={`btn-light next ${curPage === numPages ? 'disabled' : ''}`}>
-        Next
-      </a>
-      Showing {pagination.total_items} companies, Page: {curPage} of {numPages}
+    <div className='navbar-font' style={{ 'float': 'right' }}>
+        You are looking at {pagination.total_items} companies, 
+        page {curPage} of {numPages}.
+        <span> </span>
+        <a role='button' onClick={goToPreviousPage} className={`prev ${curPage === 1 ? 'disabled' : ''}`}>
+        [Back</a>
+        <span> | </span>
+        <a role='button' onClick={goToNextPage} className={`next ${curPage === numPages ? 'disabled' : ''}`}>
+          Next]
+        </a>
+
     </div>
   );
 
+  {/* {numPages && getPaginationGroup().map((item, index) => (
+        <a role='button' key={index} onClick={changePage} className={`${curPage === item ? 'active' : null}`}>
+          {item}
+        </a>))} */}
 
   var idx = getIndeces()
 
