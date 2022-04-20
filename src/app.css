@@ -77,10 +77,6 @@
     color: #633D5D;
 }
 
-.body {
-    font-family: Helvetica;
-}
-
 .frame {
     border-top: 8px #002147 solid;
     max-width: 990px;
@@ -119,15 +115,36 @@
     padding: 0
 }
 
+/* Company Profile Page */
+
 #profilesummary {
     padding-top: 8px;
     font-family: Helvetica;
     font-size: 12px;
 }
 
-#profilesummary h4,h3,h2,h1 {
+#profilesummary h4 {
     font-family: Helvetica;
+    font-size: 15px;
+    line-height: 16px;
+    color:#633D5D
 }
+
+#company-facts li {
+    font-size: 10px;
+    list-style-type: None;
+    border-bottom: 1px #E5E5E5 solid;
+    max-width: 250px;
+    line-height: 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#company-facts {
+    padding-left: 0px;
+}
+
+/* Company profile end */
 
 .footer-frame {
     border-top: 2px #002147 solid;

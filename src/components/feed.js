@@ -37,6 +37,30 @@ export default function Feed() {
     )
   }
 
+  if (loadingCompanyData) {
+    return (
+      <div>
+        <div className='grid-container dropdown'>
+          <button className="dropbtn" onClick={() => setisBrowseVisible(!isBrowseVisible)}>
+            <span style={{ 'paddingLeft': '16px' }}>Browse by Industry</span>
+            <span style={{ 'fontSize': '6px' }}> ◢</span>
+          </button>
+        </div>
+        <section className='browseTitle'>
+          <span>Browse</span>
+        </section>
+
+        <section>
+          {
+            <ul id='companiesnav'>
+              <li>...</li>
+            </ul>
+          }
+        </section>
+      </div>
+    )
+  }
+
   return (
     <div>
       <div className='grid-container dropdown'>
@@ -54,6 +78,7 @@ export default function Feed() {
         {browseIndustry && ` ${CATEGORIESNAVBAR[browseIndustry.sic_2d].humanReadable} / ${CATEGORIESNAVBAR[browseIndustry.sic_2d].subindustries[browseIndustry.sic_3d].humanReadable}`}
         {paginator}
       </section>
+
       <section>
         {!loadingCompanyData &&
           <ul id='companiesnav'>
