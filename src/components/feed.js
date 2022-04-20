@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import useCompanySearch from './useCompanySearch'
 import usePagination from './usePagination'
 import renderRow from '../utils/renderUtils'
-import Loading from './loading';
 import { CATEGORIESNAVBAR } from "../utils";
 import { Link } from "react-router-dom";
 import useEscape from "./useEscape";
@@ -56,14 +55,11 @@ export default function Feed() {
         {paginator}
       </section>
       <section>
-        {loadingCompanyData && <span id='companiesnav'>loading</span>}
+        {!loadingCompanyData &&
           <ul id='companiesnav'>
-            {!loadingCompanyData &&
-              <span>
-                {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
-              </span>
-            }
+            {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
           </ul>
+        }
       </section>
     </div >
   )

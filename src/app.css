@@ -1,5 +1,8 @@
-/* BARNAV */
+#app {
+    font-family: Helvetica;
+}
 
+/* BARNAV */
 /* Dropdown Button */
 .dropbtn {
     background-color: #002147;
@@ -76,7 +79,7 @@
     border-top: 8px #002147 solid;
     max-width: 990px;
     min-width: 630px;
-    min-height: 990px;
+    min-height: 550px;
 }
 
 #frame-2 {
@@ -91,13 +94,11 @@
     height: 80px;
     font-family: Helvetica;
     font-style: normal;
+    column-count: 4;
+    margin: 0;
     background-color: #FAF9F2;
 }
 
-#companiesnav {
-    column-count: 4;
-    margin: 0;
-}
 
 #companiesnav a {
     font-size: 11px;
@@ -110,6 +111,15 @@
     padding: 0
 }
 
+#profilesummary {
+    padding-top: 8px;
+    font-family: Helvetica;
+    font-size: 12px;
+}
+
+#profilesummary h4,h3,h2,h1 {
+    font-family: Helvetica;
+}
 
 .footer-frame {
     border-top: 2px #002147 solid;
