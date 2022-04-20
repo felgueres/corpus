@@ -39,7 +39,7 @@ export default function Feed() {
 
   return (
     <div>
-      <div className='dropdown'>
+      <div className='grid-container dropdown'>
         <button className="dropbtn" onClick={() => setisBrowseVisible(!isBrowseVisible)}>
           <span style={{ 'paddingLeft': '16px' }}>Browse by Industry</span>
           <span style={{ 'fontSize': '6px' }}> ◢</span>

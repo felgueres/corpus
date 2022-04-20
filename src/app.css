@@ -8,9 +8,9 @@
     background-color: #002147;
     color: white;
     font-size: 12px;
-    border: none;
     padding-left: 0px;
     padding-top: 6px;
+    border: none;
 }
 
 .dropbtn:focus {
@@ -26,16 +26,22 @@
     padding-top: 0px;
 }
 
+.grid-container {
+    display:block;
+    background-color: #002147;
+  }
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 180px;
+    width: 100%;
     z-index: 1;
     padding-left: 0px !important;
     padding-bottom: 8px;
     padding-top: 4px;
+    column-count: 2;
 }
 
 /* Links inside the dropdown */
@@ -84,7 +90,9 @@
 
 #frame-2 {
     height: 518px;
-    border: 1px black solid;
+    min-width: 630px;
+    max-width: 990px;
+    border-top: 1px #002147 solid;
 }
 
 #companiesnav {
