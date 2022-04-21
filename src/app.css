@@ -1,5 +1,36 @@
 #app {
     font-family: Helvetica;
+    max-width: 990px;
+    min-width: 630px;
+    min-height: 550px;
+    padding: 0;
+}
+#homebar {
+    background-color: #002147;
+}
+
+#homebar .navbar-brand, .navbar-text {
+    font-size: 12px;
+    color: #F3F4EF;
+    line-height: 12px;
+}
+#homebar .navbar-text {
+    font-size: 12px;
+    color: #F3F4EF;
+    line-height: 12px;
+
+}
+
+#homebar .navbar-brand {
+    font-weight: bold;
+}
+
+#frame-content {
+    height: 518px;
+    min-width: 630px;
+    max-width: 990px;
+    border-top: 1px #002147 solid;
+    padding: 0;
 }
 
 /* BARNAV */
@@ -77,19 +108,7 @@
     color: #633D5D;
 }
 
-.frame {
-    border-top: 8px #002147 solid;
-    max-width: 990px;
-    min-width: 630px;
-    min-height: 550px;
-}
 
-#frame-2 {
-    height: 518px;
-    min-width: 630px;
-    max-width: 990px;
-    border-top: 1px #002147 solid;
-}
 
 #companiesnav {
     padding-left: 4px;

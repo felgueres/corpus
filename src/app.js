@@ -14,9 +14,9 @@ const App = () => {
   }
 
   return (
-    <Container className='frame px-0' id="app">
+    <Container id="app">
       <NavBar />
-      <Container id="frame-2" className="px-0">
+      <Container id="frame-content">
         <Switch>
           <Route path="/" component={Profiles} />
         </Switch>

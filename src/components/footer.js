@@ -8,9 +8,8 @@ const Footer = () => (
         <Navbar className="py-2" >
           <Navbar.Brand className="navbar-font" href="/">American Machina [V0.0]</Navbar.Brand>
           <NavbarCollapse className='justify-content-center'>
-            <SearchBar />
           </NavbarCollapse>
-          <Navbar.Text className="navbar-font">feedback | updates</Navbar.Text>
+          <Navbar.Text className="navbar-font">feedback</Navbar.Text>
         </Navbar>
     </div>
 )

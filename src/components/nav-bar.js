@@ -4,15 +4,14 @@ import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 
 const NavBar = () => {
   return (
-    <div>
-      <div className='navbar-bg'>
-        <Navbar className="py-2" >
-          <Navbar.Brand className="navbar-font" href="/">American Machina<span style={{'fontSize': '9px'}}><br/>Market Insights of America's Industrial Base </span> </Navbar.Brand>
-          <NavbarCollapse className='justify-content-center'>
-          </NavbarCollapse>
-          <Navbar.Text className="navbar-font">feedback | updates</Navbar.Text>
-        </Navbar>
-      </div>
+    <div id="homebar">
+      <Navbar>
+        <Navbar.Brand href="/">American Machina</Navbar.Brand>
+        <NavbarCollapse className='justify-content-center'>
+          <Navbar.Text>Market Insights on America's Industrial Base</Navbar.Text>
+        </NavbarCollapse>
+        <Navbar.Text>feedback</Navbar.Text>
+      </Navbar>
     </div>
   );
 };
