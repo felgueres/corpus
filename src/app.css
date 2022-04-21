@@ -4,21 +4,31 @@
     min-width: 630px;
     min-height: 550px;
     padding: 0;
+    border: black 1px solid
 }
 #homebar {
     background-color: #002147;
 }
 
-#homebar .navbar-brand, .navbar-text {
+#homebar .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#homebar .navbar-brand {
     font-size: 12px;
     color: #F3F4EF;
+    margin: 0;
     line-height: 12px;
+    font-weight: 300;
+    font-style: normal;
 }
+
 #homebar .navbar-text {
     font-size: 12px;
     color: #F3F4EF;
     line-height: 12px;
-
+    font-weight: 300;
 }
 
 #homebar .navbar-brand {
@@ -33,10 +43,29 @@
     padding: 0;
 }
 
+#industrybar {
+    padding: 0;
+    height: 39px;
+    font-size: 12px;
+    border-bottom: black 1px solid;
+}
+
+#industrybar .navbar {
+    padding: 0 0 0 8px;
+}
+
+#industrybar .nav-link {
+    line-height: 15px;
+    color: black;
+    font-size: 12px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 2em;
+}
+
 /* BARNAV */
 /* Dropdown Button */
 .dropbtn {
-    background-color: #002147;
     color: white;
     font-size: 12px;
     padding-left: 0px;
@@ -59,7 +88,6 @@
 
 .grid-container {
     display:block;
-    background-color: #002147;
   }
 
 /* Dropdown Content (Hidden by Default) */
@@ -138,6 +166,7 @@
 
 #profilesummary {
     padding-top: 8px;
+    padding-left: 8px;
     font-family: Helvetica;
     font-size: 12px;
 }
@@ -166,7 +195,7 @@
 /* Company profile end */
 
 .footer-frame {
-    border-top: 2px #002147 solid;
+    border-top: 1px black solid;
 }
 
 .browse-item-link {

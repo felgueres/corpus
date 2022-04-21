@@ -6,35 +6,40 @@ const CATEGORIESNAVBAR = {
         'subindustries': {
             371: {
                 'name': 'Motor Vehicles and Motor Vehicle Equipment',
-                'humanReadable': 'Motor Vehicles',
+                'humanReadable': 'Motors',
                 'urlName': 'motorVehicles',
+                'sic_3': 371
             },
             372: {
                 'name': 'Aircraft and Parts',
                 'humanReadable': 'Aircraft',
                 'urlName': 'aircraft',
+                'sic_3': 372
             },
             376: {
                 'name': 'Guided Missiles and Space Vehicles and Parts',
-                'humanReadable': 'Defense and Space Vehicles',
+                'humanReadable': 'Space',
                 'urlName': 'spaceVehicles',
+                'sic_3': 376 
             },
         }
     },
     35: {
         'name': 'Industrial and Commercial Machinery and Computer Equipment',
-        'humanReadable': 'Industrial Machinery',
+        'humanReadable': 'Machinery',
         'urlName': 'industrialMachinery',
         'subindustries': {
             351: {
                 'name': 'Engines and Turbines',
-                'humanReadable': 'Engines and Turbines',
-                'urlName': 'enginesAndTurbines'
+                'humanReadable': 'Engines',
+                'urlName': 'enginesAndTurbines',
+                'sic_3': 351
             },
             354: {
                 'name': 'Metalworking Machinery and Equipment',
-                'humanReadable': 'Metalworking Machinery',
-                'urlName': 'metalworking'
+                'humanReadable': 'Machinery',
+                'urlName': 'metalworking',
+                'sic_3': 354
             },
         }
     },
@@ -46,7 +51,8 @@ const CATEGORIESNAVBAR = {
             367: {
                 'name': 'Electronic Components and Accesories',
                 'humanReadable': 'Electronics',
-                'urlName': 'electronics'
+                'urlName': 'electronics',
+                'sic_3': 367
             }
         }
     }

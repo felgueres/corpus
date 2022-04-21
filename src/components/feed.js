@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import useCompanySearch from './useCompanySearch'
 import usePagination from './usePagination'
-import renderRow from '../utils/renderUtils'
 import { CATEGORIESNAVBAR } from "../utils";
-import { Link } from "react-router-dom";
 import useEscape from "./useEscape";
+import { Navbar, Nav } from 'react-bootstrap';
+import renderRow from '../utils/renderUtils'
 
 export default function Feed() {
   const [filters, setFilters] = useState(false)
@@ -14,78 +14,67 @@ export default function Feed() {
   const [isBrowseVisible, setisBrowseVisible] = useState(false)
   useEscape(() => setisBrowseVisible(false))
 
-  function handleFilter(event, filterType) {
-    let filterName = event.target.id
+// setting the filter state change fetches items from server 
+
+  function handleFilter(filter, filterType) {
+    console.log(filter)
     setisBrowseVisible(false)
     setFilters({
       [filterType]: {
-        [filterName]: true
+        [filter]: true
       }
     })
     setBrowseIndustry({
-      'sic_2d': String(filterName).slice(0, 2),
-      'sic_3d': String(filterName)
+      'sic_2d': String(filter).slice(0, 2),
+      'sic_3d': String(filter)
     })
   }
 
-  const getCategoryItems = (idx, category) => {
-    return (
-      <li>
-        <span className="dropdown-category">{category.humanReadable}</span>
-        {Object.entries(category.subindustries).map(([k, subindustry],) => { return (<li key={k} className='browse-item'><Link id={k} onClick={(e) => { handleFilter(e, 'sic_3') }} className='browse-item-link'>{`${subindustry.humanReadable}`}</Link></li>) })}
-      </li>
-    )
-  }
 
   if (loadingCompanyData) {
     return (
-      <div>
-        <div className='grid-container dropdown'>
-          <button className="dropbtn" onClick={() => setisBrowseVisible(!isBrowseVisible)}>
-            <span style={{ 'paddingLeft': '16px' }}>Browse by Industry</span>
-            <span style={{ 'fontSize': '6px' }}> ◢</span>
-          </button>
-        </div>
-        <section className='browseTitle'>
-          <span>Browse</span>
-        </section>
-
-        <section>
-          {
-            <ul id='companiesnav'>
-              <li>...</li>
-            </ul>
-          }
-        </section>
-      </div>
+      <div>packets</div>
     )
+  }
+
+  // Unpack subindustries
+  const industriesMap = Object.entries(CATEGORIESNAVBAR).map(([, category],) => category.subindustries)
+  let subs = []
+  for (const e of industriesMap) {
+    Object.entries(e).map(([, sub],) => subs.push(sub))
+  }
+
+  const navbarLink = (e) => {
+    return (
+      <span>
+        <Nav.Link id={e.sic_3d} href={`/${e.urlName}`}>
+          {`${e.humanReadable}`}
+        </Nav.Link>
+      </span>)
   }
 
   return (
     <div>
-      <div className='grid-container dropdown'>
-        <button className="dropbtn" onClick={() => setisBrowseVisible(!isBrowseVisible)}>
-          <span style={{ 'paddingLeft': '16px' }}>Browse by Industry</span>
-          <span style={{ 'fontSize': '6px' }}> ◢</span>
-        </button>
-        <ul className={`dropdown-content ${isBrowseVisible ? 'isActive' : ''}`}>
-          {Object.entries(CATEGORIESNAVBAR).map(([idx, category],) => getCategoryItems(idx, category))}
-        </ul>
+      <div id='industrybar'>
+        <Navbar bg="white">
+            <Nav>
+              {subs.map(e => navbarLink(e))}
+            </Nav>
+        </Navbar>
       </div>
 
-      <section className='browseTitle'>
-        {!browseIndustry && `Browse`}
-        {browseIndustry && ` ${CATEGORIESNAVBAR[browseIndustry.sic_2d].humanReadable} / ${CATEGORIESNAVBAR[browseIndustry.sic_2d].subindustries[browseIndustry.sic_3d].humanReadable}`}
-        {paginator}
-      </section>
-
-      <section>
+      <div>
         {!loadingCompanyData &&
           <ul id='companiesnav'>
             {!loadingCompanyData && Object.entries(companies).map(([, entry]) => entry).slice(idx.startIdx, idx.endIdx).map(card => (renderRow(card)))}
           </ul>
         }
-      </section>
+      </div>
     </div >
   )
 }
+      // <section className='browseTitle'>
+      //   {!browseIndustry && `Browse`}
+      //   {browseIndustry && ` ${CATEGORIESNAVBAR[browseIndustry.sic_2d].humanReadable} / ${CATEGORIESNAVBAR[browseIndustry.sic_2d].subindustries[browseIndustry.sic_3d].humanReadable}`}
+      //   {paginator}
+      // </section>
