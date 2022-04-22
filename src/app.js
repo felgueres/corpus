@@ -8,11 +8,9 @@ import { Profile, Home, Category} from "./views";
 
 const App = () => {
   const { isLoading } = useAuth0();
-
   if (isLoading) {
     return <Loading />;
   }
-
   return (
     <Container id="app">
       <NavBar />

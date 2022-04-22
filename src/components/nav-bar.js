@@ -8,7 +8,7 @@ const NavBar = () => {
       <Navbar>
         <Navbar.Brand href="/">American Machina</Navbar.Brand>
         <NavbarCollapse className='justify-content-center'>
-          <Navbar.Text>Market Insights on America's Industrial Base</Navbar.Text>
+          <Navbar.Text>Insights on America's Industrial Base</Navbar.Text>
         </NavbarCollapse>
         <Navbar.Text>feedback</Navbar.Text>
       </Navbar>

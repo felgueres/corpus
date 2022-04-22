@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Col, Row } from 'react-bootstrap';
 
 export default function usePagination(filters, pagination) {
-  const pageLimit = 3
-  const dataLimit = 15
+  const pageLimit = 1
+  const dataLimit = 100
   const [numPages, setNumPages] = useState(1)
   const [curPage, setCurPage] = useState(1)
 
@@ -35,17 +34,13 @@ export default function usePagination(filters, pagination) {
   }
 
   const paginator = (
-    <div className='navbar-font' style={{ 'float': 'right' }}>
-        You are looking at {pagination.total_items} companies, 
-        page {curPage} of {numPages}.
-        <span> </span>
-        <a role='button' onClick={goToPreviousPage} className={`prev ${curPage === 1 ? 'disabled' : ''}`}>
-        [Back</a>
-        <span> | </span>
-        <a role='button' onClick={goToNextPage} className={`next ${curPage === numPages ? 'disabled' : ''}`}>
-          Next]
-        </a>
-
+    <div>
+        {pagination.total_items} companies, page {curPage} of {numPages}.
+        <button role='button' onClick={goToPreviousPage} className={`prev ${curPage === 1 ? 'disabled' : ''}`}>
+        Previous </button>
+        <button role='button' onClick={goToNextPage} className={`next ${curPage === numPages ? 'disabled' : ''}`}>
+          Next
+        </button>
     </div>
   );
 

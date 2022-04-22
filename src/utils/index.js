@@ -1,3 +1,3 @@
-import CATEGORIESNAVBAR from './constants'
+import CATEGORIES from './constants'
 
-export { CATEGORIESNAVBAR }
+export { CATEGORIES }

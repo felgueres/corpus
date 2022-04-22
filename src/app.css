@@ -6,6 +6,7 @@
     padding: 0;
     border: black 1px solid
 }
+
 #homebar {
     background-color: #002147;
 }
@@ -67,6 +68,49 @@
     background-color: #002147;
     color: white;
 }
+
+#categoryview {
+    padding-left: 16px;
+    padding-top: 8px;
+}
+
+#categoryview h1 {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+#directory {
+    font-size: 10px;
+    max-height: 600px;
+    max-width: 600px;
+}
+
+/* TODO: there must be a way to overflow within the frame */
+#directory .cols-4 {
+    column-count: 4;
+}
+
+#directory .cols-2 {
+    column-count: 2;
+}
+
+#directory .cols-1 {
+    column-count: 1;
+}
+
+#directory li {
+    list-style-type: none;
+    line-height: 1.4em;
+}
+
+#directory a {
+    color: black;
+}
+
+#directory ul {
+    padding: 0;
+}
+
 
 #companiesnav {
     padding-left: 4px;
