@@ -24,11 +24,9 @@ const CompanyFacts = ({ organizationId }) => {
     var curVal = hasCurrent ? current[concept].val : false
     var previousVal = hasPrevious ? previous[concept].val : false
     
+    var yoy = false 
     if(hasCurrent&&hasPrevious&&curVal>0&&previousVal>0){
-      var yoy = ((curVal/previousVal- 1) * 100).toFixed(1) + '%'}
-    else{
-      var yoy = false
-    }
+      yoy = ((curVal/previousVal- 1) * 100).toFixed(1) + '%'}
 
     const MILLION = 1000000
     var formatVal = hasCurrent ? BigNumber(curVal).dividedBy(MILLION).toFormat(0): '--'

@@ -60,7 +60,12 @@ export const SearchBar = () => {
 
   useEffect(() => {
     if (searchTerm) { fetchSearchResults(searchTerm) }
-  }, [searchTerm]);
+  }, );
+
+  // This line below was main line but compiler complained about the dep array, revise.
+  // useEffect(() => {
+  //   if (searchTerm) { fetchSearchResults(searchTerm) }
+  // }, [searchTerm]);
 
   useEffect(() => {
     if (searchTerm === '') {
