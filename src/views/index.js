@@ -1,3 +1,5 @@
-import Profiles from "./profiles";
+import Profile from "./profile";
+import Home from "./home";
+import Category from "./category";
 
-export { Profiles };
+export { Profile, Home, Category };

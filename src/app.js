@@ -1,10 +1,10 @@
+import "./app.css";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Footer, Loading, NavBar } from "./components";
-import { Profiles } from "./views";
 import { Container } from "react-bootstrap";
-import "./app.css";
+import { Footer, Loading, NavBar, CategoriesBar } from "./components";
+import { Profile, Home, Category} from "./views";
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -16,9 +16,12 @@ const App = () => {
   return (
     <Container id="app">
       <NavBar />
+      <CategoriesBar/>
       <Container id="frame-content">
         <Switch>
-          <Route path="/" component={Profiles} />
+          <Route path="/" exact component={Home} /> 
+          <Route path='/organizations/:organizationId' component={Profile} />
+          <Route path='/categories/:category' component={Category} />
         </Switch>
       </Container>
       <Footer />
