@@ -11,7 +11,7 @@ const Profile = ({ match }) => {
   }
 
   return (
-    <div id='profile'>
+    <div id='profile' className="content">
       <ProfileData organizationId={organizationId}/>
       <CompanyFacts organizationId={organizationId}/>
     </div>

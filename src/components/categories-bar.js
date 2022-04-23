@@ -1,6 +1,6 @@
 import React from 'react'
-import { CATEGORIES } from "../utils";
 import { Navbar, Nav } from 'react-bootstrap';
+import { CATEGORIES } from "../utils";
 
 const CategoriesBar =()=> {
   let c = Object.entries(CATEGORIES).map(([,v],)=>v)

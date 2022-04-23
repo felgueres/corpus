@@ -1,14 +1,13 @@
 import React from "react";
 import useOrganizationProfile from "./useOrganizationProfile";
+import SkeletonProfile from "../skeletons/SkeletonProfile";
 
 const ProfileData = ({organizationId}) => {
 
   const { data , loading } = useOrganizationProfile(organizationId)
 
   if (loading) {
-    return ( 
-    <div id='profilesummary'>
-    </div>)
+    return (<SkeletonProfile/>)
   }
 
   function replace_quotes(s){
