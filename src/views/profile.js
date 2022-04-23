@@ -1,8 +1,19 @@
 import React from "react";
+import CompanyFacts from "../components/profile-company-facts";
+import ProfileData from "../components/profile-data";
 
-export const Profile = ({ match }) => {
+const Profile = ({ match }) => {
+  var organizationId = match.params.organizationId;
+  console.log('hey')
+
+  if(!organizationId){
+    return <div>Loading</div>
+  }
+
   return (
-    <div>
+    <div id='profile'>
+      <ProfileData organizationId={organizationId}/>
+      <CompanyFacts organizationId={organizationId}/>
     </div>
   );
 };

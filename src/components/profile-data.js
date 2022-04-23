@@ -3,17 +3,11 @@ import useOrganizationProfile from "./useOrganizationProfile";
 
 const ProfileData = ({organizationId}) => {
 
-  const { organizationData, loadingCompanyData } = useOrganizationProfile(organizationId)
+  const { data , loading } = useOrganizationProfile(organizationId)
 
-  if (loadingCompanyData ) {
+  if (loading) {
     return ( 
     <div id='profilesummary'>
-      <h4>Company Profile</h4>
-      <ul id='company-facts'>
-        <li><span>Name</span>...</li>
-        <li><span>Ticker</span>...</li>
-        <li><span>Exchange</span>...</li>
-      </ul>
     </div>)
   }
 
@@ -21,14 +15,13 @@ const ProfileData = ({organizationId}) => {
     return s.replace(/'/g,'"')
   }
 
+  let ticker = JSON.parse(replace_quotes(data.tickers))[0]
+  let exchange = JSON.parse(replace_quotes(data.exchanges))[0]
+
   return (
     <div id='profilesummary'>
-      <h4>Company Profile</h4>
-      <ul id='company-facts'>
-        <li><span>Name</span>{organizationData.name}</li>
-        <li><span>Ticker</span>{JSON.parse(replace_quotes(organizationData.tickers))[0]}</li>
-        <li><span>Exchange</span>{JSON.parse(replace_quotes(organizationData.exchanges))[0]}</li>
-      </ul>
+      <h1>{data.name}</h1>
+      <h2>{exchange} : {ticker}</h2>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import Footer from "./footer";
 import Loading from "./loading";
 import NavBar from "./nav-bar";
 import PrivateRoute from "./private-route";
-import ProfileSummary from "./profile-summary";
+import ProfileSummary from "../views/profile";
 import CategoriesBar from "./categories-bar";
 import CompanyDirectory from "./company-directory";
 

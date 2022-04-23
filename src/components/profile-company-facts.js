@@ -3,9 +3,9 @@ import useOrganizationFacts from "./useOrganizationFacts";
 import BigNumber from "bignumber.js";
 
 const CompanyFacts = ({ organizationId }) => {
-  const { organizationFacts, loadingCompanyFacts } = useOrganizationFacts(organizationId)
+  const { facts, loading} = useOrganizationFacts(organizationId)
 
-  if (loadingCompanyFacts || organizationFacts.length <1) {
+  if (loading || facts.length <1) {
     return (
       <div id='profilesummary'>
         <h4>Company Facts</h4>
@@ -18,6 +18,7 @@ const CompanyFacts = ({ organizationId }) => {
       </div>
     )
   }
+
   const fact= (concept, current, previous, curYear) => {
     var hasCurrent = current.hasOwnProperty(concept)
     var hasPrevious = previous.hasOwnProperty(concept)
@@ -29,21 +30,21 @@ const CompanyFacts = ({ organizationId }) => {
       yoy = ((curVal/previousVal- 1) * 100).toFixed(1) + '%'}
 
     const MILLION = 1000000
-    var formatVal = hasCurrent ? BigNumber(curVal).dividedBy(MILLION).toFormat(0): '--'
+    var formatVal = hasCurrent ? BigNumber(curVal).dividedBy(MILLION).toFormat(0): 'Unavailable'
 
     return (
       <li>
-        <span>{concept} ({curYear}) (MUSD):</span>
+        <span>{concept} (MUSD) </span>
         <span>
           {hasCurrent&&yoy ? `${formatVal} (${yoy})` : `${formatVal}`}
         </span>
       </li>
     )
   }
-  var facts = {}
-  for (const e of organizationFacts){
+  var f = {}
+  for (const e of facts){
     var yr = e.frame.slice(2,6)
-    facts[parseInt(yr)] = {...facts[yr], [e['concept']]:e}
+    f[parseInt(yr)] = {...f[yr], [e['concept']]:e}
   }
 
   const cagr=(end, start, periods)=>{
@@ -51,25 +52,26 @@ const CompanyFacts = ({ organizationId }) => {
   }
 
   const YEARSPERIOD = 5
-  const maxYr = Math.max(...Object.keys(facts).map(e=>parseInt(e)))
-  const current = facts[maxYr]
-  const previous = facts[maxYr-1]
-  var hasTminusPeriod= facts.hasOwnProperty(maxYr-YEARSPERIOD)
-  var hasTminusPeriodRevenue = hasTminusPeriod ? facts[maxYr-YEARSPERIOD].hasOwnProperty('Revenues') : false
+  const maxYr = Math.max(...Object.keys(f).map(e=>parseInt(e)))
+  const current = f[maxYr]
+  const previous = f[maxYr-1]
+  var hasTminusPeriod= f.hasOwnProperty(maxYr-YEARSPERIOD)
+  var hasTminusPeriodRevenue = hasTminusPeriod ? f[maxYr-YEARSPERIOD].hasOwnProperty('Revenues') : false
   var hasCurrentRevenue = current.hasOwnProperty('Revenues')
   var curRevenue = hasCurrentRevenue ? current.Revenues.val : NaN
-  var minusPeriodRevenue = hasTminusPeriodRevenue ? facts[maxYr-YEARSPERIOD].Revenues.val : NaN
+  var minusPeriodRevenue = hasTminusPeriodRevenue ? f[maxYr-YEARSPERIOD].Revenues.val : NaN
   var cagrRevenue = (hasCurrentRevenue&&hasTminusPeriodRevenue) ? cagr(curRevenue,minusPeriodRevenue, YEARSPERIOD) : NaN
 
   return (
-    <div id='profilesummary'>
-      <h4>Company Facts</h4>
-      <ul id='company-facts'>
+    <div id='factscomponent'>
+      <h4>Annual Financial Performance</h4>
+      <ul id='facts'>
+        <li><span>{` `}</span>{maxYr}</li>
         {fact('EntityPublicFloat',current,previous, maxYr )}
         {fact('Revenues',current,previous, maxYr )}
         {fact('CostOfRevenue',current,previous, maxYr )}
         {fact('GrossProfit',current,previous, maxYr )}
-        <li><span>{`CAGR ${YEARSPERIOD}yr  Revenue`}</span>{cagrRevenue ? `${(cagrRevenue * 100).toFixed(1)}%` : '--'}</li>
+        <li><span>{`CAGR ${YEARSPERIOD}yr  Revenue`}</span>{cagrRevenue ? `${(cagrRevenue * 100).toFixed(1)}%` : 'Unavailable'}</li>
       </ul>
     </div>
   );
