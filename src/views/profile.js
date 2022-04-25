@@ -1,21 +1,20 @@
 import React from "react";
 import CompanyFacts from "../components/profile-company-facts";
 import ProfileData from "../components/profile-data";
+import ProfileInsights from "../components/profile-insights";
 
 const Profile = ({ match }) => {
   var organizationId = match.params.organizationId;
-  console.log('hey')
-
-  if(!organizationId){
-    return <div>Loading</div>
-  }
-
   return (
-    <div id='profile' className="content">
-      <ProfileData organizationId={organizationId}/>
-      <CompanyFacts organizationId={organizationId}/>
+    <div id='profile'>
+      <span>
+        <ProfileData organizationId={organizationId} />
+      </span>
+      <div className="content">
+        <ProfileInsights organizationId={organizationId} />
+        <CompanyFacts organizationId={organizationId} />
+      </div>
     </div>
   );
 };
-
 export default Profile;

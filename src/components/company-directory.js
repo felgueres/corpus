@@ -2,6 +2,7 @@ import React from 'react'
 import useCategorySearch from './useCategorySearch'
 import usePagination from './usePagination'
 import { Link } from 'react-router-dom'
+import SkeletonDirectory from '../skeletons/SkeletonDirectory'
 
 export default function CompanyDirectory({ category }) {
   let categoryId = category.sic
@@ -10,7 +11,9 @@ export default function CompanyDirectory({ category }) {
 
   if (loading) {
     return (
-      <div></div>
+      <div id='directory'>
+        <SkeletonDirectory/>
+      </div>
     )
   }
   let s = companies.length

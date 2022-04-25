@@ -22,7 +22,7 @@ const App = () => {
           <Route path='/categories/:category' component={Category} />
         </Switch>
       </Container>
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   );
 };

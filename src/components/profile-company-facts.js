@@ -5,6 +5,8 @@ import SkeletonFacts from "../skeletons/SkeletonFacts";
 
 const MILLION = 1000000
 
+// TODO: This code needs to be redone. It's hideous
+
 const CompanyFacts = ({ organizationId }) => {
   const { facts, loading } = useOrganizationFacts(organizationId)
 
@@ -31,6 +33,7 @@ const CompanyFacts = ({ organizationId }) => {
 
     return (
       <li>
+        
         <span>{concept} (MUSD) </span>
         <span>
           {hasCurrent && yoy ? `${formatVal} (${yoy})` : `${formatVal}`}
@@ -60,16 +63,18 @@ const CompanyFacts = ({ organizationId }) => {
   var cagrRevenue = (hasCurrentRevenue && hasTminusPeriodRevenue) ? cagr(curRevenue, minusPeriodRevenue, YEARSPERIOD) : NaN
 
   return (
-    <div id='factscomponent'>
-      <h4>Financial Performance</h4>
-      <ul id='facts'>
-        <li><span>{` `}</span>{maxYr}</li>
-        {fact('EntityPublicFloat', current, previous, maxYr)}
-        {fact('Revenues', current, previous, maxYr)}
-        {fact('CostOfRevenue', current, previous, maxYr)}
-        {fact('GrossProfit', current, previous, maxYr)}
-        <li><span>{`CAGR ${YEARSPERIOD}yr  Revenue`}</span>{cagrRevenue ? `${(cagrRevenue * 100).toFixed(1)}%` : 'Unavailable'}</li>
-      </ul>
+    <div id='col'>
+      <div id='factscomponent'>
+        <h2>Financial Performance</h2>
+        <ul id='facts'>
+          <li><span>{` `}</span>{maxYr}</li>
+          {fact('EntityPublicFloat', current, previous, maxYr)}
+          {fact('Revenues', current, previous, maxYr)}
+          {fact('CostOfRevenue', current, previous, maxYr)}
+          {fact('GrossProfit', current, previous, maxYr)}
+          <li><span>{`CAGR ${YEARSPERIOD}yr  Revenue`}</span>{cagrRevenue ? `${(cagrRevenue * 100).toFixed(1)}%` : 'Unavailable'}</li>
+        </ul>
+      </div>
     </div>
   );
 };

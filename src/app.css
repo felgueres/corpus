@@ -3,6 +3,7 @@
     max-width: 990px;
     min-width: 630px;
     min-height: 550px;
+    height: 2000px;
     padding: 0;
     border: black 1px solid
 }
@@ -94,15 +95,12 @@ h4 {
 #directory .cols-4 {
     column-count: 4;
 }
-
 #directory .cols-2 {
     column-count: 2;
 }
-
 #directory .cols-1 {
     column-count: 1;
 }
-
 #directory li {
     list-style-type: none;
     line-height: 1.4em;
@@ -111,16 +109,13 @@ h4 {
 #directory a {
     color: black;
 }
-
 #directory ul {
     padding: 0;
 }
-
 #profile {
     padding-top: 8px;
     padding-left: 8px;
 }
-
 .content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -129,18 +124,16 @@ h4 {
 
 #profile h1 {
     font-weight: 800;
-    font-size: 36px;
-    line-height: 36px;
+    font-size: 26px;
+    line-height: 28px;
     padding-bottom: 0;
     margin-bottom: 0;
 }
-
 #profile h2 {
-    font-size: 25px;
+    font-size: 18px;
     line-height: 25px;
     color: #5a564f
 }
-
 #facts li {
     font-size: 10px;
     list-style-type: None;
@@ -150,62 +143,79 @@ h4 {
     display: flex;
     justify-content: space-between;
 }
-
 #facts {
     padding-left: 0px;
 }
-
 #factscomponent {
-    border: #E5E5E5 solid 1px;
+    border: black solid 1px;
     width: 250px;
     padding: 12px;
-    border-radius: 10px;
 }
+
+#profile-insights {
+    width: 100%;
+    min-width: 506px;
+}
+
+#profile-insights h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#profile-insights li {
+    padding: 10px 5px 10px 5px;
+    border-color: #E5E5E5;
+    list-style-type: None;
+    font-size: 12px;
+    border-style: solid;
+    border-width: 0 0px 1px 0px
+}
+
+#profile-insights .insight-risk {
+    border-left: 5px solid lightcoral;
+    padding-left: 8px;
+}
+
+#profile-insights a{
+    margin-right: 15px 
+}
+
+#profile-insights a.active {
+    border-bottom: 3px #002147 solid  
+}
+
+#profile-insights a:hover {
+    border-bottom: 3px #002147 solid  
+}
+
+#profile-insights .insight-fact {
+    border-left: 5px solid lightblue;
+    padding-left: 8px;
+}
+
+#profile-insights .insight-opportunity {
+    border-left: 5px solid #7fcebb;
+    padding-left: 8px;
+}
+
+#profile-insights .spacing {
+    padding: 0 10px 0 10px
+}
+
+#profile-insights .source {
+    font-size: 10px;
+}
+
+
 
 /* Company profile end */
 
-.footer-frame {
-    border-top: 1px black solid;
-}
+/* Home view */
 
-.browse-item-link {
-    color: #444444;
+#homeview {
+    padding-left: 16px;
+    padding-top: 8px;
 }
-
-.navbar-bg {
-    background-color: #FAF9F2;
-}
-
-.label-as-badge {
-    border-radius: 1em;
-}
-
-.spinner {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.badge.badge-small {
-    vertical-align: Top;
-    margin-left: '10px';
-    font-size: 0.5em;
-}
-
-.title {
-    font-weight: 800;
-    font-size: 44px;
-    line-height: 55px;
-    color: #24221e;
-}
-
 /* Small screen */
 
 @media screen and (max-width: 799px) {
