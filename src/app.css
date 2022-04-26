@@ -198,6 +198,11 @@ h4 {
     padding-left: 8px;
 }
 
+#profile-insights .insight-summary {
+    border-left: 5px solid #002147;
+    padding-left: 8px;
+}
+
 #profile-insights .spacing {
     padding: 0 10px 0 10px
 }

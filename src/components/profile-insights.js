@@ -16,7 +16,7 @@ function insight(i, idx) {
 
 const ProfileInsights = ({ organizationId }) => {
   const { insights, loading } = useInsights(organizationId)
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('summary');
   if (loading) {
     return (<SkeletonProfile />)
   }
