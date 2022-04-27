@@ -7,7 +7,6 @@ export const Category = ({ match }) => {
   let c = CATEGORIES[name]
   return (
     <div id='categoryview'>
-      <h1>{c.humanReadable}</h1>
       <CompanyDirectory category={c} />
     </div>
   );

@@ -3,8 +3,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Container } from "react-bootstrap";
-import { Footer, Loading, NavBar, CategoriesBar, SideBar } from "./components";
-import { Profile, Home, Category } from "./views";
+import { Footer, Loading, NavBar, SideBar } from "./components";
+import { Profile, Home } from "./views";
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -15,14 +15,13 @@ const App = () => {
     <Container id="app">
       <NavBar />
       <Container id="frame-content">
-        <SideBar />
+        <SideBar/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path='/organizations/:organizationId' component={Profile} />
-          <Route path='/categories/:category' component={Category} />
         </Switch>
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   );
 };
