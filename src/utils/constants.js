@@ -8,7 +8,7 @@ const CATEGORIES = {
     },
     'aircraft': {
         'name': 'Aircraft and Parts',
-        'humanReadable': 'Aircraft',
+        'humanReadable': 'Aerospace',
         'url': 'aircraft',
         'sic': 372,
     },
@@ -18,21 +18,9 @@ const CATEGORIES = {
         'url': 'space',
         'sic': 376,
     },
-    'engines': {
-        'name': 'Engines and Turbines',
-        'humanReadable': 'Engines',
-        'url': 'engines',
-        'sic': 351,
-    },
-    'machinery': {
-        'name': 'Metalworking Machinery and Equipment',
-        'humanReadable': 'Machinery',
-        'url': 'machinery',
-        'sic': 354,
-    },
     'electronics': {
         'name': 'Electronic Components and Accesories',
-        'humanReadable': 'Electronics',
+        'humanReadable': 'Chips',
         'url': 'electronics',
         'sic': 367
     }

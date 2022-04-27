@@ -10,7 +10,7 @@ const NavBar = () => {
         <NavbarCollapse className='justify-content-center'>
           <Navbar.Text>Insights on America's Industrial Base</Navbar.Text>
         </NavbarCollapse>
-        <Navbar.Text>feedback</Navbar.Text>
+        <Navbar.Text>about</Navbar.Text>
       </Navbar>
     </div>
   );

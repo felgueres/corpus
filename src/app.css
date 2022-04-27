@@ -2,8 +2,7 @@
     font-family: Helvetica;
     max-width: 990px;
     min-width: 630px;
-    min-height: 550px;
-    height: 2000px;
+    height: 700px;
     padding: 0;
     border: black 1px solid
 }
@@ -43,36 +42,40 @@ h4 {
 }
 
 #frame-content {
-    height: 518px;
+    height: 100%;
     min-width: 630px;
     max-width: 990px;
     padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
 }
 
-#industrybar {
-    padding: 0;
-    height: 37px;
-    font-size: 12px;
-    border-bottom: black 1px solid;
-    text-align: center;
+#sidebar {
+    width: 170px;
+    border-right: 1px #E5E5E5 solid;
 }
 
-#industrybar .navbar {
-    padding: 0;
+#sidebar .navbar {
+    padding-right: 0;
 }
 
-#industrybar .nav-link {
+#sidebar .navbar-nav{
+    width: 100%;
+} 
+
+#sidebar .nav-link {
     line-height: 15px;
-    color: black;
     font-size: 12px;
-    padding-top: 11px;
-    padding-bottom: 11px;
-    width:80px
+    font-size: 16px;
+    font-weight: bold;
 }
 
-#industrybar .nav-link:hover{
-    background-color: #002147;
-    color: white;
+#sidebar .nav-link:hover{
+    border-right: #002147 5px solid;
+}
+
+#industrybar .nav-link.active{
+    border-right: #002147 5px solid;
 }
 
 #categoryview {
