@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import useInsights from "./useInsights";
 import SkeletonProfile from "../skeletons/SkeletonProfile";
 
-const NAVS = [['summary', 'Summary'], ['risk', 'Risks'], ['opportunity', 'Opportunities'], ['fact', 'Facts'], ['all', 'Show all']]
+const NAVS = [['supply','Supply Chains'],['manufacturing', 'Manufacturing'],
+              ['demand','Demand'],,['risk', 'Risks'],
+              ['fact', 'Insights'], ['climate', 'Climate'],['cyber','Cyber'],
+              ['competition', 'Competition'],['material','Raw Materials']]
 
 function insight(i, idx) {
   return (
@@ -15,8 +18,10 @@ function insight(i, idx) {
 }
 
 const ProfileInsights = ({ organizationId }) => {
+
   const { insights, loading } = useInsights(organizationId)
-  const [activeCategory, setActiveCategory] = useState('summary');
+  const [activeCategory, setActiveCategory] = useState('');
+
   if (loading) {
     return (<SkeletonProfile />)
   }
@@ -29,9 +34,9 @@ const ProfileInsights = ({ organizationId }) => {
 
   return (
     <div id='profile-insights'>
-      <li key='header'>
+      <div id='categories'>
         {NAVS.map(([v, n]) => navlink(v, n))}
-      </li>
+      </div>
       {insights.filter(i => i.category === activeCategory || activeCategory === 'all').map((i, idx) => { return insight(i, idx) })}
     </div>
   );

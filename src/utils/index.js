@@ -1,3 +1,3 @@
-import CATEGORIES from './constants'
+import { CATEGORIES } from './constants'
 
-export { CATEGORIES }
+export default CATEGORIES;

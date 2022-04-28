@@ -5,15 +5,12 @@ import ProfileInsights from "../components/profile-insights";
 
 const Profile = ({ match }) => {
   var organizationId = match.params.organizationId;
+
   return (
     <div id='profile'>
-      <span>
         <ProfileData organizationId={organizationId} />
-      </span>
-      <div className="content">
         <ProfileInsights organizationId={organizationId} />
         <CompanyFacts organizationId={organizationId} />
-      </div>
     </div>
   );
 };

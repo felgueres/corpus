@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CATEGORIES } from '../utils';
+import CATEGORIES from '../utils/constants';
 
 export default function useDirectory() {
   const c = Object.entries(CATEGORIES).map(([,v],)=>v)

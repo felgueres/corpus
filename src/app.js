@@ -21,7 +21,7 @@ const App = () => {
           <Route path='/organizations/:organizationId' component={Profile} />
         </Switch>
       </Container>
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   );
 };

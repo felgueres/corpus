@@ -2,13 +2,16 @@
     font-family: Helvetica;
     max-width: 990px;
     min-width: 630px;
-    height: 700px;
+    min-height: 700px;
     padding: 0;
+    border: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: black;
 }
 
 h4 {
     font-size: 18px;
-    font-weight:300 
+    font-weight: 300
 }
 
 #homebar {
@@ -46,13 +49,15 @@ h4 {
     max-width: 990px;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    height: 100%;
+    grid-template-columns: 170px auto;
+    min-height: 700px;
 }
 
 #sidebar {
     width: 170px;
-    border-right: 1px #E5E5E5 solid;
+    max-width: 170px;
+    border-right: 1px black solid;
+    height: 100%;
 }
 
 #homeview {
@@ -63,9 +68,9 @@ h4 {
     padding-right: 0;
 }
 
-#sidebar .navbar-nav{
+#sidebar .navbar-nav {
     width: 100%;
-} 
+}
 
 #sidebar .nav-link {
     line-height: 15px;
@@ -74,11 +79,11 @@ h4 {
     font-weight: bold;
 }
 
-#sidebar .nav-link:hover{
+#sidebar .nav-link:hover {
     border-right: #002147 5px solid;
 }
 
-#industrybar .nav-link.active{
+#sidebar .nav-link.active {
     border-right: #002147 5px solid;
 }
 
@@ -102,12 +107,15 @@ h4 {
 #directory .cols-4 {
     column-count: 4;
 }
+
 #directory .cols-2 {
     column-count: 2;
 }
+
 #directory .cols-1 {
     column-count: 1;
 }
+
 #directory li {
     list-style-type: none;
     line-height: 1.4em;
@@ -116,18 +124,22 @@ h4 {
 #directory a {
     color: black;
 }
+
 #directory ul {
     padding: 0;
 }
+
 #profile {
     padding-top: 8px;
-    padding-left: 8px;
+    padding-left: 16px;
 }
+
 .content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 100px
 }
+
+/* gap: 100px */
 
 #profile h1 {
     font-weight: 800;
@@ -136,11 +148,13 @@ h4 {
     padding-bottom: 0;
     margin-bottom: 0;
 }
+
 #profile h2 {
     font-size: 18px;
     line-height: 25px;
     color: #5a564f
 }
+
 #facts li {
     font-size: 10px;
     list-style-type: None;
@@ -150,18 +164,19 @@ h4 {
     display: flex;
     justify-content: space-between;
 }
-#facts {
-    padding-left: 0px;
-}
+
 #factscomponent {
-    border: black solid 1px;
-    width: 250px;
-    padding: 12px;
+    padding: 8px;
 }
+
+#factsgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 
 #profile-insights {
     width: 100%;
-    min-width: 506px;
 }
 
 #profile-insights h1 {
@@ -183,16 +198,16 @@ h4 {
     padding-left: 8px;
 }
 
-#profile-insights a{
-    margin-right: 15px 
+#profile-insights a {
+    margin-right: 15px
 }
 
 #profile-insights a.active {
-    border-bottom: 3px #002147 solid  
+    border-bottom: 3px #002147 solid
 }
 
 #profile-insights a:hover {
-    border-bottom: 3px #002147 solid  
+    border-bottom: 3px #002147 solid
 }
 
 #profile-insights .insight-fact {
@@ -216,4 +231,30 @@ h4 {
 
 #profile-insights .source {
     font-size: 10px;
+}
+
+#categories {
+    padding: 0;
+    height: 37px;
+    font-size: 12px;
+    border-bottom: black 1px solid;
+    text-align: center;
+}
+
+#categories .navbar {
+    padding: 0;
+}
+
+#categories .nav-link {
+    line-height: 15px;
+    color: black;
+    font-size: 12px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    width: 80px
+}
+
+#categories .nav-link:hover {
+    background-color: #002147;
+    color: white;
 }

@@ -4,77 +4,49 @@ import BigNumber from "bignumber.js";
 import SkeletonFacts from "../skeletons/SkeletonFacts";
 
 const MILLION = 1000000
-
-// TODO: This code needs to be redone. It's hideous
+const YEARSPERIOD = 5
+const cagr = (end, start, periods) => {
+  return Math.pow((end / start), (1 / periods)) - 1
+}
 
 const CompanyFacts = ({ organizationId }) => {
   const { facts, loading } = useOrganizationFacts(organizationId)
 
-  if (loading || facts.length < 1) {
-    return (
-      <div id='factscomponent'>
-        <SkeletonFacts />
-      </div>
-    )
-  }
+  if (loading || facts.length < 1) { return (<div id='factscomponent'><SkeletonFacts /></div>) }
+  
+  const revenues = facts
+    .filter(i => i.concept === 'Revenues')
+    .map(i => { return { ...i, ['CY']: parseInt(i.frame.slice(2, 7))}})
 
-  const fact = (concept, current, previous, curYear) => {
-    var hasCurrent = current.hasOwnProperty(concept)
-    var hasPrevious = previous.hasOwnProperty(concept)
-    var curVal = hasCurrent ? current[concept].val : false
-    var previousVal = hasPrevious ? previous[concept].val : false
+  const costOfRevenue = facts
+    .filter(i => i.concept === 'CostOfRevenue')
+    .map(i => { return { ...i, ['CY']: parseInt(i.frame.slice(2, 7))}})
+  
+  const publicFloat = facts
+    .filter(i => i.concept === 'EntityPublicFloat')
+    .map(i => {return { ...i, ['CY']: parseInt(i.frame.slice(2, 7))}})
 
-    var yoy = false
-    if (hasCurrent && hasPrevious && curVal > 0 && previousVal > 0) {
-      yoy = ((curVal / previousVal - 1) * 100).toFixed(1) + '%'
-    }
-
-    var formatVal = hasCurrent ? BigNumber(curVal).dividedBy(MILLION).toFormat(0) : 'Unavailable'
-
-    return (
-      <li>
-        
-        <span>{concept} (MUSD) </span>
-        <span>
-          {hasCurrent && yoy ? `${formatVal} (${yoy})` : `${formatVal}`}
-        </span>
-      </li>
-    )
-  }
-  var f = {}
-  for (const e of facts) {
-    var yr = e.frame.slice(2, 6)
-    f[parseInt(yr)] = { ...f[yr], [e['concept']]: e }
-  }
-
-  const cagr = (end, start, periods) => {
-    return Math.pow((end / start), (1 / periods)) - 1
-  }
-
-  const YEARSPERIOD = 5
-  const maxYr = Math.max(...Object.keys(f).map(e => parseInt(e)))
-  const current = f[maxYr]
-  const previous = f[maxYr - 1]
-  var hasTminusPeriod = f.hasOwnProperty(maxYr - YEARSPERIOD)
-  var hasTminusPeriodRevenue = hasTminusPeriod ? f[maxYr - YEARSPERIOD].hasOwnProperty('Revenues') : false
-  var hasCurrentRevenue = current.hasOwnProperty('Revenues')
-  var curRevenue = hasCurrentRevenue ? current.Revenues.val : NaN
-  var minusPeriodRevenue = hasTminusPeriodRevenue ? f[maxYr - YEARSPERIOD].Revenues.val : NaN
-  var cagrRevenue = (hasCurrentRevenue && hasTminusPeriodRevenue) ? cagr(curRevenue, minusPeriodRevenue, YEARSPERIOD) : NaN
+  console.log(publicFloat)
+  const latestYear = Math.max(...publicFloat.map(i=>i.CY))
+  const publicFloatLatest = publicFloat.filter(i=> i.CY === latestYear)
+  const publicFloatLatestValue = (publicFloatLatest.length === 0)? false : BigNumber(publicFloatLatest[0].val).dividedBy(MILLION)
+  const publicFloatPrevious = publicFloat.filter(i=> i.CY === latestYear-1)
+  const publicFloatPreviousValue = (publicFloatPrevious.length === 0)? false : BigNumber(publicFloatPrevious[0].val).dividedBy(MILLION)
+  console.log(publicFloatPrevious)
 
   return (
-    <div id='col'>
-      <div id='factscomponent'>
-        <h2>Financial Performance</h2>
-        <ul id='facts'>
-          <li><span>{` `}</span>{maxYr}</li>
-          {fact('EntityPublicFloat', current, previous, maxYr)}
-          {fact('Revenues', current, previous, maxYr)}
-          {fact('CostOfRevenue', current, previous, maxYr)}
-          {fact('GrossProfit', current, previous, maxYr)}
-          <li><span>{`CAGR ${YEARSPERIOD}yr  Revenue`}</span>{cagrRevenue ? `${(cagrRevenue * 100).toFixed(1)}%` : 'Unavailable'}</li>
-        </ul>
+    <div id='factscomponent'>
+      <h4>Financial Performance</h4>
+      <div id='factsgrid'>
+        <div>(MUSD)</div>
+        <div>{Math.max(...publicFloat.map(i=>parseInt(i.CY)))}</div>
+        <div>Y/Y</div>
+        <div>Public Float</div>
+        <div>{publicFloatLatestValue ? publicFloatLatestValue.toFormat(0): 'Unavailable'}</div>
+        <div>{(publicFloatPreviousValue && publicFloatLatestValue) ? publicFloatLatestValue.dividedBy(publicFloatPreviousValue).toFormat(2): 'Unavailable'}</div>
       </div>
+      {`CAGR ${YEARSPERIOD}yr  Revenue`}
+      {/* {cagrRevenue ? `${(cagrRevenue * 100).toFixed(1)}%` : 'Unavailable'} */}
     </div>
   );
 };

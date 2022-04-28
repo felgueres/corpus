@@ -1,7 +1,7 @@
 const CATEGORIES = {
     'motorVehicles': {
         'name': 'Motor Vehicles and Motor Vehicle Equipment',
-        'humanReadable': 'Motors',
+        'humanReadable': 'Automotive',
         'url': 'motorVehicles',
         'industry': 'transportation',
         'sic': 371,
@@ -26,5 +26,4 @@ const CATEGORIES = {
     }
 }
 
-
-export default CATEGORIES 
+export default CATEGORIES
