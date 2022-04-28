@@ -1,7 +1,7 @@
 const CATEGORIES = {
     'motorVehicles': {
         'name': 'Motor Vehicles and Motor Vehicle Equipment',
-        'humanReadable': 'Automotive',
+        'humanReadable': 'Motors',
         'url': 'motorVehicles',
         'industry': 'transportation',
         'sic': 371,
@@ -20,7 +20,7 @@ const CATEGORIES = {
     },
     'electronics': {
         'name': 'Electronic Components and Accesories',
-        'humanReadable': 'Chips',
+        'humanReadable': 'Semiconductors',
         'url': 'electronics',
         'sic': 367
     }

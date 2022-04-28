@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useInsights from "./useInsights";
 import SkeletonProfile from "../skeletons/SkeletonProfile";
-import CompanyFacts from "./profile-company-facts";
 
 const NAVS = [['supply', 'Supply Chains'], ['manufacturing', 'Manufacturing'],
 ['demand', 'Demand'], , ['risk', 'Risks'],
@@ -54,7 +53,6 @@ const ProfileInsights = ({ organizationId }) => {
         <div id='right-col'>
           {isCategoryAvailable(insights, 'demand') && insightCards(insights, 'demand', 'Demand')}
           {isCategoryAvailable(insights, 'fact') && insightCards(insights, 'fact', 'Insights')}
-          <CompanyFacts organizationId={organizationId}/>
         </div>
       </div>
     </div>

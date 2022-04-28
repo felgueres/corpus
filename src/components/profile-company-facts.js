@@ -38,20 +38,19 @@ const CompanyFacts = ({ organizationId }) => {
 
   return (
     <div id='factscomponent'>
-      <h4>Financial Performance</h4>
       <div id='factsgrid'>
-        <div>(USD)</div>
-        <div>{EntityPublicFloat.latestYear}</div>
-        <div>Y/Y</div>
-        <div>Public Float</div>
-        <div>{EntityPublicFloat.latestValue ? formatAsCompact(EntityPublicFloat.latestValue) : 'Unavailable'}</div>
-        <div>{(EntityPublicFloat.latestValue&& EntityPublicFloat.previousValue) ? formatAsPercent((EntityPublicFloat.latestValue/ EntityPublicFloat.previousValue) - 1) : 'Unavailable'}</div>
+        <div className="name">(USD)</div>
+        <div className="name metric">{EntityPublicFloat.latestYear}</div>
+        <div className="name metric">Y/Y</div>
+        <div >Public Float</div>
+        <div className="metric">{EntityPublicFloat.latestValue ? formatAsCompact(EntityPublicFloat.latestValue) : 'Unavailable'}</div>
+        <div className="metric">{(EntityPublicFloat.latestValue&& EntityPublicFloat.previousValue) ? formatAsPercent((EntityPublicFloat.latestValue/ EntityPublicFloat.previousValue) - 1) : 'Unavailable'}</div>
         <div>Revenue</div>
-        <div>{Revenues.latestValue?formatAsCompact(Revenues.latestValue):'Unavailable'}</div>
-        <div>{(Revenues.latestValue&&Revenues.previousValue)?formatAsPercent((Revenues.latestValue/Revenues.previousValue)-1):'Unavailable'}</div>
+        <div className="metric">{Revenues.latestValue?formatAsCompact(Revenues.latestValue):'Unavailable'}</div>
+        <div className="metric">{(Revenues.latestValue&&Revenues.previousValue)?formatAsPercent((Revenues.latestValue/Revenues.previousValue)-1):'Unavailable'}</div>
         <div>Cost of Revenue</div>
-        <div>{CostOfRevenue.latestValue?formatAsCompact(CostOfRevenue.latestValue) : 'Unavailable'}</div>
-        <div>{(CostOfRevenue.latestValue&&CostOfRevenue.previousValue)?formatAsPercent((CostOfRevenue.latestValue/CostOfRevenue.previousValue)-1):'Unavailable'}</div>
+        <div className="metric">{CostOfRevenue.latestValue?formatAsCompact(CostOfRevenue.latestValue) : 'Unavailable'}</div>
+        <div className="metric">{(CostOfRevenue.latestValue&&CostOfRevenue.previousValue)?formatAsPercent((CostOfRevenue.latestValue/CostOfRevenue.previousValue)-1):'Unavailable'}</div>
       </div>
     </div>
   );

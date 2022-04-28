@@ -11,7 +11,10 @@
 
 h4 {
     font-size: 18px;
-    font-weight: 300
+    font-weight: 300;
+    padding: 5px 0px 5px 0px;
+    margin: 0;
+    font-weight:400;
 }
 
 #homebar {
@@ -165,9 +168,10 @@ h4 {
 }
 
 #factscomponent {
-    max-width: 400px;
-    font-size: 12px; 
+    font-size: 10px; 
     line-height: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 #factsgrid {
@@ -175,8 +179,20 @@ h4 {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+#factsgrid .metric {
+    text-align: center;
+}
+
+#factsgrid .name {
+   font-weight: bold; 
+   border-bottom: 1px solid #dadce0;
+   line-height: 15px;
+}
+
+
 #profile-insights {
     width: 100%;
+    padding-top: 15px;
 }
 
 #two-col-frame {
@@ -188,7 +204,6 @@ h4 {
     font-size: 10px;
     border: 1px solid #dadce0;
     padding: 10px;
-    border-radius: 10px;
 }
 
 #profile-insights h1 {
@@ -197,15 +212,11 @@ h4 {
 }
 
 #profile-insights li {
-    padding: 5px 5px 5px 0px;
+    padding: 5px 0px 5px 0px;
     list-style-type: None;
     font-size: 12px;
 }
 
-#profile-insights .insight-risk {
-    border-left: 1px solid lightcoral;
-    padding-left: 8px;
-}
 
 #profile-insights a {
     margin-right: 15px
@@ -219,24 +230,48 @@ h4 {
     border-bottom: 3px #002147 solid
 }
 
+#profile-insights .insight-risk {
+    border-left: 2px solid lightcoral;
+}
+
 #profile-insights .insight-fact {
-    border-left: 1px solid lightblue;
-    padding-left: 8px;
+    border-left: 2px solid lightblue;
 }
 
 #profile-insights .insight-supply {
-    border-left: 1px solid lightblue;
-    padding-left: 8px;
+    border-left: 2px solid lightblue;
 }
 
 #profile-insights .insight-opportunity {
-    border-left: 1px solid #7fcebb;
-    padding-left: 8px;
+    border-left: 2px solid #7fcebb;
+}
+
+#profile-insights .insight-manufacturing {
+    border-left: 2px solid mediumslateblue;
+}
+
+#profile-insights .insight-material {
+    border-left: 2px solid gold;
+}
+
+#profile-insights .insight-competition {
+    border-left: 2px solid olive;
+}
+
+#profile-insights .insight-competition {
+    border-left: 2px solid plum;
+}
+
+#profile-insights .insight-climate {
+    border-left: 2px solid orange;
+}
+
+#profile-insights .insight-demand {
+    border-left: 2px solid green;
 }
 
 #profile-insights .insight-summary {
     border-left: 1px solid #002147;
-    padding-left: 8px;
 }
 
 #profile-insights .spacing {
@@ -269,4 +304,10 @@ h4 {
 #categories .nav-link:hover {
     background-color: #002147;
     color: white;
+}
+
+#homecopy {
+    font-size: 12px;
+    padding: 16px;
+
 }
