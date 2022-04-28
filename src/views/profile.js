@@ -10,7 +10,6 @@ const Profile = ({ match }) => {
     <div id='profile'>
         <ProfileData organizationId={organizationId} />
         <ProfileInsights organizationId={organizationId} />
-        <CompanyFacts organizationId={organizationId} />
     </div>
   );
 };

@@ -130,8 +130,7 @@ h4 {
 }
 
 #profile {
-    padding-top: 8px;
-    padding-left: 16px;
+    padding: 16px;
 }
 
 .content {
@@ -166,7 +165,9 @@ h4 {
 }
 
 #factscomponent {
-    padding: 8px;
+    max-width: 400px;
+    font-size: 12px; 
+    line-height: 20px;
 }
 
 #factsgrid {
@@ -174,9 +175,20 @@ h4 {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-
 #profile-insights {
     width: 100%;
+}
+
+#two-col-frame {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+#profile-insights .insight {
+    font-size: 10px;
+    border: 1px solid #dadce0;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #profile-insights h1 {
@@ -185,16 +197,13 @@ h4 {
 }
 
 #profile-insights li {
-    padding: 10px 5px 10px 5px;
-    border-color: #E5E5E5;
+    padding: 5px 5px 5px 0px;
     list-style-type: None;
     font-size: 12px;
-    border-style: solid;
-    border-width: 0 0px 1px 0px
 }
 
 #profile-insights .insight-risk {
-    border-left: 5px solid lightcoral;
+    border-left: 1px solid lightcoral;
     padding-left: 8px;
 }
 
@@ -211,17 +220,22 @@ h4 {
 }
 
 #profile-insights .insight-fact {
-    border-left: 5px solid lightblue;
+    border-left: 1px solid lightblue;
+    padding-left: 8px;
+}
+
+#profile-insights .insight-supply {
+    border-left: 1px solid lightblue;
     padding-left: 8px;
 }
 
 #profile-insights .insight-opportunity {
-    border-left: 5px solid #7fcebb;
+    border-left: 1px solid #7fcebb;
     padding-left: 8px;
 }
 
 #profile-insights .insight-summary {
-    border-left: 5px solid #002147;
+    border-left: 1px solid #002147;
     padding-left: 8px;
 }
 
@@ -237,8 +251,6 @@ h4 {
     padding: 0;
     height: 37px;
     font-size: 12px;
-    border-bottom: black 1px solid;
-    text-align: center;
 }
 
 #categories .navbar {
