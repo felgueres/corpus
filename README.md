@@ -1,7 +1,5 @@
-ClimateDisclosures is a company-level database of climate risk and opportunities. 
-
-It helps sift through exposures related to opportunity, physical damages and regulatory shocks associated to climate change.
+American Machina sifts through annual investor reports indexing company-level information on Supply Chains, Competition, Raw Materials, Demand, Climate Risks, and other facts.
 
 The source of data is annual financial disclosures filed to the SEC.
 
-Runs at https://www.climate-disclosures.com
+Runs at https://www.americanmachina.com
