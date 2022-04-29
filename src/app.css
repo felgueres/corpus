@@ -35,7 +35,7 @@ h4 {
     font-style: normal;
 }
 
-#homebar .navbar-text {
+#homebar .navbar-text, .nav-link {
     font-size: 12px;
     color: #F3F4EF;
     line-height: 12px;
