@@ -2,10 +2,6 @@ import React from "react";
 import useOrganizationFacts from "./useOrganizationFacts";
 import SkeletonFacts from "../skeletons/SkeletonFacts";
 
-const cagr = (end, start, periods) => {
-  return Math.pow((end / start), (1 / periods)) - 1
-}
-
 function formatAsCompact(num) {
   return new Intl.NumberFormat('en', { notation: 'compact' }).format(num);
 }

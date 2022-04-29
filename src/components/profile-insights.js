@@ -1,11 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import useInsights from "./useInsights";
 import SkeletonProfile from "../skeletons/SkeletonProfile";
-
-const NAVS = [['supply', 'Supply Chains'], ['manufacturing', 'Manufacturing'],
-['demand', 'Demand'], , ['risk', 'Risks'],
-['fact', 'Insights'], ['climate', 'Climate'], ['cyber', 'Cyber'],
-['competition', 'Competition'], ['material', 'Raw Materials']]
 
 function insight(i, idx) {
   return (<li key={idx}><div className={`insight insight-${i.category}`}>{i.text}</div></li>)
@@ -14,22 +9,16 @@ function insight(i, idx) {
 const ProfileInsights = ({ organizationId }) => {
 
   const { insights, loading } = useInsights(organizationId)
-  const [activeCategory, setActiveCategory] = useState('');
 
   if (loading) {
     return (<SkeletonProfile />)
-  }
-
-  function navlink(value, name) {
-    return (
-      <a className={activeCategory === value ? 'active' : ''} role='button' onClick={() => { setActiveCategory(value) }}>{name}</a>)
   }
 
   function insightCards(insightsArr, category, categoryReadable) {
     return (
       <div>
         <h4>{categoryReadable}</h4>
-        {insightsArr.filter(i => i.category === category || activeCategory === 'all').map((i, idx) => { return insight(i, idx) })}
+        {insightsArr.filter(i => i.category === category).map((i, idx) => { return insight(i, idx) })}
       </div>
     )
   }
