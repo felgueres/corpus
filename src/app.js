@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Container } from "react-bootstrap";
 import { Loading, NavBar, SideBar } from "./components";
-import { Profile, About } from "./views";
+import { Filings, About, Earnings } from "./views";
 import { Redirect } from "react-router-dom";
 
 const App = () => {
@@ -18,8 +18,9 @@ const App = () => {
       <Container id="frame-content">
         <SideBar/>
         <Switch>
-          <Route path="/" exact><Redirect to='/organizations/12927'></Redirect></Route>
-          <Route path='/organizations/:organizationId' component={Profile} />
+          <Route path="/" exact><Redirect to='/earnings/12927'></Redirect></Route>
+          <Route path='/filings/:organizationId' component={Filings} />
+          <Route path='/earnings/:organizationId' component={Earnings} />
           <Route path='/about/' component={About} />
         </Switch>
       </Container>

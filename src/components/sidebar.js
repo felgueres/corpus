@@ -8,12 +8,12 @@ import SkeletonSidebar from '../skeletons/SkeletonSidebar';
 const SideBar = () => {
   const { companies, loading } = useDirectory()
   const url = window.location.pathname;
-  const organizationId = url.startsWith('/organizations/')?url.split('/organizations/')[1]:''
+  const organizationId = url.startsWith('/earnings/')?url.split('/earnings/')[1]:''
   console.log(organizationId)
 
   const navbarLink = (e) => {
     return (
-      <Nav.Link className={`${e.cik===organizationId?'active':''}`} key={e.cik} href={`/organizations/${e.cik}`}>
+      <Nav.Link className={`${e.cik===organizationId?'active':''}`} key={e.cik} href={`/earnings/${e.cik}`}>
         {`${e.name}`}
       </Nav.Link>
     )

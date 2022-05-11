@@ -211,6 +211,12 @@ h4 {
     gap: 16px;
 }
 
+#two-cols-variant {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 16px;
+}
+
 #profile-insights .insight {
     font-size: 10px;
     border: 1px solid #dadce0;
@@ -302,7 +308,7 @@ h4 {
     font-size: 12px;
     padding-top: 11px;
     padding-bottom: 11px;
-    width: 80px
+    padding-left: 0px;
 }
 
 #categories .nav-link:hover {
@@ -314,4 +320,8 @@ h4 {
     font-size: 12px;
     padding: 16px;
     text-align: justify;
+}
+
+#earnings {
+    font-size: 10px;
 }

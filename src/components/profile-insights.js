@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useInsights from "./useInsights";
 import SkeletonProfile from "../skeletons/SkeletonProfile";
-import { Button } from "react-bootstrap";
 
 function insight(i, idx) {
   return (<li key={idx}><div className={`insight insight-${i.category}`}>{i.text}</div></li>)
