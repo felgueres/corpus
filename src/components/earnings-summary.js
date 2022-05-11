@@ -11,18 +11,57 @@ const EarningsSummary = ({ organizationId }) => {
     return (<SkeletonProfile />)
   }
 
+  const regex = /\d+/;
+
+  function sentencesWithFacts(summary) {
+    var s = summary
+      .sort((a, b) => (a.start_idx > b.start_idx) ? 1 : -1)
+      .filter(e => e.section === 'outlook' && (e.role !== 'operator'))
+      .map(e => e.summary)
+      .join(' ')
+      .split(' . ')
+      .filter(e => regex.test(e))
+    return s
+  }
+
+  function sentencesWithCommentary(summary) {
+    var s = summary
+      .sort((a, b) => (a.start_idx > b.start_idx) ? 1 : -1)
+      .filter(e => e.section === 'outlook' && (e.role !== 'operator'))
+      .map(e => e.summary)
+      .join(' ')
+      .split(' . ')
+      .filter(e => !regex.test(e))
+    return s
+  }
+
+  var sentencesWithFacts = sentencesWithFacts(summary)
+  var sentencesWithCommentary = sentencesWithCommentary(summary)
+
+  console.log(sentencesWithCommentary)
+
   return (
     <div id='earnings'>
-      <div id='two-cols-variant'>
-        <div>
-          <Navbar>
-            <Nav className='flex-column'>
-              <h4>Q1 2022</h4>
-            </Nav>
-          </Navbar>
+      <div id='two-col-frame'>
+        <div className="summary-card">
+          <h4>Top Comments</h4>
+          <ul>
+            {sentencesWithCommentary
+              .map(e => {
+                return (<li>{e}</li>)
+              }
+              )}
+          </ul>
         </div>
-        <div>
-          {summary.sort((a, b) => (a.start_idx > b.start_idx) ? 1 : -1).filter(e => e.section === 'outlook' && (e.role !== 'operator')).map(e => { return (<div><br/>{e.role}<br/> <br/>{e.summary}</div>) })}
+        <div className="summary-card">
+          <h4>Key Facts</h4>
+          <ul>
+            {sentencesWithFacts
+              .map(e => {
+                return (<li>{e}</li>)
+              }
+              )}
+          </ul>
         </div>
       </div>
     </div>
