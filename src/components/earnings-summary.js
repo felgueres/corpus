@@ -21,6 +21,7 @@ const EarningsSummary = ({ organizationId }) => {
       .join(' ')
       .split(' . ')
       .filter(e => regex.test(e))
+      .filter(e=>e.split(' ').length <40)
     return s
   }
 
@@ -32,6 +33,7 @@ const EarningsSummary = ({ organizationId }) => {
       .join(' ')
       .split(' . ')
       .filter(e => !regex.test(e))
+      .filter(e=>e.split(' ').length <40)
     return s
   }
 
