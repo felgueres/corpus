@@ -46,9 +46,9 @@ const EarningsSummary = ({ organizationId }) => {
     <div id='earnings'>
       <div id='two-col-frame'>
         <div className="summary-card">
-          <h4>Top Comments</h4>
+          <h4>Key Facts</h4>
           <ul>
-            {sentencesWithCommentary
+            {sentencesWithFacts
               .map(e => {
                 return (<li>{e}</li>)
               }
@@ -56,9 +56,9 @@ const EarningsSummary = ({ organizationId }) => {
           </ul>
         </div>
         <div className="summary-card">
-          <h4>Key Facts</h4>
+          <h4>Top Comments</h4>
           <ul>
-            {sentencesWithFacts
+            {sentencesWithCommentary
               .map(e => {
                 return (<li>{e}</li>)
               }

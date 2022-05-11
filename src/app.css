@@ -332,3 +332,7 @@ h4 {
     padding-left: 16px;
     padding-right: 16px;
 }
+
+#earnings li {
+    margin-bottom: 7px;
+}
