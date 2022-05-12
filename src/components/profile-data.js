@@ -14,7 +14,7 @@ const ProfileData = ({organizationId}) => {
     <div id='profilesummary'>
       <h1>{data.name}</h1>
       <h2>{exchange} : {ticker}
-      <br/>Q1, 2022</h2>
+      <br/>Q1 2022</h2>
     </div>
   );
 };

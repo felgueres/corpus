@@ -18,7 +18,7 @@ const App = () => {
       <Container id="frame-content">
         <SideBar/>
         <Switch>
-          <Route path="/" exact><Redirect to='/earnings/12927'></Redirect></Route>
+          <Route path="/" exact><Redirect to='/earnings/1318605'></Redirect></Route>
           <Route path='/filings/:organizationId' component={Filings} />
           <Route path='/earnings/:organizationId' component={Earnings} />
           <Route path='/about/' component={About} />
