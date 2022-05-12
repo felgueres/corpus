@@ -326,6 +326,8 @@ h4 {
 
 #earnings h4 {
     padding: 8px 0 8px 8px;
+    color:#0969da; 
+    font-weight: 600;
 }
 
 #earnings ul {

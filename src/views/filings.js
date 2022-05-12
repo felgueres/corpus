@@ -8,8 +8,10 @@ const Filings = ({ match }) => {
 
   return (
     <div id='profile'>
-      <ProfileData organizationId={organizationId} />
-      <CategoriesBar organizationId={organizationId} />
+      <div id='two-col-frame'>
+      <div><ProfileData organizationId={organizationId} /></div>
+      <div><CategoriesBar organizationId={organizationId}/></div>
+      </div>
       <ProfileInsights organizationId={organizationId} />
     </div>
   );
