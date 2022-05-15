@@ -1,5 +1,3 @@
-American Machina sifts through annual investor reports indexing company-level information on Supply Chains, Competition, Raw Materials, Demand, Climate Risks, and other facts.
-
-The source of data is annual financial disclosures filed to the SEC.
+Allows users to do market research on American industry.
 
 Runs at https://www.americanmachina.com
