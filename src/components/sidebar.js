@@ -9,7 +9,6 @@ const SideBar = () => {
   const { companies, loading } = useDirectory()
   const url = window.location.pathname;
   const organizationId = url.startsWith('/earnings/')?url.split('/earnings/')[1]:''
-  console.log(organizationId)
 
   const navbarLink = (e) => {
     return (
