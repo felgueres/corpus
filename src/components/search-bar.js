@@ -1,28 +1,30 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
+import useSearch from "./useSearch";
 
 export const SearchBar = () => {
   let [searchParams, setSearchParams] = useSearchParams();
   let query = searchParams.get("q")
+  let { data, loading } = useSearch(searchParams.toString())
+
   function handleSubmit(event) {
     event.preventDefault()
-    console.log(event.currentTarget)
     let formData = new FormData(event.currentTarget);
-    console.log(formData.values())
-    let newQuery = formData.get("query");
+    let newQuery = formData.get("q");
     if (!newQuery) return;
-    setSearchParams({ 'q': newQuery})
+    setSearchParams({ 'q': newQuery })
   }
-  console.log(query)
 
   return (
-    <div style={{ display: "flex" }}>
+    <div>
       <form onSubmit={handleSubmit}>
         <label>
-          <input defaultValue={query ?? undefined} type="text" name="query" />
+          <input defaultValue={query ?? undefined} type="text" name="q" placeholder="search" autoComplete="off" />
         </label>
-        <button type="submit">Search</button>
       </form>
+      <ul>
+        <li>{data}</li>
+      </ul>
     </div>
   );
 };

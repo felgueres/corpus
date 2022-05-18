@@ -3,7 +3,7 @@ import SearchBar from "../components/search-bar";
 
 export const Home = () => {
   return (
-    <div>
+    <div id='home'>
       <SearchBar/>
     </div>
   );
