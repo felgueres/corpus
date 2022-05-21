@@ -1,10 +1,11 @@
 import React from "react";
-import SearchBar from "../components/search-bar";
+import AlgoliaSearch from "../components/algolia";
+
 
 export const Home = () => {
   return (
-    <div id='home'>
-      <SearchBar/>
+    <div>
+      <AlgoliaSearch/>
     </div>
   );
 };
