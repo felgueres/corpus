@@ -215,8 +215,18 @@ h4 {
 
 #two-cols-variant {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 3fr;
     gap: 16px;
+}
+
+#two-cols-search-frame{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+}
+
+#search-filters .ais-RefinementList-labelText {
+    font-size: 11px;
 }
 
 #profile-insights .insight {
