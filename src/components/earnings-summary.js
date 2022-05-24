@@ -1,8 +1,6 @@
 import React from "react";
 import useSummary from "./useSummary";
 import SkeletonProfile from "../skeletons/SkeletonProfile";
-import CategoriesBar from "./categories-bar";
-import { Navbar, Nav } from "react-bootstrap";
 
 const EarningsSummary = ({ organizationId }) => {
   const { summary, loading } = useSummary(organizationId)
@@ -39,8 +37,6 @@ const EarningsSummary = ({ organizationId }) => {
 
   var sentencesWithFacts = sentencesWithFacts(summary)
   var sentencesWithCommentary = sentencesWithCommentary(summary)
-
-  console.log(sentencesWithCommentary)
 
   return (
     <div id='earnings'>

@@ -4,9 +4,11 @@
     min-width: 630px;
     min-height: 700px;
     padding: 0;
-    border: 0px 1px 1px 1px;
+    /* border: 0px 1px 1px 1px;
     border-style: solid;
-    border-color: black;
+    border-color: #a6b7f9; */
+    /* background: url("./assets/default_bg_light_theme.png");
+    background-repeat: no-repeat; */
 }
 
 h4 {
@@ -213,8 +215,18 @@ h4 {
 
 #two-cols-variant {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 3fr;
     gap: 16px;
+}
+
+#two-cols-search-frame{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+}
+
+#search-filters .ais-RefinementList-labelText {
+    font-size: 11px;
 }
 
 #profile-insights .insight {
@@ -326,7 +338,7 @@ h4 {
 
 #earnings h4 {
     padding: 8px 0 8px 8px;
-    color:#0969da; 
+    color: #0969da;
     font-weight: 600;
 }
 
@@ -337,4 +349,77 @@ h4 {
 
 #earnings li {
     margin-bottom: 7px;
+}
+
+#home {
+    padding: 16px;
+}
+
+#search-form form {
+    width: 500px;
+    margin: auto;
+    display: block;
+    padding: 50px 0px 50px 0px;
+}
+
+#search-form label {
+    width: 100%;
+}
+
+#search-form input {
+    width: 100%;
+    border-radius: 50px;
+    padding: 12px 12px 12px 25px;
+    border: 1px solid #dadce0;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+#search-form input:focus {
+    outline: 1px solid #a6b7f9;
+    box-shadow: 0 0 10px #a6b7f9;
+}
+
+#search-results h4 {
+    font-size: 16px;
+    color: #4367DC;
+    font-weight: bold;
+}
+
+#search-results {
+    font-size: 11px;
+    padding: 8px;
+}
+
+#search-results ul {
+    padding-left: 0px;
+}
+
+#search-results li {
+    font-size: 11px;
+    width: 420px;
+    list-style-type: none;
+    border: #edeeef 1px solid;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+#search-form-algolia input {
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid #dadce0;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+#search-form-algolia input:focus {
+    outline: 1px solid #a6b7f9;
+    box-shadow: 0 0 10px #a6b7f9;
+}
+
+#search-form-algolia form {
+    width: 500px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }

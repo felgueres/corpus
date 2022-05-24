@@ -9,7 +9,10 @@ export default function useSearch(query) {
       const apiUrl = process.env.REACT_APP_API_URL;
       setLoading(true)
       try {
-        let response = await fetch(`${apiUrl}/api/search/${query}`)
+        let response = await fetch(`${apiUrl}/api/search?${query}`,
+        {
+          method: 'GET'
+        })
         response = await response.json()
         setData(response)
         setLoading(false)
