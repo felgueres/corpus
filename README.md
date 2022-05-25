@@ -1,3 +1,3 @@
-Allows users to do market research in natural language.
+Industrial Market Research
 
 Runs at https://www.americanmachina.com
