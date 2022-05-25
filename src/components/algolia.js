@@ -1,17 +1,18 @@
 import React from "react";
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, Highlight, RefinementList } from 'react-instantsearch-hooks-web';
+import { InstantSearch, SearchBox, InfiniteHits, Highlight, RefinementList, Pagination } from 'react-instantsearch-hooks-web';
 
 export const AlgoliaSearch = () => {
   const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_ACCOUNT, process.env.REACT_APP_ALGOLIA_ID);
-  console.log(process)
 
   function Hit({ hit }) {
-    console.log(hit)
     return (
-      <article>
+      <article id="search-results">
+        <p><Highlight attribute='company_name' hit={hit}/></p>
         <p>{hit.name}, {hit.role} </p>
-        <p><Highlight attribute='summary' hit={hit} />{hit.p}</p>
+        <div className="ais-Highlight"><Highlight attribute='summary' hit={hit}/>{hit.p}</div>
+        <br/>
+        <div>{hit.words.map(e=>{return <span className="keyword-pill">{e}</span>})}</div>
       </article>
     );
   }
@@ -22,18 +23,14 @@ export const AlgoliaSearch = () => {
       <div id="two-cols-search-frame">
         <div id='search-filters'>
           <span className="ais-Panel-header">Company</span>
-          <RefinementList attribute="company_name" />
-          <span className="ais-Panel-header">Role</span>
-          <RefinementList attribute="role" />
+          <RefinementList operator={'and'} showMore={true} showMoreLimit={50} sortBy={['name']} attribute="company_name" />
           <span className="ais-Panel-header">Section</span>
           <RefinementList attribute="section" />
-          <span className="ais-Panel-header">Industry</span>
-          <RefinementList attribute="industry" />
-          <span className="ais-Panel-header">Keywords</span>
-          <RefinementList attribute="words" />
+          <span className="ais-Panel-header"></span>
+          <RefinementList attribute="p_type" />
         </div>
         <div>
-          <Hits hitComponent={Hit} />
+          <InfiniteHits showPrevious={false} hitComponent={Hit} />
         </div>
       </div>
     </InstantSearch>

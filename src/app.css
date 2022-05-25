@@ -423,3 +423,18 @@ h4 {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
+.keyword-pill {
+    border: #a6b7f9 1px solid;
+    padding: 5px;
+    margin-right: 3px;
+    border-radius: 10px;
+    font-size: 8px;
+    line-height: 20px;
+    color: #3730a3;
+    background-color: #eef2ff;
+}
+
+#search-results .ais-Highlight {
+    font-size: 11px;
+}
