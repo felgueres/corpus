@@ -4,11 +4,6 @@
     min-width: 630px;
     min-height: 700px;
     padding: 0;
-    /* border: 0px 1px 1px 1px;
-    border-style: solid;
-    border-color: #a6b7f9; */
-    /* background: url("./assets/default_bg_light_theme.png");
-    background-repeat: no-repeat; */
 }
 
 h4 {
@@ -20,7 +15,8 @@ h4 {
 }
 
 #homebar {
-    background-color: #002147;
+    background-color: #002518;
+      
 }
 
 #homebar .navbar {
@@ -29,12 +25,11 @@ h4 {
 }
 
 #homebar .navbar-brand {
-    font-size: 12px;
+    font-size: 11px;
     color: #F3F4EF;
     margin: 0;
     line-height: 12px;
-    font-weight: 300;
-    font-style: normal;
+    font-weight: 100;
 }
 
 #homebar .navbar-text,
@@ -395,15 +390,6 @@ h4 {
     padding-left: 0px;
 }
 
-#search-results li {
-    font-size: 11px;
-    width: 420px;
-    list-style-type: none;
-    border: #edeeef 1px solid;
-    border-radius: 10px;
-    padding: 16px;
-}
-
 #search-form-algolia input {
     width: 100%;
     border-radius: 50px;
@@ -413,8 +399,7 @@ h4 {
 }
 
 #search-form-algolia input:focus {
-    outline: 1px solid #a6b7f9;
-    box-shadow: 0 0 10px #a6b7f9;
+    outline: 1px solid #002518;
 }
 
 #search-form-algolia form {

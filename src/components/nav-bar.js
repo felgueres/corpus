@@ -8,9 +8,8 @@ const NavBar = () => {
   return (
     <div id="homebar">
       <Navbar>
-        <Navbar.Brand href="/">American Machina</Navbar.Brand>
+        <Navbar.Text href="/">American Machina</Navbar.Text>
         <NavbarCollapse className='justify-content-center'>
-          <Navbar.Text>Insights on America's Industrial Base</Navbar.Text>
         </NavbarCollapse>
         <Nav.Link href='/about'>About</Nav.Link>
       </Navbar>
