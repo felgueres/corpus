@@ -3,39 +3,19 @@
     max-width: 990px;
     min-width: 630px;
     min-height: 700px;
+    border: #002518 1px solid;
     padding: 0;
 }
 
-h4 {
-    font-size: 14px;
-    font-weight: 400;
-    padding: 5px 0px 5px 0px;
-    margin: 0;
-    font-weight: 400;
-}
-
-#homebar {
-    background-color: #002518;
-      
-}
-
 #homebar .navbar {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-#homebar .navbar-brand {
-    font-size: 11px;
-    color: #F3F4EF;
-    margin: 0;
-    line-height: 12px;
-    font-weight: 100;
+    border-bottom: #002518 1px solid;
+    padding: 0;
 }
 
 #homebar .navbar-text,
 .nav-link {
     font-size: 12px;
-    color: #F3F4EF;
+    color: #002518;
     line-height: 12px;
     font-weight: 300;
 }
@@ -65,156 +45,12 @@ h4 {
     height: 100%;
 }
 
-#sidebar .navbar {
-    padding-right: 0;
-}
-
-#sidebar .navbar-nav {
-    width: 100%;
-}
-
-#sidebar .nav-link {
-    line-height: 15px;
-    font-size: 12px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-#sidebar .nav-link:hover {
-    border-right: #002147 5px solid;
-}
-
-#sidebar .nav-link.active {
-    border-right: #002147 5px solid;
-}
-
-#categoryview {
-    padding-left: 16px;
-    padding-top: 8px;
-}
-
-#categoryview h1 {
-    font-size: 32px;
-    font-weight: 800;
-}
-
-#directory {
-    font-size: 10px;
-    max-height: 600px;
-    max-width: 600px;
-}
-
-/* TODO: there must be a way to overflow within the frame */
-#directory .cols-4 {
-    column-count: 4;
-}
-
-#directory .cols-2 {
-    column-count: 2;
-}
-
-#directory .cols-1 {
-    column-count: 1;
-}
-
-#directory li {
-    list-style-type: none;
-    line-height: 1.4em;
-}
-
-#directory a {
-    color: black;
-}
-
-#directory ul {
-    padding: 0;
-}
-
-#profile {
-    padding: 16px;
-}
-
 .content {
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
 
-/* gap: 100px */
-
-#profile h1 {
-    font-weight: 800;
-    font-size: 26px;
-    line-height: 28px;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-#profile h2 {
-    font-size: 18px;
-    line-height: 25px;
-    color: #5a564f
-}
-
-#facts li {
-    font-size: 10px;
-    list-style-type: None;
-    border-bottom: 1px #E5E5E5 solid;
-    max-width: 250px;
-    line-height: 27px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#factscomponent {
-    font-size: 10px;
-    line-height: 20px;
-    padding: 0;
-    margin: 0;
-}
-
-#factsgrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-#factsgrid .metric {
-    text-align: center;
-}
-
-#factsgrid .name {
-    font-weight: bold;
-    border-bottom: 1px solid #dadce0;
-    line-height: 15px;
-}
-
-
-#profile-insights {
-    width: 100%;
-    padding-top: 15px;
-}
-
-#insight-card .showmore {
-    font-size: 10px;
-    border-style: solid;
-    border-top: 0px;
-    border-color: #edeeef;
-    display: flex;
-    justify-content: center;
-}
-
-#two-col-frame {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-#two-cols-variant {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 16px;
-}
-
-#two-cols-search-frame{
+#two-col-frame{
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 10px;
@@ -224,168 +60,16 @@ h4 {
     font-size: 11px;
 }
 
-#profile-insights .insight {
-    font-size: 10px;
-    border: 1px solid #dadce0;
-    padding: 10px;
-}
-
-#profile-insights h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-#profile-insights li {
-    padding: 5px 0px 5px 0px;
-    list-style-type: None;
-    font-size: 12px;
-}
-
-#profile-insights li:last-of-type {
-    padding: 0px 0px 0px 0px;
-    list-style-type: None;
-    font-size: 12px;
-}
-
-#profile-insights .insight-risk {
-    border-left: 2px solid lightcoral;
-}
-
-#profile-insights .insight-fact {
-    border-left: 2px solid lightblue;
-}
-
-#profile-insights .insight-supply {
-    border-left: 2px solid lightblue;
-}
-
-#profile-insights .insight-opportunity {
-    border-left: 2px solid #7fcebb;
-}
-
-#profile-insights .insight-manufacturing {
-    border-left: 2px solid mediumslateblue;
-}
-
-#profile-insights .insight-material {
-    border-left: 2px solid gold;
-}
-
-#profile-insights .insight-competition {
-    border-left: 2px solid olive;
-}
-
-#profile-insights .insight-competition {
-    border-left: 2px solid plum;
-}
-
-#profile-insights .insight-climate {
-    border-left: 2px solid orange;
-}
-
-#profile-insights .insight-demand {
-    border-left: 2px solid green;
-}
-
-#profile-insights .insight-summary {
-    border-left: 1px solid #002147;
-}
-
-#profile-insights .spacing {
-    padding: 0 10px 0 10px
-}
-
-#profile-insights .source {
-    font-size: 10px;
-}
-
-#categories {
-    padding: 0;
-    height: 37px;
-    font-size: 12px;
-}
-
-#categories-bar .navbar {
-    padding: 0;
-}
-
-#categories-bar .nav-link {
-    line-height: 15px;
-    color: black;
-}
-
 #homecopy {
     font-size: 12px;
     padding: 16px;
     text-align: justify;
 }
 
-#earnings {
-    font-size: 10px;
-}
-
-#earnings .summary-card {
-    margin-top: 10px;
-    border: #E5E5E5 1px solid;
-    border-radius: 10px;
-    padding: 8px;
-}
-
-#earnings h4 {
-    padding: 8px 0 8px 8px;
-    color: #0969da;
-    font-weight: 600;
-}
-
-#earnings ul {
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-#earnings li {
-    margin-bottom: 7px;
-}
-
-#home {
-    padding: 16px;
-}
-
-#search-form form {
-    width: 500px;
-    margin: auto;
-    display: block;
-    padding: 50px 0px 50px 0px;
-}
-
-#search-form label {
-    width: 100%;
-}
-
-#search-form input {
-    width: 100%;
-    border-radius: 50px;
-    padding: 12px 12px 12px 25px;
-    border: 1px solid #dadce0;
-    font-size: 12px;
-    line-height: 15px;
-}
-
-#search-form input:focus {
-    outline: 1px solid #a6b7f9;
-    box-shadow: 0 0 10px #a6b7f9;
-}
-
-#search-results h4 {
-    font-size: 16px;
-    color: #4367DC;
-    font-weight: bold;
-}
-
 #search-results {
     font-size: 11px;
     padding: 8px;
 }
-
 #search-results ul {
     padding-left: 0px;
 }

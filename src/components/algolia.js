@@ -4,7 +4,6 @@ import { InstantSearch, SearchBox, InfiniteHits, Highlight, RefinementList } fro
 
 const INDEXNAME = 'mvpV2'
 
-
 export const AlgoliaSearch = () => {
   const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_ACCOUNT, process.env.REACT_APP_ALGOLIA_ID);
 
@@ -24,8 +23,8 @@ export const AlgoliaSearch = () => {
 
   return (
     <InstantSearch searchClient={searchClient} indexName={INDEXNAME}>
-      <SearchBox id='search-form-algolia' />
-      <div id="two-cols-search-frame">
+      <SearchBox id='search-form-algolia' placeholder={'Start typing for companies, people, and keywords'} />
+      <div id="two-col-frame">
         <div id='search-filters'>
           <span className="ais-Panel-header">Company</span>
           <RefinementList operator={'and'} showMore={true} showMoreLimit={50} sortBy={['name']} attribute="company_name" />
