@@ -1,6 +1,6 @@
 import React from "react";
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, InfiniteHits, Highlight, RefinementList } from 'react-instantsearch-hooks-web';
+import { InstantSearch, SearchBox, InfiniteHits, RefinementList, CurrentRefinements } from 'react-instantsearch-hooks-web';
 
 const INDEXNAME = 'mvpV2'
 
@@ -9,11 +9,12 @@ export const AlgoliaSearch = () => {
 
   function Hit({ hit }) {
     return (
-      <article id="search-results">
-        <p><Highlight attribute='company_name' hit={hit} /> (${hit.symbol})</p>
-        <p>{hit.name}, {hit.role} </p>
+      <article>
+        <span>Role: {hit.role}</span>
+        <span>Company: {hit.company_name} ({hit.symbol}) </span>
+        <p>Document: Earnings Call Transcript Summary</p>
         <ul>
-          {JSON.parse(hit.jsummary).map(e => <span>{e}<br/><br/></span>)}
+          {JSON.parse(hit.jsummary).map(e => <span>{e}<br /><br /></span>)}
         </ul>
         <br />
         <div>{hit.words.map(e => { return <span className="keyword-pill">{e}</span> })}</div>
@@ -22,22 +23,23 @@ export const AlgoliaSearch = () => {
   }
 
   return (
-    <InstantSearch searchClient={searchClient} indexName={INDEXNAME}>
-      <SearchBox id='search-form-algolia' placeholder={'Start typing for companies, people, and keywords'} />
-      <div id="two-col-frame">
-        <div id='search-filters'>
-          <span className="ais-Panel-header">Company</span>
-          <RefinementList operator={'and'} showMore={true} showMoreLimit={50} sortBy={['name']} attribute="company_name" />
-          <br />
-          <span className="ais-Panel-header">Includes</span>
-          <RefinementList attribute="p_type" />
+    <div id="search">
+      <InstantSearch searchClient={searchClient} indexName={INDEXNAME}>
+        <div id="two-col-search-frame">
+          <div><SearchBox id='search-form-algolia' placeholder={'Search companies, people, or keywords'} /></div>
+          <div><CurrentRefinements clearsQuery={true} /></div>
         </div>
-        <div>
-          <InfiniteHits showPrevious={false} hitComponent={Hit} />
+        <div id="two-col-frame" className="">
+          <div id='search-filters' className="">
+            <header>Companies</header>
+            <RefinementList operator={'or'} showMore={true} limit={15} showMoreLimit={50} sortBy={['name']} attribute="company_name" />
+          </div>
+          <div id='search-results'>
+            <InfiniteHits showPrevious={false} hitComponent={Hit} />
+          </div>
         </div>
-      </div>
-    </InstantSearch>
+      </InstantSearch>
+    </div>
   );
 };
-
 export default AlgoliaSearch;

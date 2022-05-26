@@ -7,97 +7,75 @@
     padding: 0;
 }
 
+/* Navbar Section */
 #homebar .navbar {
     border-bottom: #002518 1px solid;
     padding: 0;
-}
-
-#homebar .navbar-text,
-.nav-link {
     font-size: 12px;
-    color: #002518;
     line-height: 12px;
     font-weight: 300;
 }
 
-#homebar .navbar-brand {
-    font-weight: bold;
-}
+#homebar .navbar-text,.nav-link {color: #002518;}
 
-#frame-content {
-    height: 100%;
-    min-width: 630px;
-    max-width: 990px;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 170px auto;
-    min-height: 700px;
-}
-
-#sidebar {
-    width: 170px;
-    max-width: 170px;
-    border-right: 1px black solid;
-    height: 100%;
-}
-
-#homeview {
-    height: 100%;
-}
-
-.content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
-
+/* Frames */
 #two-col-frame{
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 10px;
+    grid-template-columns: 150px auto;
+    gap: 5px;
 }
 
-#search-filters .ais-RefinementList-labelText {
-    font-size: 11px;
+#two-col-search-frame{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+/* Search Filters */
 
-#homecopy {
+#search-filters .ais-RefinementList-labelText {font-size: 11px;}
+
+#search-filters header{
     font-size: 12px;
-    padding: 16px;
-    text-align: justify;
+    font-weight: 300;
+    margin-bottom: 5px;
 }
 
+#search-filters .ais-RefinementList-count  {
+    display: none;
+}
+#search-filters .ais-RefinementList-checkbox {
+    display: none;
+}
+#search-filters .ais-Panel-header {
+    color: #002518;
+}
+
+#search-filters .ais-RefinementList-item {
+    font-size: 11px;
+    line-height: 11px;
+}
+
+#search-filters .ais-RefinementList-showMore{
+    font-size: 11px;
+    line-height: 11px;
+    border: #002518 1px solid;
+    margin-top: 0px;
+}
+
+/* Search Results */
 #search-results {
     font-size: 11px;
     padding: 8px;
 }
-#search-results ul {
-    padding-left: 0px;
-}
-
-#search-form-algolia input {
-    width: 100%;
-    border-radius: 50px;
-    border: 1px solid #dadce0;
-    font-size: 12px;
-    line-height: 15px;
-}
-
-#search-form-algolia input:focus {
-    outline: 1px solid #002518;
-}
-
-#search-form-algolia form {
-    width: 500px;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
+#search-results ul {padding-left: 0px;}
 
 .keyword-pill {
     border: #a6b7f9 1px solid;
     padding: 5px;
     margin-right: 3px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 8px;
     line-height: 20px;
     color: #3730a3;
@@ -106,4 +84,38 @@
 
 #search-results .ais-Highlight {
     font-size: 11px;
+}
+
+#search-results .ais-InfiniteHits-item {
+    font-size: 11px;
+    line-height: 14px;
+}
+#search-results .ais-InfiniteHits-loadMore {
+    font-size: 11px;
+    line-height: 14px;
+    
+}
+
+/* Search Form */
+
+#search-form-algolia input {
+    width: 100%;
+    border: 1px solid #dadce0;
+    font-size: 12px;
+    line-height: 15px;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#search-form-algolia ::placeholder {
+    color:#002518;
+}
+
+#search-form-algolia input:focus {
+    outline: 1px solid #002518;
+}
+
+#search-form-algolia form {
+    width: 400px;
+    /* margin: auto; this line makes searchbar align center */
 }
