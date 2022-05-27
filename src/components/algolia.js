@@ -13,13 +13,13 @@ export const AlgoliaSearch = () => {
     return (
       <table style={{ 'width': '100%' }}>
         <tr>
-          <span id="hit-title"> {hit.company_name} </span>
+          <span id="hit-title"> ${hit.symbol} </span>
           <Highlight attribute='s' hit={hit} />
         </tr>
         <table id='metadata'>
           <tr>
             <td>
-              {hit.name} {hit.role} {' | '} {`$${hit.symbol}`} {' | '} {hit.period} {' | '} {hit.industry} {' | '} {hit.s_type} {' | '} Sentiment
+              {hit.name} {hit.role} {' | '} {`${hit.company_name}`} {' | '} {hit.period} {' | '} {hit.industry} {' | '} {hit.s_type} {' | '} Sentiment
               <svg height={11} width={12}><circle cx={7} cy={5} r={4} fill={sMap[hit.label]}></circle></svg>{' | '}
               {hit.is_summary ? <span>Summary<span className="beta-pill">Beta</span></span> : 'Transcript'}
             </td>

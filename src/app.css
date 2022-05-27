@@ -42,7 +42,7 @@
     width: 100%;
 }
 
-#search-filters .ais-RefinementList-labelText {font-size: 11px;}
+#search-filters .ais-RefinementList-labelText {font-size: 13px;}
 
 #search-filters header{
     font-size: 13px;
@@ -57,13 +57,13 @@
 }
 
 #search-filters .ais-RefinementList-item {
-    font-size: 11px;
-    line-height: 11px;
+    font-size: 13px;
+    line-height: 13px;
 }
 
 #search-filters .ais-RefinementList-showMore{
-    font-size: 11px;
-    line-height: 11px;
+    font-size: 13px;
+    line-height: 13px;
     border: #002518 1px solid;
     margin-top: 0px;
     border: none;
@@ -74,7 +74,7 @@
 
 /* Search Results */
 #metadata {
-    font-size: 9px;
+    font-size: 11px;
     color: #3730a3;
     line-height: 0em;
 }
@@ -85,7 +85,7 @@
     padding: 1px 2px 1px 2px;
     vertical-align: super;
     border-radius: 2px;
-    font-size: 6px;
+    font-size: 9px;
 }
 
 .keyword-pill {
@@ -103,7 +103,7 @@
 }
 
 #search-results .ais-Highlight {
-    font-size: 11px;
+    font-size: 13px;
 }
 
 #search-results .ais-Hits {
@@ -112,7 +112,7 @@
 
 
 #search-results .ais-Hits-item {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 14px;
     padding: 0px;
     box-shadow: none;
@@ -120,7 +120,7 @@
 }
 
 #search-results .ais-InfiniteHits-loadMore {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 14px;
 }
 
@@ -130,7 +130,7 @@
 }
 
 #search-filters .ais-CurrentRefinements-label,.ais-CurrentRefinements-categoryLabel,.ais-CurrentRefinements-item {
-    font-size: 11px;
+    font-size: 13px;
     padding: 0;
     margin: 0;
     border: 0;
@@ -166,7 +166,7 @@
 #pagination-table .ais-Pagination-link{
     border: none;
     box-shadow: none;
-    font-size: 11px;
+    font-size: 13px;
 }
 
 
