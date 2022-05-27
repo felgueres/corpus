@@ -9,11 +9,9 @@ const App = () => {
   return (
     <Container id="app">
       <Navbar/>
-      <Container id="content">
         <Routes>
           <Route path="/" element={<Home/>} />
         </Routes>
-      </Container>
     </Container>
   );
 };
