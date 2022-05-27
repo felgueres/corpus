@@ -29,6 +29,10 @@
 }
 
 /* Search */
+#search-table {
+    min-height: 650px;
+}
+
 #search-table td {
     vertical-align: top;
 }
@@ -95,19 +99,19 @@
     background-color: #eef2ff;
 }
 #search-results {
-    width:600px
+    width:620px
 }
 
 #search-results .ais-Highlight {
     font-size: 11px;
 }
 
-#search-results .ais-InfiniteHits {
+#search-results .ais-Hits {
     width: 100%;
 }
 
 
-#search-results .ais-InfiniteHits-item {
+#search-results .ais-Hits-item {
     font-size: 11px;
     line-height: 14px;
     padding: 0px;
@@ -156,3 +160,13 @@
     width: 420px;
     height: 28px;
 }
+
+/* Pagination */
+
+#pagination-table .ais-Pagination-link{
+    border: none;
+    box-shadow: none;
+    font-size: 11px;
+}
+
+

@@ -1,6 +1,6 @@
 import React from "react";
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, InfiniteHits, RefinementList, Highlight } from 'react-instantsearch-hooks-web';
+import { InstantSearch, SearchBox, Hits, RefinementList, Highlight, Pagination } from 'react-instantsearch-hooks-web';
 
 const INDEXNAME = 'mvpV3'
 
@@ -31,31 +31,31 @@ export const AlgoliaSearch = () => {
 
   return (
     <InstantSearch searchClient={searchClient} indexName={INDEXNAME}>
-      <table id='search-table' style={{ 'width': '100%'}}>
+      <table id='search-table' style={{ 'width': '100%' }}>
         <tr id='spacer-h' />
-        <tr><SearchBox id='search-form-algolia' placeholder={'Search companies, people, or keywords'}/></tr>
+        <tr><SearchBox id='search-form-algolia' placeholder={'Search companies, people, or keywords'} /></tr>
         <tr id='spacer-h' />
         <tr>
           <td id='search-results'>
-            <InfiniteHits showPrevious={false} hitComponent={Hit} />
+            <tr><Hits hitComponent={Hit} /></tr>
           </td>
-          <td id='spacer-w'/>
+          <td id='spacer-w' />
           <td id='search-filters'>
             <table id='search-filters-table'>
               <tr>
                 <td>
                   <header>Sentiment Analysis</header>
                   <RefinementList operator={'and'} attribute="label" />
-                  <tr id='spacer-h'/>
+                  <tr id='spacer-h' />
                   <header>Statement Type</header>
                   <RefinementList operator={'and'} attribute="s_type" />
-                  <tr id='spacer-h'/>
+                  <tr id='spacer-h' />
                   <header><span>Summary<span className="beta-pill">Beta</span></span></header>
                   <RefinementList operator={'and'} attribute="is_summary" />
-                  <tr id='spacer-h'/>
+                  <tr id='spacer-h' />
                   <header>Industry</header>
                   <RefinementList operator={'and'} attribute="industry" />
-                  <tr id='spacer-h'/>
+                  <tr id='spacer-h' />
                   <header>Keywords</header>
                   <RefinementList operator={'and'} attribute="kwords" />
                 </td>
@@ -65,6 +65,11 @@ export const AlgoliaSearch = () => {
                 </td>
               </tr>
             </table>
+          </td>
+        </tr>
+        <tr id='pagination-table'>
+          <td>
+            <Pagination showFirst={true} showPrevious={false} />
           </td>
         </tr>
       </table>
