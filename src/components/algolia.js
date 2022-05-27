@@ -1,6 +1,6 @@
 import React from "react";
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, InfiniteHits, RefinementList, CurrentRefinements, useConnector } from 'react-instantsearch-hooks-web';
+import { InstantSearch, SearchBox, InfiniteHits, RefinementList, CurrentRefinements, Highlight } from 'react-instantsearch-hooks-web';
 
 const INDEXNAME = 'mvpV3'
 
@@ -13,7 +13,7 @@ export const AlgoliaSearch = () => {
         <div id='hit-title'>
           <span>{hit.company_name} ({hit.symbol}) {'>'} {hit.name} - {hit.role}</span>
         </div>
-        <span>{hit.s}</span>
+        <span><Highlight attribute='s' hit={hit}/></span>
         <div className="source">Date: {hit.period}</div>
       </article>
     );
