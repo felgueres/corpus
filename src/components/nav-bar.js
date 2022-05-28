@@ -5,10 +5,10 @@ const NavBar = () => {
     <table id="homebar">
       <tr>
         <td>
-          <a href="/">Machina: Industrials Search</a>
+          <a href="/">Industrials Search</a>
         </td>
         <td style={{ 'textAlign': 'right' }}>
-          <a href='https://www.surveymonkey.com/r/25G9H5K'>mailing list</a>
+          <a href='https://www.surveymonkey.com/r/25G9H5K'>Join Membership</a>
         </td>
       </tr>
       <tr id="spacer"/>
