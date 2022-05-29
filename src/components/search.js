@@ -6,7 +6,7 @@ const INDEXNAME = 'mvpV3'
 
 const sMap = { 'positive': '#7cd2af', 'negative': '#d4789d', 'neutral': '#A9A9A9' }
 
-export const AlgoliaSearch = () => {
+export const Search = () => {
   const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_ACCOUNT, process.env.REACT_APP_ALGOLIA_ID);
 
   var groupBy = function(xs, key) {
@@ -23,14 +23,13 @@ export const AlgoliaSearch = () => {
     return (cHit(oneHit))
   }
 
-  // {'tesla': [object1, object2, object3, object4]}
-  // obj1 = {'index','name','symbol','industry', 'cik'}
-
   function cHit(hits) {
     if (hits[0] === undefined){
       return <span>loading</span>
     }
+
     let hit = hits[0][0]
+
     console.log(hits.map(x=>x))
 
     return (
@@ -89,7 +88,7 @@ export const AlgoliaSearch = () => {
       <table id='search-table'>
         <tbody>
         <tr id='spacer-h' />
-          <SearchBox id='search-form-algolia' placeholder={'Search aerospace...'} />
+          <SearchBox id='search-form' placeholder={'Search aerospace...'} />
         <tr>
           <td id='search-results'>
             <CustomHits />
@@ -122,14 +121,14 @@ export const AlgoliaSearch = () => {
             </table>
           </td>
         </tr>
-        {/* <tr id='pagination-table'>
+        <tr id='pagination-table'>
           <td>
             <Pagination showFirst={true} showPrevious={false} />
           </td>
-        </tr> */}
+        </tr>
         </tbody>
       </table>
     </InstantSearch>
   );
 };
-export default AlgoliaSearch;
+export default Search;

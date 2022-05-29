@@ -1,6 +1,6 @@
 import React from "react";
-import AlgoliaSearch from "../components/algolia";
+import Search from "../components/search";
 
-export const Home = () => {return (<AlgoliaSearch/>);};
+export const Home = () => {return (<Search/>);};
 
 export default Home;

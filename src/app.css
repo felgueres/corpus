@@ -3,14 +3,13 @@
     max-width: 990px;
     min-width: 630px;
     min-height: 700px;
-    padding: 0;
     margin: auto;
 }
+
 /* Table Utils */
 #spacer-h {
     height: 5px;
 }
-
 
 #spacer-w {
     width: 30px;
@@ -50,6 +49,17 @@
 }
 
 /* Search Filters */
+#search-filters li {
+    list-style-type: none;
+}
+#search-filters ul {
+    padding: 0;
+}
+#search-filters label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 #search-filters-table {
     width: 100%;
 }
@@ -58,16 +68,19 @@
     vertical-align: top;
 }
 
-#search-filters .ais-RefinementList-labelText {font-size: 13px;}
-
 #search-filters header{
     font-size: 13px;
     color: #3730a3;
 }
 
+#search-filters .ais-RefinementList-list {
+    margin: 0;
+}
+
 #search-filters .ais-RefinementList-count  {
     display: none;
 }
+
 #search-filters .ais-RefinementList-checkbox {
     display: none;
 }
@@ -77,44 +90,11 @@
     line-height: 13px;
 }
 
-#search-filters .ais-RefinementList-showMore{
-    font-size: 13px;
-    line-height: 13px;
-    border: #002518 1px solid;
-    margin-top: 0px;
-    border: none;
-    height: auto;
-    box-shadow: none;
-    padding: 0;
+#search-filters .ais-RefinementList-item--selected {
+    font-weight: bold;
 }
 
 /* Search Results */
-#metadata {
-    font-size: 11px;
-    color: #3730a3;
-    line-height: 12px;
-    width: 100%;
-}
-
-.beta-pill {
-    color: #3730a3;
-    background-color: #eef2ff;
-    padding: 1px 2px 1px 2px;
-    vertical-align: super;
-    border-radius: 2px;
-    font-size: 9px;
-}
-
-.keyword-pill {
-    border: #a6b7f9 1px solid;
-    padding: 5px;
-    margin-right: 3px;
-    border-radius: 5px;
-    font-size: 8px;
-    line-height: 20px;
-    color: #3730a3;
-    background-color: #eef2ff;
-}
 #search-results {
     width:620px
 }
@@ -122,11 +102,6 @@
 #search-results .ais-Highlight {
     font-size: 13px;
 }
-
-#search-results .ais-Hits {
-    width: 100%;
-}
-
 
 #search-results .ais-Hits-item {
     font-size: 13px;
@@ -143,51 +118,95 @@
 }
 
 #hit-title {
-    /* color: #3730a3; */
     color: #0068ff;
 }
 
-#search-filters .ais-CurrentRefinements-label,.ais-CurrentRefinements-categoryLabel,.ais-CurrentRefinements-item {
-    font-size: 13px;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: white;
+#metadata {
+    font-size: 11px;
+    color: #3730a3;
+    line-height: 12px;
+    width: 100%;
+}
+
+.beta-pill {
+    color: #3730a3;
+    background-color: #eef2ff;
+    padding: 1px 2px 1px 2px;
+    margin-left: 3px;
+    vertical-align: super;
+    border-radius: 2px;
+    font-size: 8px;
+}
+
+.keyword-pill {
+    border: #a6b7f9 1px solid;
+    padding: 5px;
+    margin-right: 3px;
+    border-radius: 5px;
+    font-size: 8px;
+    line-height: 20px;
+    color: #3730a3;
+    background-color: #eef2ff;
 }
 
 /* Search Form */
-#search-form-algolia input {
-    outline: 1px solid #dadce0;
-    border: none;
-    font-size: 12px;
-    line-height: 15px;
-    box-shadow: none;
-    border-radius: 15px;
-}
 
-#search-form-algolia ::placeholder {
+#search-form ::placeholder {
     color:#002518;
     font-weight: 100;
 }
 
-#search-form-algolia input:focus {
+#search-form input:focus {
     outline: 1px solid #0068ff;
 }
 
-#search-form-algolia form {
+#search-form .ais-SearchBox-form {
     width: 420px;
     height: 28px;
 }
 
-/* Pagination */
-#pagination-table .ais-Pagination-link{
+#search-form .ais-SearchBox-input {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: 1px solid #dadce0;
     border: none;
-    box-shadow: none;
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 15px;
 }
 
-#pagination-table .ais-Pagination-link:hover{
+#search-form .ais-SearchBox-submit{
+    display: none;
+}
+#search-form .ais-SearchBox-reset{
+    display: none;
+}
+
+
+/* Pagination */
+#pagination-table a {
     text-decoration: none;
-    background-color: blue;
-    box-shadow: none;
+    font-size: 14px;
+    color: #4285f4
+}
+
+#pagination-table a:hover {
+    text-decoration: underline;
+}
+
+#pagination-table ul {
+    padding: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#pagination-table li {
+    display: inline;
+    padding-left: 1em;
+}
+
+#pagination-table li:first-of-type {
+    padding: 0;
 }
