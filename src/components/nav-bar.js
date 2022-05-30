@@ -7,7 +7,7 @@ const NavBar = () => {
       <tbody>
         <tr>
           <td>
-            <img src={image}/>
+            <img width={'60px'} src={image} alt={'logo'}/>
             <span className="beta-pill">Beta</span>
           </td>
           <td style={{ 'textAlign': 'right' }}>

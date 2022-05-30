@@ -20,6 +20,7 @@
     width: 100%;
     padding: 0;
     margin: 0;
+    background-color: #FFDE22;
 }
 #homebar img {
     max-width: 100%;
@@ -119,13 +120,30 @@
 
 #hit-title {
     color: #0068ff;
+    font-size: 13px;
+}
+
+#hits-table {
+    font-size: 13px;
+}
+
+#hits-table header {
+    color: #0969da;
+}
+#hits-table li {
+    list-style-type: none;
+    border-bottom: 1px #d8dee4 solid;
+}
+
+#hits-table li:last-of-type {
+    border-bottom: none;
 }
 
 #metadata {
-    font-size: 11px;
+    font-size: 10px;
     color: #3730a3;
     line-height: 12px;
-    width: 100%;
+    width: 75px;
 }
 
 .beta-pill {
@@ -174,6 +192,7 @@
     border: none;
     font-size: 12px;
     line-height: 15px;
+    color: #444444;
     border-radius: 15px;
 }
 
