@@ -1,17 +1,20 @@
 import React from "react";
+import image from "../assets/am.png"
 
 const NavBar = () => {
   return (
     <table id="homebar">
-      <tr>
-        <td>
-          <a href="/">Industrials Search</a>
-        </td>
-        <td style={{ 'textAlign': 'right' }}>
-          <a href='https://www.surveymonkey.com/r/25G9H5K'>Join Membership</a>
-        </td>
-      </tr>
-      <tr id="spacer"/>
+      <tbody>
+        <tr>
+          <td>
+            <img width={'60px'} src={image} alt={'logo'}/>
+            <span className="beta-pill">Beta</span>
+          </td>
+          <td style={{ 'textAlign': 'right' }}>
+            <a href='https://www.surveymonkey.com/r/25G9H5K'>Join Membership</a>
+          </td>
+        </tr>
+      </tbody>
     </table>
   );
 };
