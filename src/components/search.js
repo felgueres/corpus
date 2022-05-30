@@ -54,6 +54,7 @@ export const Search = () => {
                       <tr>{h.role}</tr>
                       <tr>{h.period}</tr>
                       <tr>Sentiment <svg height={11} width={12}><circle cx={5} cy={7} r={3} fill={sMap[h.label]}></circle></svg></tr>
+                      <tr>{h.is_summary?'Summary':'Transcript'}</tr>
                     </tbody>
                   </table>
                 </td>
@@ -94,7 +95,7 @@ export const Search = () => {
       <table id='search-table'>
         <tbody>
           <tr id='spacer-h' />
-          <SearchBox id='search-form' placeholder={'Search aerospace universe (ex. \'supply chain\') ...'} />
+          <SearchBox id='search-form' placeholder={'Search Aerospace companies, names or keywords ...'} />
           <tr>
             <td id='search-results'>
               <CustomHits />
