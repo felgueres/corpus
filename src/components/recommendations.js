@@ -1,6 +1,6 @@
 
 export const Recommendations = () => {
-    return (<table id='recommendations' width={'100%'}>
+    return (<table id='recommendations'>
         <tbody>
             <tr>
                 <td>
