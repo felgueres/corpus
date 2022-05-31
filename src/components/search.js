@@ -91,9 +91,9 @@ export const Search = () => {
     <InstantSearch searchClient={searchClient} indexName={INDEXNAME}>
       <table id='search-table'>
         <tbody>
-          <tr >
-            <td >
-              <table width={'100%'}>
+          <tr>
+            <td>
+              <table id='searchform-table'>
                 <tr><td>
                   <SearchBox id='search-form' queryHook={(query, search) => { if(query.length>3){search(query)}}} placeholder={'Search Aerospace companies, names or keywords ...'} />
                 </td></tr>
@@ -101,11 +101,11 @@ export const Search = () => {
             </td>
           </tr>
           <tr>
-            <table width={'100%'}>
+            <table id='searchwrap-table'>
               <tbody>
                 <tr>
-                  <td id='filters-section'>
-                    <table id='search-filters-table'>
+                  <td>
+                    <table id='search-filters-table' className="notvisible">
                       <tr>
                         <td>
                           <table>
