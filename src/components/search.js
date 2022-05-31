@@ -7,7 +7,7 @@ const sMap = { 'positive': '#7cd2af', 'negative': '#d4789d', 'neutral': '#A9A9A9
 
 export const Search = () => {
   const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_ACCOUNT, process.env.REACT_APP_ALGOLIA_ID);
-
+  
   var groupBy = function (xs, key) {
     return xs.reduce(function (rv, x) {
       (rv[x[key]] = rv[x[key]] || []).push(x);
@@ -16,30 +16,22 @@ export const Search = () => {
   };
 
   function CustomHits(props) {
-    const { hits, results} = useHits(props);
-    console.log(results)
-    let gHits = groupBy(hits, 'company_name')
-    let oneHit = Object.entries(gHits).map(([k, v], i) => (v))
-    return (cHit(oneHit, results.query))
+    const { hits } = useHits(props);
+    if (hits.length < 1) {
+      return <span>Try something else.</span>
+    }
+    let groupedHits = groupBy(hits, 'company_name')
+    let Hits = Object.entries(groupedHits).map(([k, v],) => Hit(k, v))
+    return (
+      <table>
+        {Hits}
+      </table>
+    )
   }
 
-
-  function cHit(hits, q) {
-    if (hits[0] === undefined) {
-      return <span>loading</span>
-    }
-    if (q ===''){
-      return <span>
-        <br/>
-        Start typing eg. 'supply chain' or click on a company name
-        <br/>
-        </span>
-    }
-
-    let hit = hits[0][0]
-    let qualitative = hits[0].filter(i => i.s_type === 'Qualitative')
-    let quantitative = hits[0].filter(i => i.s_type === 'Quantitative')
-    // RETURNS A LIST OF TABLES
+  function Hit(k, v) {
+    let qualitative = v.filter(i => i.s_type === 'Qualitative')
+    let quantitative = v.filter(i => i.s_type === 'Quantitative')
 
     function hitItem(h) {
       return (
@@ -54,11 +46,11 @@ export const Search = () => {
                       <tr>{h.role}</tr>
                       <tr>{h.period}</tr>
                       <tr>Sentiment <svg height={11} width={12}><circle cx={5} cy={7} r={3} fill={sMap[h.label]}></circle></svg></tr>
-                      <tr>{h.is_summary?'Summary':'Transcript'}</tr>
+                      <tr>{h.is_summary ? 'Summary' : 'Transcript'}</tr>
                     </tbody>
                   </table>
                 </td>
-                <td>{h.s}</td>
+                <td style={{'verticalAlign':'middle'}}>{h.s}</td>
               </tr>
             </tbody>
           </table>
@@ -69,17 +61,16 @@ export const Search = () => {
     return (
       <table id='hits-table'>
         <tbody>
-          <tr id='spacer-h' />
-          <tr><td><span id="hit-title"> {hit.company_name} ({hit.symbol})</span></td></tr>
-          {quantitative.length>0 && 
-          <tr>
-            <td>
-              <header>Quantitative</header>
-              {quantitative.map(h => hitItem(h))}
-            </td>
-          </tr>}
-          {qualitative.length>0 && <tr>
-            <td>
+          <tr><td><span id="hit-title"> {k} </span></td></tr>
+          {quantitative.length > 0 &&
+            <tr>
+              <td id='subsection-a'>
+                <header>Quantitative</header>
+                {quantitative.map(h => hitItem(h))}
+              </td>
+            </tr>}
+          {qualitative.length > 0 && <tr>
+            <td id='subsection-b'>
               <header>Qualitative</header>
               {qualitative.map(h => hitItem(h))}
             </td>
@@ -90,42 +81,98 @@ export const Search = () => {
     );
   }
 
+  const handleClick = event => {
+    event.currentTarget.querySelector('.plus').classList.toggle('not-visible')
+    event.currentTarget.querySelector('.minus').classList.toggle('not-visible')
+    event.currentTarget.querySelector('.ais-RefinementList').classList.toggle('not-visible')
+  }
+
   return (
     <InstantSearch searchClient={searchClient} indexName={INDEXNAME}>
       <table id='search-table'>
         <tbody>
-          <tr id='spacer-h' />
-          <SearchBox id='search-form' placeholder={'Search Aerospace companies, names or keywords ...'} />
-          <tr>
-            <td id='search-results'>
-              <CustomHits />
-            </td>
-            <td id='spacer-w' />
-            <td id='search-filters'>
-              <table id='search-filters-table'>
-                <tr>
-                  <td>
-                    <header>Sentiment Analysis</header>
-                    <RefinementList operator={'and'} attribute="label" />
-                    <tr id='spacer-h' />
-                    <header>Statement Type</header>
-                    <RefinementList operator={'and'} attribute="s_type" />
-                    <tr id='spacer-h' />
-                    <header>Keywords</header>
-                    <RefinementList operator={'and'} attribute="kwords" />
-                  </td>
-                  <td style={{ 'width': '150px' }}>
-                    <header>Companies</header>
-                    <RefinementList operator={'and'} limit={50} sortBy={['name']} attribute="company_name" />
-                  </td>
-                </tr>
+          <tr >
+            <td >
+              <table >
+                <tr><td>
+                  <SearchBox id='search-form' queryHook={(query, search) => { if(query.length>3){search(query)}}} placeholder={'Search Aerospace companies, names or keywords ...'} />
+                </td></tr>
               </table>
             </td>
           </tr>
-          <tr id='pagination-table'>
-            <td>
-              <Pagination showFirst={true} showPrevious={false} />
-            </td>
+          <tr>
+            <table width={'100%'}>
+              <tbody>
+                <tr>
+                  <td id='filters-section'>
+                    <table id='search-filters-table'>
+                      <tr>
+                        <td>
+                          <table>
+                            <tbody>
+                              <tr>
+                                <span className='filter-list' onClick={handleClick}>
+                                  <span className="filter-header">
+                                    <span className="plus">▸ </span>
+                                    <span className="minus not-visible">▾ </span>
+                                    <span>Sentiment Analysis</span>
+                                  </span>
+                                  <RefinementList className='not-visible' operator={'and'} attribute="label" />
+                                </span>
+                              </tr>
+                              <tr>
+                                <span className='filter-list' onClick={handleClick}>
+                                  <span className="filter-header">
+                                    <span className="plus">▸ </span>
+                                    <span className="minus not-visible">▾ </span>
+                                    <span>Statement Type</span>
+                                  </span>
+                                  <RefinementList className='not-visible' operator={'and'} attribute="s_type" />
+                                </span>
+                              </tr>
+                              <tr>
+                                <span className='filter-list' onClick={handleClick}>
+                                  <span className="filter-header">
+                                    <span className="plus">▸ </span>
+                                    <span className="minus not-visible">▾ </span>
+                                    <span>Keywords</span>
+                                  </span>
+                                  <RefinementList className='not-visible' operator={'and'} attribute="kwords" />
+                                </span>
+                              </tr>
+                              <tr>
+                                <span className='filter-list' onClick={handleClick}>
+                                  <span className="filter-header">
+                                    <span className="plus">▸ </span>
+                                    <span className="minus not-visible">▾ </span>
+                                    <span>Companies</span>
+                                  </span>
+                                  <RefinementList className='not-visible' operator={'and'} limit={50} sortBy={['name']} attribute="company_name" />
+                                </span>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td id='search-results'>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <CustomHits />
+                          <tr id='pagination-table'>
+                            <td>
+                              <Pagination showFirst={true} showPrevious={false} />
+                            </td>
+                          </tr>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </tr>
         </tbody>
       </table>
