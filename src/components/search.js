@@ -1,25 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, RefinementList, Pagination, useHits } from 'react-instantsearch-hooks-web';
+import { groupBy } from "../utils/utils";
 
 const INDEXNAME = 'mvpV3'
 const sMap = { 'positive': '#7cd2af', 'negative': '#d4789d', 'neutral': '#A9A9A9' }
 
 export const Search = () => {
-  const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_ACCOUNT, process.env.REACT_APP_ALGOLIA_ID);
-  
-  var groupBy = function (xs, key) {
-    return xs.reduce(function (rv, x) {
-      (rv[x[key]] = rv[x[key]] || []).push(x);
-      return rv;
-    }, {});
+  const algoliaClient = algoliasearch(process.env.REACT_APP_ALGOLIA_ACCOUNT, process.env.REACT_APP_ALGOLIA_ID);
+
+  const searchClient = {
+    ...algoliaClient,
+    search(requests){
+      if(requests.every(({params})=> !params.query)){
+        return []
+      }
+      return algoliaClient.search(requests)
+    },
   };
 
   function CustomHits(props) {
-    const { hits } = useHits(props);
-    if (hits.length < 1) {
-      return <span>Try something else.</span>
-    }
+    const { hits, results} = useHits(props);
     let groupedHits = groupBy(hits, 'company_name')
     let Hits = Object.entries(groupedHits).map(([k, v],) => Hit(k, v))
     return (
@@ -88,20 +89,21 @@ export const Search = () => {
   }
 
   return (
-    <InstantSearch searchClient={searchClient} indexName={INDEXNAME}>
+    <InstantSearch searchClient={algoliaClient} indexName={INDEXNAME}>
       <table id='search-table'>
         <tbody>
           <tr>
             <td>
               <table id='searchform-table'>
                 <tr><td>
-                  <SearchBox id='search-form' queryHook={(query, search) => { if(query.length>3){search(query)}}} placeholder={'Search Aerospace companies, names or keywords ...'} />
+                  <SearchBox id='search-form' queryHook={(query, search) => { if(query.length>3){search(query)}}} placeholder={'Search aerospace companies, people or keywords ...'} />
                 </td></tr>
               </table>
             </td>
           </tr>
+          {true && 
           <tr>
-            <table id='searchwrap-table'>
+            <table>
               <tbody>
                 <tr>
                   <td>
@@ -173,7 +175,7 @@ export const Search = () => {
                 </tr>
               </tbody>
             </table>
-          </tr>
+          </tr>}
         </tbody>
       </table>
     </InstantSearch>

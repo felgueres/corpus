@@ -13,9 +13,6 @@ const Footer = () => {
           <td><a href='/' className="links">Share feedback</a></td>
         </tr>
         <tr>
-          <td><a href='/' className="links">Request a feature</a></td>
-        </tr>
-        <tr>
           <td><a href='/' className="links">Join Membership</a></td>
         </tr>
         <tr>
