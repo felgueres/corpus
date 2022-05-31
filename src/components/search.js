@@ -93,7 +93,7 @@ export const Search = () => {
         <tbody>
           <tr >
             <td >
-              <table >
+              <table width={'100%'}>
                 <tr><td>
                   <SearchBox id='search-form' queryHook={(query, search) => { if(query.length>3){search(query)}}} placeholder={'Search Aerospace companies, names or keywords ...'} />
                 </td></tr>
