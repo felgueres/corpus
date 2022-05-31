@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, RefinementList, Pagination, useHits } from 'react-instantsearch-hooks-web';
 import { groupBy } from "../utils/utils";
@@ -89,7 +89,7 @@ export const Search = () => {
   }
 
   return (
-    <InstantSearch searchClient={algoliaClient} indexName={INDEXNAME}>
+    <InstantSearch searchClient={searchClient} indexName={INDEXNAME}>
       <table id='search-table'>
         <tbody>
           <tr>

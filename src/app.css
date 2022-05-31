@@ -7,8 +7,11 @@
 }
 
 /* Table Utils */
-#spacer-h {
-    height: 5px;
+#spacer-h-100 {
+    height: 100px;
+}
+#spacer-h-50 {
+    height: 50px;
 }
 
 #spacer-w {
@@ -182,7 +185,7 @@
     background-color: #eef2ff;
     padding: 1px 2px 1px 2px;
     margin-left: 3px;
-    vertical-align: super;
+    vertical-align: top;
     border-radius: 2px;
     font-size: 8px;
 }
@@ -200,41 +203,22 @@
 
 /* Search Form */
 #searchform-table {
-    width: 50%;
     margin: auto;
 }
-
-#search-form ::placeholder {
-    color:#002518;
-    font-weight: 100;
+#searchform-table form {
+    height: 30px;
+    width: 420px;
 }
 
-#search-form input:focus-visible{
-    outline: 1px solid #0068ff;
-}
-
-#search-form .ais-SearchBox-form {
-    height: 28px;
-}
-
-#search-form .ais-SearchBox-input {
+#search-form input {
     width: 100%;
-    height: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    outline: 1px solid #dadce0;
-    font-size: 14px;
-    line-height: 15px;
-    color: #444444;
-    border: none;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px #002518 solid;
 }
 
-#search-form .ais-SearchBox-submit{
-    display: none;
-}
-
-#search-form .ais-SearchBox-reset{
-    display: none;
+#search-form ::placeholder{
+    padding-left: 20px;
 }
 
 /* Pagination */
@@ -293,4 +277,45 @@
 #searchwrap-table {
     height: 100%;
     margin-top: 15px;
+}
+
+/* banner */
+#banner {
+    width: 100%;
+    text-align: center;
+}
+#slogan {
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Recommendations */
+
+#recommendations {
+    font-size: 12px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding-top: 3px;
+}
+
+#valueprop {
+    width:90%;
+    font-size: 13px;
+    margin: auto;
+    table-layout: fixed;
+}
+
+#valueprop h3 {
+    color: #3730a3;
+}
+
+#valueprop td {
+    vertical-align: text-top;
+    padding: 5px 20px 20px 20px;
+}
+
+#valueprop span {
+    line-height: 20px;
 }
