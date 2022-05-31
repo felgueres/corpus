@@ -276,9 +276,9 @@
 /* Recommendations */
 
 #recommendations {
-    font-size: 12px;
+    font-size: 1250;
     text-align: center;
-    width: 35%;
+    width: 50%;
     margin: auto;
     padding-top: 3px;
 }
