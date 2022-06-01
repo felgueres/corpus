@@ -282,11 +282,10 @@
 /* Recommendations */
 
 #recommendations {
-    font-size: 1250;
+    font-size: var(--regular-fs);
     text-align: center;
-    width: 50%;
     margin: auto;
-    padding-top: 3px;
+    margin-top: 3px;
 }
 
 #recommendations button {

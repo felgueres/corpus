@@ -21,7 +21,7 @@ export const Recommendations = () => {
         <tbody>
             <tr>
                 <td>
-                    Suggestions:
+                    <span>Suggestions:</span>
                 </td>
                 <td>
                     <button onClick={()=>navigateSearch('/search', s1)}>supply chains</button>
