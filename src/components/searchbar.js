@@ -1,20 +1,20 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate, createSearchParams } from "react-router-dom";
 
 export const SearchBar = () => {
-
-    let [searchParams, setSearchParams] = useSearchParams();
-
+    let [searchParams, ] = useSearchParams();
+    let navigate = useNavigate()
     let query = searchParams.get("q")
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        console.log(event.currentTarget)
+    async function handleSubmit(event){
+        event.preventDefault();
         let formData = new FormData(event.currentTarget);
-        console.log(formData.values())
         let newQuery = formData.get("query");
         if (!newQuery) return;
-        setSearchParams({ 'q': newQuery })
+        navigate({
+            pathname: "/search",
+            search: `?${createSearchParams({'q':newQuery, 'collection': 'summaryV2', 'limit': 2})}`
+        })
     }
 
     return (
@@ -24,7 +24,7 @@ export const SearchBar = () => {
                     <td>
                         <form id='search-form' onSubmit={handleSubmit}>
                             <label>
-                                <input defaultValue={query ?? undefined} type="text" name="query" autoComplete="false" placeholder="Search companies, people or keywords" />
+                                <input defaultValue={query ?? undefined} type="text" name="query" autoComplete="off" placeholder="Search companies, people or keywords" />
                             </label>
                         </form>
                     </td>

@@ -21,6 +21,9 @@
 #spacer-h-50 {
     height: 50px;
 }
+#spacer-h-20 {
+    height: 20px;
+}
 
 #spacer-w {
     width: 30px;
@@ -84,7 +87,7 @@
 }
 
 #search-filters-table .ais-RefinementList-item {
-    font-size: 13px;
+    font-size: var(--regular-fs);
     line-height: 13px;
 }
 
@@ -200,11 +203,12 @@
     height: 30px;
     border-radius: 20px;
     border: 1px #002518 solid;
+    padding-left: 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
 }
 
-#search-form ::placeholder{
-    padding-left: 20px;
-}
+/* Box-Sising prevents  */
 
 /* Pagination */
 
@@ -266,11 +270,13 @@
 #banner {
     width: var(--hundred-pct);
     text-align: center;
+    box-sizing: border-box;
 }
 #slogan {
     font-size: 18px;
     text-align: center;
     width: var(--hundred-pct);
+    box-sizing: border-box;
 }
 
 /* Recommendations */
@@ -295,7 +301,7 @@
 }
 
 #valueprop td {
-    vertical-align: text-top;
+    vertical-align:top;
     padding: 5px 20px 20px 20px;
 }
 
@@ -308,5 +314,12 @@
     width: var(--eighty-pct);
     font-size: var(--regular-fs);
     text-align: end;
+    margin: auto;
+}
+
+/* Search Results Table */
+#results-table {
+    border-top: #edeeef 1px solid;
+    width: var(--eighty-pct);
     margin: auto;
 }
