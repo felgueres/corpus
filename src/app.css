@@ -289,6 +289,22 @@
     padding-top: 3px;
 }
 
+#recommendations button {
+    background: #eef2ff;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    padding: 0;
+    opacity: 0.8;
+}
+
+#recommendations button:hover {
+    opacity: 1;
+}
+
+
+
 #valueprop {
     width: var(--eighty-pct);
     font-size: var(--regular-fs);

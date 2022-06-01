@@ -5,7 +5,7 @@ export const Banner = () => {
             <tr id='spacer-h-50'/>
             <tr>
                 <td id='banner'>
-                    <img alt={'nominal'} height={34} width={119} src={image} />
+                    <a href='/' alt='home'><img alt={'nominal'} height={34} width={119} src={image} /></a>
                     <span className="beta-pill">Beta</span>
                 </td>
             </tr>
