@@ -30,15 +30,6 @@ body {
         width: 100%;
         -webkit-text-size-adjust: none;
     }
-
-    /* #logo {
-        width: 5rem;
-        height: 100%;
-    } */
-
-    #slogan {
-        display: none;
-    }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 750px) {
