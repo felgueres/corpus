@@ -26,7 +26,7 @@ export const SearchBar = () => {
                                 <td >
                                     <form id='search-form' onSubmit={handleSubmit}>
                                         <label>
-                                            <input defaultValue={query ?? undefined} type="text" name="query" autoComplete="off" placeholder="Search companies, people or keywords" />
+                                            <input defaultValue={query ?? undefined} type="text" name="query" autoComplete="off" placeholder="Search ideas, people or keywords" />
                                         </label>
                                     </form>
                                 </td>
