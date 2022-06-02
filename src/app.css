@@ -52,6 +52,7 @@ body {
     height: var(--hundred-pct);
     border-radius: 48px;
     font-family: Helvetica;
+    background-color: #eff3f4;
     font-size: 0.875rem;
     line-height: calc(1rem + 1px);
     padding: calc(1rem - 6px) calc(1.25rem + 2px);
@@ -64,6 +65,7 @@ body {
 #search-form input:focus{
     outline: none;
     border: 1px #0969da solid;
+    background-color: #ffffff;
 }
 
 
@@ -265,7 +267,6 @@ body {
     font-size: var(--regular-fs);
     text-align: center;
     margin: auto;
-    margin-top: 3px;
 }
 
 #recommendations button {
