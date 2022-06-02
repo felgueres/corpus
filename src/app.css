@@ -14,6 +14,7 @@ body {
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
     padding: 1rem;
+    min-height: 100vh;
 }
 
 #nmain {
@@ -21,7 +22,6 @@ body {
     width: 100%;
     margin: auto;
     box-sizing: border-box;
-    min-height: 100vh;
 }
 
 #logo {
@@ -69,16 +69,7 @@ body {
     background-color: #ffffff;
 }
 
-
 /* Table Utils */
-#spacer-h-100 {
-    height: var(--hundred-px);
-}
-
-#spacer-h-50 {
-    height: 50px;
-}
-
 #spacer-h-20 {
     height: 20px;
 }
@@ -244,9 +235,14 @@ body {
     opacity: 1;
 }
 
+/* Value prop */
+
 #valueprop-table {
     margin: auto;
-    table-layout: fixed;
+    margin-top: 50px;
+    border: var(--color-light-border) 1px solid;
+    border-radius: 20px;
+    box-sizing: border-box;
 }
 
 #valueprop-table span {
@@ -255,6 +251,8 @@ body {
 
 #valueprop-table td {
     max-width: var(--max-width-box);
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 #valueprop-table h3 {

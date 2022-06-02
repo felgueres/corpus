@@ -1,6 +1,6 @@
 const Info = ({ t, p }) => {
     return (
-        <td>
+        <td className="border">
             <h3>{t}</h3>
             <span>{p}</span>
         </td>
@@ -10,10 +10,10 @@ const Info = ({ t, p }) => {
 let t1='Skip the long transcripts'
 let p1='Nominal summarizes market data, including earnings calls and financial facts, into takeaways points.'
 
-let t2='A user interface that gets out of your way'
+let t2='A UI that gets out of your way'
 let p2='We\'ve put together only what\'s neccesary to increase breadth of analysis and a fast experience.' 
 
-let t3='Get narratives right'
+let t3='Get narratives early and right'
 let p3='Nominal makes it easy for teams to pick up on market trends and shifts.' 
 
 
@@ -26,8 +26,8 @@ export const ValueProp = () => {
                     <table id='valueprop-table'>
                         <tbody>
                             <tr>{<Info t={t1} p={p1}/>}</tr>
-                            <tr>{<Info t={t2} p={p2}/>}</tr>
                             <tr>{<Info t={t3} p={p3}/>}</tr>
+                            <tr>{<Info t={t2} p={p2}/>}</tr>
                         </tbody>
                     </table>
                 </td>
