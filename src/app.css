@@ -47,7 +47,7 @@ body {
 #searchform-table {
     margin: auto;
     width: 100%;
-    max-width: 552px;
+    max-width: 420px;
 }
 
 #searchform-table form {
@@ -63,7 +63,7 @@ body {
     font-family: Helvetica;
     font-size: 0.875rem;
     line-height: calc(1rem + 1px);
-    padding: calc(1rem - 4px) calc(1.25rem + 2px);
+    padding: calc(1rem - 6px) calc(1.25rem + 2px);
     border: 1px #0969da solid;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
