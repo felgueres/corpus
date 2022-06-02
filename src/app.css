@@ -19,6 +19,8 @@ body {
     max-width: 926px;
     width: 100%;
     margin: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 #logo {
@@ -29,12 +31,6 @@ body {
     body {
         width: 100%;
         -webkit-text-size-adjust: none;
-    }
-}
-
-@media only screen and (min-width: 300px) and (max-width: 750px) {
-    #nmain {
-        border: none;
     }
 }
 
@@ -257,7 +253,7 @@ body {
 }
 
 #slogan {
-    font-size: 18px;
+    font-size: 1rem;
     text-align: center;
     width: var(--hundred-pct);
     box-sizing: border-box;

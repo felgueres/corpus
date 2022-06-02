@@ -7,7 +7,7 @@ import Search from "./views/search";
 
 const App = () => {
   return (
-    <table id="nmain" className="nmain">
+    <table id="nmain">
       <tbody>
           <Routes>
             <Route path="/" element={<Home />} />
