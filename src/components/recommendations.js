@@ -9,31 +9,36 @@ const useNavigateSearch = () => {
     })
 }
 
-let s1= {'q': 'supply chains', 'collection': 'summaryV2', 'limit': 2}
-let s2= {'q': 'reshoring', 'collection': 'summaryV2', 'limit': 2}
-let s3= {'q': 'demand', 'collection': 'summaryV2', 'limit': 2}
+let s1 = { 'q': 'supply chains', 'collection': 'summaryV2', 'limit': 2 }
+let s2 = { 'q': 'reshoring', 'collection': 'summaryV2', 'limit': 2 }
+let s3 = { 'q': 'demand', 'collection': 'summaryV2', 'limit': 2 }
 
 export const Recommendations = () => {
-
     const navigateSearch = useNavigateSearch()
-
-    return (<table id='recommendations'>
-        <tbody>
+    return (
+        <>
             <tr>
                 <td>
-                    <span>Suggestions:</span>
-                </td>
-                <td>
-                    <button onClick={()=>navigateSearch('/search', s1)}>supply chains</button>
-                </td>
-                <td>
-                    <button onClick={()=>navigateSearch('/search', s2)}>reshoring</button>
-                </td>
-                <td>
-                    <button onClick={()=>navigateSearch('/search', s3)}>demand</button>
+                    <table id='recommendations'>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>Suggestions:</span>
+                                </td>
+                                <td>
+                                    <button onClick={() => navigateSearch('/search', s1)}>supply chains</button>
+                                </td>
+                                <td>
+                                    <button onClick={() => navigateSearch('/search', s2)}>reshoring</button>
+                                </td>
+                                <td>
+                                    <button onClick={() => navigateSearch('/search', s3)}>demand</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </td>
             </tr>
-        </tbody>
-    </table>
+        </>
     )
 }

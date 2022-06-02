@@ -5,12 +5,11 @@ import { SearchResults } from "../components/search-results";
 
 export const Search = () => {
     return (
-        <div>
+        <>
             <Banner />
             <SearchBar />
-            <br/>
-            <SearchResults/>
-        </div>
+            <SearchResults />
+        </>
     );
 };
 

@@ -1,11 +1,10 @@
-import image from '../assets/home_logo.svg'
+import image from '../assets/home_logo.svg';
 export const Banner = () => {
-    return (<table width={'100%'}>
-        <tbody>
-            <tr id='spacer-h-50'/>
+    return (
+        <>
             <tr>
                 <td id='banner'>
-                    <a href='/' alt='home'><img alt={'nominal'} height={34} width={119} src={image} /></a>
+                    <a href='/' alt='home'><img id='logo' alt={'nominal'} src={image} /></a>
                     <span className="beta-pill">Beta</span>
                 </td>
             </tr>
@@ -14,6 +13,6 @@ export const Banner = () => {
                     <span>Summarized Earnings Calls</span>
                 </td>
             </tr>
-        </tbody>
-    </table>)
+        </>
+    )
 }

@@ -7,12 +7,12 @@ import { ValueProp } from "../components/valueprop";
 
 export const Home = () => {
     return (
-        <div>
+        <>
             <Banner />
             <SearchBar />
             <Recommendations />
             <ValueProp/>
-        </div>
+        </>
     );
 };
 
