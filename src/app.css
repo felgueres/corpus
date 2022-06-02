@@ -4,6 +4,8 @@
     --eighty-pct: 80%;
     --hundred-pct: 100%;
     --color-light-border: #e4e4ec;
+    --color-grey-border: #eff3f4;
+    --max-width-box: 420px;
 }
 
 body {
@@ -14,13 +16,12 @@ body {
     padding: 1rem;
 }
 
-
 #nmain {
     max-width: 926px;
     width: 100%;
     margin: auto;
-    min-height: 100vh;
     box-sizing: border-box;
+    min-height: 100vh;
 }
 
 #logo {
@@ -38,7 +39,7 @@ body {
 #searchform-table {
     margin: auto;
     width: 100%;
-    max-width: 420px;
+    max-width: var(--max-width-box);
 }
 
 #searchform-table form {
@@ -184,6 +185,7 @@ body {
     vertical-align: top;
     border-radius: 2px;
     font-size: 8px;
+    margin-left: 0.25rem;
 }
 
 .keyword-pill {
@@ -197,56 +199,15 @@ body {
     background-color: #eef2ff;
 }
 
-/* Box-Sising prevents  */
-
-/* Pagination */
-
-#pagination-table a {
-    text-decoration: none;
-    font-size: 14px;
-    color: #4285f4
-}
-
-#pagination-table a:hover {
-    text-decoration: underline;
-}
-
-#pagination-table ul {
-    padding: 0;
-    margin: auto;
-    text-align: center;
-}
-
-#pagination-table li {
-    display: inline;
-    padding-left: 1em;
-}
-
-#pagination-table li:first-of-type {
-    padding: 0;
-}
-
 /* Footer */
 #footer-table {
-    border-top: #edeeef 1px solid;
     width: var(--hundred-pct);
 }
 
-#footer-table .title {
-    font-size: 0.75rem;
-    line-height: 1rem;
-    letter-spacing: -0.08px;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
 #footer-table a {
-    font-size: 12px;
-    color: #4367dc;
-    line-height: 14px;
-    cursor: pointer;
+    font-size: 0.7rem;
+    text-decoration: none;
 }
-
 /* banner */
 #banner {
     width: var(--hundred-pct);
@@ -283,23 +244,21 @@ body {
     opacity: 1;
 }
 
-#valueprop {
-    width: var(--hundred-pct);
+#valueprop-table {
     margin: auto;
     table-layout: fixed;
 }
 
-#valueprop h3 {
-    color: #3730a3;
+#valueprop-table span {
+    line-height: calc(1rem + 4px);
 }
 
-#valueprop td {
-    vertical-align: top;
-    padding: 5px 20px 20px 20px;
+#valueprop-table td {
+    max-width: var(--max-width-box);
 }
 
-#valueprop span {
-    line-height: 20px;
+#valueprop-table h3 {
+    color: #384B9A;
 }
 
 /* Navbar */
