@@ -31,10 +31,10 @@ body {
         -webkit-text-size-adjust: none;
     }
 
-    #logo {
+    /* #logo {
         width: 5rem;
         height: 100%;
-    }
+    } */
 
     #slogan {
         display: none;
