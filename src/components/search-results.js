@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import SkeletonHit from "../skeletons/SkeletonHit";
 import useSearch from "./useSearch";
 
 const sMap = { 'positive': '#7cd2af', 'negative': '#d4789d', 'neutral': '#A9A9A9' }
@@ -54,8 +55,7 @@ export const SearchResults = () => {
 
     if(loading){
         return <>
-        <tr><td>Loading first skeleton</td></tr>
-        <tr><td>Loading second skeleton</td></tr>
+        <SkeletonHit/>
         </>
     }
 
