@@ -1,6 +1,5 @@
 import React from "react";
 import SkeletonElement from "./SkeletonElement";
-import Shimmer from "./Shimmer";
 
 const Row = ({td}) => {
     return (<tr><td>{td}</td></tr>)
@@ -11,11 +10,8 @@ const TdSkeleton = () => {
         <div className="skeleton-wrapper">
             <div className="skeleton-hit">
                 <SkeletonElement type='text'></SkeletonElement>
-                {/* <SkeletonElement type='text'></SkeletonElement>
-                <SkeletonElement type='text'></SkeletonElement> */}
-                {/* <SkeletonElement type='subtitle'></SkeletonElement> */}
+                <SkeletonElement type='title'></SkeletonElement>
             </div>
-            {/* <Shimmer /> */}
         </div>
     )
 }
@@ -23,6 +19,9 @@ const TdSkeleton = () => {
 const SkeletonHit = () => {
     return (
         <>
+            <Row td={<TdSkeleton/>} />
+            <Row td={<TdSkeleton/>} />
+            <Row td={<TdSkeleton/>} />
             <Row td={<TdSkeleton/>} />
         </>
     )

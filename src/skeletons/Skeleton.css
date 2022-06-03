@@ -1,48 +1,34 @@
 /* Basic Styles */
 
 .skeleton {
-    /* background: #ddd; */
-    /* border-radius: 4px; */
+    background-color: #F9F9F9;
+}
+
+.skeleton-hit {
+    width: 60%;
+    margin: auto;
 }
 
 .skeleton.text {
-    height: 4rem;
-    margin: 1rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: #C8C8C8;
 }
 
 .skeleton.title {
     width: 50%;
-    height: 24px;
-    margin-bottom: 5px;
+    height: 1.5rem;
+    background-color: #DFDFDF;
 }
 
 
-.skeleton.subtitle {
-    width: 25%;
-    height: 15px;
-    margin-bottom: 15px;
-}
-
-.skeleton.list {
-    height: 12px;
-    margin-bottom: 3px;
-    width: 25%;
-}
+/* relative position helps to anchor the shimmer */
 
 .skeleton-wrapper {
     position: relative;
     overflow:hidden;
     background-color: #F9F9F9;
-}
-
-.skeleton-hit {
-    width: 100%;
-    background-color: #C8C8C8;
-}
-
-/* skeleton profile */
-.skeleton-profile {
-    align-items: center;
+    padding: 1rem;
 }
 
 /* animation effects */
@@ -68,3 +54,6 @@
     0% {transform: translateX(0%)}
     100% {transform: translateX(100%)}
 }
+
+
+/* Old */
