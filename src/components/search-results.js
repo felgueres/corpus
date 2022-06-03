@@ -25,11 +25,6 @@ const HitItem = ({ h }) => {
                             <tbody>
                                 <tr>
                                     <td>
-                                        <span className="keyword-pill">Summary</span>
-                                        <span className="keyword-pill">{h.section}</span>
-                                        <span className="keyword-pill">{h.role}</span>
-                                        <br />
-                                        <br />
                                         <span>{h.s}</span>
                                     </td>
                                 </tr>
@@ -57,6 +52,13 @@ export const SearchResults = () => {
     let [searchParams,] = useSearchParams();
     let { data, loading } = useSearch(searchParams)
 
+    if(loading){
+        return <>
+        <tr><td>Loading first skeleton</td></tr>
+        <tr><td>Loading second skeleton</td></tr>
+        </>
+    }
+
 
     return (<>
         <tr>
@@ -66,8 +68,8 @@ export const SearchResults = () => {
                         <tr id='spacer-h-20' />
                         <tr>
                             <td>
-                                {!loading && data.length > 0 && <HitItem h={data[0]} />}
-                                {(loading || data.length < 1) && <span>Nothin' here</span>}
+                                {Object.entries(data).map(([k,v],)=> <HitItem key={k} h={v} />)}
+                                {data.length ===0 &&<span>Your search did not match any documents. <br/> <br/> Try different or fewer keywords.</span>}
                             </td>
                         </tr>
                         <tr id='spacer-h-20' />

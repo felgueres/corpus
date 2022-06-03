@@ -10,7 +10,7 @@ const useNavigateSearch = () => {
 }
 
 let s1 = { 'q': 'supply chains', 'collection': 'summaryV2', 'limit': 2 }
-let s2 = { 'q': 'reshoring', 'collection': 'summaryV2', 'limit': 2 }
+let s2 = { 'q': 'tesla', 'collection': 'summaryV2', 'limit': 2 }
 let s3 = { 'q': 'demand', 'collection': 'summaryV2', 'limit': 2 }
 
 export const Recommendations = () => {
@@ -26,13 +26,13 @@ export const Recommendations = () => {
                                     <span>Suggestions:</span>
                                 </td>
                                 <td>
-                                    <button onClick={() => navigateSearch('/search', s1)}>supply chains</button>
+                                    <button onClick={() => navigateSearch('/search', s1)}>{s1.q}</button>
                                 </td>
                                 <td>
-                                    <button onClick={() => navigateSearch('/search', s2)}>reshoring</button>
+                                    <button onClick={() => navigateSearch('/search', s2)}>{s2.q}</button>
                                 </td>
                                 <td>
-                                    <button onClick={() => navigateSearch('/search', s3)}>demand</button>
+                                    <button onClick={() => navigateSearch('/search', s3)}>{s3.q}</button>
                                 </td>
                             </tr>
                         </tbody>

@@ -10,7 +10,7 @@ export const Banner = () => {
             </tr>
             <tr>
                 <td id='slogan'>
-                    <span>Search for Business Strategy</span>
+                    <span>Search market intelligence using Nominal</span>
                 </td>
             </tr>
         </>

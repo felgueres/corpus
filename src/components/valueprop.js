@@ -7,17 +7,15 @@ const Info = ({ t, p }) => {
     )
 }
 
-let t1='Skip the long transcripts'
+let t1='1. Skip the long transcripts'
 let p1='Nominal summarizes market data, including earnings calls and financial facts, into takeaways points.'
 
-let t2='A UI that gets out of your way'
+let t2='2. A UI that gets out of your way'
 let p2='We\'ve put together only what\'s neccesary to increase breadth of analysis and a fast experience.' 
 
-let t3='Get narratives early and right'
-let p3='Nominal makes it easy for teams to pick up on market trends and shifts.' 
+let t3='3. Get market narratives early and factually right '
+let p3='Makes it easy for teams to pick up on market trends and shifts.' 
 
-
- 
 export const ValueProp = () => {
     return (
         <>
