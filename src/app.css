@@ -268,7 +268,7 @@ body {
 
 /* Navbar */
 #navbar-table {
-    width: var(--eighty-pct);
+    width: var(--hundred-pct);
     font-size: var(--regular-fs);
     text-align: end;
     margin: auto;
