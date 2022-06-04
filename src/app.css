@@ -74,6 +74,10 @@ body {
     height: 20px;
 }
 
+#spacer-h-10 {
+    height: 10px;
+}
+
 .not-visible {
     display: none;
 }
@@ -269,7 +273,19 @@ body {
 
 /* Search Results Table */
 #results-table {
-    border-top: var(--color-light-border) 1px solid;
     width: var(--hundred-pct);
     margin: auto;
+}
+
+#company-results-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+#company-results-table th {
+    text-align: left;
+}
+
+#company-results-table tr {
+    border-bottom: var(--color-grey-border) 1px solid;
 }

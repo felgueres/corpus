@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 export default function useSearch(query) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     async function fetchAPI() {
       const apiUrl = process.env.REACT_APP_API_URL;
@@ -20,5 +21,6 @@ export default function useSearch(query) {
     }
     fetchAPI()
   }, [ query ])
+
   return { data , loading}
 }

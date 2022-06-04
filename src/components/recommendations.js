@@ -9,9 +9,9 @@ const useNavigateSearch = () => {
     })
 }
 
-let s1 = { 'q': 'supply chains', 'collection': 'summaryV2', 'limit': 2 }
-let s2 = { 'q': 'tesla', 'collection': 'summaryV2', 'limit': 2 }
-let s3 = { 'q': 'demand', 'collection': 'summaryV2', 'limit': 2 }
+let s1 = { 'q': 'supply chains', 'collection': 'summaryV2', 'limit': 5 }
+let s2 = { 'q': 'tesla', 'collection': 'summaryV2', 'limit': 5 }
+let s3 = { 'q': 'demand', 'collection': 'summaryV2', 'limit': 5 }
 
 export const Recommendations = () => {
     const navigateSearch = useNavigateSearch()

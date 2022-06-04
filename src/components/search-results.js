@@ -59,7 +59,6 @@ export const SearchResults = () => {
         </>
     }
 
-
     return (<>
         <tr>
             <td>
