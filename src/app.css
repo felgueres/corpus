@@ -33,6 +33,9 @@ body {
         width: 100%;
         -webkit-text-size-adjust: none;
     }
+    #symbol {
+        display: none;
+    }
 }
 
 /* Search Form */
@@ -273,8 +276,19 @@ body {
 
 /* Search Results Table */
 #results-table {
-    width: var(--hundred-pct);
-    margin: auto;
+    max-width: 580px;
+    border-spacing: 0;
+    line-height: 1.25rem;
+}
+
+#results-table .title {
+    color: #1a0dab;
+    line-height: 1.2rem;
+    font-size: 1rem;
+}
+
+#results-table th {
+    text-align: left;
 }
 
 #company-results-table {

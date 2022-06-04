@@ -8,12 +8,10 @@ const HitItem = ({ h }) => {
     return (<>
         <tr>
             <td>{h.company_name}</td>
-            <td>{h.symbol}</td>
-            <td>{h.name}</td>
+            <td id="symbol">{h.symbol}</td>
             <td>{h.role}</td>
             <td>{h.period}</td>
             <td><svg height={11} width={12}><circle cx={5} cy={7} r={3} fill={sMap[h.label]}></circle></svg></td>
-            <td><a href='/'>Section</a></td>
         </tr>
     </>
     )
@@ -42,12 +40,10 @@ export const CompanyResults = () => {
                     <tbody>
                         <tr>
                             <th>Company</th>
-                            <th>Symbol</th>
-                            <th>Person</th>
+                            <th id='symbol'>Symbol</th>
                             <th>Role</th>
-                            <th></th>
+                            <th>Period</th>
                             <th>Sentiment</th>
-                            <th>Section</th>
                         </tr>
                         {Object.entries(data).map(([k, v],) => <HitItem key={k} h={v} />)}
                     </tbody>
