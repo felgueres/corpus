@@ -279,22 +279,27 @@ body {
     max-width: 580px;
     border-spacing: 0;
     line-height: 1.25rem;
+    margin-bottom: 1.9rem;
 }
 
 #results-table .title {
     color: #1a0dab;
     line-height: 1.2rem;
     font-size: 1rem;
+    letter-spacing: 0.5px;
 }
 
 #results-table th {
     text-align: left;
 }
 
+/* Results by Company */
+
 #company-results-table {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
+    margin-bottom: 1.2rem;
 }
 #company-results-table th {
     text-align: left;
