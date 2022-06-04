@@ -2,7 +2,12 @@ import { useSearchParams } from "react-router-dom";
 import SkeletonHit from "../skeletons/SkeletonHit";
 import useSearch from "./useSearch";
 
-const HitItem = ({ h }) => {
+const reactStringReplace = require('react-string-replace')
+
+const HitItem = ({ h, q }) => {
+
+    let r = '(' + q.split(' ').join('|') + ')'
+
     return (
         <table id='results-table'>
             <tbody>
@@ -13,7 +18,7 @@ const HitItem = ({ h }) => {
                 </tr>
                 <tr>
                     <td>
-                        <span>{h.s}</span>
+                        {reactStringReplace(h.s, new RegExp(r, "gmi"), (match,i)=>(<b>{match}</b>))}
                     </td>
                 </tr>
                 <tr>
@@ -45,7 +50,7 @@ export const SearchResults = () => {
     return (<>
         <tr>
             <td>
-                {Object.entries(data).map(([k, v],) => <HitItem key={k} h={v} />)}
+                {Object.entries(data).map(([k, v],) => <HitItem key={k} h={v} q={searchParams.get('q')} />)}
                 {data.length === 0 && <span>Your search did not match any documents. <br /> <br /> Try different or fewer keywords.</span>}
             </td>
         </tr>
