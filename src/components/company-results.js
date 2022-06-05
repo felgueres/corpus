@@ -2,8 +2,6 @@ import { useSearchParams } from "react-router-dom";
 import SkeletonHit from "../skeletons/SkeletonHit";
 import useSearch from "./useSearch";
 
-const sMap = { 'positive': '#7cd2af', 'negative': '#d4789d', 'neutral': '#A9A9A9' }
-
 const HitItem = ({ h }) => {
     return (<>
         <tr>
@@ -11,7 +9,7 @@ const HitItem = ({ h }) => {
             <td id="symbol">{h.symbol}</td>
             <td>{h.role}</td>
             <td>{h.period}</td>
-            <td><svg height={11} width={12}><circle cx={5} cy={7} r={3} fill={sMap[h.label]}></circle></svg></td>
+            <td>{h.label}</td>
         </tr>
     </>
     )

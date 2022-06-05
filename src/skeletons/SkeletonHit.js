@@ -20,9 +20,6 @@ const SkeletonHit = () => {
     return (
         <>
             <Row td={<TdSkeleton/>} />
-            <Row td={<TdSkeleton/>} />
-            <Row td={<TdSkeleton/>} />
-            <Row td={<TdSkeleton/>} />
         </>
     )
 }

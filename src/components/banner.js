@@ -1,16 +1,18 @@
-import image from '../assets/home_logo.svg';
 export const Banner = () => {
     return (
         <>
             <tr>
                 <td id='banner'>
-                    <a href='/' alt='home'><img id='logo' alt={'nominal'} src={image} /></a>
-                    <span className="beta-pill">Beta</span>
+                    <a href='/' alt='home'>
+                        <span>
+                            <span className='title'>nominal</span><span className="beta-pill">Beta</span>
+                        </span>
+                    </a>
                 </td>
             </tr>
             <tr>
                 <td id='slogan'>
-                    <span>Search summarized earnings calls</span>
+                    <span>Aerospace market intelligence</span>
                 </td>
             </tr>
         </>

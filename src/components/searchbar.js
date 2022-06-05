@@ -16,6 +16,7 @@ export const SearchBar = () => {
             search: `?${createSearchParams({ 'q': newQuery, 'collection': 'summaryV2', 'limit': 5 })}`
         })
     }
+
     return (
         <>
             <tr>
@@ -26,7 +27,7 @@ export const SearchBar = () => {
                                 <td >
                                     <form id='search-form' onSubmit={handleSubmit}>
                                         <label>
-                                            <input defaultValue={query ?? undefined} type="text" name="query" autoComplete="off" placeholder="Search ideas, people or keywords" />
+                                            <input defaultValue={query ?? undefined} type="text" name="query" autoComplete="off" placeholder="Search companies, people or keywords" />
                                         </label>
                                     </form>
                                 </td>

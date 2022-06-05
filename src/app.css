@@ -59,7 +59,7 @@ body {
     background-color: #eff3f4;
     font-size: 0.875rem;
     line-height: calc(1rem + 1px);
-    padding: calc(1rem - 6px) calc(1.25rem + 2px);
+    padding: calc(1rem - 2px) calc(1.25rem + 1px);
     border: 1px var(--color-light-border) solid;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -214,10 +214,20 @@ body {
 }
 
 #slogan {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-align: center;
     width: var(--hundred-pct);
     box-sizing: border-box;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#banner a {
+    text-decoration: none;
+    color: black;
 }
 
 /* Recommendations */
