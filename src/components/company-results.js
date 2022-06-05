@@ -41,7 +41,7 @@ export const CompanyResults = () => {
                         <tr>
                             <th>Company</th>
                             <th id='symbol'>Symbol</th>
-                            <th>Role</th>
+                            <th>Mentions</th>
                             <th>Period</th>
                             <th>Sentiment</th>
                         </tr>

@@ -18,12 +18,12 @@ const HitItem = ({ h, q }) => {
                 </tr>
                 <tr>
                     <td>
-                        {reactStringReplace(h.s, new RegExp(r, "gmi"), (match,i)=>(<b>{match}</b>))}
+                        {reactStringReplace(h.s, new RegExp(r, "gmi"), (match,i)=>(<b key={i}>{match}</b>))}
                     </td>
                 </tr>
                 <tr>
                     <td onClick={handleClick}>
-                        <span className="">Show Original<br /></span>
+                        <span> Show Original<br /></span>
                         <span className="summary not-visible">{h.original}</span>
                     </td>
                 </tr>
