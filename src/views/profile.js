@@ -1,14 +1,14 @@
 import React from "react";
 import SearchBar from "../components/searchbar";
-import { SearchResults } from "../components/search-results";
 import { Banner } from "../components/banner";
+import { EarningsCall } from "../components/earningscall";
 
 export const Profile = () => {
     return (
         <>
             <Banner/>
             <SearchBar />
-            <SearchResults />
+            <EarningsCall/>
         </>
     );
 };

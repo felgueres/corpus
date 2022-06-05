@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react'
 
-export default function useSearch(query) {
+export default function useSearch(searchParams,pathname) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true)
-
-  console.log(4, query.get('limit') )
 
   useEffect(() => {
     async function fetchAPI() {
       const apiUrl = process.env.REACT_APP_API_URL;
-      setLoading(true)
 
+      setLoading(true)
       try {
-        let response = await fetch(`${apiUrl}/api/search?${query}`,
+        let response = await fetch(`${apiUrl}/api${pathname}?${searchParams}`,
         {
           method: 'GET'
         })
@@ -23,7 +21,7 @@ export default function useSearch(query) {
       }
     }
     fetchAPI()
-  }, [ query ])
+  }, [ searchParams, pathname ])
 
   return { data , loading}
 }

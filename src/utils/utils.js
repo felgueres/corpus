@@ -1,3 +1,5 @@
+import { useLocation } from "react-router-dom";
+
 function replace_quotes(s) {
   return s.replace(/'/g, '"')
 }
@@ -9,4 +11,9 @@ function groupBy(xs, key) {
     }, {});
   };
 
-export { replace_quotes, groupBy };
+const usePathname = ()=>{
+    const location = useLocation()
+    return location.pathname
+}
+
+export { replace_quotes, groupBy, usePathname};

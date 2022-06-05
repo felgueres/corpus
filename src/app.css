@@ -318,3 +318,12 @@ body {
 #company-results-table tr {
     border-bottom: var(--color-grey-border) 1px solid;
 }
+
+/* Profile */
+
+.profile-title {
+    color: #1a0dab;
+    line-height: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}

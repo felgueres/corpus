@@ -1,29 +1,42 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate, createSearchParams } from "react-router-dom";
 import SkeletonHit from "../skeletons/SkeletonHit";
+import { usePathname } from "../utils/utils";
 import useSearch from "./useSearch";
 
-const HitItem = ({ h }) => {
-    return (<>
-        <tr>
-            <td>{h.company_name}</td>
-            <td id="symbol">{h.symbol}</td>
-            <td>{h.role}</td>
-            <td>{h.period}</td>
-            <td>{h.label}</td>
-        </tr>
-    </>
-    )
+const useNavigateSearch = () => {
+    const navigate = useNavigate()
+    return (pathname, params) => navigate({
+        pathname: pathname,
+        search: `?${createSearchParams(params)}`
+    })
 }
 
 export const CompanyResults = () => {
     let [searchParams,] = useSearchParams();
-    let { data, loading } = useSearch(searchParams)
+    let pathname = usePathname();
+    let { data, loading } = useSearch(searchParams, pathname);
+    const navigateSearch = useNavigateSearch()
+    
+    const HitItem = ({ h }) => {
+        let params = {'q': h.cik, 'collection':'summaryV2', 'limit': 0}
+        return (<>
+            <tr>
+                <td><button onClick={() => navigateSearch('/profile', params)}> {h.company_name} </button></td>
+                <td id="symbol">{h.symbol}</td>
+                <td>{h.role}</td>
+                <td>{h.period}</td>
+                <td>{h.label}</td>
+            </tr>
+        </>
+        )
+    }
 
     if (loading) {
         return <>
             <SkeletonHit />
         </>
     }
+
     if (data.length === 0) {
         return <></>
     }

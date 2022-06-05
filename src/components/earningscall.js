@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import SkeletonHit from "../skeletons/SkeletonHit";
-import useSearch from "./useSearch";
 import { usePathname } from "../utils/utils";
+import useSearch from "./useSearch";
 
 const reactStringReplace = require('react-string-replace')
 
@@ -14,12 +14,12 @@ const HitItem = ({ h, q }) => {
             <tbody>
                 <tr>
                     <td>
-                        <span className="title">{h.company_name}</span>
+                        {h.name}, {h.role}, {h.start_idx}, {h.label}
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        {reactStringReplace(h.s, new RegExp(r, "gmi"), (match,i)=>(<b key={i}>{match}</b>))}
+                        {reactStringReplace(h.s, new RegExp(r, "gmi"), (match, i) => (<b key={i}>{match}</b>))}
                     </td>
                 </tr>
                 <tr>
@@ -38,7 +38,7 @@ const handleClick = event => {
     event.currentTarget.querySelector('.summary').classList.toggle('not-visible')
 }
 
-export const SearchResults = () => {
+export const EarningsCall = () => {
     let [searchParams,] = useSearchParams();
     let pathname = usePathname();
     let { data, loading } = useSearch(searchParams, pathname);
@@ -49,11 +49,20 @@ export const SearchResults = () => {
         </>
     }
 
+    let firstE = data[0] ;
+
     return (<>
         <tr>
             <td>
-                {Object.entries(data).map(([k, v],) => <HitItem key={k} h={v} q={searchParams.get('q')} />)}
-                {data.length === 0 && <span>Your search did not match any documents. <br /> <br /> Try different or fewer keywords.</span>}
+                <span className="profile-title">{firstE.company_name} <br /> Earnings Call: {firstE.period}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {Object
+                    .entries(data)
+                    .sort(e => e.start_idx)
+                    .map(([k, v], ) => <HitItem key={k} h={v} q={searchParams.get('q')} />)}
             </td>
         </tr>
     </>

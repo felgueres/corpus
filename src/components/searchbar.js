@@ -1,9 +1,11 @@
 import React from "react";
 import { useSearchParams, useNavigate, createSearchParams } from "react-router-dom";
+import { usePathname } from "../utils/utils";
 
 export const SearchBar = () => {
     let [searchParams,] = useSearchParams();
     let navigate = useNavigate()
+    let pathname = usePathname()
     let query = searchParams.get("q")
 
     async function handleSubmit(event) {
@@ -27,7 +29,7 @@ export const SearchBar = () => {
                                 <td >
                                     <form id='search-form' onSubmit={handleSubmit}>
                                         <label>
-                                            <input defaultValue={query ?? undefined} type="text" name="query" autoComplete="off" placeholder="Search companies, people or keywords" />
+                                            <input defaultValue={pathname==='/profile'?undefined: (query ?? undefined)} type="text" name="query" autoComplete="off" placeholder="Search companies, people or keywords" />
                                         </label>
                                     </form>
                                 </td>

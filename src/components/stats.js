@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import { usePathname } from "../utils/utils";
 import useSearch from "./useSearch";
 
 function useModifiedURL(){
@@ -8,8 +9,9 @@ function useModifiedURL(){
 }
 
 export const Stats = () => {
-    let searchParams = useModifiedURL()
-    let { data, loading } = useSearch(searchParams)
+    let searchParams = useModifiedURL();
+    let pathname = usePathname();
+    let { data, loading } = useSearch(searchParams, pathname);
 
     if (loading) {
         return <></>
