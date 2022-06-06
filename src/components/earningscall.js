@@ -49,14 +49,7 @@ export const EarningsCall = () => {
         </>
     }
 
-    let firstE = data[0] ;
-
     return (<>
-        <tr>
-            <td>
-                <span className="profile-title">{firstE.company_name} <br /> Earnings Call: {firstE.period}</span>
-            </td>
-        </tr>
         <tr>
             <td>
                 {Object

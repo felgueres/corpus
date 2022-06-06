@@ -12,7 +12,7 @@ export const Banner = () => {
             </tr>
             <tr>
                 <td id='slogan'>
-                    <span>Aerospace market intelligence</span>
+                    <span>Quarterly review of space earnings</span>
                 </td>
             </tr>
         </>
