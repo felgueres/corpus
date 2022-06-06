@@ -334,3 +334,13 @@ body {
     width: 100%;
     text-align: center;
 }
+
+.link-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: #1a0dab;
+    font-weight: bold;
+    font-size: 1rem;
+}

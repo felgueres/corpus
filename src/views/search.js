@@ -10,7 +10,7 @@ export const Search = () => {
         <>
             <Banner />
             <SearchBar />
-            <Stats/>
+            {/* <Stats/> */}
             <CompanyResults />
             <SearchResults />
         </>

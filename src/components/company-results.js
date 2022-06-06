@@ -21,8 +21,7 @@ export const CompanyResults = () => {
         let params = {'q': h.cik, 'collection':'summaryV2', 'limit': 0}
         return (<>
             <tr>
-                <td><button onClick={() => navigateSearch('/profile', params)}> {h.company_name} </button></td>
-                <td id="symbol">{h.symbol}</td>
+                <td><button className="link-button" onClick={() => navigateSearch('/profile', params)}> {h.symbol} </button></td>
                 <td>{h.role}</td>
                 <td>{h.period}</td>
                 <td>{h.label}</td>
@@ -50,7 +49,6 @@ export const CompanyResults = () => {
                 <table id='company-results-table'>
                     <tbody>
                         <tr>
-                            <th>Company</th>
                             <th id='symbol'>Symbol</th>
                             <th>Mentions</th>
                             <th>Period</th>
