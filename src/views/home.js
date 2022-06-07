@@ -7,6 +7,7 @@ export const Home = () => {
         <>
             <Navbar />
             <EarningsList/>
+            
         </>
     );
 };
