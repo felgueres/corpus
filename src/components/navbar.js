@@ -1,20 +1,27 @@
+import { Banner } from "./banner"
+import SearchBar from "./searchbar"
+import { Subscribe } from "./subscribe"
 
-export const Navbar = () => {
+
+export const Navbar= () => {
     return (
-        <>
-            <tr>
-                <td>
-                    <table id='navbar-table'>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <a href='https://www.surveymonkey.com/r/25G9H5K'>Subscribe</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-        </>
-    )
+        <tr>
+            <td>
+                <table id='navbar-table'>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <Banner />
+                            </td>
+                            <td>
+                                <SearchBar />
+                            </td>
+                            <td>
+                                <Subscribe/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>)
 }

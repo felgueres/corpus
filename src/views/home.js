@@ -1,17 +1,12 @@
 import React from "react";
-import SearchBar from "../components/searchbar";
-import { Banner } from "../components/banner";
-import { Recommendations } from "../components/recommendations";
 import { Navbar } from "../components/navbar";
-
+import { EarningsList } from "../components/earnings-list";
 
 export const Home = () => {
     return (
         <>
             <Navbar />
-            <Banner />
-            <SearchBar />
-            <Recommendations />
+            <EarningsList/>
         </>
     );
 };

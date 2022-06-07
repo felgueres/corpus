@@ -15,6 +15,7 @@ body {
     font-family: Helvetica, sans-serif;
     padding: 1rem;
     min-height: 100vh;
+    background-color: #F1F2F6;
 }
 
 #nmain {
@@ -33,6 +34,7 @@ body {
         width: 100%;
         -webkit-text-size-adjust: none;
     }
+
     #symbol {
         display: none;
     }
@@ -40,7 +42,6 @@ body {
 
 /* Search Form */
 #searchform-table {
-    margin: auto;
     width: 100%;
     max-width: var(--max-width-box);
 }
@@ -66,7 +67,7 @@ body {
     caret-color: #4a72f5;
 }
 
-#search-form input:focus{
+#search-form input:focus {
     outline: none;
     border: 1px #0969da solid;
     background-color: #ffffff;
@@ -206,16 +207,15 @@ body {
     font-size: 0.7rem;
     text-decoration: none;
 }
+
 /* banner */
 #banner {
     width: var(--hundred-pct);
-    text-align: center;
     box-sizing: border-box;
 }
 
 #slogan {
-    font-size: 0.9rem;
-    text-align: center;
+    font-size: 0.7rem;
     width: var(--hundred-pct);
     box-sizing: border-box;
 }
@@ -229,6 +229,7 @@ body {
     text-decoration: none;
     color: black;
 }
+
 
 /* Recommendations */
 
@@ -279,9 +280,54 @@ body {
 /* Navbar */
 #navbar-table {
     width: var(--hundred-pct);
-    font-size: var(--regular-fs);
+}
+
+#subscribe {
+    width: 100%;
     text-align: end;
-    margin: auto;
+}
+
+#brand {
+    width: 100%;
+}
+
+/* Earnings Summaries */
+#ec-summaries {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#ec-summaries tr {
+    border-bottom: var(--color-light-border) 1px solid;
+}
+
+#ec-summaries td.truncate {
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: auto;
+    min-width: 0;
+    max-width: 850px;
+}
+
+#ec-summaries td.symbol {
+    color: #1A0DAB;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+#ec-summaries td.title {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+#ec-summaries td.showmore {
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+
+#ec-summaries td.right {
+    text-align:right;
 }
 
 /* Search Results Table */
@@ -311,6 +357,7 @@ body {
     border-collapse: collapse;
     margin-bottom: 1.2rem;
 }
+
 #company-results-table th {
     text-align: left;
 }
