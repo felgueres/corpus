@@ -1,11 +1,12 @@
 import useSearch from "./useSearch";
+import { useNavigateSearch } from "./useNavigateSearch";
 
 const SummaryRow = ({ d }) => {
+    let params = {'q': d.cik, 'collection':'summaryV2', 'limit': 0}
+    const navigateSearch = useNavigateSearch()
     return (<>
         <tr>
-            <td className="symbol">
-                {d.symbol}
-            </td>
+            <td><button className="link-button" onClick={() => navigateSearch('/profile', params)}> {d.symbol} </button></td>
             <td className="truncate">
                 {d.s}
             </td>

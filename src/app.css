@@ -15,7 +15,6 @@ body {
     font-family: Helvetica, sans-serif;
     padding: 1rem;
     min-height: 100vh;
-    background-color: #F1F2F6;
 }
 
 #nmain {
@@ -23,6 +22,7 @@ body {
     width: 100%;
     margin: auto;
     box-sizing: border-box;
+    background-color: #F1F2F6;
 }
 
 #logo {
@@ -125,7 +125,6 @@ body {
     font-size: var(--regular-fs);
     color: #3730a3;
 }
-
 
 /* Search Results */
 #search-results {
@@ -302,6 +301,10 @@ body {
     border-bottom: var(--color-light-border) 1px solid;
 }
 
+#ec-summaries tr:hover {
+    opacity: 0.8;
+}
+
 #ec-summaries td.truncate {
     overflow: hidden;
     display: inline-block;
@@ -412,4 +415,5 @@ body {
     color: #1a0dab;
     font-weight: bold;
     font-size: 1rem;
+    padding: 0;
 }

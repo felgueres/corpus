@@ -3,9 +3,8 @@ import SkeletonHit from "../skeletons/SkeletonHit";
 import { usePathname } from "../utils/utils";
 import useSearch from "./useSearch";
 
-const HitItem = ({ h, q }) => {
+const HitItem = ({ h }) => {
     let kwords = h.kwords.slice(0,2).map(x=>x.split(' ').length>1?x.split(' ').join('-'):x)
-    console.log(kwords)
     return (
         <tr>
             <td>
@@ -56,7 +55,7 @@ export const SectionsTable = () => {
                         {Object
                             .entries(data)
                             .sort(e => e.start_idx)
-                            .map(([k, v],) => <HitItem key={k} h={v} q={searchParams.get('q')} />)}
+                            .map(([k, v],) => <HitItem key={k} h={v}/>)}
                     </tbody>
                 </table>
             </td>

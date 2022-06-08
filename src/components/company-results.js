@@ -1,15 +1,9 @@
-import { useSearchParams, useNavigate, createSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import SkeletonHit from "../skeletons/SkeletonHit";
 import { usePathname } from "../utils/utils";
 import useSearch from "./useSearch";
+import { useNavigateSearch } from "./useNavigateSearch";
 
-const useNavigateSearch = () => {
-    const navigate = useNavigate()
-    return (pathname, params) => navigate({
-        pathname: pathname,
-        search: `?${createSearchParams(params)}`
-    })
-}
 
 export const CompanyResults = () => {
     let [searchParams,] = useSearchParams();
