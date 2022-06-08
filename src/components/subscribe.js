@@ -6,7 +6,7 @@ export const Subscribe = () => {
                 <tbody>
                     <tr>
                         <td>
-                            <a href='https://www.surveymonkey.com/r/25G9H5K'>Subscribe</a>
+                            <a href='https://www.surveymonkey.com/r/25G9H5K'>Notify me next <br/> earnings season</a>
                         </td>
                     </tr>
                 </tbody>

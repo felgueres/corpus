@@ -35,7 +35,7 @@ export const EarningsList = () => {
                         {data.map((d,i) => <SummaryRow d={d} key={i} />)}
                         <tr>
                             <td colSpan={2} className="showmore">
-                                Show all summaries »
+                                <button>Show all summaries »</button>
                             </td>
                         </tr>
                     </tbody>

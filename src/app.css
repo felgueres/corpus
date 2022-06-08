@@ -325,11 +325,15 @@ body {
 
 }
 
-#ec-summaries td.showmore {
+#ec-summaries td.showmore button {
     font-size: 0.75rem;
     font-weight: bold;
-    color: #0969da 
-}
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0969da;
+    padding: 0;
+} 
 
 #ec-summaries tr:last-of-type {
     border: none;
@@ -385,7 +389,19 @@ body {
 
 #ec-sections-table {
     width: 100%;
-    text-align: center;
+    border-collapse: collapse;
+}
+
+#ec-sections-table tr {
+    border-bottom: 1px var(--color-light-border) solid;
+}
+
+#ec-sections-table tr:first-of-type {
+    border-bottom: 1px solid black;
+}
+
+#ec-sections-table th {
+    text-align: left;
 }
 
 .link-button {

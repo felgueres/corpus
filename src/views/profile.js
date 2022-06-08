@@ -1,14 +1,12 @@
 import React from "react";
-import SearchBar from "../components/searchbar";
-import { Banner } from "../components/banner";
+import { Navbar } from "../components/navbar";
 import { EarningsCall } from "../components/earningscall";
 import { SectionsTable } from "../components/sections-table";
 
 export const Profile = () => {
     return (
         <>
-            <Banner/>
-            <SearchBar />
+            <Navbar/>
             <SectionsTable/>
             <EarningsCall/>
         </>

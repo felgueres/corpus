@@ -1,16 +1,12 @@
 import React from "react";
-import SearchBar from "../components/searchbar";
-import { Banner } from "../components/banner";
 import { SearchResults } from "../components/search-results";
 import { CompanyResults } from "../components/company-results";
-import { Stats } from "../components/stats";
+import { Navbar } from "../components/navbar";
 
 export const Search = () => {
     return (
         <>
-            <Banner />
-            <SearchBar />
-            {/* <Stats/> */}
+            <Navbar/>
             <CompanyResults />
             <SearchResults />
         </>
