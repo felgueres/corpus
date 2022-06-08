@@ -18,8 +18,6 @@ export const EarningsList = () => {
     let searchParams = new URLSearchParams({ 'collection': 'summaryV2' }).toString()
     let { data, loading } = useSearch(searchParams, pathname);
 
-    console.log(data)
-
     if (loading) {
         return <></>
     }
@@ -30,14 +28,16 @@ export const EarningsList = () => {
                 <table id='ec-summaries'>
                     <tbody>
                         <tr>
-                            <td className="title">
-                               Symbol 
-                            </td>
-                            <td className="right showmore">
+                            <th className='table-header' colSpan={2}>
+                                Latest Earnings
+                            </th>
+                        </tr>
+                        {data.map((d,i) => <SummaryRow d={d} key={i} />)}
+                        <tr>
+                            <td colSpan={2} className="showmore">
                                 Show all summaries »
                             </td>
                         </tr>
-                        {data.map(d => <SummaryRow d={d} />)}
                     </tbody>
                 </table>
             </td>

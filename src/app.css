@@ -60,7 +60,7 @@ body {
     background-color: #eff3f4;
     font-size: 0.875rem;
     line-height: calc(1rem + 1px);
-    padding: calc(1rem - 2px) calc(1.25rem + 1px);
+    padding: calc(1rem - 6px) calc(1.25rem + 1px);
     border: 1px var(--color-light-border) solid;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -295,6 +295,7 @@ body {
 #ec-summaries {
     border-collapse: collapse;
     width: 100%;
+    margin-top: 10px;
 }
 
 #ec-summaries tr {
@@ -317,17 +318,26 @@ body {
     font-size: 0.85rem;
 }
 
-#ec-summaries td.title {
-    font-size: 0.75rem;
+#ec-summaries th.table-header {
+    font-size: 0.8rem;
     font-weight: 600;
-}
-#ec-summaries td.showmore {
-    font-size: 0.75rem;
-    font-weight: 300;
+    text-align: start;
+
 }
 
-#ec-summaries td.right {
-    text-align:right;
+#ec-summaries td.showmore {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #0969da 
+}
+
+#ec-summaries tr:last-of-type {
+    border: none;
+}
+
+#ec-summaries tr:first-of-type {
+    border-bottom: 1px black solid;
+    line-height: 1rem;
 }
 
 /* Search Results Table */
@@ -343,10 +353,6 @@ body {
     line-height: 1.2rem;
     font-size: 1rem;
     letter-spacing: 0.5px;
-}
-
-#results-table th {
-    text-align: left;
 }
 
 /* Results by Company */
