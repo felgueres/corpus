@@ -3,7 +3,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./views";
 import Search from "./views/search";
-import Profile from "./views/profile";
+import { Transcript } from "./views/transcript";
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/transcript" element={<Profile/>} />
+            <Route path="/transcript" element={<Transcript/>} />
           </Routes>
       </tbody>
     </table>

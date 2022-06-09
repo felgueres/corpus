@@ -23,8 +23,6 @@ export const Facts = () => {
         return <></>
     }
 
-    console.log(data)
-
     return (
         <tr>
             <td>

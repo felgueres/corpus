@@ -3,39 +3,27 @@ import SkeletonHit from "../skeletons/SkeletonHit";
 import { usePathname } from "../utils/utils";
 import useSearch from "./useSearch";
 
-const reactStringReplace = require('react-string-replace')
-
-const HitItem = ({ h, q }) => {
-
-    let r = '(' + q.split(' ').join('|') + ')'
-
-    return (
-        <table id='results-table'>
-            <tbody>
-                <tr>
-                    <td>
-                        {h.name}, {h.role}, {h.start_idx}, {h.label}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        {reactStringReplace(h.s, new RegExp(r, "gmi"), (match, i) => (<b key={i}>{match}</b>))}
-                    </td>
-                </tr>
-                <tr>
-                    <td onClick={handleClick}>
-                        <span> Show Original<br /></span>
-                        <span className="summary not-visible">{h.original}</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    )
+const SummaryParagraph = ({ data }) => {
+    return (<>
+        <tr>
+            <th>Summary</th>
+        </tr>
+        {data.sort(e => e.start_idx).map((e,i) => <tr key={i}><td /><td>{e.s}</td></tr>)}</>)
 }
 
-
-const handleClick = event => {
-    event.currentTarget.querySelector('.summary').classList.toggle('not-visible')
+const Keywords = ({ data }) => {
+    return (<>
+        <tr>
+            <th>Keywords</th>
+        </tr>
+        <tr>
+            <td />
+            <td>
+                {data.map(e => e.kwords.slice(0, 3).map((e,i) => <span key={i}>{e}</span>))}
+            </td>
+        </tr>
+    </>
+    )
 }
 
 export const EarningsCall = () => {
@@ -51,11 +39,22 @@ export const EarningsCall = () => {
 
     return (<>
         <tr>
+            <td><h2>{data[0].company_name}</h2></td>
+        </tr>
+        <tr>
             <td>
-                {Object
-                    .entries(data)
-                    .sort(e => e.start_idx)
-                    .map(([k, v], ) => <HitItem key={k} h={v} q={searchParams.get('q')} />)}
+                <table id='transcript-table'>
+                    <tbody>
+                        <tr>
+                            <td>Speakers</td>
+                        </tr>
+
+                        <Keywords data={data} />
+
+                        <SummaryParagraph data={data} />
+
+                    </tbody>
+                </table>
             </td>
         </tr>
     </>

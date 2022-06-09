@@ -23,7 +23,7 @@ const HitItem = ({ h }) => {
     )
 }
 
-export const SectionsTable = () => {
+export const IndexTable = () => {
     let [searchParams,] = useSearchParams();
     let pathname = usePathname();
     let { data, loading } = useSearch(searchParams, pathname);
