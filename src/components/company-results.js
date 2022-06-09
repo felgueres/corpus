@@ -15,7 +15,7 @@ export const CompanyResults = () => {
         let params = {'q': h.cik, 'collection':'summaryV2', 'limit': 0}
         return (<>
             <tr>
-                <td><button className="link-button" onClick={() => navigateSearch('/profile', params)}> {h.symbol} </button></td>
+                <td><button className="link-button" onClick={() => navigateSearch('/transcript', params)}> {h.symbol} </button></td>
                 <td>{h.role}</td>
                 <td>{h.period}</td>
                 <td>{h.label}</td>

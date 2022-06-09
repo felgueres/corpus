@@ -22,7 +22,7 @@ body {
     width: 100%;
     margin: auto;
     box-sizing: border-box;
-    background-color: #F1F2F6;
+
 }
 
 #logo {
@@ -220,7 +220,7 @@ body {
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 

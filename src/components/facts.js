@@ -1,7 +1,7 @@
 import useSearch from "./useSearch";
 import { useNavigateSearch } from "./useNavigateSearch";
 
-const SummaryRow = ({ d }) => {
+const FactsRow = ({ d }) => {
     let params = {'q': d.cik, 'collection':'summaryV2', 'limit': 0}
     const navigateSearch = useNavigateSearch()
     return (<>
@@ -14,14 +14,16 @@ const SummaryRow = ({ d }) => {
     </>)
 }
 
-export const EarningsList = () => {
-    let pathname = '/latest'
-    let searchParams = new URLSearchParams({ 'collection': 'summaryV2', 'limit': '10' }).toString()
+export const Facts = () => {
+    let pathname = '/facts'
+    let searchParams = new URLSearchParams({ 'collection': 'factsV1', 'limit': 1 }).toString()
     let { data, loading } = useSearch(searchParams, pathname);
 
     if (loading) {
         return <></>
     }
+
+    console.log(data)
 
     return (
         <tr>
@@ -30,15 +32,10 @@ export const EarningsList = () => {
                     <tbody>
                         <tr>
                             <th className='table-header' colSpan={2}>
-                                Latest Earnings
+                                Facts 
                             </th>
                         </tr>
-                        {data.map((d,i) => <SummaryRow d={d} key={i} />)}
-                        <tr>
-                            <td colSpan={2} className="showmore">
-                                <button>Show all summaries »</button>
-                            </td>
-                        </tr>
+                        {data.map((d,i) => <FactsRow d={d} key={i} />)}
                     </tbody>
                 </table>
             </td>
