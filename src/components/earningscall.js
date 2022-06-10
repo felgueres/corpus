@@ -5,21 +5,52 @@ import useSearch from "./useSearch";
 
 const SummaryParagraph = ({ data }) => {
     return (<>
-        <tr>
+        <tr className="transcript-title-row">
             <th>Summary</th>
         </tr>
-        {data.sort(e => e.start_idx).map((e,i) => <tr key={i}><td /><td>{e.s}</td></tr>)}</>)
+        {data.sort(e => e.start_idx).map((e, i) => <><tr key={i}>
+            <td /><td>{e.s}</td>
+        </tr>
+        <tr>
+            <td/>
+            {/* <td>
+                {e.original}
+            </td> */}
+        </tr>
+        </>
+        )
+        }</>)
 }
 
 const Keywords = ({ data }) => {
     return (<>
-        <tr>
+        <tr className="transcript-title-row">
             <th>Keywords</th>
         </tr>
         <tr>
             <td />
             <td>
-                {data.map(e => e.kwords.slice(0, 3).map((e,i) => <span key={i}>{e}</span>))}
+                {data.map(e => e.kwords.map((e, i) => <span key={i}>{e}, </span>))}
+            </td>
+        </tr>
+    </>
+    )
+}
+
+const SummaryStats= ({ data }) => {
+    let s_tokens = data.map(e => e.summary_tokens).reduce((partialSum,a)=>partialSum+a,0)
+    let o_tokens = data.map(e => e.original_tokens).reduce((partialSum,a)=>partialSum+a,0)
+    let perc = s_tokens/o_tokens
+
+    return (<>
+        <tr className="transcript-title-row">
+            <th>Summary Stats</th>
+        </tr>
+        <tr>
+            <td />
+            <td>
+                <span>This summary has {Math.floor((1-perc)*100)}% less text than the original transcript. </span>
+                <br></br>
             </td>
         </tr>
     </>
@@ -45,14 +76,10 @@ export const EarningsCall = () => {
             <td>
                 <table id='transcript-table'>
                     <tbody>
-                        <tr>
-                            <td>Speakers</td>
-                        </tr>
-
+                        <SummaryStats data={data}/>
                         <Keywords data={data} />
-
+                        <tr id="spacer-h-10" />
                         <SummaryParagraph data={data} />
-
                     </tbody>
                 </table>
             </td>

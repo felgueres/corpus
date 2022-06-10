@@ -390,25 +390,26 @@ body {
     border-collapse: collapse;
 }
 
-#transcript-table td:first-child {
-    border-right: 1px black solid;
-    border-bottom: none;
-}
-
-#transcript-table td:nth-child(2) {
-    max-width: 700px;
-    padding: 0.5rem 1rem;
-    line-height: 1rem;
-}
-
-#transcript-table tr:first-of-type {
-    border-bottom: 1px black solid;
+.transcript-title-row {
+    border-bottom: 1px solid black;
 }
 
 .transcript-subtitle {
     font-size: x-small;
     color: #536471;
-    text-align: end;
+}
+
+#transcript-table td:first-child{
+    border-right: 1px solid black;
+}
+
+#transcript-table td {
+    line-height: 1.5rem;
+    padding: 0.5rem;
+}
+
+#transcript-table td:nth-of-type(2){
+    max-width: 500px;
 }
 
 

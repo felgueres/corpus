@@ -16,7 +16,7 @@ const SummaryRow = ({ d }) => {
 
 export const EarningsList = () => {
     let pathname = '/latest'
-    let searchParams = new URLSearchParams({ 'collection': 'summaryV2', 'limit': '10' }).toString()
+    let searchParams = new URLSearchParams({ 'collection': 'summaryV2', 'limit': '20' }).toString()
     let { data, loading } = useSearch(searchParams, pathname);
 
     if (loading) {
