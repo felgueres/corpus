@@ -5,7 +5,6 @@ import { useState } from "react/cjs/react.development";
 const SummaryRow = ({ d }) => {
     let params = {'q': d.cik, 'collection':'summaryV2', 'limit': 0}
     const navigateSearch = useNavigateSearch()
-    console.log(d)
     return (<>
         <tr>
             <td><button className="link-button" onClick={() => navigateSearch('/transcript', params)}> {d.symbol} </button></td>
