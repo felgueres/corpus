@@ -1,9 +1,11 @@
 import useSearch from "./useSearch";
 import { useNavigateSearch } from "./useNavigateSearch";
+import { useState } from "react/cjs/react.development";
 
 const SummaryRow = ({ d }) => {
     let params = {'q': d.cik, 'collection':'summaryV2', 'limit': 0}
     const navigateSearch = useNavigateSearch()
+    console.log(d)
     return (<>
         <tr>
             <td><button className="link-button" onClick={() => navigateSearch('/transcript', params)}> {d.symbol} </button></td>
@@ -17,8 +19,12 @@ const SummaryRow = ({ d }) => {
 
 export const EarningsList = () => {
     let pathname = '/latest'
-    let searchParams = new URLSearchParams({ 'collection': 'summaryV2', 'limit': '5' }).toString()
+    let [searchParams, setSearch] = useState(new URLSearchParams({ 'collection': 'summaryV2', 'limit': '5' })) 
     let { data, loading } = useSearch(searchParams, pathname);
+
+    let showMore=()=>{
+        setSearch(new URLSearchParams({ 'collection': 'summaryV2', 'limit': '10' }))
+    }
 
     if (loading) {
         return <></>
@@ -36,7 +42,7 @@ export const EarningsList = () => {
                         {data.map((d,i) => <SummaryRow d={d} key={i} />)}
                         <tr>
                             <td colSpan={3} className="showmore">
-                                <button>Show all »</button>
+                                <button onClick={showMore}>Show all »</button>
                             </td>
                         </tr>
                     </tbody>

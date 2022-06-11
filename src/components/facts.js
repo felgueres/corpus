@@ -5,7 +5,6 @@ const formatter = new Intl.NumberFormat('en-US', {currency: 'USD', maximumFracti
 
 const FactsRow = ({ k, v }) => {
     let first = v[0]
-
     return (<>
         <tr>
             <td className="link-button">{k}</td>
@@ -24,10 +23,11 @@ export const Facts = () => {
         return <></>
     }
 
-    let gData = Object.entries(groupBy(data, 'symbol'))
+    var gData = Object.entries(groupBy(data, 'symbol'))
     let [,firstFrames] = gData[0]
     let framesList = firstFrames.map(e=>e.frame).sort()
     const FramesHeaders = () => {return framesList.map(e=><th key={e}>{e.slice(2,)}</th>)}
+    gData = gData.sort(([, b], [, d])=>d[3].val-b[3].val)
 
     return (
         <tr>
