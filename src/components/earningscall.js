@@ -6,10 +6,10 @@ import useSearch from "./useSearch";
 const SummaryParagraph = ({ data }) => {
     return (<>
         <tr className="transcript-title-row">
-            <th>Summary</th>
+            <th>Summarized Transcript</th>
         </tr>
         {data.sort(e => e.start_idx).map((e, i) => <><tr key={i}>
-            <td /><td>{e.s}</td>
+            <td>{e.s}</td>
         </tr>
         <tr>
             <td/>
@@ -28,7 +28,6 @@ const Keywords = ({ data }) => {
             <th>Keywords</th>
         </tr>
         <tr>
-            <td />
             <td>
                 {data.map(e => e.kwords.map((e, i) => <span key={i}>{e}, </span>))}
             </td>
@@ -44,10 +43,9 @@ const SummaryStats= ({ data }) => {
 
     return (<>
         <tr className="transcript-title-row">
-            <th>Summary Stats</th>
+            <th>Stats</th>
         </tr>
         <tr>
-            <td />
             <td>
                 <span>This summary has {Math.floor((1-perc)*100)}% less text than the original transcript. </span>
                 <br></br>
@@ -78,7 +76,6 @@ export const EarningsCall = () => {
                     <tbody>
                         <SummaryStats data={data}/>
                         <Keywords data={data} />
-                        <tr id="spacer-h-10" />
                         <SummaryParagraph data={data} />
                     </tbody>
                 </table>

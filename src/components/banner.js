@@ -7,14 +7,14 @@ export const Banner = () => {
                         <td id='banner'>
                             <a href='/' alt='home'>
                                 <span>
-                                    <span className='title'>tinyTranscripts</span><span className="beta-pill">Beta</span>
+                                    <span className='title'>nominal</span><span className="beta-pill">Beta</span>
                                 </span>
                             </a>
                         </td>
                     </tr>
                     <tr>
                         <td id='slogan'>
-                            <span>Summarized Earnings Transcripts</span>
+                            <span>Aerospace Market Research</span>
                         </td>
                     </tr>
                 </tbody>

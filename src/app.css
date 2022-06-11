@@ -25,18 +25,10 @@ body {
 
 }
 
-#logo {
-    width: 7rem;
-}
-
 @media only screen and (min-width: 300px) and (max-width: 750px) {
     body {
         width: 100%;
         -webkit-text-size-adjust: none;
-    }
-
-    #symbol {
-        display: none;
     }
 }
 
@@ -147,18 +139,6 @@ body {
     color: #0969da;
 }
 
-#subsection {
-    padding-left: 10px;
-}
-
-#subsection-a header {
-    background-color: #E9FDF3;
-}
-
-#subsection-b header {
-    background-color: #F3F1FF;
-}
-
 #hits-table li {
     list-style-type: none;
     border-bottom: 1px #edeeef solid;
@@ -227,7 +207,6 @@ body {
     color: black;
 }
 
-
 /* Recommendations */
 
 #recommendations {
@@ -284,8 +263,17 @@ body {
     text-align: end;
 }
 
-#brand {
-    width: 100%;
+#subscribe button {
+    background-color: transparent;
+    border: 1px solid #1D1E21;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#subscribe button:hover {
+    background-color: #1D1E21;
+    color: #E5E7EA;
 }
 
 /* Earnings Summaries */
@@ -293,6 +281,8 @@ body {
     border-collapse: collapse;
     width: 100%;
     margin-top: 10px;
+    box-sizing: border-box;
+    text-align: left;
 }
 
 #ec-summaries tr {
@@ -301,16 +291,14 @@ body {
 
 #ec-summaries tr:hover {
     opacity: 0.8;
+    background-color: #F1F2F6;
 }
 
 #ec-summaries td.truncate {
     overflow: hidden;
-    display: inline-block;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: auto;
-    min-width: 0;
-    max-width: 850px;
+    max-width: 100px;
 }
 
 #ec-summaries td.symbol {
@@ -323,7 +311,6 @@ body {
     font-size: 0.8rem;
     font-weight: 600;
     text-align: start;
-
 }
 
 #ec-summaries td.showmore button {
@@ -334,7 +321,7 @@ body {
     cursor: pointer;
     color: #0969da;
     padding: 0;
-} 
+}
 
 #ec-summaries tr:last-of-type {
     border: none;
@@ -388,10 +375,12 @@ body {
 /* Transcript */
 #transcript-table {
     border-collapse: collapse;
+    max-width: 500px;
 }
 
 .transcript-title-row {
     border-bottom: 1px solid black;
+    text-align: left;
 }
 
 .transcript-subtitle {
@@ -399,19 +388,10 @@ body {
     color: #536471;
 }
 
-#transcript-table td:first-child{
-    border-right: 1px solid black;
-}
-
 #transcript-table td {
     line-height: 1.5rem;
     padding: 0.5rem;
 }
-
-#transcript-table td:nth-of-type(2){
-    max-width: 500px;
-}
-
 
 /* EC Sections */
 
@@ -441,4 +421,18 @@ body {
     font-weight: bold;
     font-size: 1rem;
     padding: 0;
+}
+
+/* Facts Section */
+#facts-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#facts-table tr:first-of-type{
+    border-bottom: 1px solid black;
+}
+#facts-table tr{
+    border-bottom: 1px solid var(--color-light-border);
 }
