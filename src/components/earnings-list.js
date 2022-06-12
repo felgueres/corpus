@@ -22,7 +22,7 @@ export const EarningsList = () => {
     let { data, loading } = useSearch(searchParams, pathname);
 
     let showMore=()=>{
-        setSearch(new URLSearchParams({ 'collection': 'summaryV2', 'limit': '10' }))
+        setSearch(new URLSearchParams({ 'collection': 'summaryV2', 'limit': '50' }))
     }
 
     if (loading) {
