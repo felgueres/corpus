@@ -14,7 +14,7 @@ export const Banner = () => {
                     </tr>
                     <tr>
                         <td id='slogan'>
-                            <span>Aerospace Earnings</span>
+                            <span>Summarized Earnings</span>
                         </td>
                     </tr>
                 </tbody>

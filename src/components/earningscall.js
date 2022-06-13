@@ -11,7 +11,7 @@ const SummaryParagraph = ({ data }) => {
             <th>Summarized Transcript</th>
         </tr>
         {data.sort(e => e.start_idx).map((e, i) => <tr id={e.index} key={i}>
-            <td className="transcript-spacing">{e.s}</td></tr>
+            <td className="transcript-spacing">{e.s.replaceAll(' .','.')}</td></tr>
         )
         }
     </>)
