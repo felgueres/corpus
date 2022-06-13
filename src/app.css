@@ -65,11 +65,6 @@ body {
     background-color: #ffffff;
 }
 
-/* Table Utils */
-#spacer-h-20 {
-    height: 20px;
-}
-
 #spacer-h-10 {
     height: 10px;
 }
@@ -87,72 +82,19 @@ body {
     vertical-align: top;
 }
 
-/* Search Filters */
-#search-filters-table {
-    width: 140px;
-    height: var(--hundred-pct);
-    border-right: #edeeef 1px solid;
-    padding: 0;
-
-}
-
-#search-filters-table li {
-    list-style-type: none;
-}
-
-#search-filters-table ul {
-    padding: 2px 0px 0px 5px;
-}
-
-#search-filters-table label:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-#search-filters-table td {
-    vertical-align: top;
-}
-
-#search-filters-table .filter-header {
-    font-size: var(--regular-fs);
-    color: #3730a3;
-}
-
 /* Search Results */
-#search-results {
-    width: var(--hundred-pct);
+#results-table {
+    max-width: 580px;
     border-spacing: 0;
+    line-height: 1.25rem;
+    margin-bottom: 1.9rem;
 }
 
-#hit-title {
-    color: #0969da;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-#hits-table {
-    font-size: 13px;
-    border-spacing: 0px;
-}
-
-#hits-table header {
-    color: #0969da;
-}
-
-#hits-table li {
-    list-style-type: none;
-    border-bottom: 1px #edeeef solid;
-}
-
-#hits-table li:last-of-type {
-    border-bottom: none;
-}
-
-#metadata {
-    font-size: 10px;
-    color: #3730a3;
-    line-height: 12px;
-    width: 75px;
+#results-table .title {
+    color: #1a0dab;
+    line-height: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
 }
 
 .beta-pill {
@@ -162,27 +104,6 @@ body {
     border-radius: 2px;
     font-size: 8px;
     margin-left: 0.25rem;
-}
-
-.keyword-pill {
-    border: #a6b7f9 1px solid;
-    padding: 5px;
-    margin-right: 3px;
-    border-radius: 5px;
-    font-size: 8px;
-    line-height: 20px;
-    color: #3730a3;
-    background-color: #eef2ff;
-}
-
-/* Footer */
-#footer-table {
-    width: var(--hundred-pct);
-}
-
-#footer-table a {
-    font-size: 0.7rem;
-    text-decoration: none;
 }
 
 /* banner */
@@ -205,52 +126,6 @@ body {
 #banner a {
     text-decoration: none;
     color: black;
-}
-
-/* Recommendations */
-
-#recommendations {
-    font-size: var(--regular-fs);
-    text-align: center;
-    margin: auto;
-}
-
-#recommendations button {
-    background: #eef2ff;
-    color: inherit;
-    border: none;
-    cursor: pointer;
-    outline: inherit;
-    padding: 0;
-    opacity: 0.8;
-}
-
-#recommendations button:hover {
-    opacity: 1;
-}
-
-/* Value prop */
-
-#valueprop-table {
-    margin: auto;
-    margin-top: 50px;
-    border: var(--color-light-border) 1px solid;
-    border-radius: 20px;
-    box-sizing: border-box;
-}
-
-#valueprop-table span {
-    line-height: calc(1rem + 4px);
-}
-
-#valueprop-table td {
-    max-width: var(--max-width-box);
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-#valueprop-table h3 {
-    color: #384B9A;
 }
 
 /* Navbar */
@@ -289,7 +164,7 @@ body {
     border-bottom: var(--color-light-border) 1px solid;
 }
 
-#ec-summaries tr:hover {
+.hover-highlight:hover {
     opacity: 0.8;
     background-color: #F1F2F6;
 }
@@ -332,21 +207,6 @@ body {
     line-height: 1rem;
 }
 
-/* Search Results Table */
-#results-table {
-    max-width: 580px;
-    border-spacing: 0;
-    line-height: 1.25rem;
-    margin-bottom: 1.9rem;
-}
-
-#results-table .title {
-    color: #1a0dab;
-    line-height: 1.2rem;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-}
-
 /* Results by Company */
 
 #company-results-table {
@@ -367,9 +227,7 @@ body {
 /* Profile */
 .profile-title {
     color: #1a0dab;
-    line-height: 1.2rem;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+    font-size: 1.5rem;
 }
 
 /* Transcript */
@@ -383,33 +241,38 @@ body {
     text-align: left;
 }
 
-.transcript-subtitle {
-    font-size: x-small;
-    color: #536471;
-}
-
-#transcript-table td {
+.transcript-spacing {
     line-height: 1.5rem;
-    padding: 0.5rem;
+    padding-bottom: 10px;
 }
 
-/* EC Sections */
+#index-list span::before {
+    content: ', ';
+}
 
-#ec-sections-table {
+#index-table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 10px;
 }
 
-#ec-sections-table tr {
-    border-bottom: 1px var(--color-light-border) solid;
+.left-align {
+    text-align: left;
 }
 
-#ec-sections-table tr:first-of-type {
+.border-bottom {
     border-bottom: 1px solid black;
 }
 
-#ec-sections-table th {
-    text-align: left;
+.truncate-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+
+#index-list span:first-child::before{
+    content: '';
 }
 
 .link-button {
@@ -436,3 +299,4 @@ body {
 #facts-table tr{
     border-bottom: 1px solid var(--color-light-border);
 }
+

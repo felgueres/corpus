@@ -6,7 +6,7 @@ const SummaryRow = ({ d }) => {
     let params = {'q': d.cik, 'collection':'summaryV2', 'limit': 0}
     const navigateSearch = useNavigateSearch()
     return (<>
-        <tr>
+        <tr className="hover-highlight">
             <td><button className="link-button" onClick={() => navigateSearch('/transcript', params)}> {d.symbol} </button></td>
             <td className="truncate">{d.company_name}</td>
             <td className="truncate">
