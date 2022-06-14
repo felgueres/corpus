@@ -5,12 +5,17 @@ import SearchBar from "./searchbar"
 export const Navbar = () => {
     return (
         <tr>
-            <table id='navbar'>
-                <tbody>
-                    <Brand />
-                    <SearchBar />
-                    <Subscribe />
-                </tbody>
-            </table>
-        </tr>)
+            <td>
+                <table id='navbar'>
+                    <tbody>
+                        <tr>
+                            <Brand />
+                            <SearchBar />
+                            <Subscribe />
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    )
 }
