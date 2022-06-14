@@ -2,7 +2,8 @@
 export const Subscribe = () => {
     return (
         <>
-            <table id='subscribe'>
+        <td>
+            <table id='subscribe-table'>
                 <tbody>
                     <tr>
                         <td>
@@ -13,6 +14,7 @@ export const Subscribe = () => {
                     </tr>
                 </tbody>
             </table>
+        </td>
         </>
     )
 }

@@ -21,19 +21,22 @@ export const SearchBar = () => {
 
     return (
         <>
+        <td>
             <table id='searchform-table'>
                 <tbody>
                     <tr >
                         <td >
                             <form id='search-form' onSubmit={handleSubmit}>
                                 <label>
-                                    <input defaultValue={pathname === '/transcript' ? undefined : (query ?? undefined)} type="text" name="query" autoComplete="off" placeholder="Search transcripts" />
+                                    <input defaultValue={pathname === '/transcript' ? undefined : (query ?? undefined)} type="text" name="query" autoComplete="off" placeholder="Search" />
                                 </label>
                             </form>
                         </td>
                     </tr>
                 </tbody>
             </table>
+
+        </td>
         </>
     );
 };

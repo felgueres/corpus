@@ -1,22 +1,16 @@
-import { Banner } from "./banner"
+import { Brand } from "./brand"
 import { Subscribe } from "./subscribe"
+import SearchBar from "./searchbar"
 
-export const Navbar= () => {
+export const Navbar = () => {
     return (
         <tr>
-            <td>
-                <table id='navbar-table'>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <Banner />
-                            </td>
-                            <td>
-                                <Subscribe/>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
+            <table id='navbar'>
+                <tbody>
+                    <Brand />
+                    <SearchBar />
+                    <Subscribe />
+                </tbody>
+            </table>
         </tr>)
 }
