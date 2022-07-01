@@ -24,8 +24,8 @@ const HitItem = ({ h, q }) => {
                 </tr>
                 <tr>
                     <td onClick={handleClick}>
-                        <span> Show Original<br /></span>
-                        <span className="summary not-visible">{h.original}</span>
+                        <button> Show Original</button>
+                        <span className="summary not-visible"><br/>{h.original}</span>
                     </td>
                 </tr>
             </tbody>

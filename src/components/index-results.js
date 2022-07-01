@@ -5,7 +5,7 @@ import useSearch from "./useSearch";
 import { useNavigateSearch } from "./useNavigateSearch";
 
 
-export const CompanyResults = () => {
+export const IndexResults= () => {
     let [searchParams,] = useSearchParams();
     let pathname = usePathname();
     let { data, loading } = useSearch(searchParams, pathname);

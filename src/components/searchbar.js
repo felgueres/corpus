@@ -15,7 +15,7 @@ export const SearchBar = () => {
         if (!newQuery) return;
         navigate({
             pathname: "/search",
-            search: `?${createSearchParams({ 'q': newQuery, 'collection': 'summaryV2', 'limit': 5 })}`
+            search: `?${createSearchParams({ 'q': newQuery, 'collection': 'summaryV2', 'limit': 10 })}`
         })
     }
 
