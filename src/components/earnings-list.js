@@ -18,7 +18,7 @@ const SummaryRow = ({ d }) => {
 
 export const EarningsList = () => {
     let pathname = '/latest'
-    let [searchParams, setSearch] = useState(new URLSearchParams({ 'collection': 'summaryV2', 'limit': '5' })) 
+    let [searchParams, setSearch] = useState(new URLSearchParams({ 'collection': 'summaryV2', 'limit': '50' })) 
     let { data, loading } = useSearch(searchParams, pathname);
 
     let showMore=()=>{
