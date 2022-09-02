@@ -1,8 +1,11 @@
-# Earnings Transcripts Summaries
+# TinyTranscripts
 
-This is the presentation layer of an app that summarizes useful information about public companies in Aerospace. 
+This is the view app to using a transformer to summarize earnings calls.
 
-It has short summaries of all earnings transcripts for Q12022 via @huggingface, loading skeletons, search and attention to readability.
+Features:
+- Includes summarized transcripts for all companies in aerospace Q12022 
+- Search 
+- Highlights
 
 ### Home Page
 <img width="465" alt="Screen Shot 2022-07-04 at 5 12 01 PM" src="https://user-images.githubusercontent.com/20618426/177227311-a6d9c8a8-01ec-47a6-9c1d-7203870df67e.png">
