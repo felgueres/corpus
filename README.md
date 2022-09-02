@@ -1,4 +1,4 @@
-# TinyTranscripts
+# Tiny Transcripts UI
 
 This is the view app to using a transformer to summarize earnings calls, analyze sentiment, and make them searchable.
 
