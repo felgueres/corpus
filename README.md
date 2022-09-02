@@ -1,6 +1,6 @@
 # TinyTranscripts
 
-This is the view app to using a transformer to summarize earnings calls.
+This is the view app to using a transformer to summarize earnings calls, analyze sentiment, and make them searchable.
 
 Features:
 - Includes summarized transcripts for all companies in aerospace Q12022 
